@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{FA0BD040-019E-4834-8B03-5102F492D083}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    <Projects>
+      <Projects Name="BitBtn.bpl">BitBtn.bdsproj</Projects>
+      <Projects Name="GraphicExPack.bpl">..\GraphicEx\GraphicExPack.bdsproj</Projects>
+      <Projects Name="Install.bpl">..\JSocket\Install.bdsproj</Projects>
+      <Projects Name="MyDX9Package.bpl">..\MyDirect9\MyDX9Package.bdsproj</Projects>
+      <Projects Name="PacRAS.bpl">..\RSA\PacRAS.bdsproj</Projects>
+      <Projects Name="PAKWebBrowserUI.bpl">..\WebBrowserUI\PAKWebBrowserUI.bdsproj</Projects>
+      <Projects Name="Targets">BitBtn.bpl GraphicExPack.bpl Install.bpl MyDX9Package.bpl PacRAS.bpl PAKWebBrowserUI.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>
