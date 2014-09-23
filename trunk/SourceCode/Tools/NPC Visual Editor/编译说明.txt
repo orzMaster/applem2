@@ -1,0 +1,3 @@
+选择编译就可以不要构建否则编译不出 
+
+D:\游戏开发\applem2\Source\工具\NPC可视编辑器\NPCDesign.dproj

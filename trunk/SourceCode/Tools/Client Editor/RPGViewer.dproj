@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{94885864-9219-4728-a509-dcb5af780636}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>C:\MirServer\RPGViewer.exe</DCC_DependencyCheckOutputName>
+    <MainSource>RPGViewer.dpr</MainSource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE;WORKFILE</DCC_Define>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+    <DCC_ExeOutput>C:\MirServer</DCC_ExeOutput>
+    <DCC_UnitSearchPath>..\..\..\Common;..\..\..\Controls;..\..\..\Controls\WIL;..\..\..\Component\GraphicEx;..\..\..\Component\pngimage;..\..\..\Controls\DropGroup;C:\A3M2Source\Component\MyDirect9</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\..\..\Common;..\..\..\Controls;..\..\..\Controls\WIL;..\..\..\Component\GraphicEx;..\..\..\Component\pngimage;..\..\..\Controls\DropGroup;C:\A3M2Source\Component\MyDirect9</DCC_ResourcePath>
+    <DCC_ObjPath>..\..\..\Common;..\..\..\Controls;..\..\..\Controls\WIL;..\..\..\Component\GraphicEx;..\..\..\Component\pngimage;..\..\..\Controls\DropGroup;C:\A3M2Source\Component\MyDirect9</DCC_ObjPath>
+    <DCC_IncludePath>..\..\..\Common;..\..\..\Controls;..\..\..\Controls\WIL;..\..\..\Component\GraphicEx;..\..\..\Component\pngimage;..\..\..\Controls\DropGroup;C:\A3M2Source\Component\MyDirect9</DCC_IncludePath>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_DcuOutput>..\..\..\Build\Tools</DCC_DcuOutput>
+    <DCC_ObjOutput>..\..\..\Build\Tools</DCC_ObjOutput>
+    <DCC_HppOutput>..\..\..\Build\Tools</DCC_HppOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG;WORKFILE</DCC_Define>
+    <DCC_ExeOutput>D:\游戏工具</DCC_ExeOutput>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_UnitSearchPath>..\..\..\Common;..\..\..\控件;..\..\..\控件\MyDirect9;..\..\..\控件\WIL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\..\..\Common;..\..\..\控件;..\..\..\控件\MyDirect9;..\..\..\控件\WIL</DCC_ResourcePath>
+    <DCC_ObjPath>..\..\..\Common;..\..\..\控件;..\..\..\控件\MyDirect9;..\..\..\控件\WIL</DCC_ObjPath>
+    <DCC_IncludePath>..\..\..\Common;..\..\..\控件;..\..\..\控件\MyDirect9;..\..\..\控件\WIL</DCC_IncludePath>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2052</VersionInfo><VersionInfo Name="CodePage">936</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription">Client Editor</VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">http://www.Lomcn.co.uk</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename">RGPViewer.exe</VersionInfoKeys><VersionInfoKeys Name="ProductName">Client Editor</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">RPGViewer.dpr</Source></Source><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="RPGViewer.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\..\Common\HUtil32.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\WIL.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wm521g.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmM2Def.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmM2Wis.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmM2Zip.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmM3Def.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmM3Zip.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmMyImage.pas" />
+    <DCCReference Include="..\..\..\Controls\WIL\wmWoool.pas" />
+    <DCCReference Include="..\..\..\MirClient\Bass.pas" />
+    <DCCReference Include="..\..\..\MirClient\DLLFile.pas" />
+    <DCCReference Include="..\..\..\MyCommon\MyCommon.pas" />
+    <DCCReference Include="FrmAdd.pas">
+      <Form>FormAdd</Form>
+    </DCCReference>
+    <DCCReference Include="FrmAlpha.pas">
+      <Form>FormAlpha</Form>
+    </DCCReference>
+    <DCCReference Include="FrmDel.pas">
+      <Form>FormDel</Form>
+    </DCCReference>
+    <DCCReference Include="FrmMain.pas">
+      <Form>FormMain</Form>
+    </DCCReference>
+    <DCCReference Include="FrmOut.pas">
+      <Form>FormOut</Form>
+    </DCCReference>
+    <DCCReference Include="ZShare.pas" />
+  </ItemGroup>
+</Project>

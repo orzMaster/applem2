@@ -1,0 +1,51 @@
+package HGEPackage;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  HGE in 'HGE.pas',
+  HGEBase in 'HGEBase.pas',
+  HGECanvas in 'HGECanvas.pas',
+  HGEFonts in 'HGEFonts.pas',
+  HGEGUI in 'HGEGUI.pas',
+  HGETextures in 'HGETextures.pas',
+  HUtil32 in '..\..\Common\HUtil32.pas',
+  DES in '..\..\Common\DES.pas',
+  WIL in '..\..\WIL\WIL.pas',
+  wmM2Def in '..\..\WIL\wmM2Def.pas',
+  wmM2Wis in '..\..\WIL\wmM2Wis.pas',
+  wmMyImage in '..\..\WIL\wmMyImage.pas',
+  DirectXGraphics in 'DirectX\DirectXGraphics.pas',
+  D3DX81mo in 'DirectX\D3DX81mo.pas',
+  HGESounds in 'HGESounds.pas',
+  DirectXWave in 'Sound\DirectXWave.pas',
+  DirectXSound in 'Sound\DirectXSound.pas',
+  DirectXTypes in 'Sound\DirectXTypes.pas';
+
+end.
