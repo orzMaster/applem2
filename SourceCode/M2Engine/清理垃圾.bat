@@ -1,0 +1,17 @@
+del /s *.ddp
+del /s *.~ddp
+del /s *.~dpr
+del /s *.~pas
+del /s *.~dfm
+del /s *.bak
+del /s *.dcu
+del /s *.exe
+del /s *.del
+del /s *.xml
+del /s *.dta
+del /s *.~*~
+del /s *.map
+del /s *.~pa
+del /s *.~*
+del /s *.groupproj
+del /s *.local

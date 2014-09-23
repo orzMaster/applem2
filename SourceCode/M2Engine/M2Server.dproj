@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{ffcb0fa3-d8ae-41e0-8db2-b0ee2f413946}</ProjectGuid>
+    <MainSource>M2Server.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>C:\MirServer\Mir200\M2Server.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_UnitSearchPath>..\Common;..\..\Component\JSocket;..\..\Component\RSA</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Common;..\..\Component\JSocket;..\..\Component\RSA</DCC_ResourcePath>
+    <DCC_ObjPath>..\Common;..\..\Component\JSocket;..\..\Component\RSA</DCC_ObjPath>
+    <DCC_IncludePath>..\Common;..\..\Component\JSocket;..\..\Component\RSA</DCC_IncludePath>
+    <DCC_ExeOutput>C:\MirServer\Mir200</DCC_ExeOutput>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_ExeOutput>D:\MirServer\Mir200</DCC_ExeOutput>
+    <DCC_UnitSearchPath>..\Common</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Common</DCC_ResourcePath>
+    <DCC_ObjPath>..\Common</DCC_ObjPath>
+    <DCC_IncludePath>..\Common</DCC_IncludePath>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2052</VersionInfo><VersionInfo Name="CodePage">936</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription">M2Engine</VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">http://www.lomcn.co.uk</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename">M2Server.exe</VersionInfoKeys><VersionInfoKeys Name="ProductName">M2Engine</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">M2Server.dpr</Source></Source><Excluded_Packages>
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\bcboffice2k100.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcbofficexp100.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="M2Server.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\Common\CheckDLL.pas" />
+    <DCCReference Include="..\Common\CheckDllFile.pas" />
+    <DCCReference Include="..\Common\Common.pas" />
+    <DCCReference Include="..\Common\DES.pas" />
+    <DCCReference Include="..\Common\DESTR.pas" />
+    <DCCReference Include="..\Common\DLLLoader.pas" />
+    <DCCReference Include="..\Common\EDcodeEx.pas" />
+    <DCCReference Include="..\Common\EncryptFile.pas" />
+    <DCCReference Include="..\Common\EngineType.pas" />
+    <DCCReference Include="..\Common\Grobal2.pas" />
+    <DCCReference Include="..\Common\HUtil32.pas" />
+    <DCCReference Include="..\Common\MD5Unit.pas" />
+    <DCCReference Include="..\Common\Mudutil.pas" />
+    <DCCReference Include="..\MyCommon\MyCommon.pas" />
+    <DCCReference Include="ActionSpeedConfig.pas">
+      <Form>frmActionSpeed</Form>
+    </DCCReference>
+    <DCCReference Include="AttackSabukWallConfig.pas">
+      <Form>FrmAttackSabukWall</Form>
+    </DCCReference>
+    <DCCReference Include="BnkEngn.pas" />
+    <DCCReference Include="Castle.pas" />
+    <DCCReference Include="CastleManage.pas">
+      <Form>frmCastleManage</Form>
+    </DCCReference>
+    <DCCReference Include="ConfigMerchant.pas">
+      <Form>frmConfigMerchant</Form>
+    </DCCReference>
+    <DCCReference Include="ConfigMonGen.pas">
+      <Form>frmConfigMonGen</Form>
+    </DCCReference>
+    <DCCReference Include="CoralWry.pas" />
+    <DCCReference Include="EditCompoundInfo.pas">
+      <Form>EditCompoundInfoForm</Form>
+    </DCCReference>
+    <DCCReference Include="EngineRegister.pas">
+      <Form>FrmRegister</Form>
+    </DCCReference>
+    <DCCReference Include="Envir.pas" />
+    <DCCReference Include="Event.pas" />
+    <DCCReference Include="FrmShop.pas">
+      <Form>FormShop</Form>
+    </DCCReference>
+    <DCCReference Include="FrnEmail.pas" />
+    <DCCReference Include="FrnEngn.pas" />
+    <DCCReference Include="FSrvValue.pas">
+      <Form>FrmServerValue</Form>
+    </DCCReference>
+    <DCCReference Include="FunctionConfig.pas">
+      <Form>frmFunctionConfig</Form>
+    </DCCReference>
+    <DCCReference Include="GameCommand.pas">
+      <Form>frmGameCmd</Form>
+    </DCCReference>
+    <DCCReference Include="GameConfig.pas">
+      <Form>frmGameConfig</Form>
+    </DCCReference>
+    <DCCReference Include="GeneralConfig.pas">
+      <Form>frmGeneralConfig</Form>
+    </DCCReference>
+    <DCCReference Include="Guild.pas" />
+    <DCCReference Include="HumanInfo.pas">
+      <Form>frmHumanInfo</Form>
+    </DCCReference>
+    <DCCReference Include="IdSrvClient.pas">
+      <Form>FrmIDSoc</Form>
+    </DCCReference>
+    <DCCReference Include="ItemSet.pas">
+      <Form>frmItemSet</Form>
+    </DCCReference>
+    <DCCReference Include="ItmUnit.pas" />
+    <DCCReference Include="JClasses.pas" />
+    <DCCReference Include="LocalDB.pas">
+      <Form>FrmDB</Form>
+    </DCCReference>
+    <DCCReference Include="M2Share.pas" />
+    <DCCReference Include="Magic.pas" />
+    <DCCReference Include="Mission.pas" />
+    <DCCReference Include="MonsterConfig.pas">
+      <Form>frmMonsterConfig</Form>
+    </DCCReference>
+    <DCCReference Include="ObjAxeMon.pas" />
+    <DCCReference Include="ObjBase.pas" />
+    <DCCReference Include="ObjGuard.pas" />
+    <DCCReference Include="ObjMon.pas" />
+    <DCCReference Include="ObjMon2.pas" />
+    <DCCReference Include="ObjMon3.pas" />
+    <DCCReference Include="ObjNpc.pas" />
+    <DCCReference Include="ObjPlay.pas" />
+    <DCCReference Include="ObjPlayCmd.pas" />
+    <DCCReference Include="ObjRobot.pas" />
+    <DCCReference Include="OjbKindMon.pas" />
+    <DCCReference Include="OnlineEmail.pas">
+      <Form>frmOnlineEmail</Form>
+    </DCCReference>
+    <DCCReference Include="OnlineMsg.pas">
+      <Form>frmOnlineMsg</Form>
+    </DCCReference>
+    <DCCReference Include="PlugInManage.pas">
+      <Form>ftmPlugInManage</Form>
+    </DCCReference>
+    <DCCReference Include="PlugOfEngine.pas" />
+    <DCCReference Include="Plug\PlugOfBaseObject.pas" />
+    <DCCReference Include="Plug\PlugOfEnvirnoment.pas" />
+    <DCCReference Include="Plug\PlugOfItem.pas" />
+    <DCCReference Include="Plug\PlugOfList.pas" />
+    <DCCReference Include="Plug\PlugOfMagic.pas" />
+    <DCCReference Include="Plug\PlugOfMain.pas" />
+    <DCCReference Include="Plug\PlugOfNormNpc.pas" />
+    <DCCReference Include="Plug\PlugOfPlayObject.pas" />
+    <DCCReference Include="Plug\PlugOfUserEngine.pas" />
+    <DCCReference Include="RegDllFile.pas" />
+    <DCCReference Include="RunDB.pas" />
+    <DCCReference Include="RunSock.pas" />
+    <DCCReference Include="SDK.pas" />
+    <DCCReference Include="svMain.pas">
+      <Form>FrmMain</Form>
+    </DCCReference>
+    <DCCReference Include="UnitManage.pas" />
+    <DCCReference Include="UsrEngn.pas" />
+    <DCCReference Include="ViewCompoundInfo.pas">
+      <Form>FrmViewCompoundInfo</Form>
+    </DCCReference>
+    <DCCReference Include="ViewKernelInfo.pas">
+      <Form>frmViewKernelInfo</Form>
+    </DCCReference>
+    <DCCReference Include="ViewLevel.pas">
+      <Form>frmViewLevel</Form>
+    </DCCReference>
+    <DCCReference Include="ViewList.pas">
+      <Form>frmViewList</Form>
+    </DCCReference>
+    <DCCReference Include="ViewOnlineHuman.pas">
+      <Form>frmViewOnlineHuman</Form>
+    </DCCReference>
+    <DCCReference Include="ViewSession.pas">
+      <Form>frmViewSession</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

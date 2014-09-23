@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{a87ba25e-3ee4-4035-a6ba-81b7e30ce6eb}</ProjectGuid>
+    <MainSource>APITester.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>Bin\APITester.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>Bin</DCC_ExeOutput>
+    <DCC_UnitSearchPath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_ResourcePath>
+    <DCC_ObjPath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_ObjPath>
+    <DCC_IncludePath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_ExeOutput>Bin</DCC_ExeOutput>
+    <DCC_UnitSearchPath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_ResourcePath>
+    <DCC_ObjPath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_ObjPath>
+    <DCC_IncludePath>..\Source;..\Source\DirectX;..\Source\Bass;..\Source\ZLib</DCC_IncludePath>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_Optimize>False</DCC_Optimize>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1043</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">APITester.dpr</Source></Source>  <Excluded_Packages>
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages>
+  </Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="APITester.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\Source\HGE.pas" />
+    <DCCReference Include="..\Source\HGEAnim.pas" />
+    <DCCReference Include="..\Source\HGEColor.pas" />
+    <DCCReference Include="..\Source\HGEDistort.pas" />
+    <DCCReference Include="..\Source\HGEFont.pas" />
+    <DCCReference Include="..\Source\HGEGUI.pas" />
+    <DCCReference Include="..\Source\HGEGUICtrls.pas" />
+    <DCCReference Include="..\Source\HGEMatrix.pas" />
+    <DCCReference Include="..\Source\HGEParticle.pas" />
+    <DCCReference Include="..\Source\HGEPhysics.pas" />
+    <DCCReference Include="..\Source\HGERect.pas" />
+    <DCCReference Include="..\Source\HGESprite.pas" />
+    <DCCReference Include="..\Source\HGEUtils.pas" />
+    <DCCReference Include="..\Source\HGEVector.pas" />
+    <DCCReference Include="..\Source\OpenJpeg.pas" />
+    <DCCReference Include="FMain.pas">
+      <Form>FrmMain</Form>
+    </DCCReference>
+    <DCCReference Include="Tests\Animation\UAnim_Control.pas" />
+    <DCCReference Include="Tests\DistortionMesh\UDistortionMesh.pas" />
+    <DCCReference Include="Tests\Extensions\JPEG2000\UJPEG2000_Load.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Base.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Bridge.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Dominos.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Friction.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_MultiPendulum.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Pendulum.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Pyramid.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_SingleBox.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_Teeter.pas" />
+    <DCCReference Include="Tests\Extensions\Physics\UPhysics_VerticalStack.pas" />
+    <DCCReference Include="Tests\Extensions\SeparateAlpha\UAlpha_Load.pas" />
+    <DCCReference Include="Tests\Font\UFont.pas" />
+    <DCCReference Include="Tests\GUIObject\UGUIObject_Button.pas" />
+    <DCCReference Include="Tests\GUIObject\UGUIObject_Listbox.pas" />
+    <DCCReference Include="Tests\GUIObject\UGUIObject_Slider.pas" />
+    <DCCReference Include="Tests\GUIObject\UGUIObject_Text.pas" />
+    <DCCReference Include="Tests\GUI\UGUI_ManageControls.pas" />
+    <DCCReference Include="Tests\HGE\Channel\UChannel.pas" />
+    <DCCReference Include="Tests\HGE\Effect\UEffect.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Batch.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Clip.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Line.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Quad.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Transform.pas" />
+    <DCCReference Include="Tests\HGE\Gfx\UGfx_Triple.pas" />
+    <DCCReference Include="Tests\HGE\Ini\UIni.pas" />
+    <DCCReference Include="Tests\HGE\Input\UInput.pas" />
+    <DCCReference Include="Tests\HGE\Music\UMusic.pas" />
+    <DCCReference Include="Tests\HGE\Random\URandom.pas" />
+    <DCCReference Include="Tests\HGE\Resource\UResource_Enum.pas" />
+    <DCCReference Include="Tests\HGE\Resource\UResource_Load.pas" />
+    <DCCReference Include="Tests\HGE\Resource\UResource_MakePath.pas" />
+    <DCCReference Include="Tests\HGE\Resource\UResource_Packs.pas" />
+    <DCCReference Include="Tests\HGE\Stream\UStream.pas" />
+    <DCCReference Include="Tests\HGE\System\USystem_Launch.pas" />
+    <DCCReference Include="Tests\HGE\System\USystem_Log.pas" />
+    <DCCReference Include="Tests\HGE\System\USystem_Snapshot.pas" />
+    <DCCReference Include="Tests\HGE\Target\UTarget.pas" />
+    <DCCReference Include="Tests\HGE\Texture\UTexture.pas" />
+    <DCCReference Include="Tests\HGE\Timer\UTimer.pas" />
+    <DCCReference Include="Tests\ParticleManager\UParMan.pas" />
+    <DCCReference Include="Tests\ParticleSystem\UParSys_BoundingBox.pas" />
+    <DCCReference Include="Tests\ParticleSystem\UParSys_Params.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_BoundingBox.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_Color.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_Flip.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_Hotspot.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_Render.pas" />
+    <DCCReference Include="Tests\Sprite\USprite_Texture.pas" />
+    <DCCReference Include="Tests\UTestBase.pas" />
+    <DCCReference Include="USyntaxHighlighter.pas" />
+  </ItemGroup>
+</Project>

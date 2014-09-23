@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{C6E5199C-8005-4C2F-8A88-6CF907CACC27}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Projects>
+      <Projects Name="HGE_Tut01.exe">Tutorial01\HGE_Tut01.bdsproj</Projects>
+      <Projects Name="HGE_Tut02.exe">Tutorial02\HGE_Tut02.bdsproj</Projects>
+      <Projects Name="HGE_Tut03.exe">Tutorial03\HGE_Tut03.bdsproj</Projects>
+      <Projects Name="HGE_Tut04.exe">Tutorial04\HGE_Tut04.bdsproj</Projects>
+      <Projects Name="HGE_Tut05.exe">Tutorial05\HGE_Tut05.bdsproj</Projects>
+      <Projects Name="HGE_Tut06.exe">Tutorial06\HGE_Tut06.bdsproj</Projects>
+      <Projects Name="HGE_Tut07.exe">Tutorial07\HGE_Tut07.bdsproj</Projects>
+      <Projects Name="HGE_Tut08.exe">Tutorial08\HGE_Tut08.bdsproj</Projects>
+      <Projects Name="Targets">HGE_Tut01.exe HGE_Tut02.exe HGE_Tut03.exe HGE_Tut04.exe HGE_Tut05.exe HGE_Tut06.exe HGE_Tut07.exe HGE_Tut08.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>
