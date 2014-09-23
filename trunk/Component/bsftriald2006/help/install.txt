@@ -1,0 +1,40 @@
+
+
+Please, download demo-pack from out site with SkinBuilder, samples and help:
+
+http://www.almdev.com/prods/bsf/files/bsf.zip
+http://www.almdev.com/prods/skinadapter/files/sademo.zip
+
+
+
+
+BusinessSkinForm + SkinAdapter Trial Installation
+You can install this components as you would any other component.
+Just follow these steps:
+
+
+Installation for Delphi  5, 6, 7, 2005, 2006, 2007, 2009, 2010, XE
+ 
+
+1. Run Delphi and select the COMPONENTS pull-down menu.
+Then choose the item Install Packages...
+2. Click on the ADD button. A dialog box will pop up. Click on the BROWSE
+button.
+3. A standard file selection dialog will pop up. Select *.bpl file.
+
+
+Installation for C++ Builder 5, 6,2006, 2007, 2009, 2010, XE
+ 
+
+1. Run C++ Builder and select the COMPONENTS pull-down menu.
+Then choose the item Install Packages...
+2. Click on the ADD button. A dialog box will pop up. Click on the BROWSE
+button.
+3. A standard file selection dialog will pop up. Select *.bpl file.
+
+
+if you use BusinessSkinForm VCL in Delphi 2007-2010, XE or C++Builder 2007-2010, XE
+you must set Application.MainFormOnTaskBar to False!
+
+
+ 

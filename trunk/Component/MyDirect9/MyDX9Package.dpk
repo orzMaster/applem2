@@ -1,0 +1,44 @@
+package MyDX9Package;
+
+{$R *.res}
+{$R 'Icon.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl,
+  rtl;
+
+contains
+  TDX9Devices in 'TDX9Devices.pas',
+  MyDXTypes in 'MyDXTypes.pas',
+  MyDirect3D9 in 'MyDirect3D9.pas',
+  MyDirectInput in 'MyDirectInput.pas',
+  MyDXBase in 'MyDXBase.pas',
+  TDX9Textures in 'TDX9Textures.pas',
+  TDX9Canvas in 'TDX9Canvas.pas',
+  TDX9Fonts in 'TDX9Fonts.pas',
+  MyDXWave in 'MyDXWave.pas',
+  MyDirectSound in 'MyDirectSound.pas';
+
+end.
