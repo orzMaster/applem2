@@ -188,7 +188,7 @@ begin
           CloseConnect(sRemoteIPaddr);
         end;
     end;
-    MainOutMessage('¶Ë¿Ú¹¥»÷: ' + sRemoteIPaddr, 3);
+    MainOutMessage('Port Attack: ' + sRemoteIPaddr, 3);
     Exit;
   end;
 

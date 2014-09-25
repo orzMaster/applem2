@@ -4,8 +4,8 @@ object EditCompoundInfoForm: TEditCompoundInfoForm
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'EditCompoundInfoForm'
-  ClientHeight = 154
-  ClientWidth = 318
+  ClientHeight = 97
+  ClientWidth = 282
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
@@ -18,66 +18,66 @@ object EditCompoundInfoForm: TEditCompoundInfoForm
   PixelsPerInch = 96
   TextHeight = 12
   object Label1: TLabel
-    Left = 6
-    Top = 45
+    Left = 8
+    Top = 8
     Width = 102
     Height = 12
-    Caption = #38468#21152#23646#24615#38543#26426#33539#22260':'
+    Caption = 'Prop Random Rnge:'
   end
   object Label2: TLabel
-    Left = 183
-    Top = 45
+    Left = 192
+    Top = 11
     Width = 6
     Height = 12
     Caption = '-'
   end
   object Label3: TLabel
-    Left = 78
-    Top = 88
-    Width = 30
+    Left = 8
+    Top = 37
+    Width = 42
     Height = 12
-    Caption = #20960#29575':'
+    Caption = 'Chance:'
   end
   object eLowValue: TEdit
-    Left = 108
-    Top = 42
+    Left = 116
+    Top = 8
     Width = 70
     Height = 20
     TabOrder = 0
     Text = 'eLowValue'
   end
   object eHighValue: TEdit
-    Left = 195
-    Top = 42
+    Left = 203
+    Top = 8
     Width = 70
     Height = 20
     TabOrder = 1
     Text = 'eHighValue'
   end
   object eRate: TEdit
-    Left = 108
-    Top = 85
+    Left = 116
+    Top = 34
     Width = 121
     Height = 20
     TabOrder = 2
     Text = 'eRate'
   end
   object BtnOK: TButton
-    Left = 64
-    Top = 121
+    Left = 51
+    Top = 60
     Width = 75
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'Okay(&O)'
     ModalResult = 1
     TabOrder = 3
     OnClick = BtnOKClick
   end
   object BtnCancel: TButton
-    Left = 168
-    Top = 121
+    Left = 162
+    Top = 60
     Width = 75
     Height = 25
-    Caption = #21462#28040'(&C)'
+    Caption = 'Cancel(&C)'
     ModalResult = 2
     TabOrder = 4
   end

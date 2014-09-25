@@ -3,7 +3,7 @@ object frmHumanInfo: TfrmHumanInfo
   Top = 185
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #20154#29289#23646#24615
+  Caption = 'Character Attributes'
   ClientHeight = 335
   ClientWidth = 645
   Color = clBtnFace
@@ -25,62 +25,62 @@ object frmHumanInfo: TfrmHumanInfo
     ActivePage = TabSheet2
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = #20154#29289#20449#24687
+      Caption = 'Character Info'
       object GroupBox1: TGroupBox
         Left = 8
         Top = 13
         Width = 201
         Height = 193
-        Caption = #26597#30475#20449#24687
+        Caption = 'View Information'
         TabOrder = 0
         object Label1: TLabel
           Left = 8
           Top = 19
-          Width = 54
+          Width = 30
           Height = 12
-          Caption = #20154#29289#21517#31216':'
+          Caption = 'Name:'
         end
         object Label2: TLabel
           Left = 8
           Top = 43
           Width = 54
           Height = 12
-          Caption = #25152#22312#22320#22270':'
+          Caption = 'Location:'
         end
         object Label3: TLabel
           Left = 8
           Top = 67
-          Width = 54
+          Width = 24
           Height = 12
-          Caption = #25152#22312#24231#26631':'
+          Caption = 'X/Y:'
         end
         object Label4: TLabel
           Left = 8
           Top = 91
-          Width = 54
+          Width = 48
           Height = 12
-          Caption = #30331#24405#24080#21495':'
+          Caption = 'Account:'
         end
         object Label5: TLabel
           Left = 8
           Top = 115
-          Width = 42
+          Width = 54
           Height = 12
-          Caption = #30331#24405'IP:'
+          Caption = 'Login IP:'
         end
         object Label6: TLabel
           Left = 8
           Top = 139
           Width = 54
           Height = 12
-          Caption = #30331#24405#26102#38388':'
+          Caption = 'Log Time:'
         end
         object Label7: TLabel
           Left = 8
           Top = 163
-          Width = 54
+          Width = 42
           Height = 12
-          Caption = #22312#32447#26102#38271':'
+          Caption = 'Online:'
         end
         object EditName: TEdit
           Left = 64
@@ -151,56 +151,56 @@ object frmHumanInfo: TfrmHumanInfo
         Top = 13
         Width = 153
         Height = 193
-        Caption = #20154#29289#23646#24615
+        Caption = 'Character Attributes'
         TabOrder = 1
         object Label11: TLabel
           Left = 8
           Top = 19
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #38450#24481':'
+          Caption = 'AC:'
         end
         object Label13: TLabel
           Left = 8
           Top = 43
-          Width = 30
+          Width = 24
           Height = 12
-          Caption = #39764#38450':'
+          Caption = 'MAC:'
         end
         object Label14: TLabel
           Left = 8
           Top = 67
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #25915#20987':'
+          Caption = 'DC:'
         end
         object Label15: TLabel
           Left = 8
           Top = 91
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #39764#27861':'
+          Caption = 'MC:'
         end
         object Label16: TLabel
           Left = 8
           Top = 115
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #36947#26415':'
+          Caption = 'SC:'
         end
         object Label17: TLabel
           Left = 8
           Top = 139
           Width = 42
           Height = 12
-          Caption = #29983#21629#20540':'
+          Caption = 'Health:'
         end
         object Label18: TLabel
           Left = 8
           Top = 163
-          Width = 42
+          Width = 30
           Height = 12
-          Caption = #39764#27861#20540':'
+          Caption = 'Mana:'
         end
         object EditAC: TEdit
           Left = 56
@@ -271,56 +271,56 @@ object frmHumanInfo: TfrmHumanInfo
         Top = 13
         Width = 153
         Height = 193
-        Caption = #20154#29289#23646#24615#28857
+        Caption = 'Attribute Points'
         TabOrder = 2
         object Label20: TLabel
           Left = 8
           Top = 19
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #38450#24481':'
+          Caption = 'AC:'
         end
         object Label22: TLabel
           Left = 8
           Top = 43
-          Width = 30
+          Width = 24
           Height = 12
-          Caption = #39764#38450':'
+          Caption = 'MAC:'
         end
         object Label23: TLabel
           Left = 8
           Top = 67
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #25915#20987':'
+          Caption = 'DC:'
         end
         object Label24: TLabel
           Left = 8
           Top = 91
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #39764#27861':'
+          Caption = 'MC:'
         end
         object Label25: TLabel
           Left = 8
           Top = 115
-          Width = 30
+          Width = 18
           Height = 12
-          Caption = #36947#26415':'
+          Caption = 'SC:'
         end
         object Label30: TLabel
           Left = 8
           Top = 139
-          Width = 30
+          Width = 42
           Height = 12
-          Caption = #29983#21629':'
+          Caption = 'Health:'
         end
         object Label31: TLabel
           Left = 8
           Top = 163
           Width = 42
           Height = 12
-          Caption = #21097#20313#28857':'
+          Caption = 'Remain:'
         end
         object EditNakedAC: TEdit
           Left = 56
@@ -388,63 +388,63 @@ object frmHumanInfo: TfrmHumanInfo
       end
     end
     object TabSheet2: TTabSheet
-      Caption = #26222#36890#25968#25454
+      Caption = 'Normal Data'
       ImageIndex = 1
       object GroupBox2: TGroupBox
         Left = 9
         Top = 10
         Width = 160
         Height = 191
-        Caption = #21487#35843#23646#24615
+        Caption = 'Adjustable Property'
         TabOrder = 0
         object Label12: TLabel
           Left = 8
           Top = 18
-          Width = 30
+          Width = 36
           Height = 12
-          Caption = #31561#32423':'
+          Caption = 'Level:'
         end
         object Label8: TLabel
           Left = 8
           Top = 42
-          Width = 42
+          Width = 30
           Height = 12
-          Caption = #37329#24065#25968':'
+          Caption = 'Gold:'
         end
         object Label9: TLabel
           Left = 8
           Top = 66
-          Width = 54
+          Width = 60
           Height = 12
-          Caption = #32465#23450#37329#24065':'
+          Caption = 'Bind Gold:'
         end
         object Label10: TLabel
           Left = 8
           Top = 114
           Width = 54
           Height = 12
-          Caption = #24403#21069#32463#39564':'
+          Caption = 'Curr EXP:'
         end
         object Label21: TLabel
           Left = 8
           Top = 138
           Width = 54
           Height = 12
-          Caption = #21319#32423#32463#39564':'
+          Caption = 'Upgr EXP:'
         end
         object Label26: TLabel
           Left = 8
           Top = 90
-          Width = 30
+          Width = 54
           Height = 12
-          Caption = 'PK'#20540':'
+          Caption = 'PK Value:'
         end
         object Label51: TLabel
           Left = 8
           Top = 162
-          Width = 54
+          Width = 48
           Height = 12
-          Caption = #20179#24211#37329#24065':'
+          Caption = 'WH Gold:'
         end
         object EditLevel: TSpinEdit
           Left = 68
@@ -528,49 +528,48 @@ object frmHumanInfo: TfrmHumanInfo
         Top = 10
         Width = 130
         Height = 191
-        Caption = #21487#35843#23646#24615
         TabOrder = 1
         object LabelGameGold: TLabel
           Left = 8
           Top = 18
-          Width = 30
+          Width = 36
           Height = 12
-          Caption = #20803#23453':'
+          Caption = 'Ingot:'
         end
         object LabelGamePoint: TLabel
           Left = 8
           Top = 42
-          Width = 30
+          Width = 42
           Height = 12
-          Caption = #28857#21367':'
+          Caption = 'Volume:'
         end
         object LabelGameDiamond: TLabel
           Left = 8
           Top = 66
-          Width = 30
+          Width = 42
           Height = 12
-          Caption = #31215#20998':'
+          Caption = 'Points:'
         end
         object Label19: TLabel
           Left = 8
           Top = 90
-          Width = 30
+          Width = 24
           Height = 12
-          Caption = #22768#26395':'
+          Caption = 'Rep:'
         end
         object Label27: TLabel
           Left = 8
           Top = 114
-          Width = 30
+          Width = 54
           Height = 12
-          Caption = #20462#28860':'
+          Caption = 'Practice:'
         end
         object Label35: TLabel
           Left = 8
           Top = 138
           Width = 42
           Height = 12
-          Caption = #25104#38271#28857':'
+          Caption = 'Growth:'
         end
         object EditGameGold: TSpinEdit
           Left = 55
@@ -640,28 +639,28 @@ object frmHumanInfo: TfrmHumanInfo
         Top = 10
         Width = 311
         Height = 191
-        Caption = #33258#23450#20041#21464#37327
+        Caption = 'Custom Varialbes'
         TabOrder = 2
         object Label28: TLabel
           Left = 6
           Top = 18
-          Width = 30
+          Width = 24
           Height = 12
-          Caption = #25991#37319':'
+          Caption = 'Lit:'
         end
         object Label36: TLabel
           Left = 106
           Top = 18
           Width = 30
           Height = 12
-          Caption = #25276#38230':'
+          Caption = 'Dart:'
         end
         object Label37: TLabel
           Left = 206
           Top = 18
-          Width = 30
+          Width = 24
           Height = 12
-          Caption = #21163#21290':'
+          Caption = 'Rob:'
         end
         object Label29: TLabel
           Left = 6
@@ -985,14 +984,14 @@ object frmHumanInfo: TfrmHumanInfo
       end
     end
     object TabSheet4: TTabSheet
-      Caption = #36523#19978#35013#22791
+      Caption = 'Equipment'
       ImageIndex = 3
       object GroupBox7: TGroupBox
         Left = 8
         Top = 8
         Width = 609
         Height = 201
-        Caption = #35013#22791#21015#34920
+        Caption = 'Equipment List'
         TabOrder = 0
         object GridUserItem: TStringGrid
           Left = 8
@@ -1020,14 +1019,14 @@ object frmHumanInfo: TfrmHumanInfo
       end
     end
     object TabSheet5: TTabSheet
-      Caption = #32972#21253#29289#21697
+      Caption = 'Backpack Items'
       ImageIndex = 4
       object GroupBox8: TGroupBox
         Left = 8
         Top = 8
         Width = 609
         Height = 201
-        Caption = #35013#22791#21015#34920
+        Caption = 'Equipment List'
         TabOrder = 0
         object GridBagItem: TStringGrid
           Left = 8
@@ -1055,14 +1054,14 @@ object frmHumanInfo: TfrmHumanInfo
       end
     end
     object TabSheet6: TTabSheet
-      Caption = #20179#24211#29289#21697
+      Caption = 'WH Items'
       ImageIndex = 5
       object GroupBox10: TGroupBox
         Left = 8
         Top = 8
         Width = 609
         Height = 201
-        Caption = #35013#22791#21015#34920
+        Caption = 'Equipment List'
         TabOrder = 0
         object GridStorageItem: TStringGrid
           Left = 8
@@ -1096,14 +1095,14 @@ object frmHumanInfo: TfrmHumanInfo
     Top = 255
     Width = 89
     Height = 73
-    Caption = #25511#21046
+    Caption = 'Control'
     TabOrder = 1
     object CheckBoxMonitor: TCheckBox
       Left = 8
       Top = 16
-      Width = 67
+      Width = 78
       Height = 17
-      Caption = #23454#26102#30417#25511
+      Caption = 'Real-Time'
       TabOrder = 0
       OnClick = CheckBoxMonitorClick
     end
@@ -1112,7 +1111,7 @@ object frmHumanInfo: TfrmHumanInfo
       Top = 40
       Width = 65
       Height = 25
-      Caption = #36386#19979#32447
+      Caption = 'KickOff'
       TabOrder = 1
       OnClick = ButtonKickClick
     end
@@ -1122,7 +1121,7 @@ object frmHumanInfo: TfrmHumanInfo
     Top = 255
     Width = 81
     Height = 73
-    Caption = #24403#21069#29366#24577
+    Caption = 'Curr Status'
     TabOrder = 2
     object EditHumanStatus: TEdit
       Left = 8
@@ -1138,7 +1137,7 @@ object frmHumanInfo: TfrmHumanInfo
     Top = 302
     Width = 65
     Height = 25
-    Caption = #20462#25913#25968#25454
+    Caption = 'Modify'
     TabOrder = 3
     OnClick = ButtonSaveClick
   end
@@ -1147,22 +1146,22 @@ object frmHumanInfo: TfrmHumanInfo
     Top = 255
     Width = 90
     Height = 73
-    Caption = #20154#29289#29366#24577
+    Caption = 'PPL Status'
     TabOrder = 4
     object CheckBoxGameMaster: TCheckBox
       Left = 8
       Top = 16
       Width = 73
       Height = 17
-      Caption = 'GM'#27169#24335
+      Caption = 'GM Mode'
       TabOrder = 0
     end
     object CheckBoxSuperMan: TCheckBox
       Left = 8
       Top = 32
-      Width = 73
+      Width = 79
       Height = 17
-      Caption = #26080#25932#27169#24335
+      Caption = 'Invincible'
       TabOrder = 1
     end
     object CheckBoxObserver: TCheckBox
@@ -1170,7 +1169,7 @@ object frmHumanInfo: TfrmHumanInfo
       Top = 48
       Width = 73
       Height = 17
-      Caption = #38544#36523#27169#24335
+      Caption = 'Stealth'
       TabOrder = 2
     end
   end

@@ -1,7 +1,7 @@
 object FrmViewCompoundInfo: TFrmViewCompoundInfo
   Left = 0
   Top = 0
-  Caption = #35013#22791#21512#25104
+  Caption = 'Equipment Synthesis'
   ClientHeight = 600
   ClientWidth = 1000
   Color = clBtnFace
@@ -22,42 +22,41 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
     Width = 1000
     Height = 90
     Align = alTop
-    Caption = #22522#26412#35774#32622
     TabOrder = 0
     object GroupBox2: TGroupBox
       Left = 8
       Top = 10
       Width = 190
       Height = 70
-      Caption = #39068#33394#35774#32622
+      Caption = 'Color Settings'
       TabOrder = 0
       object Label1: TLabel
         Left = 8
         Top = 20
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19968#31561':'
+        Caption = '1:'
       end
       object Label2: TLabel
         Left = 100
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #20108#31561':'
+        Caption = '2:'
       end
       object Label3: TLabel
         Left = 8
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19977#31561':'
+        Caption = '3:'
       end
       object Label4: TLabel
         Left = 100
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #22235#31561':'
+        Caption = '4:'
       end
       object seColor1: TSpinEdit
         Left = 44
@@ -109,35 +108,35 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
       Top = 10
       Width = 240
       Height = 70
-      Caption = #36153#29992#35774#32622'('#37329#24065')'
+      Caption = 'Fees (Gold)'
       TabOrder = 1
       object Label5: TLabel
         Left = 8
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19968#31561':'
+        Caption = '1:'
       end
       object Label6: TLabel
         Left = 128
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #20108#31561':'
+        Caption = '2:'
       end
       object Label7: TLabel
         Left = 8
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19977#31561':'
+        Caption = '3:'
       end
       object Label8: TLabel
         Left = 128
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #22235#31561':'
+        Caption = '4:'
       end
       object eGoldFee1: TEdit
         Left = 44
@@ -181,35 +180,35 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
       Top = 10
       Width = 240
       Height = 70
-      Caption = #36153#29992#35774#32622'('#20803#23453')'
+      Caption = 'Cost (Ingot)'
       TabOrder = 2
       object Label9: TLabel
         Left = 8
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19968#31561':'
+        Caption = '1:'
       end
       object Label10: TLabel
         Left = 128
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #20108#31561':'
+        Caption = '2:'
       end
       object Label11: TLabel
         Left = 8
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19977#31561':'
+        Caption = '3:'
       end
       object Label12: TLabel
         Left = 128
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #22235#31561':'
+        Caption = '4:'
       end
       object eGameGoldFee1: TEdit
         Left = 44
@@ -253,35 +252,35 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
       Top = 10
       Width = 190
       Height = 70
-      Caption = #25481#33853#20960#29575
+      Caption = 'Drop Probability'
       TabOrder = 3
       object Label13: TLabel
         Left = 8
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19968#31561':'
+        Caption = '1:'
       end
       object Label14: TLabel
         Left = 100
         Top = 19
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #20108#31561':'
+        Caption = '2:'
       end
       object Label15: TLabel
         Left = 8
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #19977#31561':'
+        Caption = '3:'
       end
       object Label16: TLabel
         Left = 98
         Top = 43
-        Width = 30
+        Width = 12
         Height = 12
-        Caption = #22235#31561':'
+        Caption = '4:'
       end
       object seDropRate1: TSpinEdit
         Left = 44
@@ -333,7 +332,7 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
       Top = 55
       Width = 75
       Height = 25
-      Caption = #20445#23384'(&S)'
+      Caption = 'Save(&S)'
       TabOrder = 4
       OnClick = BtnSaveClick
     end
@@ -342,13 +341,14 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
       Top = 10
       Width = 80
       Height = 40
-      Caption = #20801#35768#20998#31867#24046
+      Caption = 'Class Diff'
       TabOrder = 5
       object seValueLimit: TSpinEdit
         Left = 10
         Top = 14
         Width = 60
         Height = 21
+        Hint = 'Allow Classification Difference'
         MaxValue = 0
         MinValue = 0
         TabOrder = 0
@@ -366,65 +366,65 @@ object FrmViewCompoundInfo: TFrmViewCompoundInfo
     Columns = <
       item
         AutoSize = True
-        Caption = #35013#22791#21517#31216
+        Caption = 'Equipment Name'
       end
       item
-        Caption = #20998#31867
+        Caption = 'Classification'
         Width = 40
       end
       item
-        Caption = #25104#21151#29575
+        Caption = 'Success Rate'
       end
       item
-        Caption = #38450#24481
+        Caption = 'AC'
         Width = 65
       end
       item
-        Caption = #39764#27861#38450#24481
+        Caption = 'MAC'
         Width = 65
       end
       item
-        Caption = #25915#20987
+        Caption = 'DC'
         Width = 65
       end
       item
-        Caption = #39764#27861
+        Caption = 'MC'
         Width = 65
       end
       item
-        Caption = #36947#26415
+        Caption = 'SC'
         Width = 65
       end
       item
-        Caption = #29983#21629#20540
+        Caption = 'Health'
         Width = 65
       end
       item
-        Caption = #39764#27861#20540
+        Caption = 'Mana'
         Width = 65
       end
       item
-        Caption = #20934#30830
+        Caption = 'Accurate'
         Width = 60
       end
       item
-        Caption = #25935#25463
+        Caption = 'Agility'
         Width = 60
       end
       item
-        Caption = #33268#21629#19968#20987
+        Caption = 'Fatal Blow'
         Width = 60
       end
       item
-        Caption = #20260#23475#21152#25104
+        Caption = 'Dmg Bonus'
         Width = 60
       end
       item
-        Caption = #20260#23475#21560#25910
+        Caption = 'Dmg Absorption'
         Width = 60
       end
       item
-        Caption = #39764#27861#36530#36991
+        Caption = 'Magic Avoid'
         Width = 60
       end>
     GridLines = True

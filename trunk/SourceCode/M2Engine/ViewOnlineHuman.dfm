@@ -1,7 +1,7 @@
 object frmViewOnlineHuman: TfrmViewOnlineHuman
   Left = 273
   Top = 420
-  Caption = #22312#32447#20154#29289
+  Caption = 'Online People'
   ClientHeight = 390
   ClientWidth = 903
   Color = clBtnFace
@@ -37,8 +37,6 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
       TabOrder = 0
       OnDblClick = GridHumanDblClick
-      ExplicitLeft = 0
-      ExplicitTop = -5
       ColWidths = (
         33
         78
@@ -68,14 +66,14 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Top = 14
       Width = 30
       Height = 12
-      Caption = #25490#24207':'
+      Caption = 'Sort:'
     end
     object ButtonRefGrid: TButton
       Left = 384
       Top = 9
       Width = 73
       Height = 21
-      Caption = #21047#26032'(&R)'
+      Caption = 'Refresh(&R)'
       TabOrder = 0
       OnClick = ButtonRefGridClick
     end
@@ -110,7 +108,7 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Top = 9
       Width = 73
       Height = 21
-      Caption = #25628#32034'(&S)'
+      Caption = 'Search(&S)'
       TabOrder = 3
       OnClick = ButtonSearchClick
     end
@@ -119,7 +117,7 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Top = 9
       Width = 113
       Height = 21
-      Caption = #20154#29289#20449#24687'(&I)'
+      Caption = 'Information(&I)'
       TabOrder = 4
       OnClick = ButtonViewClick
     end
@@ -128,7 +126,7 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Top = 12
       Width = 97
       Height = 17
-      Caption = #26174#31034#31163#32447#25346#26426
+      Caption = 'Show Offline'
       TabOrder = 5
     end
     object Button1: TButton
@@ -136,7 +134,7 @@ object frmViewOnlineHuman: TfrmViewOnlineHuman
       Top = 9
       Width = 145
       Height = 21
-      Caption = #36386#38500#25152#26377#31163#32447#25346#26426#20154#29289
+      Caption = 'Kick all Chars Offline'
       TabOrder = 6
       OnClick = Button1Click
     end

@@ -43,7 +43,7 @@ begin
   sSelGateIPaddr := Trim(EditSelGate.Text);
   sGameGateIPaddr := FrmUserSoc.GateRouteIP(sSelGateIPaddr, nGameGatePort);
   if sGameGateIPaddr = '' then begin
-    EditGameGate.Text := '无此网关设置';
+    EditGameGate.Text := 'No such gateway settings';
     Exit;
   end;
   EditGameGate.Text := format('%s:%d', [sGameGateIPaddr, nGameGatePort]);

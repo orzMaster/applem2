@@ -120,7 +120,7 @@ begin
     End;
   end
   else begin
-    MainOutMessage('非法地址连接:' + sRemoteAddr);
+    MainOutMessage('Illegal address connection:' + sRemoteAddr);
     Socket.Close;
   end;
 end;
@@ -697,7 +697,7 @@ begin
   try
     m_ServersList.Lock;
     Try
-      sSendMsg := format(sFormatMsg, [wIdent, sMsg, '游戏中心']);
+      sSendMsg := format(sFormatMsg, [wIdent, sMsg, 'Game Center']);
       for I := 0 to m_ServersList.Count - 1 do begin
         MsgServer := pTMsgServerInfo(m_ServersList.Items[I]);
         SendSocket(MsgServer, sSendMsg);

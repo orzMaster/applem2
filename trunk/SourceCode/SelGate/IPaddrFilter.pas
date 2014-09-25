@@ -142,16 +142,16 @@ var
   Blockaddr: pTBlockaddr;
 begin
   sIPaddress := '';
-  if not InputQuery('过滤IP段信息', '请输入起始IP地址: ', sIPaddress) then Exit;
+  if not InputQuery('Permanent IP filter','Please enter a new IP address:  ', sIPaddress) then Exit;
   nBeginaddr := inet_addr(PChar(sIPaddress));
   if nBeginaddr = INADDR_NONE then begin
-    Application.MessageBox('输入的地址格式不正确！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Entered address incorrectly formatted!!!','Error message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
-  if not InputQuery('过滤IP段信息', '请输入结束IP地址: ', sIPaddress) then Exit;
+  if not InputQuery('Permanent IP filter','Please enter a new IP address: ', sIPaddress) then Exit;
   nEndaddr := inet_addr(PChar(sIPaddress));
   if nEndaddr = INADDR_NONE then begin
-    Application.MessageBox('输入的地址格式不正确！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Entered address incorrectly formatted!!!','Error message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   if LongWord(nEndaddr) >= LongWord(nBeginaddr) then begin
@@ -163,7 +163,7 @@ begin
       TObject(Blockaddr));
     SaveBlockIPList;
   end else
-    Application.MessageBox('结束地址不能小于开始地址', '提示信息', MB_OK +
+    Application.MessageBox('End address can not be less than the start address', 'prompt', MB_OK +
       MB_ICONINFORMATION);
 end;
 
@@ -209,8 +209,8 @@ procedure TfrmIPaddrFilter.APOPMENU_KICKClick(Sender: TObject);
 begin
   if (ListBoxActiveList.ItemIndex >= 0) and (ListBoxActiveList.ItemIndex <
     ListBoxActiveList.Items.Count) then begin
-    if Application.MessageBox(PChar('是否确认将此连接断开？'),
-      PChar('确认信息 - ' +
+    if Application.MessageBox(PChar('Are you sure to disconnect this connection?'),
+      PChar('Confirmation - ' +
       ListBoxActiveList.Items.Strings[ListBoxActiveList.ItemIndex]), MB_OKCANCEL
       + MB_ICONQUESTION) <> IDOK then
       Exit;
@@ -232,8 +232,8 @@ begin
     ListBoxActiveList.Items.Count) then begin
     sIPaddr := ListBoxActiveList.Items.Strings[ListBoxActiveList.ItemIndex];
     if
-      Application.MessageBox(PChar('是否确认将此IP加入动态过滤列表中？加入过滤列表后，此IP建立的所有连接将被强行中断。'),
-      PChar('确认信息 - ' +
+      Application.MessageBox(PChar('Are you sure you want to permanently ban all active IPs?  All IPs connected will be forcibly interrupted.'),
+    PChar('Confirmation - ' +
       ListBoxActiveList.Items.Strings[ListBoxActiveList.ItemIndex]),
       MB_OKCANCEL + MB_ICONQUESTION
       ) <> IDOK then
@@ -253,8 +253,8 @@ begin
     ListBoxActiveList.Items.Count) then begin
     sIPaddr := ListBoxActiveList.Items.Strings[ListBoxActiveList.ItemIndex];
     if
-      Application.MessageBox(PChar('是否确认将此IP加入永久过滤列表中？加入过滤列表后，此IP建立的所有连接将被强行中断。'),
-      PChar('确认信息 - ' +
+      Application.MessageBox(PChar('Are you sure this IP add permanent filter list? After adding filter list, all connections to this IP will be forcibly interrupted established.'),
+      PChar('Confirmation - ' +
       ListBoxActiveList.Items.Strings[ListBoxActiveList.ItemIndex]),
       MB_OKCANCEL + MB_ICONQUESTION
       ) <> IDOK then
@@ -514,11 +514,10 @@ var
   sIPaddress: string;
 begin
   sIPaddress := '';
-  if not InputQuery('动态IP过滤', '请输入一个新的IP地址: ', sIPaddress) then
+  if not InputQuery('IP block filtering', 'Please enter a new IP address: ', sIPaddress) then
     Exit;
   if not IsIPaddr(sIPaddress) then begin
-    Application.MessageBox('输入的地址格式错误！！！',
-      '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Entered address incorrectly formatted!!!','Error message', MB_OK + MB_ICONERROR);
     Exit;
   end;
   ListBoxTempList.Items.Add(sIPaddress);
@@ -530,13 +529,13 @@ var
   sIPaddress: string;
 begin
   sIPaddress := '';
-  if not InputQuery('永久IP过滤', '请输入一个新的IP地址: ',
+  if not InputQuery('Permanent IP Filtering','Please enter a new IP Address ',
     sIPaddress) then
     Exit;
   if not IsIPaddr(sIPaddress) then begin
     if
-      Application.MessageBox('输入的地址格式不完整，是否添加？',
-      '错误信息',
+      Application.MessageBox('Address format entered is incomplete, whether to add?',
+      'Error Message',
       MB_YESNO + MB_ICONQUESTION) <> ID_YES then
       Exit;
   end;

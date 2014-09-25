@@ -3,7 +3,7 @@ object frmViewKernelInfo: TfrmViewKernelInfo
   Top = 584
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #20869#26680#25968#25454#26597#30475
+  Caption = 'Kernal Data View'
   ClientHeight = 389
   ClientWidth = 403
   Color = clBtnFace
@@ -26,12 +26,8 @@ object frmViewKernelInfo: TfrmViewKernelInfo
     ActivePage = TabSheet5
     TabOrder = 0
     object TabSheet3: TTabSheet
-      Caption = #20840#23616#21464#37327
+      Caption = 'Global Variables'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewInteger: TListView
         Left = 9
         Top = 9
@@ -39,10 +35,10 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Height = 139
         Columns = <
           item
-            Caption = #24207#21495
+            Caption = 'No.'
           end
           item
-            Caption = #24403#21069#25968#20540
+            Caption = 'Current Value'
             Width = 285
           end>
         GridLines = True
@@ -59,10 +55,10 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Height = 139
         Columns = <
           item
-            Caption = #24207#21495
+            Caption = 'No.'
           end
           item
-            Caption = #24403#21069#23383#31526#20018
+            Caption = 'Current String'
             Width = 285
           end>
         GridLines = True
@@ -77,7 +73,7 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 312
         Width = 80
         Height = 25
-        Caption = #28165#31354#21464#37327'&G'
+        Caption = 'Empty(&G)'
         TabOrder = 2
         OnClick = Button1Click
       end
@@ -86,7 +82,7 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 312
         Width = 80
         Height = 25
-        Caption = #28165#31354#21464#37327'&A'
+        Caption = 'Empty(&A)'
         TabOrder = 3
         OnClick = Button2Click
       end
@@ -95,51 +91,47 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 312
         Width = 80
         Height = 25
-        Caption = #21047#26032'(R)'
+        Caption = 'Refresh(&R)'
         TabOrder = 4
         Visible = False
       end
     end
     object TabSheet1: TTabSheet
-      Caption = #28216#25103#25968#25454
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      Caption = 'Game Data'
       object GroupBox1: TGroupBox
         Left = 8
         Top = 4
         Width = 168
         Height = 133
-        Caption = #28216#25103#25968#25454#24211
+        Caption = 'Game Database'
         TabOrder = 0
         object Label1: TLabel
           Left = 8
           Top = 20
           Width = 78
           Height = 12
-          Caption = #35835#21462#35831#27714#27425#25968':'
+          Caption = 'Read Request:'
         end
         object Label2: TLabel
           Left = 8
           Top = 44
           Width = 78
           Height = 12
-          Caption = #35835#21462#22833#36133#27425#25968':'
+          Caption = 'Read Failure:'
         end
         object Label3: TLabel
           Left = 8
           Top = 68
           Width = 78
           Height = 12
-          Caption = #20445#23384#35831#27714#27425#25968':'
+          Caption = 'Save Request:'
         end
         object Label4: TLabel
           Left = 8
           Top = 92
           Width = 78
           Height = 12
-          Caption = #35831#27714#26631#35782#25968#23383':'
+          Caption = 'Identication:'
         end
         object EditLoadHumanDBCount: TEdit
           Left = 88
@@ -170,6 +162,7 @@ object frmViewKernelInfo: TfrmViewKernelInfo
           Top = 88
           Width = 71
           Height = 20
+          Hint = 'Request Identifcation Number'
           ReadOnly = True
           TabOrder = 3
         end
@@ -179,21 +172,21 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 4
         Width = 190
         Height = 133
-        Caption = #29289#21697#31995#21015#21495
+        Caption = 'Items Serial No'
         TabOrder = 1
         object Label7: TLabel
           Left = 8
           Top = 20
           Width = 78
           Height = 12
-          Caption = #24618#29289#25481#33853#29289#21697':'
+          Caption = 'Monster Loot:'
         end
         object Label8: TLabel
           Left = 8
           Top = 44
           Width = 78
           Height = 12
-          Caption = #21629#20196#21046#36896#29289#21697':'
+          Caption = 'Manufactured:'
         end
         object EditItemNumber: TEdit
           Left = 88
@@ -217,49 +210,49 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 156
         Width = 168
         Height = 187
-        Caption = #20013#22870#27604#20363
+        Caption = 'Winning Percentage'
         TabOrder = 2
         object Label9: TLabel
           Left = 8
           Top = 20
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #19968#31561#22870':'
+          Caption = 'Prize 1:'
         end
         object Label10: TLabel
           Left = 8
           Top = 44
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #20108#31561#22870':'
+          Caption = 'Prize 2:'
         end
         object Label11: TLabel
           Left = 8
           Top = 68
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #19977#31561#22870':'
+          Caption = 'Prize 3:'
         end
         object Label12: TLabel
           Left = 8
           Top = 92
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #22235#31561#22870':'
+          Caption = 'Prize 4:'
         end
         object Label13: TLabel
           Left = 8
           Top = 116
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #20116#31561#22870':'
+          Caption = 'Prize 5:'
         end
         object Label14: TLabel
           Left = 8
           Top = 140
-          Width = 42
+          Width = 48
           Height = 12
-          Caption = #20845#31561#22870':'
+          Caption = 'Prize 6:'
         end
         object EditWinLotteryLevel1: TEdit
           Left = 88
@@ -315,21 +308,21 @@ object frmViewKernelInfo: TfrmViewKernelInfo
         Top = 156
         Width = 190
         Height = 187
-        Caption = #20013#22870#25968#37327
+        Caption = 'Lottery'
         TabOrder = 3
         object Label5: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 66
           Height = 12
-          Caption = #20013#22870#24635#25968':'
+          Caption = 'Total Wins:'
         end
         object Label6: TLabel
           Left = 8
           Top = 44
-          Width = 54
+          Width = 78
           Height = 12
-          Caption = #26410#20013#22870#25968':'
+          Caption = 'Non Winners::'
         end
         object EditWinLotteryCount: TEdit
           Left = 88
@@ -350,14 +343,14 @@ object frmViewKernelInfo: TfrmViewKernelInfo
       end
     end
     object TabSheet5: TTabSheet
-      Caption = #24037#20316#32447#31243
+      Caption = 'Worker Thread'
       ImageIndex = 4
       object GroupBox7: TGroupBox
         Left = 10
         Top = 3
         Width = 364
         Height = 137
-        Caption = #32447#31243#29366#24577
+        Caption = 'Thread State'
         TabOrder = 0
         object GridThread: TStringGrid
           Left = 10
@@ -387,23 +380,23 @@ object frmViewKernelInfo: TfrmViewKernelInfo
   object MainMenu1: TMainMenu
     Top = 272
     object V1: TMenuItem
-      Caption = #26597#30475'(&V)'
+      Caption = 'CheckOut(&V)'
       object N1: TMenuItem
-        Caption = #26356#26032#36895#24230'(&U)'
+        Caption = 'Update Rate(&U)'
         object N2: TMenuItem
-          Caption = #39640'(&H)'
+          Caption = 'High(&H)'
         end
         object N3: TMenuItem
-          Caption = #26631#20934'(&N)'
+          Caption = 'Standard(&N)'
           Checked = True
         end
         object N4: TMenuItem
-          Caption = #20302'(&L)'
+          Caption = 'Low(&L)'
         end
       end
     end
     object A1: TMenuItem
-      Caption = #20851#20110'(&A)'
+      Caption = 'Respect(&A)'
     end
   end
 end

@@ -53,34 +53,34 @@ begin
   nShowLogLv := TrackBarLogLevel.Position;
 
   if not IsIPaddr(sGateIPaddr) then begin
-    Application.MessageBox('网关地址设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('Invalid Gate IP address entered!!!', 'Error Message', MB_OK +
       MB_ICONERROR);
     EditGateIPaddr.SetFocus;
     exit;
   end;
 
   if (nGatePort < 0) or (nGatePort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('Invalid Gate port entered!!!', 'Error Message', MB_OK +
       MB_ICONERROR);
     EditGatePort.SetFocus;
     exit;
   end;
 
   if not IsIPaddr(sServerIPaddr) then begin
-    Application.MessageBox('服务器地址设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('Invalid Server IP address entered!!!', 'Error Message', MB_OK +
       MB_ICONERROR);
     EditServerIPaddr.SetFocus;
     exit;
   end;
 
   if (nServerPort < 0) or (nServerPort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('Invalid Server port entered!!!', 'Error Message', MB_OK +
       MB_ICONERROR);
     EditServerPort.SetFocus;
     exit;
   end;
   if sTitle = '' then begin
-    Application.MessageBox('标题设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('Invalid Server title entered!!!', 'Error Message', MB_OK +
       MB_ICONERROR);
     EditTitle.SetFocus;
     exit;

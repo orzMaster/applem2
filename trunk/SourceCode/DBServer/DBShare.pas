@@ -6,8 +6,8 @@ uses
   Grobal2, MudUtil, Common;
 
 const
-  //g_sVersion = '程序版本: 1.00 Build 20080825';
-  g_sUpDateTime = '更新日期: 2012/05/01';
+  //g_sVersion = 'Version: 1.00 Build 20080825';
+  g_sUpDateTime = 'Update: 2012/05/01';
 
   SIZEOFTHUMAN = 44032;
 
@@ -150,7 +150,7 @@ var
   n4ADBB8: Integer;
   bo4ADB1C: Boolean;
 
-  sServerName: string = '新热血传奇';
+  sServerName: string = 'Mir';
   sConfFileName: string = '.\Dbsrc.ini';
   sConfClass: string = 'DBServer';
   sGateConfFileName: string = '.\!serverinfo.txt';
@@ -178,20 +178,20 @@ var
   g_boArraySortTime: LongWord;
 
   {
-  nClearIndex        :Integer;   //当前清理位置（记录的ID）
-  nClearCount        :Integer;   //当前已经清量数量
-  nRecordCount       :Integer;   //当前总记录数
+  nClearIndex        :Integer;   //Current cleaning position (record ID)
+  nClearCount        :Integer;   //current number has been cleared amount
+  nRecordCount       :Integer;   //current total number of records
   }
   {
   boClearLevel1      :Boolean = True;
   boClearLevel2      :Boolean = True;
   boClearLevel3      :Boolean = True;
   }
-{  dwInterval: LongWord = 3000; //清理时间间隔长度
+{  dwInterval: LongWord = 3000; //cleanup interval length
 
-  nLevel1: Integer = 1; //清理等级 1
-  nLevel2: Integer = 7; //清理等级 2
-  nLevel3: Integer = 14; //清理等级 3
+  nLevel1: Integer = 1; //Cleanup Level 1
+  nLevel2: Integer = 7; //Cleanup Level 2
+  nLevel3: Integer = 14; //Cleanup Level 3
 
   nDay1: Integer = 14; //清理未登录天数 1
   nDay2: Integer = 62; //清理未登录天数 2
@@ -292,7 +292,7 @@ begin
   try
     ServerIPList.LoadFromFile(sServerIPConfFileNmae);
   except
-    MainOutMessage('加载IP列表文件 ' + sServerIPConfFileNmae + ' 出错！！！');
+    MainOutMessage('Load IP listing file ' + sServerIPConfFileNmae + ' Error!!!');
   end;
 end;
 
@@ -541,7 +541,7 @@ begin
           g_FiltrateUserName.Add(sStr);
       end;
     end else begin
-      TempList.Add(';创建人物过滤字符，一行一个过滤');
+      TempList.Add(';Create a character filer, One per line filter');
       TempList.SaveToFile(sFiltrateUserName);
     end;
   Finally

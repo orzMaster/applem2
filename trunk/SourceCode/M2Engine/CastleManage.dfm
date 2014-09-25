@@ -3,7 +3,7 @@ object frmCastleManage: TfrmCastleManage
   Top = 94
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #22478#22561#31649#29702
+  Caption = 'Castle Management'
   ClientHeight = 279
   ClientWidth = 564
   Color = clBtnFace
@@ -21,7 +21,7 @@ object frmCastleManage: TfrmCastleManage
     Top = 8
     Width = 193
     Height = 257
-    Caption = #22478#22561#21015#34920
+    Caption = 'Castle List'
     TabOrder = 0
     object ListViewCastle: TListView
       Left = 8
@@ -30,15 +30,15 @@ object frmCastleManage: TfrmCastleManage
       Height = 233
       Columns = <
         item
-          Caption = #24207#21495
+          Caption = 'No.'
           Width = 36
         end
         item
-          Caption = #32534#21495
+          Caption = 'Serial No.'
           Width = 36
         end
         item
-          Caption = #21517#31216
+          Caption = 'Name'
           Width = 100
         end>
       GridLines = True
@@ -54,21 +54,17 @@ object frmCastleManage: TfrmCastleManage
     Top = 8
     Width = 353
     Height = 257
-    Caption = #22478#22561#20449#24687
+    Caption = 'Castle Information'
     TabOrder = 1
     object PageControlCastle: TPageControl
       Left = 8
       Top = 16
       Width = 337
       Height = 233
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       TabOrder = 0
       object TabSheet1: TTabSheet
-        Caption = #22522#26412#29366#24577
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
+        Caption = 'Basic'
         object GroupBox3: TGroupBox
           Left = 5
           Top = 5
@@ -78,42 +74,42 @@ object frmCastleManage: TfrmCastleManage
           object Label2: TLabel
             Left = 8
             Top = 20
-            Width = 54
+            Width = 42
             Height = 12
-            Caption = #25152#23646#34892#20250':'
+            Caption = 'Belong:'
           end
           object Label1: TLabel
             Left = 8
             Top = 44
-            Width = 54
+            Width = 36
             Height = 12
-            Caption = #36164#37329#24635#25968':'
+            Caption = 'Funds:'
           end
           object Label3: TLabel
             Left = 8
             Top = 68
-            Width = 54
+            Width = 42
             Height = 12
-            Caption = #24403#22825#25910#20837':'
+            Caption = 'Income:'
           end
           object Label7: TLabel
             Left = 152
             Top = 44
-            Width = 30
+            Width = 36
             Height = 12
-            Caption = #31561#32423':'
+            Caption = 'Level:'
           end
           object Label8: TLabel
             Left = 152
             Top = 68
-            Width = 30
+            Width = 42
             Height = 12
-            Caption = #33021#28304':'
+            Caption = 'Energy:'
           end
           object EditOwenGuildName: TEdit
             Left = 64
             Top = 16
-            Width = 169
+            Width = 179
             Height = 20
             TabOrder = 0
           end
@@ -138,7 +134,7 @@ object frmCastleManage: TfrmCastleManage
             Value = 0
           end
           object EditTechLevel: TSpinEdit
-            Left = 184
+            Left = 196
             Top = 40
             Width = 49
             Height = 21
@@ -148,7 +144,7 @@ object frmCastleManage: TfrmCastleManage
             Value = 0
           end
           object EditPower: TSpinEdit
-            Left = 184
+            Left = 196
             Top = 64
             Width = 49
             Height = 21
@@ -160,12 +156,8 @@ object frmCastleManage: TfrmCastleManage
         end
       end
       object TabSheet3: TTabSheet
-        Caption = #23432#21355#29366#24577
+        Caption = 'Guard Status'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox5: TGroupBox
           Left = 5
           Top = 0
@@ -179,23 +171,23 @@ object frmCastleManage: TfrmCastleManage
             Height = 145
             Columns = <
               item
-                Caption = #24207#21495
+                Caption = 'No.'
                 Width = 36
               end
               item
-                Caption = #21517#31216
+                Caption = 'Name'
                 Width = 80
               end
               item
-                Caption = #24231#26631
+                Caption = 'Coordinates'
                 Width = 60
               end
               item
-                Caption = #34880#37327
+                Caption = 'Blood'
                 Width = 80
               end
               item
-                Caption = #22478#38376#29366#24577
+                Caption = 'Gate State'
                 Width = 60
               end>
             GridLines = True
@@ -205,23 +197,19 @@ object frmCastleManage: TfrmCastleManage
             ViewStyle = vsReport
           end
           object ButtonRefresh: TButton
-            Left = 240
+            Left = 232
             Top = 168
-            Width = 65
+            Width = 73
             Height = 25
-            Caption = #21047#26032'(&R)'
+            Caption = 'Refresh(&R)'
             TabOrder = 1
             OnClick = ButtonRefreshClick
           end
         end
       end
       object TabSheet2: TTabSheet
-        Caption = #35774#32622
+        Caption = 'Set'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox4: TGroupBox
           Left = 5
           Top = 5
@@ -231,44 +219,44 @@ object frmCastleManage: TfrmCastleManage
           object Label4: TLabel
             Left = 8
             Top = 20
-            Width = 54
+            Width = 42
             Height = 12
-            Caption = #22478#22561#21517#31216':'
+            Caption = 'Castle:'
           end
           object Label5: TLabel
             Left = 8
             Top = 44
-            Width = 54
+            Width = 48
             Height = 12
-            Caption = #25152#23646#34892#20250':'
+            Caption = 'Belongs:'
           end
           object Label6: TLabel
             Left = 176
             Top = 68
             Width = 54
             Height = 12
-            Caption = #22238#22478#22320#22270':'
+            Caption = 'City Map:'
           end
           object Label9: TLabel
             Left = 8
             Top = 92
             Width = 54
             Height = 12
-            Caption = #22238#22478#22352#26631':'
+            Caption = 'City X/Y:'
           end
           object Label10: TLabel
             Left = 176
             Top = 92
-            Width = 54
+            Width = 60
             Height = 12
-            Caption = #23494#36947#22320#22270':'
+            Caption = 'Middleton:'
           end
           object Label11: TLabel
             Left = 8
             Top = 68
-            Width = 54
+            Width = 42
             Height = 12
-            Caption = #30343#23467#22320#22270':'
+            Caption = 'Palace:'
           end
           object EditCastleName: TEdit
             Left = 64
@@ -330,7 +318,7 @@ object frmCastleManage: TfrmCastleManage
             Top = 160
             Width = 75
             Height = 25
-            Caption = #20445#23384'(&S)'
+            Caption = 'Save(&S)'
             Enabled = False
             TabOrder = 7
             OnClick = ButtonSaveClick
@@ -338,12 +326,8 @@ object frmCastleManage: TfrmCastleManage
         end
       end
       object TabSheet4: TTabSheet
-        Caption = #25915#22478#30003#35831
+        Caption = 'Siege'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox6: TGroupBox
           Left = 8
           Top = 0
@@ -357,14 +341,14 @@ object frmCastleManage: TfrmCastleManage
             Height = 145
             Columns = <
               item
-                Caption = #24207#21495
+                Caption = 'No.'
               end
               item
-                Caption = #34892#20250#21517#31216
+                Caption = 'Guild Name'
                 Width = 150
               end
               item
-                Caption = #25915#22478#26102#38388
+                Caption = 'Siege Time'
                 Width = 80
               end>
             GridLines = True
@@ -379,7 +363,7 @@ object frmCastleManage: TfrmCastleManage
             Top = 168
             Width = 65
             Height = 25
-            Caption = #22686#21152'(&A)'
+            Caption = 'Add(&A)'
             TabOrder = 1
             OnClick = ButtonAttackAdClick
           end
@@ -388,7 +372,7 @@ object frmCastleManage: TfrmCastleManage
             Top = 168
             Width = 65
             Height = 25
-            Caption = #32534#36753'(&E)'
+            Caption = 'Edit(&E)'
             TabOrder = 2
             OnClick = ButtonAttackEditClick
           end
@@ -397,16 +381,16 @@ object frmCastleManage: TfrmCastleManage
             Top = 168
             Width = 65
             Height = 25
-            Caption = #21024#38500'(&D)'
+            Caption = 'Delete(&D)'
             TabOrder = 3
             OnClick = ButtonAttackDelClick
           end
           object ButtonAttackR: TButton
-            Left = 240
+            Left = 232
             Top = 168
-            Width = 67
+            Width = 75
             Height = 25
-            Caption = #21047#26032'(&R)'
+            Caption = 'Refresh(&R)'
             TabOrder = 4
             OnClick = ButtonAttackRClick
           end

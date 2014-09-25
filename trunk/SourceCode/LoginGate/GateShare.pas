@@ -5,7 +5,7 @@ uses
   Windows, Messages, Classes, SysUtils, JSocket, WinSock, SyncObjs, Common, Grobal2;
 
 const
-  g_sUpDateTime = '更新日期: 2012/05/01';
+  g_sUpDateTime = 'Update: 2012/05/01';  //更新日期
   BlockIPListName = '.\BlockIPList.txt';
   TeledataBlockIPListName = '.\Config\LoginGate_BlockIPList.txt';
   ConfigFileName = '.\Config.ini';
@@ -79,8 +79,8 @@ var
   dwConnectTimeOut: LongWord = 10 * 1000;
 
   g_dwGameCenterHandle: THandle;
-  g_sNowStartGate: string = '正在启动登录网关...';
-  g_sNowStartOK: string = '启动登录网关完成...';
+  g_sNowStartGate: string = 'Starting Login Gateway...';
+  g_sNowStartOK: string = 'Start Login Gateway complete...';
 
   g_boTeledata: Boolean = False;
 

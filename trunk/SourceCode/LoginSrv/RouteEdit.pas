@@ -123,7 +123,7 @@ begin
   SafeFillChar(m_RouteInfo, SizeOf(m_RouteInfo), 0);
   m_RouteInfo.sSelGateIP := Trim(EditSelGate.Text);
   if not IsIPaddr(m_RouteInfo.sSelGateIP) then begin
-    MessageBox(Handle, '角色网关输入错误！！！', '错误信息', MB_OK +
+    MessageBox(Handle, 'Role Gateway input error!!!', 'Error', MB_OK +
       MB_ICONERROR);
     EditSelGate.SetFocus;
     Exit;
@@ -132,13 +132,13 @@ begin
   nGameGatePort := StrToIntDef(EditGatePort1.Text, 0);
 
   if not IsIPaddr(sGameGateIP) then begin
-    MessageBox(Handle, '游戏网关一输入错误！！！', '错误信息', MB_OK +
+    MessageBox(Handle, 'Game Gateway input error!!!', 'Error', MB_OK +
       MB_ICONERROR);
     EditGateIPaddr1.SetFocus;
     Exit;
   end;
   if nGameGatePort <= 0 then begin
-    MessageBox(Handle, '游戏网关一输入错误！！！', '错误信息', MB_OK +
+    MessageBox(Handle, 'Game Gateway input error!!!', 'Error', MB_OK +
       MB_ICONERROR);
     EditGatePort1.SetFocus;
     Exit;

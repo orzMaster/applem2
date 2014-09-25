@@ -32,12 +32,12 @@ uses LSShare, LMain, HUtil32;
 
 procedure TfrmGrobalSession.FormCreate(Sender: TObject);
 begin
-  GridSession.Cells[0, 0] := '序号';
-  GridSession.Cells[1, 0] := '登录帐号';
-  GridSession.Cells[2, 0] := '登录地址';
-  GridSession.Cells[3, 0] := '服务器名';
-  GridSession.Cells[4, 0] := '会话ID';
-  GridSession.Cells[5, 0] := '数据库ID';
+  GridSession.Cells[0, 0] := 'Idx';
+  GridSession.Cells[1, 0] := 'User ID';
+  GridSession.Cells[2, 0] := 'IP Address';
+  GridSession.Cells[3, 0] := 'Server';
+  GridSession.Cells[4, 0] := 'Session ID';
+  GridSession.Cells[5, 0] := 'Database ID';
 end;
 
 procedure TfrmGrobalSession.Open;
@@ -53,7 +53,7 @@ var
   Config: pTConfig;
 begin
   Config := @g_Config;
-  PanelStatus.Caption := '正在取得数据...';
+  PanelStatus.Caption := 'Refreshing Grid...';
   GridSession.Visible := False;
   GridSession.Cells[0, 1] := '';
   GridSession.Cells[1, 1] := '';

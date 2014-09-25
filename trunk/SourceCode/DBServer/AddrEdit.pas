@@ -38,15 +38,15 @@ uses HUtil32, DBShare;
 procedure TFrmEditAddr.FormCreate(Sender: TObject);
 begin
   ERowCount.Value := 8;
-  AddrGrid.Cells[0, 0] := '角色选择网关地址';
-  AddrGrid.Cells[1, 0] := '游戏网关';
-  AddrGrid.Cells[2, 0] := '端口';
-  AddrGrid.Cells[3, 0] := '游戏网关';
-  AddrGrid.Cells[4, 0] := '端口';
-  AddrGrid.Cells[5, 0] := '游戏网关';
-  AddrGrid.Cells[6, 0] := '端口';
-  AddrGrid.Cells[7, 0] := '游戏网关';
-  AddrGrid.Cells[8, 0] := '端口';
+  AddrGrid.Cells[0, 0] := 'Role Selection Gateway Address';
+  AddrGrid.Cells[1, 0] := 'Gateway Game';
+  AddrGrid.Cells[2, 0] := 'Port';
+  AddrGrid.Cells[3, 0] := 'Gateway Game';
+  AddrGrid.Cells[4, 0] := 'Port';
+  AddrGrid.Cells[5, 0] := 'Gateway Game';
+  AddrGrid.Cells[6, 0] := 'Port';
+  AddrGrid.Cells[7, 0] := 'Gateway Game';
+  AddrGrid.Cells[8, 0] := 'Port';
 end;
 
 procedure TFrmEditAddr.BtnApplyRowClick(Sender: TObject);
@@ -76,7 +76,7 @@ begin
   try
     SaveList.SaveToFile(sGateConfFileName);
   except
-    ShowMessage(sGateConfFileName + ' 保存异常！！！');
+    ShowMessage(sGateConfFileName + ' Save Exception!!!');
   end;
   Self.Close;
 end;
@@ -104,7 +104,7 @@ begin
   try
     LoadList.LoadFromFile(sGateConfFileName);
   except
-    ShowMessage(sGateConfFileName + ' 读取异常！！！');
+    ShowMessage(sGateConfFileName + ' Read Exception!!!');
   end;
   n1C := 1;
   for i := 0 to LoadList.Count - 1 do begin

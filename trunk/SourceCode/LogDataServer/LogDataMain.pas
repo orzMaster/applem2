@@ -154,7 +154,7 @@ procedure TFormMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if m_boRemoteClose then
     exit;
-  if Application.MessageBox('是否确认关闭日志程序？', '提示信息', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
+  if Application.MessageBox('Are you sure to close the logging program?', 'Message', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
     IdUDPServer.Active := False;
   end
   else
@@ -215,22 +215,22 @@ begin
         Inc(SaveCount);
         try
           ADOQuery1.Append;
-          ADOQuery1.FieldByName('动作').AsString := AStrings.Strings[0];
-          ADOQuery1.FieldByName('地图').AsString := AStrings.Strings[1];
-          ADOQuery1.FieldByName('X坐标').AsString := AStrings.Strings[2];
-          ADOQuery1.FieldByName('Y坐标').AsString := AStrings.Strings[3];
-          ADOQuery1.FieldByName('人物名称').AsString := AStrings.Strings[4];
-          ADOQuery1.FieldByName('物品名称').AsString := AStrings.Strings[5];
-          ADOQuery1.FieldByName('物品ID').AsString := AStrings.Strings[6];
-          ADOQuery1.FieldByName('物品数量').AsString := AStrings.Strings[7];
-          ADOQuery1.FieldByName('交易对像').AsString := AStrings.Strings[8];
-          ADOQuery1.FieldByName('备注1').AsString := AStrings.Strings[9];
-          ADOQuery1.FieldByName('备注2').AsString := AStrings.Strings[10];
-          ADOQuery1.FieldByName('备注3').AsString := AStrings.Strings[11];
+          ADOQuery1.FieldByName('Action').AsString := AStrings.Strings[0];
+          ADOQuery1.FieldByName('Map').AsString := AStrings.Strings[1];
+          ADOQuery1.FieldByName('X Coordinate').AsString := AStrings.Strings[2];
+          ADOQuery1.FieldByName('Y Coordinate').AsString := AStrings.Strings[3];
+          ADOQuery1.FieldByName('Character Name').AsString := AStrings.Strings[4];
+          ADOQuery1.FieldByName('Item Name').AsString := AStrings.Strings[5];
+          ADOQuery1.FieldByName('Item ID').AsString := AStrings.Strings[6];
+          ADOQuery1.FieldByName('Item Number').AsString := AStrings.Strings[7];
+          ADOQuery1.FieldByName('Transaction').AsString := AStrings.Strings[8];
+          ADOQuery1.FieldByName('Note 1').AsString := AStrings.Strings[9];
+          ADOQuery1.FieldByName('Note 2').AsString := AStrings.Strings[10];
+          ADOQuery1.FieldByName('Note 3').AsString := AStrings.Strings[11];
           if UserItem <> nil then begin
             MemoryStream.Position := 0;
             Move(UserItem^, MemoryStream.Memory^, SizeOf(TUserItem));
-            TBlobField(ADOQuery1.FieldByName('物品数据')).LoadFromStream(MemoryStream);
+            TBlobField(ADOQuery1.FieldByName('Item Data')).LoadFromStream(MemoryStream);
           end;
           ADOQuery1.Post;
         except
@@ -276,7 +276,7 @@ end;
 
 procedure TFormMain.MEMU_HELP_ABOUTClick(Sender: TObject);
 begin
-  ShellAbout(Handle, '游戏日志服务器 2012/05/01', 'Copyright (C) 2012 applem2.com',
+  ShellAbout(Handle, 'Game Log Server 2012/05/01', 'Copyright (C) 2012 applem2.com',  //游戏日志服务器
     Application.Icon.Handle);
 end;
 

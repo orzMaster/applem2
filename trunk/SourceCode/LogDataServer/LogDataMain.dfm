@@ -60,19 +60,19 @@ object FormMain: TFormMain
     OnClick = CheckBox1Click
   end
   object MainMenu1: TMainMenu
-    Left = 176
+    Left = 192
     Top = 8
     object V1: TMenuItem
       Caption = 'View'
       object MEMU_VIEW_LOGVIEW: TMenuItem
-        Caption = #26085#24535#26597#35810'(&L)'
+        Caption = 'Log Query (&L)'
         OnClick = MEMU_VIEW_LOGVIEWClick
       end
     end
     object H1: TMenuItem
       Caption = 'Help'
       object MEMU_HELP_ABOUT: TMenuItem
-        Caption = #20851#20110'(&A)'
+        Caption = 'About(&A)'
         OnClick = MEMU_HELP_ABOUTClick
       end
     end
@@ -80,8 +80,8 @@ object FormMain: TFormMain
   object TimerSave: TTimer
     Interval = 3000
     OnTimer = TimerSaveTimer
-    Left = 144
-    Top = 16
+    Left = 160
+    Top = 8
   end
   object IdUDPServer: TIdUDPServer
     BufferSize = 81920
@@ -92,7 +92,8 @@ object FormMain: TFormMain
       end>
     DefaultPort = 0
     OnUDPRead = IdUDPServerUDPRead
-    Left = 184
+    Left = 224
+    Top = 8
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
@@ -101,12 +102,12 @@ object FormMain: TFormMain
     Parameters = <>
     SQL.Strings = (
       'sql')
-    Left = 96
-    Top = 16
+    Left = 104
+    Top = 8
   end
   object ApplicationEvents1: TApplicationEvents
     OnException = ApplicationEvents1Exception
-    Left = 120
+    Left = 136
     Top = 8
   end
 end

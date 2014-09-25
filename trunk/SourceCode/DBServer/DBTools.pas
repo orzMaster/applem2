@@ -97,23 +97,23 @@ end;
 
 procedure TfrmDBTool.FormCreate(Sender: TObject);
 begin
-  GridMirDBInfo.Cells[0, 0] := '参数';
-  GridMirDBInfo.Cells[1, 0] := '内容';
-  GridMirDBInfo.Cells[0, 1] := '文件位置';
-  GridMirDBInfo.Cells[0, 2] := '文件标识';
-  GridMirDBInfo.Cells[0, 3] := '记录总数';
-  GridMirDBInfo.Cells[0, 4] := '有效数量';
-  GridMirDBInfo.Cells[0, 5] := '删除数量';
-  GridMirDBInfo.Cells[0, 6] := '更新日期';
+  GridMirDBInfo.Cells[0, 0] := 'Parameters';
+  GridMirDBInfo.Cells[1, 0] := 'Content';
+  GridMirDBInfo.Cells[0, 1] := 'File Location';
+  GridMirDBInfo.Cells[0, 2] := 'File Identifier';
+  GridMirDBInfo.Cells[0, 3] := 'Record Total';
+  GridMirDBInfo.Cells[0, 4] := 'Effective Amount';
+  GridMirDBInfo.Cells[0, 5] := 'Delete Number';
+  GridMirDBInfo.Cells[0, 6] := 'Update';
 
-  GridHumDBInfo.Cells[0, 0] := '参数';
-  GridHumDBInfo.Cells[1, 0] := '内容';
-  GridHumDBInfo.Cells[0, 1] := '文件位置';
-  GridHumDBInfo.Cells[0, 2] := '文件标识';
-  GridHumDBInfo.Cells[0, 3] := '记录总数';
-  GridHumDBInfo.Cells[0, 4] := '有效数量';
-  GridHumDBInfo.Cells[0, 5] := '删除数量';
-  GridHumDBInfo.Cells[0, 6] := '更新日期';
+  GridHumDBInfo.Cells[0, 0] := 'Parameters';
+  GridHumDBInfo.Cells[1, 0] := 'Content';
+  GridHumDBInfo.Cells[0, 1] := 'File Location';
+  GridHumDBInfo.Cells[0, 2] := 'File Identifier';
+  GridHumDBInfo.Cells[0, 3] := 'Record Total';
+  GridHumDBInfo.Cells[0, 4] := 'Effective Amount';
+  GridHumDBInfo.Cells[0, 5] := 'Delete Number';
+  GridHumDBInfo.Cells[0, 6] := 'Update';
 end;
 
 procedure TfrmDBTool.ButtonStartRebuildClick(Sender: TObject);
@@ -261,8 +261,8 @@ begin
   {LabelProcess.Caption := IntToStr(nProcID) + '/' + IntToStr(nProcMax);
   if not boRebuilding then begin
     TimerShowInfo.Enabled := False;
-    LabelProcess.Caption := '完成！！！';
-    ShowMessage('完成！！！');
+    LabelProcess.Caption := 'Carry out!!!';
+    ShowMessage('Carry out!!!');
   end;       }
 end;
 

@@ -85,20 +85,20 @@ procedure TFormView.FormCreate(Sender: TObject);
 begin
   DateTimeBegin.DateTime := Now;
   DateTimeEnd.DateTime := Now;
-  LogGrid.Cells[0, 0] := '编号';
-  LogGrid.Cells[1, 0] := '动作';
-  LogGrid.Cells[2, 0] := '地图';
-  LogGrid.Cells[3, 0] := '座标X';
-  LogGrid.Cells[4, 0] := '座标Y';
-  LogGrid.Cells[5, 0] := '人物名称';
-  LogGrid.Cells[6, 0] := '物品名称';
-  LogGrid.Cells[7, 0] := '物品ID';
-  LogGrid.Cells[8, 0] := '物品数量';
-  LogGrid.Cells[9, 0] := '交易对象';
-  LogGrid.Cells[10, 0] := '备注一';
-  LogGrid.Cells[11, 0] := '备注二';
-  LogGrid.Cells[12, 0] := '备注三';
-  LogGrid.Cells[13, 0] := '时间';
+  LogGrid.Cells[0, 0] := 'Serial Number';
+  LogGrid.Cells[1, 0] := 'Action';
+  LogGrid.Cells[2, 0] := 'Map';
+  LogGrid.Cells[3, 0] := 'Coordinates X';
+  LogGrid.Cells[4, 0] := 'Coordinates Y';
+  LogGrid.Cells[5, 0] := 'Character Name';
+  LogGrid.Cells[6, 0] := 'Item Name';
+  LogGrid.Cells[7, 0] := 'Item ID';
+  LogGrid.Cells[8, 0] := 'Item Number';
+  LogGrid.Cells[9, 0] := 'Trading Partners';
+  LogGrid.Cells[10, 0] := 'Note 1';
+  LogGrid.Cells[11, 0] := 'Note 2';
+  LogGrid.Cells[12, 0] := 'Note 3';
+  LogGrid.Cells[13, 0] := 'Time';
   CreateCheckBox;
 end;
 
@@ -106,41 +106,41 @@ procedure TFormView.CreateCheckBox();
 {var
   I: Integer;  }
 begin
- (* ComboBoxTerm2.Items.AddObject('全部动作', TObject(-1));
+ (* ComboBoxTerm2.Items.AddObject('All the action', TObject(-1));
   for I := Low(m_LogList) to High(m_LogList) do begin
     ComboBoxTerm2.Items.AddObject(m_LogList[I].sLogName,
       TObject(m_LogList[I].nLogIdx));
   end;
-  { ComboBoxTerm2.Items.AddObject('取回物品',TObject(0));
-   ComboBoxTerm2.Items.AddObject('存放物品',TObject(1));
-   ComboBoxTerm2.Items.AddObject('炼制药品',TObject(2));
-   ComboBoxTerm2.Items.AddObject('持久消失',TObject(3));
-   ComboBoxTerm2.Items.AddObject('捡取物品',TObject(4));
-   ComboBoxTerm2.Items.AddObject('制造物品',TObject(5));
-   ComboBoxTerm2.Items.AddObject('毁掉物品',TObject(6));
-   ComboBoxTerm2.Items.AddObject('扔掉物品',TObject(7));
-   ComboBoxTerm2.Items.AddObject('交易物品',TObject(8));
-   ComboBoxTerm2.Items.AddObject('购买物品',TObject(9));
-   ComboBoxTerm2.Items.AddObject('出售物品',TObject(10));
-   ComboBoxTerm2.Items.AddObject('使用物品',TObject(11));
-   ComboBoxTerm2.Items.AddObject('人物升级',TObject(12));
-   ComboBoxTerm2.Items.AddObject('减少金币',TObject(13));
-   ComboBoxTerm2.Items.AddObject('增加金币',TObject(14));
-   ComboBoxTerm2.Items.AddObject('死亡掉落',TObject(15));
-   ComboBoxTerm2.Items.AddObject('掉落物品',TObject(16));
-   ComboBoxTerm2.Items.AddObject('等级调整',TObject(17));
-   ComboBoxTerm2.Items.AddObject('人物死亡',TObject(19));
-   ComboBoxTerm2.Items.AddObject('升级成功',TObject(20));
-   ComboBoxTerm2.Items.AddObject('升级失败',TObject(21));
-   ComboBoxTerm2.Items.AddObject('升级取回',TObject(24));
-   ComboBoxTerm2.Items.AddObject('武器升级',TObject(25));
-   ComboBoxTerm2.Items.AddObject('城堡减钱',TObject(22));
-   ComboBoxTerm2.Items.AddObject('城堡加钱',TObject(23));
-   ComboBoxTerm2.Items.AddObject('背包减少',TObject(26));
-   ComboBoxTerm2.Items.AddObject('改变城主',TObject(27));
-   ComboBoxTerm2.Items.AddObject('元宝改变',TObject(28));
-   ComboBoxTerm2.Items.AddObject('能量改变',TObject(29));
-   ComboBoxTerm2.Items.AddObject('商铺购买',TObject(30)); }
+  { ComboBoxTerm2.Items.AddObject('Retrieve Items',TObject(0));
+   ComboBoxTerm2.Items.AddObject('Store Items',TObject(1));
+   ComboBoxTerm2.Items.AddObject('Refining Drugs',TObject(2));
+   ComboBoxTerm2.Items.AddObject('Lasting Disappear',TObject(3));
+   ComboBoxTerm2.Items.AddObject('Seizure of Goods',TObject(4));
+   ComboBoxTerm2.Items.AddObject('Manfactured Goods',TObject(5));
+   ComboBoxTerm2.Items.AddObject('Destroy Goods',TObject(6));
+   ComboBoxTerm2.Items.AddObject('Throw away Items',TObject(7));
+   ComboBoxTerm2.Items.AddObject('Trade Goods',TObject(8));
+   ComboBoxTerm2.Items.AddObject('Purchase Items',TObject(9));
+   ComboBoxTerm2.Items.AddObject('Sell Items',TObject(10));
+   ComboBoxTerm2.Items.AddObject('Use Items',TObject(11));
+   ComboBoxTerm2.Items.AddObject('Character Upgrade',TObject(12));
+   ComboBoxTerm2.Items.AddObject('Reduction in Gold',TObject(13));
+   ComboBoxTerm2.Items.AddObject('Increase in Gold',TObject(14));
+   ComboBoxTerm2.Items.AddObject('Dead Drop',TObject(15));
+   ComboBoxTerm2.Items.AddObject('Loot',TObject(16));
+   ComboBoxTerm2.Items.AddObject('Level Adjustment',TObject(17));
+   ComboBoxTerm2.Items.AddObject('Character Death',TObject(19));
+   ComboBoxTerm2.Items.AddObject('Upgrade Success',TObject(20));
+   ComboBoxTerm2.Items.AddObject('Upgrade Fail',TObject(21));
+   ComboBoxTerm2.Items.AddObject('Upgrade Retrieve',TObject(24));
+   ComboBoxTerm2.Items.AddObject('Weapon Upgrades',TObject(25));
+   ComboBoxTerm2.Items.AddObject('Castle Minus Money',TObject(22));
+   ComboBoxTerm2.Items.AddObject('Castle Plus Money',TObject(23));
+   ComboBoxTerm2.Items.AddObject('Backpack Reduce',TObject(26));
+   ComboBoxTerm2.Items.AddObject('Change Santo',TObject(27));
+   ComboBoxTerm2.Items.AddObject('Ingot Change',TObject(28));
+   ComboBoxTerm2.Items.AddObject('Energy Change',TObject(29));
+   ComboBoxTerm2.Items.AddObject('Retail Purchase',TObject(30)); }
   ComboBoxTerm2.ItemIndex := 0;  *)
 end;
 
@@ -157,12 +157,12 @@ end;
 
 procedure TFormView.ViewLog();
 resourcestring
-  {Text1 = 'select * from Log where %s='#39'%s%s order by 编号';
-  Text2 = 'select * from Log where %s=%s%s order by 编号';
-  Text3 = 'select * from Log order by 编号';
-  Text4 = 'select * from Log where %s=%d order by 编号';  }
+  {Text1 = 'select * from Log where %s='#39'%s%s order by Serial Number';
+  Text2 = 'select * from Log where %s=%s%s order by Number';
+  Text3 = 'select * from Log order by Number';
+  Text4 = 'select * from Log where %s=%d order by Number';  }
   SqlBegin = 'select * from Log ';
-  SqlEnd = ' order by 编号';
+  SqlEnd = ' order by Number';
 
   function GetAddCode(): string;
   const
@@ -173,122 +173,122 @@ resourcestring
     Result := '';
     if CheckBox1.Checked then begin
       if Trim(Edit2.Text) = '' then begin
-        Application.MessageBox('人物名称不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Character name can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
-      Result := ' 人物名称 = ''' + Trim(Edit2.Text) + ''' ';
+      Result := ' Character Name = ''' + Trim(Edit2.Text) + ''' ';
     end;
     if CheckBox2.Checked then begin
       if Trim(Edit3.Text) = '' then begin
-        Application.MessageBox('物品名称不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Item Name can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 物品名称 = ''' + Trim(Edit3.Text) + ''' ';
+      Result := Result + ' Item Name = ''' + Trim(Edit3.Text) + ''' ';
     end;
     if CheckBox3.Checked then begin
       if Trim(Edit4.Text) = '' then begin
-        Application.MessageBox('交易对像不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Transaction can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 交易对像 = ''' + Trim(Edit4.Text) + ''' ';
+      Result := Result + ' Transaction = ''' + Trim(Edit4.Text) + ''' ';
     end;
     if CheckBox4.Checked then begin
       if StrToIntDef(Trim(Edit5.Text), -1) = -1 then begin
-        Application.MessageBox('物品ID填写不正确', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Item ID incorrectly completed', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 物品ID = ' + Trim(Edit5.Text) + ' ';
+      Result := Result + ' Item ID = ' + Trim(Edit5.Text) + ' ';
     end;
     if CheckBox20.Checked then begin
       if Trim(Edit7.Text) = '' then begin
-        Application.MessageBox('备注1不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Note 1 can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 备注1 = ''' + Trim(Edit7.Text) + ''' ';
+      Result := Result + ' Note 1 = ''' + Trim(Edit7.Text) + ''' ';
     end;
     if CheckBox18.Checked then begin
       if Trim(Edit1.Text) = '' then begin
-        Application.MessageBox('备注2不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Note 2 can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 备注2 = ''' + Trim(Edit1.Text) + ''' ';
+      Result := Result + ' Note 2 = ''' + Trim(Edit1.Text) + ''' ';
     end;
     if CheckBox19.Checked then begin
       if Trim(Edit6.Text) = '' then begin
-        Application.MessageBox('备注3不能为空', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Note 3 can not be empty', 'Message', MB_OK + MB_ICONINFORMATION);
         Result := '';
         Exit;
       end;
       if Result <> '' then Result := Result + AndOrText[ComboBox1.ItemIndex];
-      Result := Result + ' 备注3 = ''' + Trim(Edit6.Text) + ''' ';
+      Result := Result + ' Note 3 = ''' + Trim(Edit6.Text) + ''' ';
     end;
     AddStr2 := '';
     if CheckBox5.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 0 ';
+      AddStr2 := AddStr2 + ' Action = 0 ';
     end;
     if CheckBox6.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 1 ';
+      AddStr2 := AddStr2 + ' Action = 1 ';
     end;
     if CheckBox7.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 2 ';
+      AddStr2 := AddStr2 + ' Action = 2 ';
     end;
     if CheckBox8.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 3 ';
+      AddStr2 := AddStr2 + ' Action = 3 ';
     end;
     if CheckBox9.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 4 ';
+      AddStr2 := AddStr2 + ' Action = 4 ';
     end;
     if CheckBox10.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 5 ';
+      AddStr2 := AddStr2 + ' Action = 5 ';
     end;
     if CheckBox11.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 6 ';
+      AddStr2 := AddStr2 + ' Action = 6 ';
     end;
     if CheckBox12.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 7 ';
+      AddStr2 := AddStr2 + ' Action = 7 ';
     end;
     if CheckBox13.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 8 ';
+      AddStr2 := AddStr2 + ' Action = 8 ';
     end;
     if CheckBox14.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 9 ';
+      AddStr2 := AddStr2 + ' Action = 9 ';
     end;
     if CheckBox15.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 10 ';
+      AddStr2 := AddStr2 + ' Action = 10 ';
     end;
     if CheckBox16.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 11 ';
+      AddStr2 := AddStr2 + ' Action = 11 ';
     end;
     if CheckBox17.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 12 ';
+      AddStr2 := AddStr2 + ' Action = 12 ';
     end;
     if CheckBox21.Checked then begin
       if AddStr2 <> '' then AddStr2 := AddStr2 + ' or ';
-      AddStr2 := AddStr2 + ' 动作 = 13 ';
+      AddStr2 := AddStr2 + ' Action = 13 ';
     end;
     if AddStr2 <> '' then begin
       if Result <> '' then begin
@@ -334,7 +334,7 @@ begin
   Try
     ADDCode := GetAddCode;
     if AddCode = '' then Exit;
-   { Application.MessageBox(PChar(AddCode), '提示信息', MB_OK +
+   { Application.MessageBox(PChar(AddCode), 'Message', MB_OK +
       MB_ICONINFORMATION);   }
 
     if X >= 0 then begin
@@ -348,9 +348,9 @@ begin
           try
             (*if ComboBoxTerm2.ItemIndex > 0 then begin
               if ComboBoxTerm1.ItemIndex = 2 then
-                AddCode := ' and 动作=' + IntToStr(Integer(ComboBoxTerm2.Items.Objects[ComboBoxTerm2.ItemIndex]))
+                AddCode := ' and Action =' + IntToStr(Integer(ComboBoxTerm2.Items.Objects[ComboBoxTerm2.ItemIndex]))
               else
-                AddCode := #39 + ' and 动作=' + IntToStr(Integer(ComboBoxTerm2.Items.Objects[ComboBoxTerm2.ItemIndex]));
+                AddCode := #39 + ' and Action =' + IntToStr(Integer(ComboBoxTerm2.Items.Objects[ComboBoxTerm2.ItemIndex]));
             end
             else begin
               if ComboBoxTerm1.ItemIndex = 2 then
@@ -359,13 +359,13 @@ begin
                 AddCode := ' ' + #39;
             end;
             case ComboBoxTerm1.ItemIndex of
-              0: SqlStr := Format(Text1, ['人物名称', EditText.Text, AddCode]);
-              1: SqlStr := Format(Text1, ['物品名称', EditText.Text, AddCode]);
-              2: SqlStr := Format(Text2, ['物品ID', EditText.Text, AddCode]);
-              3: SqlStr := Format(Text1, ['交易对像', EditText.Text, AddCode]);
+              0: SqlStr := Format(Text1, ['Character Name', EditText.Text, AddCode]);
+              1: SqlStr := Format(Text1, ['Item Name', EditText.Text, AddCode]);
+              2: SqlStr := Format(Text2, ['Goods ID', EditText.Text, AddCode]);
+              3: SqlStr := Format(Text1, ['Transaction', EditText.Text, AddCode]);
               4: begin
                   if ComboBoxTerm2.ItemIndex > 0 then
-                    SqlStr := Format(Text4, ['动作',
+                    SqlStr := Format(Text4, ['Action',
                       Integer(ComboBoxTerm2.Items.Objects[ComboBoxTerm2.ItemIndex])])
                   else
                     SqlStr := Text3;
@@ -390,7 +390,7 @@ begin
       end;
     end
     else
-      MessageBox(Handle, '结束日期不能小于开始日期！', '提示信息', MB_OK or  MB_ICONASTERISK);
+      MessageBox(Handle, 'End date can not be less than the start date!', 'Message', MB_OK or  MB_ICONASTERISK);
   Finally
     DateTimeBegin.Enabled := True;
     DateTimeEnd.Enabled := DateTimeBegin.Enabled;
@@ -408,21 +408,21 @@ begin
   if Idx >= LogGrid.RowCount then
     LogGrid.RowCount := LogGrid.RowCount + 1;
   try
-    LogGrid.Objects[0, Idx] := TObject(TBlobField(ADOQuery1.FieldByName('物品数据')).BlobSize);
-    LogGrid.Cells[0, Idx] := IntToStr(ADOQuery1.FieldByName('编号').AsInteger);
-    LogGrid.Cells[1, Idx] := GetWorkName(ADOQuery1.FieldByName('动作').AsInteger);
-    LogGrid.Cells[2, Idx] := ADOQuery1.FieldByName('地图').AsString;
-    LogGrid.Cells[3, Idx] := ADOQuery1.FieldByName('X坐标').AsString;
-    LogGrid.Cells[4, Idx] := ADOQuery1.FieldByName('Y坐标').AsString;
-    LogGrid.Cells[5, Idx] := ADOQuery1.FieldByName('人物名称').AsString;
-    LogGrid.Cells[6, Idx] := ADOQuery1.FieldByName('物品名称').AsString;
-    LogGrid.Cells[7, Idx] := ADOQuery1.FieldByName('物品ID').AsString;
-    LogGrid.Cells[8, Idx] := ADOQuery1.FieldByName('物品数量').AsString;
-    LogGrid.Cells[9, Idx] := ADOQuery1.FieldByName('交易对像').AsString;
-    LogGrid.Cells[10, Idx] := ADOQuery1.FieldByName('备注1').AsString;
-    LogGrid.Cells[11, Idx] := ADOQuery1.FieldByName('备注2').AsString;
-    LogGrid.Cells[12, Idx] := ADOQuery1.FieldByName('备注3').AsString;
-    LogGrid.Cells[13, Idx] := DateTimeToStr(ADOQuery1.FieldByName('时间').AsDateTime);
+    LogGrid.Objects[0, Idx] := TObject(TBlobField(ADOQuery1.FieldByName('Goods Data')).BlobSize);
+    LogGrid.Cells[0, Idx] := IntToStr(ADOQuery1.FieldByName('No').AsInteger);
+    LogGrid.Cells[1, Idx] := GetWorkName(ADOQuery1.FieldByName('Action').AsInteger);
+    LogGrid.Cells[2, Idx] := ADOQuery1.FieldByName('Map').AsString;
+    LogGrid.Cells[3, Idx] := ADOQuery1.FieldByName('X Coordinate').AsString;
+    LogGrid.Cells[4, Idx] := ADOQuery1.FieldByName('Y Coordinate').AsString;
+    LogGrid.Cells[5, Idx] := ADOQuery1.FieldByName('Character Name').AsString;
+    LogGrid.Cells[6, Idx] := ADOQuery1.FieldByName('Item Name').AsString;
+    LogGrid.Cells[7, Idx] := ADOQuery1.FieldByName('Item ID').AsString;
+    LogGrid.Cells[8, Idx] := ADOQuery1.FieldByName('Item Number').AsString;
+    LogGrid.Cells[9, Idx] := ADOQuery1.FieldByName('Transaction').AsString;
+    LogGrid.Cells[10, Idx] := ADOQuery1.FieldByName('Note 1').AsString;
+    LogGrid.Cells[11, Idx] := ADOQuery1.FieldByName('Note 2').AsString;
+    LogGrid.Cells[12, Idx] := ADOQuery1.FieldByName('Note 3').AsString;
+    LogGrid.Cells[13, Idx] := DateTimeToStr(ADOQuery1.FieldByName('Time').AsDateTime);
     LogGrid.Cells[14, Idx] := sFileName;
     //ADOQuery1.Insert;
   except
@@ -432,17 +432,17 @@ end;
 procedure TFormView.BitBtnOKClick(Sender: TObject);
 begin
   {if (ComBoBoxTerm1.ItemIndex <> 4) and (EditText.Text = '') then begin
-    MessageBox(Handle, '请输入查询内容！', '提示信息', MB_OK or MB_ICONASTERISK);
+    MessageBox(Handle, 'Please enter your query!', 'Message', MB_OK or MB_ICONASTERISK);
   end
   else begin  }
   if DateTimeEnd.DateTime < DateTimeBegin.DateTime then begin
-    MessageBox(Handle, '结束日期不能小于开始日期！', '提示信息', MB_OK or MB_ICONASTERISK);
+    MessageBox(Handle, 'End date can not be less than the start date!', 'Message', MB_OK or MB_ICONASTERISK);
   end
   else begin
     try
       ViewLog;
     except
-      MessageBox(Handle, '物品ID必需为数值！', '提示信息', MB_OK or MB_ICONASTERISK);
+      MessageBox(Handle, 'Item ID Required for value!', 'Message', MB_OK or MB_ICONASTERISK);
     end;
   end;
   //end;
@@ -496,7 +496,7 @@ begin
       sSaveFileName := dlgSave1.FileName;
       ADOQuery1.ConnectionString := Format(ADODBString, [LogGrid.Cells[14, SelARow]]);
       ADOQuery1.SQL.Clear;
-      ADOQuery1.SQL.Add('select 物品数据 from Log where 编号=' +  LogGrid.Cells[0, SelARow]);
+      ADOQuery1.SQL.Add('Select Items of data from Log where numbers =' +  LogGrid.Cells[0, SelARow]);
       Try
         ADOQuery1.Open;
         if ADOQuery1.RecordCount > 0 then begin
@@ -504,9 +504,9 @@ begin
             if not DeleteFile(sSaveFileName) then Exit;
           FileStream := TFileStream.Create(sSaveFileName, fmCreate);
           Try
-            if TBlobField(ADOQuery1.FieldByName('物品数据')).BlobSize = SizeOf(TUserItem) then begin
-              TBlobField(ADOQuery1.FieldByName('物品数据')).SaveToStream(FileStream);
-              Application.MessageBox(PChar('成功保存数品数据到' + #13#10 + sSaveFileName), '提示信息', MB_OK + 
+            if TBlobField(ADOQuery1.FieldByName('Item Data')).BlobSize = SizeOf(TUserItem) then begin
+              TBlobField(ADOQuery1.FieldByName('Item Data')).SaveToStream(FileStream);
+              Application.MessageBox(PChar('Successfully saved several product data to' + #13#10 + sSaveFileName), 'Message', MB_OK +
                 MB_ICONINFORMATION);
 
             end;

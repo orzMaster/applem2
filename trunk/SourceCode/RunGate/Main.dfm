@@ -43,8 +43,6 @@ object FrmMain: TFrmMain
     ScrollBars = ssHorizontal
     TabOrder = 0
     OnChange = MemoLogChange
-    ExplicitWidth = 268
-    ExplicitHeight = 119
   end
   object StatusBar: TStatusBar
     Left = 0
@@ -72,8 +70,6 @@ object FrmMain: TFrmMain
         Text = '????'
         Width = -1
       end>
-    ExplicitTop = 114
-    ExplicitWidth = 268
   end
   object Panel1: TPanel
     Left = 0
@@ -84,7 +80,6 @@ object FrmMain: TFrmMain
     BevelOuter = bvNone
     TabOrder = 2
     Visible = False
-    ExplicitWidth = 268
     object GroupBox1: TGroupBox
       Left = 0
       Top = 0
@@ -93,7 +88,6 @@ object FrmMain: TFrmMain
       Align = alTop
       Caption = 'Network Traffic'
       TabOrder = 0
-      ExplicitWidth = 268
       object LabelReviceMsgSize: TLabel
         Left = 12
         Top = 15
@@ -159,7 +153,6 @@ object FrmMain: TFrmMain
       Align = alClient
       Caption = 'Processing Time'
       TabOrder = 1
-      ExplicitWidth = 509
       object LabelReceTime: TLabel
         Left = 12
         Top = 15
@@ -254,67 +247,67 @@ object FrmMain: TFrmMain
     object MENU_CONTROL: TMenuItem
       Caption = 'Control'
       object MENU_CONTROL_START: TMenuItem
-        Caption = #21551#21160#26381#21153'(&S)'
+        Caption = 'Start(&S)'
         Visible = False
         OnClick = MENU_CONTROL_STARTClick
       end
       object MENU_CONTROL_STOP: TMenuItem
-        Caption = #20572#27490#26381#21153'(&T)'
+        Caption = 'Stop(&T)'
         Visible = False
         OnClick = MENU_CONTROL_STOPClick
       end
       object MENU_CONTROL_RECONNECT: TMenuItem
-        Caption = #21047#26032#36830#25509'(&R)'
+        Caption = 'Reconnect(&R)'
         Visible = False
         OnClick = MENU_CONTROL_RECONNECTClick
       end
       object MENU_CONTROL_RELOADCONFIG: TMenuItem
-        Caption = #37325#21152#36733#37197#32622'(&R)'
+        Caption = 'Reload Config(&R)'
         OnClick = MENU_CONTROL_RELOADCONFIGClick
       end
       object MENU_CONTROL_CLEAELOG: TMenuItem
-        Caption = #28165#38500#26085#24535'(&C)'
+        Caption = 'Clear(&C)'
         OnClick = MENU_CONTROL_CLEAELOGClick
       end
       object N1: TMenuItem
-        Caption = #31105#27490#36830#25509'(&F)'
+        Caption = 'Do Not Connect(&F)'
         OnClick = N1Click
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = #36864#20986'(&E)'
+        Caption = 'Exit(&E)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object V1: TMenuItem
       Caption = 'View'
       object I2: TMenuItem
-        Caption = #35814#32454#20449#24687'(&I)'
+        Caption = 'Details(&I)'
         OnClick = I2Click
       end
       object G1: TMenuItem
-        Caption = #20840#23616#20250#35805'(&G)'
+        Caption = 'Global Session(&G)'
         OnClick = G1Click
       end
     end
     object MENU_OPTION: TMenuItem
       Caption = 'Options'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = #22522#26412#35774#32622'(&G)'
+        Caption = 'General(&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_PERFORM: TMenuItem
-        Caption = #24615#33021#35774#32622'(&P)'
+        Caption = 'Performance Settings(&P)'
         OnClick = MENU_OPTION_PERFORMClick
       end
       object MENU_OPTION_IPFILTER: TMenuItem
-        Caption = #23433#20840#36807#28388'(&S)'
+        Caption = 'IP Filter(&S)'
         OnClick = MENU_OPTION_IPFILTERClick
       end
     end
     object H1: TMenuItem
       Caption = 'Help'
       object I1: TMenuItem
-        Caption = #20851#20110'(&I)'
+        Caption = 'About(&I)'
         OnClick = I1Click
       end
     end

@@ -2,7 +2,7 @@ object frmViewLevel: TfrmViewLevel
   Left = 666
   Top = 388
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = #20154#29289#31561#32423#23646#24615
+  Caption = 'Character Level'
   ClientHeight = 274
   ClientWidth = 312
   Color = clBtnFace
@@ -21,14 +21,13 @@ object frmViewLevel: TfrmViewLevel
     Top = 8
     Width = 121
     Height = 49
-    Caption = #20154#29289#31561#32423
     TabOrder = 0
     object Label4: TLabel
       Left = 8
       Top = 20
-      Width = 30
+      Width = 36
       Height = 12
-      Caption = #31561#32423':'
+      Caption = 'Level:'
     end
     object EditHumanLevel: TSpinEdit
       Left = 44
@@ -48,14 +47,13 @@ object frmViewLevel: TfrmViewLevel
     Top = 64
     Width = 121
     Height = 49
-    Caption = #20154#29289#32844#19994
     TabOrder = 1
     object Label1: TLabel
       Left = 8
       Top = 20
-      Width = 30
+      Width = 36
       Height = 12
-      Caption = #32844#19994':'
+      Caption = 'Class:'
     end
     object ComboBoxJob: TComboBox
       Left = 40
@@ -107,7 +105,7 @@ object frmViewLevel: TfrmViewLevel
     Top = 152
     Width = 65
     Height = 25
-    Caption = #20851#38381'(&C)'
+    Caption = 'Close(&C)'
     TabOrder = 3
     OnClick = ButtonCloseClick
   end

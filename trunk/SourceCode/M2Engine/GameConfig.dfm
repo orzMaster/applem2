@@ -1,10 +1,10 @@
 object frmGameConfig: TfrmGameConfig
   Left = 173
   Top = 173
-  ActiveControl = EditSoftVersionDate
+  ActiveControl = EditRepairDoorPrice
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #28216#25103#21442#25968
+  Caption = 'Game Parameters'
   ClientHeight = 289
   ClientWidth = 504
   Color = clBtnFace
@@ -37,11 +37,11 @@ object frmGameConfig: TfrmGameConfig
     Top = 9
     Width = 489
     Height = 257
-    ActivePage = GeneralSheet
+    ActivePage = CastleSheet
     TabOrder = 0
     OnChanging = GameConfigControlChanging
     object GeneralSheet: TTabSheet
-      Caption = #29615#22659#35774#32622
+      Caption = 'Enviroment Settings'
       ImageIndex = 2
       object GroupBoxInfo: TGroupBox
         Left = 168
@@ -62,7 +62,11 @@ object frmGameConfig: TfrmGameConfig
           Top = 16
           Width = 73
           Height = 21
-          Hint = #23458#25143#31471#29256#26412#26085#26399#35774#32622#65292#27492#26085#26399#25968#23383#24517#39035#19982#23458#25143#31471#19978#30340#26085#26399#26631#35782#19968#33268#65292#21542#21017#36827#20837#28216#25103#26102#20250#25552#31034#29256#26412#38169#35823#12290#28857#20445#23384#25353#38062#21518#29983#25928#12290
+          Hint = 
+            'Client version date settings, this date number must be consisten' +
+            't with the date identified on the client, otherwise it will prom' +
+            'pt the wrong version when entering the game. Point of entry into' +
+            ' force of the Save button.'
           TabOrder = 0
           Text = '20020522'
           OnChange = EditSoftVersionDateChange
@@ -71,23 +75,23 @@ object frmGameConfig: TfrmGameConfig
       object GroupBox5: TGroupBox
         Left = 168
         Top = 5
-        Width = 153
+        Width = 162
         Height = 44
-        Caption = #25511#21046#21488#26174#31034#20154#25968#26102#38388'('#31186')'
+        Caption = 'Console Displays No of Time(S)'
         TabOrder = 1
         object Label17: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 52
           Height = 13
-          Caption = #26174#31034#38388#38548':'
+          Caption = 'Display Int:'
         end
         object EditConsoleShowUserCountTime: TSpinEdit
           Left = 68
           Top = 16
           Width = 61
-          Height = 21
-          Hint = #31243#24207#25511#21046#21488#26174#31034#22312#32447#20154#25968#26102#38388#38388#38548#12290
+          Height = 22
+          Hint = 'Program console displays Online intervals.'
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -129,8 +133,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 64
           Top = 15
           Width = 57
-          Height = 21
-          Hint = #28216#25103#20013#20844#21578#20449#24687#26174#31034#26102#38388#38388#38548#26102#38388#12290
+          Height = 22
+          Hint = 'Notice game information display time interval.'
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -144,7 +148,7 @@ object frmGameConfig: TfrmGameConfig
           Top = 40
           Width = 57
           Height = 21
-          Hint = #20844#21578#25991#23383#26174#31034#40664#35748#39068#33394#12290
+          Hint = 'Announcement text display the default color.'
           Style = csDropDownList
           ItemHeight = 13
           TabOrder = 1
@@ -166,7 +170,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 3
         OnClick = ButtonGeneralSaveClick
       end
@@ -222,11 +226,11 @@ object frmGameConfig: TfrmGameConfig
         Caption = 'Radio Online'
         TabOrder = 5
         object Label98: TLabel
-          Left = 8
+          Left = 3
           Top = 36
-          Width = 27
+          Width = 64
           Height = 13
-          Caption = #20493#29575':'
+          Caption = 'Magnifcation:'
         end
         object Label99: TLabel
           Left = 8
@@ -236,18 +240,21 @@ object frmGameConfig: TfrmGameConfig
           Caption = 'Interval:'
         end
         object Label100: TLabel
-          Left = 136
+          Left = 128
           Top = 60
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object EditSendOnlineCountRate: TSpinEdit
           Left = 44
           Top = 32
           Width = 53
-          Height = 21
-          Hint = #24191#25773#22312#32447#20154#29289#34394#20551#20154#25968#20493#29575#65292#30495#23454#25968#25454#20026#38500#20197'10'#65292#40664#35748#20026'10'#23601#26159#19968#20493#65292'11 '#23601#26159'1.1'#20493#12290
+          Height = 22
+          Hint = 
+            'The number of false magnification broadcast online characters, r' +
+            'eal data is divided by 10, the default is doubled to 10 and 11 i' +
+            's 1.1 times.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 10
@@ -259,8 +266,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 56
           Width = 61
-          Height = 21
-          Hint = #24191#25773#22312#32447#20154#25968#38388#38548#26102#38388#12290
+          Height = 22
+          Hint = 'Radio Online interval.'
           EditorEnabled = False
           Increment = 10
           MaxValue = 200000
@@ -274,7 +281,9 @@ object frmGameConfig: TfrmGameConfig
           Top = 14
           Width = 89
           Height = 17
-          Hint = #26159#21542#21551#29992#22312#32447#24191#25773#22312#32447#20154#25968#21151#33021#65292#25171#24320#27492#21151#33021#21518#22312#28216#25103#37324#23558#20197#32418#23383#26041#24335#26174#31034#22312#32447#20154#25968#12290
+          Hint = 
+            'Later whether to enable online radio Online function, turn this ' +
+            'feature will be displayed in red-line number in the game.'
           Caption = 'Radio Online'
           TabOrder = 2
           OnClick = CheckBoxSendOnlineCountClick
@@ -285,7 +294,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 101
         Width = 153
         Height = 100
-        Caption = #29289#21697#24618#29289#25968#25454#24211#20493#29575
+        Caption = 'Items Monster DB Magnification'
         TabOrder = 6
         object Label101: TLabel
           Left = 8
@@ -312,8 +321,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 16
           Width = 69
-          Height = 21
-          Hint = #24618#29289#23646#24615#20493#29575'(HP'#12289'MP'#12289'DC'#12289'MC'#12289'SC)'#65292#23454#38469#25968#23383#20026#24403#21069#25968#25454#38500#20197'10'#12290
+          Height = 22
+          Hint = 
+            'Monster property magnification (HP, MP, DC, MC, SC), the actual ' +
+            'figure for the current data divided by 10.'
           EditorEnabled = False
           MaxValue = 20000
           MinValue = 1
@@ -325,8 +336,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 40
           Width = 69
-          Height = 21
-          Hint = #29289#21697#23646#24615#20493#29575'(DC'#12289'MC'#12289'SC)'#65292#23454#38469#25968#23383#20026#24403#21069#25968#25454#38500#20197'10'#12290
+          Height = 22
+          Hint = 
+            'Item Specifics magnification (DC, MC, SC), the actual figure for' +
+            ' the current data divided by 10.'
           EditorEnabled = False
           MaxValue = 20000000
           MinValue = 1
@@ -338,8 +351,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 64
           Width = 69
-          Height = 21
-          Hint = #29289#21697#23646#24615#20493#29575'(AC'#12289'MAC'#20108#20010')'#65292#23454#38469#25968#23383#20026#24403#21069#25968#25454#38500#20197'10'#12290
+          Height = 22
+          Hint = 
+            'Item Specifics magnification (AC, MAC two), the actual figure fo' +
+            'r the current data is divided by 10.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -369,22 +384,24 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet4: TTabSheet
-      Caption = #28216#25103#36873#39033'(1)'
+      Caption = 'Game Options(1)'
       ImageIndex = 7
       object GroupBox28: TGroupBox
-        Left = 8
-        Top = 8
+        Left = 1
+        Top = 0
         Width = 145
         Height = 102
-        Caption = #28216#25103#27169#24335
+        Caption = 'Game Mode'
         TabOrder = 0
         object CheckBoxTestServer: TCheckBox
           Left = 8
           Top = 14
           Width = 73
           Height = 17
-          Hint = #27979#35797#27169#24335#65292#25171#24320#27492#27169#24335#65292#21487#23545#26381#21153#22120#21508#39033#21442#25968#21450#21151#33021#36827#34892#27979#35797#12290
-          Caption = #27979#35797#27169#24335
+          Hint = 
+            'Test mode, open this mode, the server parameters and functions t' +
+            'o be tested.'
+          Caption = 'Test Mode'
           TabOrder = 0
           OnClick = CheckBoxTestServerClick
         end
@@ -393,17 +410,17 @@ object frmGameConfig: TfrmGameConfig
           Top = 30
           Width = 73
           Height = 17
-          Hint = #20813#36153#27169#24335#65292#25171#24320#27492#20808#39033#23558#19981#23545#29992#25143#35745#36153#12290
-          Caption = #20813#36153#27169#24335
+          Hint = 'Free mode, open the first item will not charge users.'
+          Caption = 'Free Mode'
           TabOrder = 1
           OnClick = CheckBoxServiceModeClick
         end
         object CheckBoxVentureMode: TCheckBox
           Left = 8
           Top = 46
-          Width = 81
+          Width = 121
           Height = 17
-          Caption = #19981#21047#24618#27169#24335
+          Caption = 'Brush Strange Mode'
           TabOrder = 2
           OnClick = CheckBoxVentureModeClick
         end
@@ -422,7 +439,7 @@ object frmGameConfig: TfrmGameConfig
           Top = 62
           Width = 81
           Height = 17
-          Caption = #23433#20840#21306#33073#26426
+          Caption = 'SZ Offline'
           TabOrder = 4
           OnClick = chkSafeOffLineClick
         end
@@ -430,8 +447,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 95
           Top = 60
           Width = 42
-          Height = 21
-          Hint = #25351#23450#22810#23569#32423#20197#19978#30340#29609#23478#25165#33258#21160#25346#26426
+          Height = 22
+          Hint = 'Specify how many more players before automatically hang up'
           MaxValue = 65535
           MinValue = 1
           TabOrder = 5
@@ -443,17 +460,17 @@ object frmGameConfig: TfrmGameConfig
           Top = 79
           Width = 109
           Height = 17
-          Caption = #20801#35768#33073#26426#25670#25674
+          Caption = 'Oflline Stall'
           TabOrder = 6
           OnClick = CheckBoxShopOffLineClick
         end
       end
       object GroupBox29: TGroupBox
-        Left = 223
-        Top = 110
+        Left = 179
+        Top = 134
         Width = 145
-        Height = 97
-        Caption = #27979#35797#27169#24335
+        Height = 93
+        Caption = 'Test Mode'
         TabOrder = 1
         Visible = False
         object Label61: TLabel
@@ -461,28 +478,28 @@ object frmGameConfig: TfrmGameConfig
           Top = 20
           Width = 51
           Height = 13
-          Caption = #24320#22987#31561#32423':'
+          Caption = 'Start Level'
         end
         object Label62: TLabel
           Left = 8
           Top = 44
-          Width = 51
+          Width = 50
           Height = 13
-          Caption = #24320#22987#37329#24065':'
+          Caption = 'Start Gold:'
         end
         object Label63: TLabel
           Left = 8
           Top = 68
-          Width = 51
+          Width = 24
           Height = 13
-          Caption = #20154#25968#38480#21046':'
+          Caption = 'Limit:'
         end
         object EditTestLevel: TSpinEdit
           Left = 68
           Top = 16
           Width = 69
-          Height = 21
-          Hint = #20154#29289#36215#22987#31561#32423#12290
+          Height = 22
+          Hint = 'People Start Level'
           MaxValue = 20000
           MinValue = 0
           TabOrder = 0
@@ -494,8 +511,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 40
           Width = 69
-          Height = 21
-          Hint = #27979#35797#27169#24335#20154#29289#36215#22987#37329#24065#25968#12290
+          Height = 22
+          Hint = 'People starting a few coins in test mode.'
           Increment = 1000
           MaxValue = 20000000
           MinValue = 0
@@ -507,8 +524,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 64
           Width = 69
-          Height = 21
-          Hint = #27979#35797#27169#24335#26368#39640#21487#19978#32447#20154#25968#38480#21046#12290
+          Height = 22
+          Hint = 'Test mode the maximum limit on the number line.'
           Increment = 10
           MaxValue = 2000
           MinValue = 0
@@ -522,21 +539,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 129
         Height = 45
-        Caption = #20154#29289#36215#22987#35774#32622
+        Caption = 'People Start Setting'
         TabOrder = 2
         object Label60: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 53
           Height = 13
-          Caption = #36215#22987#26435#38480':'
+          Caption = 'Permission:'
         end
         object EditStartPermission: TSpinEdit
           Left = 68
           Top = 15
           Width = 53
-          Height = 21
-          Hint = #20154#29289#28216#25103#36215#22987#26435#38480#65292#40664#35748#20026'0'#12290
+          Height = 22
+          Hint = 'People start the game privileges, the default is 0.'
           EditorEnabled = False
           MaxValue = 10
           MinValue = 0
@@ -550,30 +567,32 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 3
         OnClick = ButtonOptionSave0Click
       end
       object GroupBox31: TGroupBox
-        Left = 160
-        Top = 152
+        Left = 3
+        Top = 169
         Width = 169
         Height = 49
-        Caption = #19978#32447#20154#25968#38480#21046
+        Caption = 'Restrictions Number of Online'
         TabOrder = 4
         object Label64: TLabel
           Left = 8
           Top = 23
-          Width = 27
+          Width = 40
           Height = 13
-          Caption = #20154#25968':'
+          Caption = 'Number:'
         end
         object EditUserFull: TSpinEdit
-          Left = 44
+          Left = 54
           Top = 19
           Width = 53
-          Height = 21
-          Hint = #26368#26032#21487#19978#32447#20154#25968#38480#21046#65292#36229#36807#27492#20154#25968#21518#19978#32447#23558#25552#31034#32418#23383#12290
+          Height = 22
+          Hint = 
+            'The latest may limit the number of on-line, on-line after more t' +
+            'han this number will prompt red.'
           MaxValue = 10000
           MinValue = 0
           TabOrder = 0
@@ -582,31 +601,31 @@ object frmGameConfig: TfrmGameConfig
         end
       end
       object GroupBox33: TGroupBox
-        Left = 159
-        Top = 8
+        Left = 155
+        Top = 2
         Width = 170
         Height = 71
-        Caption = #20154#29289#36523#19978#37329#24065#25968#38480#21046
+        Caption = 'People Limit Number of Gold Coins'
         TabOrder = 5
         object Label68: TLabel
           Left = 8
           Top = 22
-          Width = 51
+          Width = 30
           Height = 13
-          Caption = #27491#24335#27169#24335':'
+          Caption = 'Offical'
         end
         object Label69: TLabel
           Left = 8
           Top = 46
-          Width = 51
+          Width = 31
           Height = 13
-          Caption = #35797#29609#27169#24335':'
+          Caption = 'Demo:'
         end
         object EditHumanMaxGold: TSpinEdit
           Left = 68
           Top = 18
           Width = 85
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 200000000
           MinValue = 1
@@ -618,7 +637,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 42
           Width = 85
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 200000000
           MinValue = 1
@@ -628,24 +647,24 @@ object frmGameConfig: TfrmGameConfig
         end
       end
       object GroupBox34: TGroupBox
-        Left = 161
-        Top = 85
+        Left = 158
+        Top = 74
         Width = 168
         Height = 61
-        Caption = #35797#29609#31561#32423#38480#21046
+        Caption = 'Demo Level Restrictions'
         TabOrder = 6
         object Label70: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 29
           Height = 13
-          Caption = #31561#32423':'
+          Caption = 'Level:'
         end
         object EditTryModeLevel: TSpinEdit
           Left = 68
           Top = 16
           Width = 61
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -658,8 +677,8 @@ object frmGameConfig: TfrmGameConfig
           Top = 38
           Width = 121
           Height = 17
-          Hint = #35797#29609#27169#24335#20801#35768#20351#29992#20179#24211#12290
-          Caption = #35797#29609#27169#24335#20351#29992#20179#24211
+          Hint = 'Demo mode allows the use of the warehouse.'
+          Caption = 'Demo Warehouse'
           TabOrder = 1
           OnClick = CheckBoxTryModeUseStorageClick
         end
@@ -669,21 +688,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 59
         Width = 129
         Height = 46
-        Caption = #32452#38431#25104#21592#25968#37327
+        Caption = 'Team Member Limit'
         TabOrder = 7
         object Label41: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 24
           Height = 13
-          Caption = #25104#21592#25968#37327':'
+          Caption = 'Limit:'
         end
         object EditGroupMembersMax: TSpinEdit
           Left = 68
           Top = 17
           Width = 53
-          Height = 21
-          Hint = #32452#38431#25104#21592#25968#37327#12290
+          Height = 22
+          Hint = 'The number of members of the team.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -697,28 +716,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 111
         Width = 129
         Height = 66
-        Caption = #34892#20250#25104#21592#38480#21046
+        Caption = 'Guild Member Limit'
         TabOrder = 8
         object Label148: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 39
           Height = 13
-          Caption = #36215#22987#25968#37327':'
+          Caption = 'Starting:'
         end
         object Label162: TLabel
           Left = 8
           Top = 42
-          Width = 51
+          Width = 45
           Height = 13
-          Caption = #27599#32423#22686#21152':'
+          Caption = 'Each Lvl:'
         end
         object EditDefGuildMemberLimit: TSpinEdit
           Left = 68
           Top = 17
           Width = 53
-          Height = 21
-          Hint = #34892#20250#25104#21592#25968#37327#12290
+          Height = 22
+          Hint = 'The number of guild members.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -730,7 +749,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 39
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 0
           MinValue = 0
           TabOrder = 1
@@ -739,31 +758,31 @@ object frmGameConfig: TfrmGameConfig
         end
       end
       object GroupBox81: TGroupBox
-        Left = 8
-        Top = 116
+        Left = 3
+        Top = 96
         Width = 145
-        Height = 85
-        Caption = #25670#25674#25910#31246
+        Height = 67
+        Caption = 'Player Stall Taxes'
         TabOrder = 9
         object Label160: TLabel
           Left = 8
           Top = 22
-          Width = 51
+          Width = 44
           Height = 13
-          Caption = #25670#25674#31246#29575':'
+          Caption = 'Stall Tax:'
         end
         object Label161: TLabel
           Left = 8
           Top = 50
-          Width = 51
+          Width = 73
           Height = 13
-          Caption = #25910#36141#31246#29575':'
+          Caption = 'Acquistion Tax:'
         end
         object EditPersonShopSellRate: TSpinEdit
-          Left = 68
+          Left = 92
           Top = 18
-          Width = 70
-          Height = 21
+          Width = 46
+          Height = 22
           MaxValue = 100
           MinValue = 0
           TabOrder = 0
@@ -771,10 +790,10 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditPersonShopSellRateChange
         end
         object EditPersonShopBuyRate: TSpinEdit
-          Left = 68
+          Left = 92
           Top = 46
-          Width = 70
-          Height = 21
+          Width = 46
+          Height = 22
           MaxValue = 100
           MinValue = 0
           TabOrder = 1
@@ -784,91 +803,105 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet2: TTabSheet
-      Caption = #28216#25103#36873#39033'(2)'
+      Caption = 'Game Options(2)'
       ImageIndex = 5
       object GroupBox17: TGroupBox
         Left = 280
         Top = 8
         Width = 153
         Height = 169
-        Caption = #36305#27493#31359#20154#25511#21046
+        Caption = 'Running Through Control'
         TabOrder = 0
         object CheckBoxDisHumRun: TCheckBox
-          Left = 10
+          Left = 7
           Top = 17
-          Width = 79
+          Width = 134
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20154#29289#23558#19981#20801#35768#31359#36807#24618#29289#25110#20854#23427#20154#29289
-          Caption = #31105#27490#36305#27493#31359#20154
+          Hint = 
+            'After opening this function, the characters will not be allowed ' +
+            'through the monsters or other characters'
+          Caption = 'No Run Through PPL'
           TabOrder = 0
           OnClick = CheckBoxDisHumRunClick
         end
         object CheckBoxRunHum: TCheckBox
-          Left = 27
+          Left = 7
           Top = 32
-          Width = 98
+          Width = 142
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20154#29289#23558#21487#20197#31359#36807#20854#20182#20154#29289
-          Caption = #20801#35768#31359#36807#20154#29289
+          Hint = 
+            'After opening this function, the characters will be able to pass' +
+            ' through the other characters'
+          Caption = 'Allow Pass Through Chars'
           TabOrder = 1
           OnClick = CheckBoxRunHumClick
         end
         object CheckBoxRunMon: TCheckBox
-          Left = 27
+          Left = 7
           Top = 51
-          Width = 99
+          Width = 134
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20154#29289#23558#21487#20197#31359#36807#24618#29289
-          Caption = #20801#35768#31359#36807#24618#29289
+          Hint = 
+            'After opening this function, the characters will be able to pass' +
+            ' through the monster'
+          Caption = 'Allow Through Monster'
           TabOrder = 2
           OnClick = CheckBoxRunMonClick
         end
         object CheckBoxWarDisHumRun: TCheckBox
-          Left = 27
+          Left = 7
           Top = 101
-          Width = 122
+          Width = 142
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#22312#25915#22478#21306#22495#65292#23558#31105#27490#31359#20154#21450#24618#29289
-          Caption = #25915#22478#21306#22495#20840#37096#31105#27490
+          Hint = 
+            'After opening this function, the siege area, people will be forb' +
+            'idden to wear and monsters'
+          Caption = 'All Prohibited Siege Area'
           TabOrder = 3
           OnClick = CheckBoxWarDisHumRunClick
         end
         object CheckBoxRunNpc: TCheckBox
-          Left = 27
+          Left = 7
           Top = 67
-          Width = 99
+          Width = 119
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20154#29289#23558#21487#20197#31359#36807'NPC'
-          Caption = #20801#35768#31359#36807'NPC'
+          Hint = 
+            'After opening this function, the characters will be able to pass' +
+            ' through the NPC'
+          Caption = 'Allow Through NPC'
           TabOrder = 4
           OnClick = CheckBoxRunNpcClick
         end
         object CheckBoxGMRunAll: TCheckBox
-          Left = 27
+          Left = 7
           Top = 119
-          Width = 122
+          Width = 142
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#36229#32423#28216#25103#31649#29702#21592#19981#21463#20197#19978#35774#32622#38480#21046#12290
-          Caption = #31649#29702#21592#19981#21463#25511#21046
+          Hint = 
+            'After opening this function, super game administrator from above' +
+            ' set limits.'
+          Caption = 'Admins Uncontrolled'
           TabOrder = 5
           OnClick = CheckBoxGMRunAllClick
         end
         object CheckBoxRunGuard: TCheckBox
-          Left = 27
+          Left = 7
           Top = 83
-          Width = 99
+          Width = 119
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20154#29289#23558#21487#20197#31359#36807#23432#21355'('#22823#20992#12289#24339#31661#25163')'
-          Caption = #20801#35768#31359#36807#23432#21355
+          Hint = 
+            'After opening this function, the characters will be able to pass' +
+            ' through the guard (machetes, archers)'
+          Caption = 'Allow Cross Guard'
           TabOrder = 6
           OnClick = CheckBoxRunGuardClick
         end
         object CheckBoxSafeArea: TCheckBox
-          Left = 27
+          Left = 7
           Top = 136
-          Width = 118
+          Width = 138
           Height = 17
-          Caption = #23433#20840#21306#19981#21463#25511#21046
+          Caption = 'SZ Uncontrolled'
           TabOrder = 7
           OnClick = CheckBoxSafeAreaClick
         end
@@ -878,51 +911,53 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 1
         OnClick = ButtonOptionSave3Click
       end
       object GroupBox53: TGroupBox
-        Left = 8
+        Left = 3
         Top = 8
-        Width = 129
+        Width = 134
         Height = 113
-        Caption = #20132#26131#25511#21046
+        Caption = 'Transaction Control'
         TabOrder = 2
         object Label20: TLabel
-          Left = 8
+          Left = 3
           Top = 20
-          Width = 51
+          Width = 74
           Height = 13
-          Caption = #20132#26131#38388#38548':'
+          Caption = 'Trade Interval:'
         end
         object Label104: TLabel
-          Left = 8
+          Left = 3
           Top = 44
-          Width = 51
+          Width = 73
           Height = 13
-          Caption = #30830#35748#20132#26131':'
+          Caption = 'Comfirm Trade'
         end
         object Label105: TLabel
-          Left = 107
+          Left = 111
           Top = 20
-          Width = 12
+          Width = 20
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object Label106: TLabel
-          Left = 107
+          Left = 111
           Top = 43
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object EditTryDealTime: TSpinEdit
-          Left = 68
+          Left = 74
           Top = 16
           Width = 37
-          Height = 21
-          Hint = #20851#38381#20132#26131#21518#65292#20877#37325#26032#20132#26131#24517#39035#38388#38548#25351#23450#26102#38388#12290
+          Height = 22
+          Hint = 
+            'After closing the transaction, the transaction must be re-specif' +
+            'ied time interval.'
           EditorEnabled = False
           MaxValue = 10
           MinValue = 1
@@ -931,11 +966,13 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditTryDealTimeChange
         end
         object EditDealOKTime: TSpinEdit
-          Left = 68
+          Left = 74
           Top = 40
           Width = 37
-          Height = 21
-          Hint = #25918#19978#20132#26131#29289#21697#21518#65292#24517#39035#31561#25351#23450#26102#38388#20877#25353#30830#35748#25353#38062#12290
+          Height = 22
+          Hint = 
+            'After the transaction put items must wait a specified time and t' +
+            'hen the OK button.'
           EditorEnabled = False
           MaxValue = 10
           MinValue = 1
@@ -948,8 +985,10 @@ object frmGameConfig: TfrmGameConfig
           Top = 64
           Width = 110
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#20132#26131#30340#29289#21697#25918#19978#20102#21518#23558#19981#21487#20197#21462#22238#65292#21482#33021#21462#28040#20132#26131#20877#37325#26032#20132#26131#12290
-          Caption = #31105#27490#21462#22238#29289#21697
+          Hint = 
+            'After opening this function, items placed on the transaction wil' +
+            'l not get back, only to cancel the transaction and re-deal.'
+          Caption = 'No Retrieve Items'
           TabOrder = 2
           OnClick = CheckBoxCanNotGetBackDealClick
         end
@@ -958,8 +997,10 @@ object frmGameConfig: TfrmGameConfig
           Top = 80
           Width = 110
           Height = 13
-          Hint = #31105#27490#20132#26131#21518#65292#22312#28216#25103#20013#23558#19981#20801#35768#36827#34892#20132#26131#12290
-          Caption = #31105#27490#20132#26131
+          Hint = 
+            'After the prohibition of trade in the game will not allow the tr' +
+            'ansaction.'
+          Caption = 'No Transaction'
           TabOrder = 3
           OnClick = CheckBoxDisableDealClick
         end
@@ -969,21 +1010,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 128
         Width = 129
         Height = 49
-        Caption = #32511#27602#20943'HP'#26102#38388'('#27627#31186')'
+        Caption = 'Green PSN - HP Time'
         TabOrder = 3
         object Label57: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 38
           Height = 13
-          Caption = #38388#38548#26102#38388':'
+          Caption = 'Interval:'
         end
         object EditPosionDecHealthTime: TSpinEdit
           Left = 68
           Top = 16
           Width = 53
-          Height = 21
-          Hint = #20154#29289#20013#32511#27602#21518#65292#20943#23569#29983#21629#28857#26102#38388#38388#38548#12290
+          Height = 22
+          Hint = 'People in the green poison, reducing life-time interval.'
           Increment = 100
           MaxValue = 20000
           MinValue = 1
@@ -997,21 +1038,23 @@ object frmGameConfig: TfrmGameConfig
         Top = 128
         Width = 129
         Height = 49
-        Caption = #32418#27602#20943#38450#24481#21450#25345#20037#29575
+        Caption = 'Red PSN Rate Cut Def'
         TabOrder = 4
         object Label59: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #27604#29575':'
+          Caption = 'Ratio:'
         end
         object EditPosionDamagarmor: TSpinEdit
           Left = 44
           Top = 16
           Width = 53
-          Height = 21
-          Hint = #20154#29289#20013#32418#27602#20943#38450#24481#21450#29289#21697#25345#20037#27604#29575#65292#27492#25968#20540#38500#20197'10'#20026#30495#23454#25968#20540#12290
+          Height = 22
+          Hint = 
+            'People in red poison lasting less defensive and articles ratio, ' +
+            'this value is divided by 10 for the true value.'
           EditorEnabled = False
           MaxValue = 20000
           MinValue = 10
@@ -1025,28 +1068,30 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 129
         Height = 113
-        Caption = #25172#29289#21697#25511#21046
+        Caption = 'Throw Control'
         TabOrder = 5
         object Label118: TLabel
           Left = 8
           Top = 44
-          Width = 51
+          Width = 61
           Height = 13
-          Caption = #29289#21697#20215#26684':'
+          Caption = 'Good Prices:'
         end
         object Label119: TLabel
           Left = 8
           Top = 68
-          Width = 27
+          Width = 25
           Height = 13
-          Caption = #37329#24065':'
+          Caption = 'Gold:'
         end
         object EditCanDropPrice: TSpinEdit
-          Left = 68
+          Left = 69
           Top = 40
-          Width = 53
-          Height = 21
-          Hint = #23567#20110#27492#20215#26684#30340#29289#21697#65292#25172#20986#21518#31435#21363#28040#22833#65292#19981#20250#20986#29616#22312#22320#19978#12290
+          Width = 52
+          Height = 22
+          Hint = 
+            'ess than this price items, disappeared immediately after the thr' +
+            'ow, does not appear in the ground.'
           Increment = 100
           MaxValue = 20000000
           MinValue = 1
@@ -1059,8 +1104,12 @@ object frmGameConfig: TfrmGameConfig
           Top = 20
           Width = 110
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#23558#23545#20154#29289#25172#19979#26469#30340#29289#21697#21450#37329#24065#36827#34892#26816#26597#65292#23567#20110#25351#23450#35268#21017#37329#24065#25110#20215#26684#30340#29289#21697#23558#19981#20801#35768#25172#19979#26469#65292#25110#25172#19979#26469#31435#21363#28040#22833#12290
-          Caption = #21551#29992#25172#29289#21697#25511#21046
+          Hint = 
+            'After opening this function will figure dropped to inspect the i' +
+            'tems and gold coins, gold coins or less than the specified rules' +
+            ' will not allow the items price dropped to, or dropped to disapp' +
+            'ear immediately.'
+          Caption = 'Enable Throw Ctrl'
           TabOrder = 1
           OnClick = CheckBoxControlDropItemClick
         end
@@ -1068,8 +1117,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 64
           Width = 53
-          Height = 21
-          Hint = #23567#20110#25351#23450#25968#37327#30340#37329#24065#65292#23558#31105#27490#25172#20986#12290
+          Height = 22
+          Hint = 'Less than a specified number of coins, will be banned throw.'
           Increment = 100
           MaxValue = 20000000
           MinValue = 1
@@ -1082,22 +1131,24 @@ object frmGameConfig: TfrmGameConfig
           Top = 92
           Width = 110
           Height = 13
-          Hint = #25171#24320#27492#21151#33021#21518#65292#22312#23433#20840#21306#23558#19981#20801#35768#25172#29289#21697#12290
-          Caption = #23433#20840#21306#31105#27490#25172
+          Hint = 
+            'After opening this function, the safety zone will be allowed to ' +
+            'throw items.'
+          Caption = 'SZ No Throw'
           TabOrder = 3
           OnClick = CheckBoxIsSafeDisableDropClick
         end
       end
     end
     object TabSheet1: TTabSheet
-      Caption = #24231#26631#33539#22260
+      Caption = 'Coordinate Range'
       ImageIndex = 4
       object ButtonOptionSave: TButton
         Left = 411
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 0
         OnClick = ButtonOptionSaveClick
       end
@@ -1106,21 +1157,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 105
         Height = 44
-        Caption = #23433#20840#21306#33539#22260
+        Caption = 'SZ Range'
         TabOrder = 1
         object Label39: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 23
           Height = 13
-          Caption = #22823#23567':'
+          Caption = 'Size:'
         end
         object EditSafeZoneSize: TSpinEdit
           Left = 44
           Top = 16
           Width = 45
-          Height = 21
-          Hint = #23433#20840#21306#33539#22260#22823#23567#12290
+          Height = 22
+          Hint = 'Safety zone range size.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -1134,21 +1185,23 @@ object frmGameConfig: TfrmGameConfig
         Top = 58
         Width = 105
         Height = 44
-        Caption = #26032#20154#20986#29983#28857#33539#22260
+        Caption = 'New Char Range'
         TabOrder = 2
         object Label40: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 35
           Height = 13
-          Caption = #33539#22260':'
+          Caption = 'Range:'
         end
         object EditStartPointSize: TSpinEdit
           Left = 44
           Top = 16
           Width = 45
-          Height = 21
-          Hint = #26032#20154#20986#29983#28857#25511#21046#65292#40664#35748#20026#21069#19977#20010#23433#20840#21306#35774#32622#12290
+          Height = 22
+          Hint = 
+            'New-born point control, the default setting for the first three ' +
+            'security zones.'
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -1162,34 +1215,34 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 145
         Height = 94
-        Caption = #32418#21517#26449
+        Caption = 'Red Village'
         TabOrder = 3
         object Label42: TLabel
           Left = 8
           Top = 44
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'X:'
+          Caption = 'Coord X:'
         end
         object Label43: TLabel
           Left = 8
           Top = 68
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'Y:'
+          Caption = 'Coord Y:'
         end
         object Label44: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #22320#22270':'
+          Caption = 'Map:'
         end
         object EditRedHomeX: TSpinEdit
           Left = 52
           Top = 40
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 0
@@ -1200,7 +1253,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 52
           Top = 64
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 1
@@ -1223,34 +1276,34 @@ object frmGameConfig: TfrmGameConfig
         Top = 108
         Width = 145
         Height = 89
-        Caption = #32418#21517#27515#20129#22238#22478#28857
+        Caption = 'Red Death Back to City'
         TabOrder = 4
         object Label45: TLabel
           Left = 8
           Top = 44
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'X:'
+          Caption = 'Coord X:'
         end
         object Label46: TLabel
           Left = 8
           Top = 68
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'Y:'
+          Caption = 'Coord Y:'
         end
         object Label47: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #22320#22270':'
+          Caption = 'Map:'
         end
         object EditRedDieHomeX: TSpinEdit
           Left = 52
           Top = 40
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 0
@@ -1261,7 +1314,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 52
           Top = 64
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 1
@@ -1283,34 +1336,34 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 145
         Height = 94
-        Caption = #24212#24613#22238#22478#28857
+        Caption = 'Emergency Back to City'
         TabOrder = 5
         object Label48: TLabel
           Left = 8
           Top = 44
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'X:'
+          Caption = 'Coord X:'
         end
         object Label49: TLabel
           Left = 8
           Top = 68
-          Width = 34
+          Width = 41
           Height = 13
-          Caption = #24231#26631'Y:'
+          Caption = 'Coord Y:'
         end
         object Label50: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #22320#22270':'
+          Caption = 'Map:'
         end
         object EditHomeX: TSpinEdit
           Left = 52
           Top = 40
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 0
@@ -1321,7 +1374,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 52
           Top = 64
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 1
@@ -1340,14 +1393,14 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet3: TTabSheet
-      Caption = 'PK'#25511#21046
+      Caption = 'PK Control'
       ImageIndex = 6
       object ButtonOptionSave2: TButton
         Left = 411
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 0
         OnClick = ButtonOptionSave2Click
       end
@@ -1356,34 +1409,34 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 153
         Height = 73
-        Caption = #33258#21160#20943'PK'#28857#25511#21046
+        Caption = 'Auto Cut PK Point Ctrl'
         TabOrder = 1
         object Label51: TLabel
           Left = 8
           Top = 20
-          Width = 51
+          Width = 38
           Height = 13
-          Caption = #38388#38548#26102#38388':'
+          Caption = 'Interval:'
         end
         object Label52: TLabel
           Left = 8
           Top = 44
-          Width = 51
+          Width = 56
           Height = 13
-          Caption = #19968#27425#28857#25968':'
+          Caption = 'Once Point:'
         end
         object Label53: TLabel
           Left = 128
           Top = 20
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object EditDecPkPointTime: TSpinEdit
           Left = 68
           Top = 16
           Width = 53
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -1395,7 +1448,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 40
           Width = 53
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -1409,20 +1462,20 @@ object frmGameConfig: TfrmGameConfig
         Top = 87
         Width = 154
         Height = 49
-        Caption = 'PK'#29366#24577#21464#33394'('#31186')'
+        Caption = 'PK State Color(s)'
         TabOrder = 2
         object Label54: TLabel
           Left = 8
           Top = 21
-          Width = 27
+          Width = 26
           Height = 13
-          Caption = #26102#38388':'
+          Caption = 'Time:'
         end
         object EditPKFlagTime: TSpinEdit
           Left = 44
           Top = 17
           Width = 53
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -1436,20 +1489,20 @@ object frmGameConfig: TfrmGameConfig
         Top = 142
         Width = 154
         Height = 49
-        Caption = #26432#20154#22686#21152'PK'#28857#25968
+        Caption = 'PK Point Increase'
         TabOrder = 3
         object Label55: TLabel
           Left = 8
           Top = 22
           Width = 27
           Height = 13
-          Caption = #28857#25968':'
+          Caption = 'Point:'
         end
         object EditKillHumanAddPKPoint: TSpinEdit
           Left = 44
           Top = 18
           Width = 53
-          Height = 21
+          Height = 22
           MaxValue = 2000
           MinValue = 1
           TabOrder = 0
@@ -1462,63 +1515,63 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 265
         Height = 169
-        Caption = 'PK'#35268#21017
+        Caption = 'PK Rules'
         TabOrder = 4
         object Label58: TLabel
           Left = 112
           Top = 20
-          Width = 63
+          Width = 67
           Height = 13
-          Caption = #22686#21152#31561#32423#25968':'
+          Caption = 'Incr No of Lvl:'
         end
         object Label65: TLabel
           Left = 112
           Top = 44
-          Width = 63
+          Width = 65
           Height = 13
-          Caption = #20943#23569#31561#32423#25968':'
+          Caption = 'Minus No Lvl:'
         end
         object Label66: TLabel
-          Left = 112
-          Top = 68
-          Width = 63
+          Left = 115
+          Top = 69
+          Width = 68
           Height = 13
-          Caption = #22686#21152#32463#39564#25968':'
+          Caption = 'Increase EXP:'
         end
         object Label56: TLabel
           Left = 112
           Top = 92
-          Width = 63
+          Width = 65
           Height = 13
-          Caption = #20943#23569#32463#39564#25968':'
+          Caption = 'Reduce EXP:'
         end
         object Label67: TLabel
           Left = 8
           Top = 92
-          Width = 41
+          Width = 34
           Height = 13
-          Caption = 'PK'#31561#32423':'
+          Caption = 'PK Lvl:'
         end
         object Label114: TLabel
           Left = 112
           Top = 116
-          Width = 65
+          Width = 71
           Height = 13
-          Caption = 'PK'#20445#25252#31561#32423':'
+          Caption = 'PK Protect Lvl:'
         end
         object Label115: TLabel
-          Left = 89
+          Left = 32
           Top = 140
-          Width = 89
+          Width = 151
           Height = 13
-          Caption = #32418#21517'PK'#20445#25252#31561#32423':'
+          Caption = 'Red Name PK Protection Level:'
         end
         object CheckBoxKillHumanWinLevel: TCheckBox
           Left = 8
           Top = 18
           Width = 97
           Height = 17
-          Caption = #26432#20154#22686#21152#31561#32423
+          Caption = 'Incr Lvl of PK'
           TabOrder = 0
           OnClick = CheckBoxKillHumanWinLevelClick
         end
@@ -1527,7 +1580,7 @@ object frmGameConfig: TfrmGameConfig
           Top = 36
           Width = 97
           Height = 17
-          Caption = #34987#26432#20943#31561#32423
+          Caption = 'Killed Minus Lvl'
           TabOrder = 1
           OnClick = CheckBoxKilledLostLevelClick
         end
@@ -1536,7 +1589,7 @@ object frmGameConfig: TfrmGameConfig
           Top = 68
           Width = 97
           Height = 17
-          Caption = #34987#26432#20943#32463#39564
+          Caption = 'Killed Less EXP'
           TabOrder = 2
           OnClick = CheckBoxKilledLostExpClick
         end
@@ -1545,7 +1598,7 @@ object frmGameConfig: TfrmGameConfig
           Top = 52
           Width = 97
           Height = 17
-          Caption = #26432#20154#22686#21152#32463#39564
+          Caption = 'PK Gain EXP'
           TabOrder = 3
           OnClick = CheckBoxKillHumanWinExpClick
         end
@@ -1553,7 +1606,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 16
           Width = 73
-          Height = 21
+          Height = 22
+          Hint = 'Increase Level when commit Murder'
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -1565,7 +1619,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 40
           Width = 73
-          Height = 21
+          Height = 22
+          Hint = 'Reduce Level when PK'#39'd'
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -1577,7 +1632,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 64
           Width = 73
-          Height = 21
+          Height = 22
           Increment = 1000
           MaxValue = 200000000
           MinValue = 1
@@ -1589,7 +1644,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 88
           Width = 73
-          Height = 21
+          Height = 22
           Increment = 1000
           MaxValue = 200000000
           MinValue = 1
@@ -1598,10 +1653,10 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditKillHumanLostExpChange
         end
         object EditHumanLevelDiffer: TSpinEdit
-          Left = 56
+          Left = 48
           Top = 88
           Width = 49
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -1612,12 +1667,16 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxPKLevelProtect: TCheckBox
           Left = 8
           Top = 116
-          Width = 89
+          Width = 98
           Height = 17
           Hint = 
-            #21551#29992'PK'#20445#25252#21151#33021#65292#25171#24320#27492#21151#33021#21518#65292#28216#25103#20013#39640#20110#20445#25252#31561#32423#30340#20154#29289#23558#19981#21487#20197#26432#20302#20110#20445#25252#31561#32423#30340#20154#29289'('#20302#31561#32423#20154#29289#20808#25915#20987#21464#33394#38500#22806')'#65292#20302#20110#20445#25252#31561#32423#30340 +
-            #20154#29289#20063#19981#21487#20197#26432#39640#20110#20445#25252#31561#32423#30340#20154#29289'('#39640#31561#32423#20154#29289#20808#25915#20987#21464#33394#38500#22806')'#12290
-          Caption = #26222#36890'PK'#20445#25252
+            'PK protection function is enabled, turn this feature on, the gam' +
+            'e character is higher than the level of protection will not kill' +
+            ' people below the protection level (low-level characters except ' +
+            'the first attack discoloration), lower than the protection level' +
+            ' of the characters nor can kill higher protection Rating figures' +
+            ' (except for high-grade character first attack discoloration).'
+          Caption = 'Ord PK Protect'
           TabOrder = 9
           OnClick = CheckBoxPKLevelProtectClick
         end
@@ -1625,8 +1684,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 112
           Width = 73
-          Height = 21
-          Hint = #20445#25252#31561#32423#12290#27492#31561#32423#20197#19979#20154#29289#21463#20445#25252#65292#20294#20808#25915#20987#21464#33394#21017#19981#21463#20445#25252#12290
+          Height = 22
+          Hint = 
+            'Protection. This rating following figures protected, but the fir' +
+            'st attack discoloration is unprotected.'
           EditorEnabled = False
           MaxValue = 65535
           MinValue = 1
@@ -1638,10 +1699,13 @@ object frmGameConfig: TfrmGameConfig
           Left = 184
           Top = 136
           Width = 73
-          Height = 21
+          Height = 22
           Hint = 
-            #32418#21517#20154#29289'PK'#20445#25252#65292#39640#20110#20445#25252#31561#32423#30340#32418#21517#20154#29289#19981#21487#20197#26432#20302#20110#20445#25252#31561#32423#26410#32418#21517#20154#29289#12290#20302#20110#20445#25252#31561#32423#26410#32418#21517#30340#20154#29289#20063#19981#21487#20197#26432#39640#20110#20445#25252#31561#32423#30340#32418#21517#20154#29289 +
-            #12290
+            'Red name characters PK protection, higher than the level of prot' +
+            'ection can not kill red name figures below the protection level ' +
+            'is not red name characters. Below the protection level is not re' +
+            'd nor the name of the characters can kill higher level of protec' +
+            'tion red name characters.'
           EditorEnabled = False
           MaxValue = 65535
           MinValue = 1
@@ -1652,61 +1716,61 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object GameSpeedSheet: TTabSheet
-      Caption = #28216#25103#36895#24230
+      Caption = 'Game Speed'
       object GroupBox1: TGroupBox
         Left = 8
         Top = 8
         Width = 97
         Height = 170
-        Caption = #38388#38548#25511#21046'('#27627#31186')'
+        Caption = 'Interval Ctrl (ms)'
         TabOrder = 0
         object Label1: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 22
           Height = 13
-          Caption = #25915#20987':'
+          Caption = 'Attk:'
         end
         object Label2: TLabel
           Left = 11
           Top = 48
-          Width = 27
+          Width = 32
           Height = 13
-          Caption = #39764#27861':'
+          Caption = 'Magic:'
         end
         object Label3: TLabel
           Left = 11
           Top = 72
-          Width = 27
+          Width = 29
           Height = 13
-          Caption = #36305#27493':'
+          Caption = 'Runn:'
         end
         object Label4: TLabel
           Left = 11
           Top = 96
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #36208#36335':'
+          Caption = 'Walk:'
         end
         object Label5: TLabel
-          Left = 11
+          Left = 3
           Top = 143
-          Width = 27
+          Width = 43
           Height = 13
-          Caption = #25366#32905':'
+          Caption = 'DigMeat:'
         end
         object Label6: TLabel
           Left = 11
           Top = 120
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #36716#21521':'
+          Caption = 'Steer:'
         end
         object EditHitIntervalTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1719,7 +1783,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 44
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1732,7 +1796,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 68
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1745,7 +1809,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 92
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1758,7 +1822,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 116
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1771,7 +1835,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 140
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -1786,56 +1850,59 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 81
         Height = 169
-        Caption = #25968#25454#37327#25511#21046
+        Caption = 'Data Controller'
         TabOrder = 1
         object Label7: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 22
           Height = 13
-          Caption = #25915#20987':'
+          Caption = 'Attk:'
         end
         object Label8: TLabel
           Left = 11
           Top = 48
-          Width = 27
+          Width = 32
           Height = 13
-          Caption = #39764#27861':'
+          Caption = 'Magic:'
         end
         object Label9: TLabel
           Left = 11
           Top = 72
-          Width = 27
+          Width = 29
           Height = 13
-          Caption = #36305#27493':'
+          Caption = 'Runn:'
         end
         object Label10: TLabel
           Left = 11
           Top = 96
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #36208#36335':'
+          Caption = 'Walk:'
         end
         object Label11: TLabel
-          Left = 11
+          Left = 3
           Top = 144
-          Width = 27
+          Width = 43
           Height = 13
-          Caption = #25366#32905':'
+          Caption = 'DigMeat:'
         end
         object Label12: TLabel
           Left = 11
           Top = 120
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #36716#21521':'
+          Caption = 'Steer:'
         end
         object EditMaxHitMsgCount: TSpinEdit
           Left = 44
           Top = 20
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1847,8 +1914,11 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 44
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1860,8 +1930,11 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 68
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1873,8 +1946,11 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 92
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1886,8 +1962,11 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 116
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1899,8 +1978,11 @@ object frmGameConfig: TfrmGameConfig
           Left = 44
           Top = 140
           Width = 29
-          Height = 21
-          Hint = #20801#35768#21516#26102#25805#20316#25968#37327#65292#27492#21442#25968#40664#35748#20026'1('#21152#22823#27492#25968#23383#65292#23558#20986#29616#21452#20493#21450#22810#20493#25915#20987')'
+          Height = 22
+          Hint = 
+            'Allows simultaneous operation number, this parameter defaults to' +
+            ' 1 (to increase this number, there will be double and fold attac' +
+            'k)'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -1914,22 +1996,24 @@ object frmGameConfig: TfrmGameConfig
         Top = 72
         Width = 113
         Height = 49
-        Caption = #35013#22791#36895#24230
+        Caption = 'Speed'
         Enabled = False
         TabOrder = 2
         object Label13: TLabel
           Left = 19
           Top = 24
-          Width = 27
+          Width = 34
           Height = 13
-          Caption = #36895#24230':'
+          Caption = 'Speed:'
         end
         object EditItemSpeedTime: TSpinEdit
           Left = 60
           Top = 20
           Width = 45
-          Height = 21
-          Hint = #25511#21046#35013#22791#21152#36895#24773#20917#65292#25968#23383#36234#22823#36234#23485#65292#36234#23567#19987#36234#20005
+          Height = 22
+          Hint = 
+            'Control equipment to accelerate the case, the larger the number,' +
+            ' the wider, more specifically less stringent'
           EditorEnabled = False
           Enabled = False
           MaxValue = 50
@@ -1944,7 +2028,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 163
         Width = 54
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 3
         OnClick = ButtonGameSpeedSaveClick
       end
@@ -1953,15 +2037,18 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 113
         Height = 57
-        Caption = #36895#24230#25511#21046#27169#24335
+        Caption = 'Speed Ctrl Mode'
         TabOrder = 4
         object RadioButtonDelyMode: TRadioButton
           Left = 8
           Top = 16
           Width = 97
           Height = 17
-          Hint = #23558#36229#36807#36895#24230#30340#25805#20316#36827#34892#24310#26102#22788#29702#65292#20197#20445#25345#27491#24120#36895#24230#65292#20351#29992#27492#31181#27169#24335#23458#25143#31471#20351#29992#21152#36895#23558#36896#25104#21345#30340#29616#35937#12290
-          Caption = #20572#39039#25805#20316#22788#29702
+          Hint = 
+            'Will exceed the speed of operation of any delay in order to main' +
+            'tain normal speed, the use of this model will cause clients to u' +
+            'se the acceleration phenomenon card.'
+          Caption = 'Handling Pause'
           TabOrder = 0
           OnClick = RadioButtonDelyModeClick
         end
@@ -1970,32 +2057,35 @@ object frmGameConfig: TfrmGameConfig
           Top = 32
           Width = 97
           Height = 17
-          Hint = #23558#36229#36807#36895#24230#30340#25805#20316#30452#25509#36807#28388#22788#29702#65292#20002#24323#36229#36895#24230#30340#25805#20316#65292#20351#29992#27492#31181#27169#24335#23458#25143#31471#20351#29992#21152#36895#23558#36896#25104#21345#20992#65292#21453#24377#30340#29616#35937#12290
-          Caption = #21453#24377#21345#20992#22788#29702
+          Hint = 
+            'Will exceed the speed of operation of direct filtration treatmen' +
+            't, discard super speed operation, the use of this model will res' +
+            'ult in accelerated client card knife, a rebound phenomenon.'
+          Caption = 'Bounce Card '
           TabOrder = 1
           OnClick = RadioButtonFilterModeClick
         end
       end
       object GroupBox7: TGroupBox
         Left = 200
-        Top = 112
+        Top = 96
         Width = 129
         Height = 81
-        Caption = #20154#29289#24367#33136#25511#21046
+        Caption = 'PPL Over Control'
         TabOrder = 5
         Visible = False
         object Label22: TLabel
           Left = 9
           Top = 22
-          Width = 51
+          Width = 48
           Height = 13
-          Caption = #20572#30041#26102#38388':'
+          Caption = 'Res Time:'
         end
         object EditStruckTime: TSpinEdit
           Left = 66
           Top = 18
           Width = 53
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 1000
           MinValue = 10
@@ -2006,9 +2096,9 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxDisableStruck: TCheckBox
           Left = 9
           Top = 43
-          Width = 105
+          Width = 117
           Height = 17
-          Caption = #20154#29289#26080#24367#33136#21160#20316
+          Caption = 'PPL bending Action'
           Enabled = False
           TabOrder = 1
           OnClick = CheckBoxDisableStruckClick
@@ -2018,40 +2108,42 @@ object frmGameConfig: TfrmGameConfig
           Top = 59
           Width = 105
           Height = 17
-          Caption = #20154#29289#33258#24049#19981#24367#33136
+          Caption = 'PPL do not stoop'
           Enabled = False
           TabOrder = 2
           OnClick = CheckBoxDisableSelfStruckClick
         end
       end
       object GroupBox15: TGroupBox
-        Left = 200
-        Top = 8
-        Width = 153
+        Left = 199
+        Top = 0
+        Width = 163
         Height = 98
-        Caption = #25805#20316#25968#25454#25511#21046
+        Caption = 'Operation Data Control'
         TabOrder = 6
         object Label38: TLabel
           Left = 11
           Top = 72
-          Width = 27
+          Width = 31
           Height = 13
-          Caption = #27425#25968':'
+          Caption = 'Views:'
         end
         object Label142: TLabel
-          Left = 75
+          Left = 88
           Top = 72
-          Width = 27
+          Width = 25
           Height = 13
-          Caption = #36807#28388':'
+          Caption = 'Filter:'
           Visible = False
         end
         object EditOverSpeedKickCount: TSpinEdit
           Left = 44
           Top = 68
           Width = 46
-          Height = 21
-          Hint = #36229#36895#27425#25968#65292#36229#25351#23450#27425#25968#21017#34987#36386#19979#32447#12290
+          Height = 22
+          Hint = 
+            'Speeding the number of ultra-specified number were kicked off th' +
+            'e assembly line.'
           EditorEnabled = False
           MaxValue = 50
           MinValue = 1
@@ -2062,19 +2154,22 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxboKickOverSpeed: TCheckBox
           Left = 8
           Top = 47
-          Width = 137
+          Width = 147
           Height = 17
-          Hint = #23558#36229#36895#25805#20316#30340#20154#29289#36386#19979#32447#12290
-          Caption = #25481#32447#22788#29702#36229#36895#25805#20316
+          Hint = 'People will kick off the assembly line speed operation.'
+          Caption = 'Dropped Speed Operation'
           TabOrder = 1
           OnClick = CheckBoxboKickOverSpeedClick
         end
         object EditDropOverSpeed: TSpinEdit
-          Left = 104
+          Left = 114
           Top = 68
           Width = 41
-          Height = 21
-          Hint = #36807#28388#36229#36895#25805#20316#25968#25454#65292#25968#23383#36234#23567#36234#20005#65292#36807#28388#21518#23458#25143#31471#20250#20986#29616#21345#20992#25110#21453#24377#29616#35937#12290'('#27627#31186')'
+          Height = 22
+          Hint = 
+            'Filtering overspeed operation data, the smaller the number the m' +
+            'ore stringent, the client will appear card knife or a rebound ph' +
+            'enomenon after filtration. (Ms)'
           EditorEnabled = False
           Increment = 10
           MaxValue = 1000
@@ -2087,10 +2182,12 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxSpellSendUpdateMsg: TCheckBox
           Left = 8
           Top = 15
-          Width = 129
+          Width = 155
           Height = 17
-          Hint = #25511#21046#20154#29289#21516#26102#30456#21516#39764#27861#25805#20316#25968#25454#65292#21516#26102#21482#33021#26377#19968#20010#39764#27861#25915#20987#25805#20316
-          Caption = #39764#27861#25805#20316#25968#25454#37327#25511#21046
+          Hint = 
+            'Control characters while the same magic manipulate data, while o' +
+            'nly one magic attack operations'
+          Caption = 'Data Ctrl Amount Magic'
           Enabled = False
           TabOrder = 3
           OnClick = CheckBoxSpellSendUpdateMsgClick
@@ -2098,10 +2195,12 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxActionSendActionMsg: TCheckBox
           Left = 8
           Top = 31
-          Width = 129
+          Width = 152
           Height = 17
-          Hint = #25511#21046#20154#29289#21516#26102#30456#21516#25915#20987#25805#20316#25968#25454#65292#21516#26102#21482#33021#26377#19968#20010#39764#27861#25915#20987#25805#20316
-          Caption = #25915#20987#25805#20316#25968#25454#37327#25511#21046
+          Hint = 
+            'Control characters operate simultaneously attack the same data, ' +
+            'but only have a magic attack operations'
+          Caption = 'Data amount Ctrl Atk Operation'
           Enabled = False
           TabOrder = 4
           OnClick = CheckBoxActionSendActionMsgClick
@@ -2112,7 +2211,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 163
         Width = 54
         Height = 25
-        Caption = #40664#35748'(&D)'
+        Caption = 'Default(&D)'
         TabOrder = 7
         OnClick = ButtonGameSpeedDefaultClick
       end
@@ -2121,37 +2220,37 @@ object frmGameConfig: TfrmGameConfig
         Top = 130
         Width = 113
         Height = 25
-        Caption = #32452#21512#36895#24230#35774#32622'(&A)'
+        Caption = 'Comb Speed Setting(&A)'
         Enabled = False
         TabOrder = 8
         OnClick = ButtonActionSpeedConfigClick
       end
       object GroupBox78: TGroupBox
-        Left = 199
-        Top = 114
-        Width = 154
-        Height = 79
-        Caption = #36895#24230#21442#25968#35774#32622'('#27627#31186')'
+        Left = 8
+        Top = 178
+        Width = 270
+        Height = 53
+        Caption = 'Speed Parameter Settings(ms)'
         TabOrder = 9
         object Label151: TLabel
-          Left = 11
-          Top = 48
-          Width = 51
+          Left = 136
+          Top = 24
+          Width = 70
           Height = 13
-          Caption = #39764#27861#38388#38548':'
+          Caption = 'Magic Interval:'
         end
         object Label152: TLabel
           Left = 11
           Top = 24
-          Width = 51
+          Width = 50
           Height = 13
-          Caption = #25915#20987#38388#38548':'
+          Caption = 'Cooldown:'
         end
         object EditHitFrameTime: TSpinEdit
           Left = 73
           Top = 20
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -2161,10 +2260,10 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditHitFrameTimeChange
         end
         object EditMagicHitFrameTime: TSpinEdit
-          Left = 73
-          Top = 44
+          Left = 206
+          Top = 20
           Width = 45
-          Height = 21
+          Height = 22
           EditorEnabled = False
           Increment = 10
           MaxValue = 2000
@@ -2176,88 +2275,96 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet10: TTabSheet
-      Caption = #29366#24577#25511#21046
+      Caption = 'State Control'
       ImageIndex = 13
       object ButtonCharStatusSave: TButton
         Left = 411
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 0
         OnClick = ButtonCharStatusSaveClick
       end
       object GroupBox72: TGroupBox
-        Left = 8
-        Top = 8
-        Width = 129
+        Left = 3
+        Top = 3
+        Width = 142
         Height = 89
-        Caption = #40635#30201#25511#21046
+        Caption = 'Paralysis Control'
         TabOrder = 1
         object CheckBoxParalyCanRun: TCheckBox
           Left = 8
           Top = 16
-          Width = 73
+          Width = 97
           Height = 17
-          Hint = #20154#29289#34987#40635#30201#21518#26159#21542#20801#35768#36305#21160#65292#38057#19978#20026#20801#35768#36305#21160
-          Caption = #20801#35768#36305#21160
+          Hint = 
+            'People are allowed to run after being paralyzed on the hook to a' +
+            'llow running'
+          Caption = 'Allow Running'
           TabOrder = 0
           OnClick = CheckBoxParalyCanRunClick
         end
         object CheckBoxParalyCanWalk: TCheckBox
           Left = 8
           Top = 32
-          Width = 73
+          Width = 129
           Height = 17
-          Hint = #20154#29289#34987#40635#30201#21518#26159#21542#20801#35768#36305#21160#65292#38057#19978#20026#20801#35768#36208#21160
-          Caption = #20801#35768#36208#21160
+          Hint = 
+            'People are allowed to run after being paralyzed on the hook to a' +
+            'llow the move'
+          Caption = 'Allow to Move Around'
           TabOrder = 1
           OnClick = CheckBoxParalyCanWalkClick
         end
         object CheckBoxParalyCanHit: TCheckBox
           Left = 8
           Top = 48
-          Width = 73
+          Width = 97
           Height = 17
-          Hint = #20154#29289#34987#40635#30201#21518#26159#21542#20801#35768#36305#21160#65292#38057#19978#20026#20801#35768#25915#20987
-          Caption = #20801#35768#25915#20987
+          Hint = 
+            'Whether to allow the running after the figure was paralyzed on t' +
+            'he hook for allowing the attack'
+          Caption = 'Allow to Attack'
           TabOrder = 2
           OnClick = CheckBoxParalyCanHitClick
         end
         object CheckBoxParalyCanSpell: TCheckBox
           Left = 8
           Top = 64
-          Width = 73
+          Width = 113
           Height = 17
-          Hint = #20154#29289#34987#40635#30201#21518#26159#21542#20801#35768#36305#21160#65292#38057#19978#20026#20801#35768#39764#27861
-          Caption = #20801#35768#39764#27861
+          Hint = 
+            'People are allowed to run after being paralyzed on the hook to a' +
+            'llow magic'
+          Caption = 'Allow Magic Attack'
           TabOrder = 3
           OnClick = CheckBoxParalyCanSpellClick
         end
       end
     end
     object ExpSheet: TTabSheet
-      Caption = #21319#32423#32463#39564
+      Caption = 'Upgrade EXP'
       ImageIndex = 1
       object GroupBox8: TGroupBox
         Left = 184
         Top = 8
         Width = 145
         Height = 89
-        Caption = #26432#24618#32463#39564
+        Caption = 'Shaguai EXP'
         TabOrder = 0
         object Label23: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 66
           Height = 13
-          Caption = #20493#29575':'
+          Caption = 'Magnification:'
         end
         object EditKillMonExpMultiple: TSpinEdit
-          Left = 44
+          Left = 83
           Top = 20
           Width = 53
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 2000
           MinValue = 1
@@ -2270,16 +2377,18 @@ object frmGameConfig: TfrmGameConfig
           Top = 45
           Width = 126
           Height = 17
-          Caption = #39640#31561#32423#26432#24618#32463#39564#19981#21464
+          Hint = 'Experience the same high level of killing'
+          Caption = 'EXP same Hi-Lvl Killin'
           TabOrder = 1
           OnClick = CheckBoxHighLevelKillMonFixExpClick
         end
         object CheckBoxHighLevelGroupFixExp: TCheckBox
           Left = 11
           Top = 64
-          Width = 126
+          Width = 131
           Height = 17
-          Caption = #39640#31561#32423#32452#38431#32463#39564#19981#21464
+          Hint = 'Experience the same high level of killing'
+          Caption = 'EXP same Hi-Lvl Team'
           TabOrder = 2
           OnClick = CheckBoxHighLevelGroupFixExpClick
         end
@@ -2289,7 +2398,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 1
         OnClick = ButtonExpSaveClick
       end
@@ -2298,14 +2407,14 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 169
         Height = 200
-        Caption = #21319#32423#32463#39564
+        Caption = 'Upgrade Experience'
         TabOrder = 2
         object Label37: TLabel
           Left = 11
           Top = 176
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #35745#21010':'
+          Caption = 'Plan:'
         end
         object ComboBoxLevelExp: TComboBox
           Left = 48
@@ -3340,28 +3449,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 90
         Width = 143
         Height = 89
-        Caption = '1000'#32423#20197#21518#32463#39564#37197#21046
+        Caption = 'After XP Prep of 1000'
         TabOrder = 3
         object Label15: TLabel
           Left = 6
           Top = 40
-          Width = 51
+          Width = 53
           Height = 13
-          Caption = #22522#26412#32463#39564':'
+          Caption = 'Basic EXP:'
         end
         object Label145: TLabel
           Left = 6
           Top = 64
-          Width = 51
+          Width = 49
           Height = 13
-          Caption = #22686#21152#32463#39564':'
+          Caption = 'Gain EXP:'
         end
         object CheckBoxFixExp: TCheckBox
           Left = 6
           Top = 16
           Width = 128
           Height = 17
-          Caption = #24341#25806#20869#37096#22266#23450#32463#39564
+          Caption = 'Internal Eng Fixed XP'
           TabOrder = 0
           OnClick = CheckBoxFixExpClick
         end
@@ -3369,8 +3478,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 62
           Top = 36
           Width = 76
-          Height = 21
-          Hint = #20154#29289#22522#26412#32463#39564
+          Height = 22
+          Hint = 'People basic experience'
           MaxValue = 2100000000
           MinValue = 0
           TabOrder = 1
@@ -3381,8 +3490,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 62
           Top = 62
           Width = 76
-          Height = 21
-          Hint = #27599#27425#21319#32423#22686#21152#30340#32463#39564
+          Height = 22
+          Hint = 'Experience increments upgrade'
           MaxValue = 2100000000
           MinValue = 0
           TabOrder = 2
@@ -3395,21 +3504,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 143
         Height = 75
-        Caption = #31561#32423#38480#21046
+        Caption = 'Level Limit'
         TabOrder = 4
         object Label146: TLabel
           Left = 8
           Top = 24
-          Width = 51
+          Width = 56
           Height = 13
-          Caption = #38480#21046#31561#32423':'
+          Caption = 'Restrict Lvl:'
         end
         object Label147: TLabel
           Left = 8
           Top = 48
-          Width = 51
+          Width = 56
           Height = 13
-          Caption = #38480#21046#32463#39564':'
+          Caption = 'Restrict XP:'
         end
         object Label155: TLabel
           Left = 120
@@ -3422,8 +3531,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 64
           Top = 20
           Width = 65
-          Height = 21
-          Hint = #31561#32423#36229#36807#35774#32622#30340#31561#32423#26102#65292#24471#21040#30340#32463#39564#20540#20026#19979#38754#30340#35774#32622#30340#20540
+          Height = 22
+          Hint = 
+            'When the level exceeds the level set value, the value obtained b' +
+            'y the following set of experiences'
           EditorEnabled = False
           MaxValue = 65535
           MinValue = 1
@@ -3435,8 +3546,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 64
           Top = 43
           Width = 50
-          Height = 21
-          Hint = #38480#21046#36798#21040#25351#23450#31561#32423#21518#26432#24618#33719#24471#30340#32463#39564#27604#20363
+          Height = 22
+          Hint = 
+            'After the limit is reached proportions specified level of experi' +
+            'ence gained Shaguai'
           EditorEnabled = False
           MaxValue = 100
           MinValue = 0
@@ -3450,29 +3563,31 @@ object frmGameConfig: TfrmGameConfig
         Top = 99
         Width = 145
         Height = 94
-        Caption = #20302#31561#32423#26432#24618#32463#39564
+        Caption = 'EXP Low-Level '
         TabOrder = 5
         object Label158: TLabel
           Left = 6
           Top = 40
-          Width = 75
+          Width = 77
           Height = 13
-          Caption = #20154#29289#27604#24618#29289#20302':'
+          Caption = 'Lowe then Mon:'
         end
         object Label159: TLabel
           Left = 6
           Top = 64
-          Width = 75
+          Width = 86
           Height = 13
-          Caption = #33719#24471#32463#39564#27604#20363':'
+          Caption = 'Proport Gain EXP:'
         end
         object CheckBoxLowLevelKillMonContainExp: TCheckBox
           Left = 6
           Top = 16
-          Width = 128
+          Width = 136
           Height = 17
-          Hint = #26159#21542#24320#21551#24403#20154#29289#31561#32423#20302#20110#24618#29289#25351#23450#31561#32423#26102#65292#33719#24471#32463#39564#27604#20363#23558#26356#25913#65281
-          Caption = #21551#29992#20302#31561#32423#26432#24618#25511#21046
+          Hint = 
+            'Whether to open when the monster character level is below the sp' +
+            'ecified level of experience to get the ratio changes!'
+          Caption = 'Enable Low-Lvl Kill Ctrl'
           TabOrder = 0
           OnClick = CheckBoxLowLevelKillMonContainExpClick
         end
@@ -3480,7 +3595,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 88
           Top = 36
           Width = 51
-          Height = 21
+          Height = 22
           MaxValue = 65535
           MinValue = 0
           TabOrder = 1
@@ -3491,8 +3606,10 @@ object frmGameConfig: TfrmGameConfig
           Left = 88
           Top = 61
           Width = 51
-          Height = 21
-          Hint = #24403#21069#35774#32622#25968#20540#38500#20197'100'#20026#23454#38469#20493#25968#65292'100 = 1'#20493'('#20445#25345#19981#21464')'
+          Height = 22
+          Hint = 
+            'The current setting value divided by 100 is the actual multiple,' +
+            ' 100 = 1 times (unchanged)'
           MaxValue = 65535
           MinValue = 0
           TabOrder = 2
@@ -3502,48 +3619,48 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object CastleSheet: TTabSheet
-      Caption = #22478#22561#21442#25968
+      Caption = 'Castle Parameters'
       ImageIndex = 3
       object GroupBox9: TGroupBox
         Left = 8
         Top = 8
         Width = 161
         Height = 113
-        Caption = #36153#29992#25910#20837
+        Caption = 'Fee Income'
         TabOrder = 0
         object Label24: TLabel
           Left = 11
           Top = 16
-          Width = 51
+          Width = 60
           Height = 13
-          Caption = #32500#20462#22478#38376':'
+          Caption = 'Repair Gate:'
         end
         object Label25: TLabel
           Left = 11
           Top = 40
-          Width = 51
+          Width = 58
           Height = 13
-          Caption = #32500#20462#22478#22681':'
+          Caption = 'Repair Wall:'
         end
         object Label26: TLabel
           Left = 11
           Top = 64
-          Width = 51
+          Width = 39
           Height = 13
-          Caption = #38599#29992#24339#31661':'
+          Caption = 'Archers:'
         end
         object Label27: TLabel
           Left = 11
           Top = 88
-          Width = 51
+          Width = 37
           Height = 13
-          Caption = #38599#29992#21355#22763':'
+          Caption = 'Guards:'
         end
         object EditRepairDoorPrice: TSpinEdit
           Left = 72
           Top = 12
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3555,7 +3672,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 72
           Top = 36
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3567,7 +3684,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 72
           Top = 60
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3579,7 +3696,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 72
           Top = 84
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3593,27 +3710,27 @@ object frmGameConfig: TfrmGameConfig
         Top = 125
         Width = 161
         Height = 68
-        Caption = #37329#24065#19978#38480
+        Caption = 'Gold Cap'
         TabOrder = 1
         object Label31: TLabel
           Left = 11
           Top = 20
-          Width = 51
+          Width = 32
           Height = 13
-          Caption = #22478#20869#36164#37329':'
+          Caption = 'Funds:'
         end
         object Label32: TLabel
           Left = 11
           Top = 44
-          Width = 51
+          Width = 60
           Height = 13
-          Caption = #19968#22825#25910#20837':'
+          Caption = 'Day Income:'
         end
         object EditCastleGoldMax: TSpinEdit
           Left = 72
           Top = 16
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3625,7 +3742,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 72
           Top = 40
           Width = 81
-          Height = 21
+          Height = 22
           Increment = 10000
           MaxValue = 100000000
           MinValue = 10000
@@ -3639,34 +3756,34 @@ object frmGameConfig: TfrmGameConfig
         Top = 58
         Width = 121
         Height = 87
-        Caption = #22238#22478#28857
+        Caption = 'Back to City'
         TabOrder = 2
         object Label28: TLabel
           Left = 11
           Top = 16
-          Width = 39
+          Width = 24
           Height = 13
-          Caption = #22320#22270#21495':'
+          Caption = 'Map:'
         end
         object Label29: TLabel
           Left = 11
           Top = 40
-          Width = 37
+          Width = 41
           Height = 13
-          Caption = #24231#26631' X:'
+          Caption = 'Coord X:'
         end
         object Label30: TLabel
           Left = 11
           Top = 64
-          Width = 37
+          Width = 41
           Height = 13
-          Caption = #24231#26631' Y:'
+          Caption = 'Coord Y:'
         end
         object EditCastleHomeX: TSpinEdit
           Left = 56
           Top = 36
           Width = 57
-          Height = 21
+          Height = 22
           MaxValue = 1000
           MinValue = 1
           TabOrder = 0
@@ -3677,7 +3794,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 56
           Top = 60
           Width = 57
-          Height = 21
+          Height = 22
           MaxValue = 1000
           MinValue = 1
           TabOrder = 1
@@ -3700,27 +3817,27 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 113
         Height = 63
-        Caption = #25915#22478#21306#22495#33539#22260
+        Caption = 'Siege Regional'
         TabOrder = 3
         object Label34: TLabel
           Left = 11
           Top = 16
-          Width = 37
+          Width = 41
           Height = 13
-          Caption = #24231#26631' X:'
+          Caption = 'Coord X:'
         end
         object Label35: TLabel
           Left = 11
           Top = 40
-          Width = 37
+          Width = 41
           Height = 13
-          Caption = #24231#26631' Y:'
+          Caption = 'Coord Y:'
         end
         object EditWarRangeX: TSpinEdit
           Left = 56
           Top = 12
           Width = 49
-          Height = 21
+          Height = 22
           MaxValue = 1000
           MinValue = 1
           TabOrder = 0
@@ -3731,7 +3848,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 56
           Top = 36
           Width = 49
-          Height = 21
+          Height = 22
           MaxValue = 1000
           MinValue = 1
           TabOrder = 1
@@ -3744,7 +3861,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 4
         OnClick = ButtonCastleSaveClick
       end
@@ -3753,20 +3870,20 @@ object frmGameConfig: TfrmGameConfig
         Top = 74
         Width = 113
         Height = 63
-        Caption = #31246#25910
+        Caption = 'Tax'
         TabOrder = 5
         object Label36: TLabel
           Left = 11
           Top = 40
-          Width = 39
+          Width = 26
           Height = 13
-          Caption = #31246#25910#29575':'
+          Caption = 'Rate:'
         end
         object EditTaxRate: TSpinEdit
           Left = 56
           Top = 36
           Width = 49
-          Height = 21
+          Height = 22
           MaxValue = 1000
           MinValue = 1
           TabOrder = 0
@@ -3776,9 +3893,9 @@ object frmGameConfig: TfrmGameConfig
         object CheckBoxGetAllNpcTax: TCheckBox
           Left = 11
           Top = 13
-          Width = 94
+          Width = 99
           Height = 17
-          Caption = #25152#26377#21830#20154#20132#31246
+          Caption = 'All NPC pay Tax'
           TabOrder = 1
           OnClick = CheckBoxGetAllNpcTaxClick
         end
@@ -3788,14 +3905,14 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 121
         Height = 44
-        Caption = #22478#22561#21517#31216
+        Caption = 'Castle Name'
         TabOrder = 6
         object Label33: TLabel
           Left = 8
           Top = 20
-          Width = 27
+          Width = 31
           Height = 13
-          Caption = #21517#31216':'
+          Caption = 'Name:'
         end
         object EditCastleName: TEdit
           Left = 40
@@ -3803,7 +3920,7 @@ object frmGameConfig: TfrmGameConfig
           Width = 73
           Height = 21
           TabOrder = 0
-          Text = #27801#24052#20811
+          Text = 'Sabuk'
           OnChange = EditCastleNameChange
         end
       end
@@ -3812,21 +3929,23 @@ object frmGameConfig: TfrmGameConfig
         Top = 146
         Width = 113
         Height = 47
-        Caption = #25104#21592#25240#25187
+        Caption = 'Member Discount'
         TabOrder = 7
         object Label107: TLabel
           Left = 11
           Top = 16
-          Width = 39
+          Width = 26
           Height = 13
-          Caption = #25240#25187#29575':'
+          Caption = 'Rate:'
         end
         object EditCastleMemberPriceRate: TSpinEdit
           Left = 56
           Top = 12
           Width = 49
-          Height = 21
-          Hint = #22478#22561#34892#20250#25104#21592#36141#20080#29289#21697#20215#26684#25240#25187#12290#25968#23383#20026#30334#20998#20043#20960#12290
+          Height = 22
+          Hint = 
+            'Castle guild members to purchase items price discounts. Digital ' +
+            'is a few percent.'
           MaxValue = 200
           MinValue = 10
           TabOrder = 0
@@ -3836,35 +3955,35 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet5: TTabSheet
-      Caption = #20449#24687#25511#21046
+      Caption = 'Information Control'
       ImageIndex = 8
       object GroupBox36: TGroupBox
         Left = 8
         Top = 8
         Width = 129
         Height = 73
-        Caption = #21457#36865#20449#24687#38271#24230
+        Caption = 'Send Msg Length'
         TabOrder = 0
         object Label71: TLabel
           Left = 11
           Top = 24
-          Width = 51
+          Width = 48
           Height = 13
-          Caption = #32842#22825#20449#24687':'
+          Caption = 'Chat Msg:'
         end
         object Label72: TLabel
           Left = 11
           Top = 48
           Width = 51
           Height = 13
-          Caption = #24191#25773#20449#24687':'
+          Caption = 'Broadcast:'
         end
         object EditSayMsgMaxLen: TSpinEdit
           Left = 68
           Top = 20
           Width = 53
-          Height = 21
-          Hint = #21457#36865#25991#23383#20449#24687#26368#22823#38271#24230#12290
+          Height = 22
+          Hint = 'The maximum length of a text message sent.'
           MaxValue = 255
           MinValue = 1
           TabOrder = 0
@@ -3875,8 +3994,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 68
           Top = 44
           Width = 53
-          Height = 21
-          Hint = 'GM'#21457#32418#33394#24191#25773#25991#23383#26368#22823#38271#24230#12290
+          Height = 22
+          Hint = 'GM maximum length of the red teletext.'
           MaxValue = 255
           MinValue = 1
           TabOrder = 1
@@ -3889,21 +4008,23 @@ object frmGameConfig: TfrmGameConfig
         Top = 88
         Width = 129
         Height = 49
-        Caption = #20801#35768#21898#35805#31561#32423
+        Caption = 'Allow Shout Level'
         TabOrder = 1
         object Label73: TLabel
           Left = 11
           Top = 24
-          Width = 51
+          Width = 29
           Height = 13
-          Caption = #20154#29289#31561#32423':'
+          Caption = 'Level:'
         end
         object EditCanShoutMsgLevel: TSpinEdit
           Left = 68
           Top = 20
           Width = 53
-          Height = 21
-          Hint = #20801#35768#21898#35805#31561#32423#65292#20154#29289#24517#39035#21040#36798#25351#23450#31561#32423#21518#25165#21487#20197#21898#35805#12290
+          Height = 22
+          Hint = 
+            'Before allowing propaganda levels, characters must reach the spe' +
+            'cified level can be propaganda.'
           MaxValue = 65535
           MinValue = 1
           TabOrder = 0
@@ -3916,22 +4037,24 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 137
         Height = 73
-        Caption = #21457#36865#24191#25773#20449#24687
+        Caption = 'BroadCast Info transmitted'
         TabOrder = 2
         object Label75: TLabel
           Left = 11
           Top = 40
-          Width = 51
+          Width = 52
           Height = 13
-          Caption = #21457#36865#21629#20196':'
+          Caption = 'Send Cmd:'
         end
         object CheckBoxShutRedMsgShowGMName: TCheckBox
           Left = 8
           Top = 16
           Width = 105
           Height = 17
-          Hint = 'GM'#21457#36865#32418#33394#24191#25773#25991#20214#20449#24687#26102#26159#21542#26174#31034#20154#29289#30340#21517#23383#12290
-          Caption = #26174#31034#20154#29289#21517#31216
+          Hint = 
+            'Whether to display the names of the characters in red when GM se' +
+            'nt a broadcast file information.'
+          Caption = 'Show Character'
           TabOrder = 0
           OnClick = CheckBoxShutRedMsgShowGMNameClick
         end
@@ -3951,57 +4074,57 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 3
         OnClick = ButtonMsgSaveClick
       end
       object GroupBox68: TGroupBox
         Left = 143
         Top = 88
-        Width = 137
+        Width = 154
         Height = 105
-        Caption = #21457#36865#20449#24687#36895#24230#25511#21046
+        Caption = 'Send Msg Speed Ctrl'
         TabOrder = 4
         object Label135: TLabel
           Left = 11
           Top = 24
-          Width = 51
+          Width = 62
           Height = 13
-          Caption = #21457#36865#38388#38548':'
+          Caption = 'Transmisson:'
         end
         object Label138: TLabel
           Left = 11
           Top = 48
-          Width = 51
+          Width = 68
           Height = 13
-          Caption = #21457#36865#25968#37327':'
+          Caption = 'Send Number:'
         end
         object Label139: TLabel
           Left = 11
           Top = 72
-          Width = 51
+          Width = 49
           Height = 13
-          Caption = #31105#35328#26102#38388':'
+          Caption = 'Gag Time:'
         end
         object Label140: TLabel
-          Left = 115
+          Left = 131
           Top = 24
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object Label141: TLabel
-          Left = 115
-          Top = 72
-          Width = 12
+          Left = 131
+          Top = 71
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object EditSayMsgTime: TSpinEdit
-          Left = 68
+          Left = 79
           Top = 20
           Width = 45
-          Height = 21
+          Height = 22
           MaxValue = 1000000
           MinValue = 1
           TabOrder = 0
@@ -4009,10 +4132,10 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditSayMsgTimeChange
         end
         object EditSayMsgCount: TSpinEdit
-          Left = 68
-          Top = 44
+          Left = 79
+          Top = 43
           Width = 45
-          Height = 21
+          Height = 22
           MaxValue = 255
           MinValue = 1
           TabOrder = 1
@@ -4020,10 +4143,10 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditSayMsgCountChange
         end
         object EditDisableSayMsgTime: TSpinEdit
-          Left = 68
+          Left = 79
           Top = 68
           Width = 45
-          Height = 21
+          Height = 22
           MaxValue = 100000
           MinValue = 1
           TabOrder = 2
@@ -4036,29 +4159,31 @@ object frmGameConfig: TfrmGameConfig
         Top = 144
         Width = 129
         Height = 49
-        Caption = #26174#31034#21069#32512#20449#24687
+        Caption = 'Show Prefix Info'
         TabOrder = 5
         object CheckBoxShowPreFixMsg: TCheckBox
           Left = 8
           Top = 16
           Width = 105
           Height = 17
-          Hint = #28216#25103#20013#32842#22825#26694#20013#26174#31034#30340#20449#24687#26159#21542#26174#31034#21069#32512#20449#24687#12290
-          Caption = #26174#31034#20449#24687#30340#21069#32512
+          Hint = 
+            'Information-game chat box displays whether to display the prefix' +
+            ' information.'
+          Caption = 'Show Prefix'
           TabOrder = 0
           OnClick = CheckBoxShowPreFixMsgClick
         end
       end
     end
     object TabSheet8: TTabSheet
-      Caption = #25991#23383#39068#33394
+      Caption = 'Text Color'
       ImageIndex = 11
       object ButtonMsgColorSave: TButton
         Left = 411
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 0
         OnClick = ButtonMsgColorSaveClick
       end
@@ -4067,21 +4192,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 105
         Height = 63
-        Caption = #32842#22825#25991#23383
+        Caption = 'Chat'
         TabOrder = 1
         object Label108: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label109: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabeltHearMsgFColor: TLabel
           Left = 88
@@ -4105,7 +4230,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4117,7 +4242,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4131,21 +4256,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 75
         Width = 105
         Height = 63
-        Caption = #31169#32842#25991#23383
+        Caption = 'Whisper'
         TabOrder = 2
         object Label110: TLabel
-          Left = 11
-          Top = 16
-          Width = 27
+          Left = 7
+          Top = 17
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label111: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelWhisperMsgFColor: TLabel
           Left = 88
@@ -4169,7 +4294,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4181,7 +4306,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4195,21 +4320,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 143
         Width = 105
         Height = 63
-        Caption = 'GM'#31169#32842#25991#23383
+        Caption = 'GM Whisper'
         TabOrder = 3
         object Label112: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label113: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelGMWhisperMsgFColor: TLabel
           Left = 88
@@ -4233,7 +4358,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4245,7 +4370,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4259,21 +4384,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 105
         Height = 63
-        Caption = #32418#33394#25552#31034#25991#23383
+        Caption = 'Red Prompt'
         TabOrder = 4
         object Label116: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label117: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelRedMsgFColor: TLabel
           Left = 88
@@ -4297,7 +4422,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4309,7 +4434,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4323,21 +4448,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 75
         Width = 105
         Height = 63
-        Caption = #32511#33394#25552#31034#25991#23383
+        Caption = 'Green Prompt'
         TabOrder = 5
         object Label120: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label121: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelGreenMsgFColor: TLabel
           Left = 88
@@ -4361,7 +4486,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4373,7 +4498,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4387,21 +4512,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 143
         Width = 105
         Height = 63
-        Caption = #34013#33394#25552#31034#25991#23383
+        Caption = 'Blue Prompt'
         TabOrder = 6
         object Label124: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label125: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelBlueMsgFColor: TLabel
           Left = 88
@@ -4425,7 +4550,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4437,7 +4562,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4451,21 +4576,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 105
         Height = 63
-        Caption = #21898#35805#25991#23383
+        Caption = 'Shout'
         TabOrder = 7
         object Label128: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label129: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelCryMsgFColor: TLabel
           Left = 88
@@ -4489,7 +4614,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4501,7 +4626,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4515,21 +4640,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 75
         Width = 105
         Height = 63
-        Caption = #34892#20250#32842#22825#25991#23383
+        Caption = 'Guild'
         TabOrder = 8
         object Label132: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label133: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelGuildMsgFColor: TLabel
           Left = 88
@@ -4553,7 +4678,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4565,7 +4690,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4579,21 +4704,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 143
         Width = 105
         Height = 63
-        Caption = #32534#32452#32842#22825#25991#23383
+        Caption = 'Group'
         TabOrder = 9
         object Label136: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label137: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelGroupMsgFColor: TLabel
           Left = 88
@@ -4617,7 +4742,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4629,7 +4754,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4643,21 +4768,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 105
         Height = 63
-        Caption = #31069#31119#35821#25991#23383
+        Caption = 'Greetings'
         TabOrder = 10
         object Label122: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label123: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelCustMsgFColor: TLabel
           Left = 88
@@ -4681,7 +4806,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4693,7 +4818,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 36
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4712,16 +4837,16 @@ object frmGameConfig: TfrmGameConfig
         object Label149: TLabel
           Left = 11
           Top = 16
-          Width = 27
+          Width = 24
           Height = 13
-          Caption = #25991#23383':'
+          Caption = 'Text:'
         end
         object Label150: TLabel
           Left = 11
           Top = 40
-          Width = 27
+          Width = 18
           Height = 13
-          Caption = #32972#26223':'
+          Caption = 'BG:'
         end
         object LabelCudtMsgFColor: TLabel
           Left = 88
@@ -4745,7 +4870,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 12
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4757,7 +4882,7 @@ object frmGameConfig: TfrmGameConfig
           Left = 40
           Top = 37
           Width = 41
-          Height = 21
+          Height = 22
           EditorEnabled = False
           MaxValue = 255
           MinValue = 0
@@ -4768,35 +4893,36 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet6: TTabSheet
-      Caption = #26102#38388#25511#21046
+      Caption = 'Time Control'
       ImageIndex = 9
       object GroupBox39: TGroupBox
         Left = 8
         Top = 8
         Width = 105
         Height = 49
-        Caption = #30003#35831#25915#22478#22825#25968
+        Caption = 'Siege Days(APP)'
         TabOrder = 0
         object Label74: TLabel
           Left = 11
           Top = 24
           Width = 27
           Height = 13
-          Caption = #22825#25968':'
+          Caption = 'Days:'
         end
         object Label77: TLabel
           Left = 83
           Top = 24
-          Width = 12
+          Width = 3
           Height = 13
-          Caption = #22825
         end
         object EditStartCastleWarDays: TSpinEdit
           Left = 44
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #30003#35831#25915#22478#25152#38656#22825#25968#65292#21253#25324#24403#22825#12290
+          Height = 22
+          Hint = 
+            'The number of days required to apply the siege, including the da' +
+            'y.'
           MaxValue = 10
           MinValue = 2
           TabOrder = 0
@@ -4809,28 +4935,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 64
         Width = 105
         Height = 49
-        Caption = #25915#22478#24320#22987#26102#38388
+        Caption = 'Siege Start Time'
         TabOrder = 1
         object Label76: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 26
           Height = 13
-          Caption = #26102#38388':'
+          Caption = 'Time:'
         end
         object Label78: TLabel
           Left = 83
           Top = 24
-          Width = 12
+          Width = 24
           Height = 13
-          Caption = #28857
+          Caption = 'Point'
         end
         object EditStartCastlewarTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #24320#22987#25915#22478#26102#38388#65292'20'#20195#34920'20'#65306'00'
+          Height = 22
+          Hint = 'Began the siege time, 20 representatives of 20:00'
           MaxValue = 24
           MinValue = 1
           TabOrder = 0
@@ -4843,28 +4969,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 119
         Width = 105
         Height = 44
-        Caption = #25915#22478#32467#26463#25552#31034
+        Caption = 'Siege End'
         TabOrder = 2
         object Label79: TLabel
           Left = 11
           Top = 20
-          Width = 27
+          Width = 26
           Height = 13
-          Caption = #26102#38388':'
+          Caption = 'Time:'
         end
         object Label80: TLabel
           Left = 83
           Top = 20
-          Width = 12
+          Width = 24
           Height = 13
-          Caption = #20998
+          Caption = 'Point'
         end
         object EditShowCastleWarEndMsgTime: TSpinEdit
           Left = 44
           Top = 16
           Width = 37
-          Height = 21
-          Hint = #25915#22478#25112#32467#26463#21069#25351#23450#26102#38388#25552#31034#12290
+          Height = 22
+          Hint = 'Specified time before the end of the siege warfare tips.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -4877,28 +5003,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 113
         Height = 49
-        Caption = #25915#22478#26102#38271
+        Caption = 'Siege Time'
         TabOrder = 3
         object Label81: TLabel
-          Left = 11
+          Left = 3
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label82: TLabel
-          Left = 91
+          Left = 86
           Top = 24
-          Width = 12
+          Width = 24
           Height = 13
-          Caption = #20998
+          Caption = 'Point'
         end
         object EditCastleWarTime: TSpinEdit
-          Left = 44
-          Top = 20
+          Left = 40
+          Top = 24
           Width = 45
-          Height = 21
-          Hint = #25915#22478#26102#38388#38271#24230#65292#40664#35748#20026'3'#20010#23567#26102#12290
+          Height = 22
+          Hint = 'Siege length of time, the default is 3 hours.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -4911,28 +5037,30 @@ object frmGameConfig: TfrmGameConfig
         Top = 64
         Width = 105
         Height = 49
-        Caption = #31105#27490#21344#39046#26102#38388
+        Caption = 'Prohibit Occupation'
         TabOrder = 4
         object Label83: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label84: TLabel
           Left = 83
           Top = 24
-          Width = 12
+          Width = 29
           Height = 13
-          Caption = #20998
+          Caption = 'Points'
         end
         object EditGetCastleTime: TSpinEdit
           Left = 43
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #25915#22478#25112#24320#22987#26102#65292#25351#23450#26102#38388#20869#19981#20801#35768#21344#39046#12290
+          Height = 22
+          Hint = 
+            'When the siege began, the occupation is not allowed within a spe' +
+            'cified time.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -4945,28 +5073,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 9
         Width = 105
         Height = 49
-        Caption = #20154#29289#25968#25454#20445#23384#38388#38548
+        Caption = 'Char Data Storage'
         TabOrder = 5
         object Label85: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label86: TLabel
           Left = 83
           Top = 24
-          Width = 12
+          Width = 24
           Height = 13
-          Caption = #20998
+          Caption = 'Point'
         end
         object EditSaveHumanRcdTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #20154#29289#25968#25454#33258#21160#20445#23384#38388#38548#26102#38388#12290
+          Height = 22
+          Hint = 'Character data is automatically saved interval'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -4979,28 +5107,30 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 112
         Height = 49
-        Caption = #20154#29289#36864#20986#37322#25918
+        Caption = 'PPL Quit Release'
         TabOrder = 6
         object Label87: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label88: TLabel
           Left = 83
           Top = 24
-          Width = 12
+          Width = 24
           Height = 13
-          Caption = #20998
+          Caption = 'Point'
         end
         object EditHumanFreeDelayTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #20154#29289#36864#21518#25351#23450#26102#38388#21518#37322#25918#26102#38388#65292#36825#20010#26102#38388#19981#33021#22826#30701#65292#21542#21017#21487#33021#24341#36215#38169#35823#12290
+          Height = 22
+          Hint = 
+            'People back after a specified time release time, this time not t' +
+            'oo short, it may cause errors.'
           Enabled = False
           MaxValue = 6000000
           MinValue = 1
@@ -5014,56 +5144,56 @@ object frmGameConfig: TfrmGameConfig
         Top = 119
         Width = 345
         Height = 44
-        Caption = #28165#29702#26102#38388
+        Caption = 'Clean Up Time'
         TabOrder = 7
         object Label89: TLabel
           Left = 121
           Top = 20
-          Width = 27
+          Width = 30
           Height = 13
-          Caption = #24618#29289':'
+          Caption = '  Mon:'
         end
         object Label90: TLabel
-          Left = 215
+          Left = 211
           Top = 20
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object Label91: TLabel
           Left = 236
           Top = 20
-          Width = 27
+          Width = 28
           Height = 13
-          Caption = #29289#21697':'
+          Caption = 'Items:'
         end
         object Label92: TLabel
           Left = 324
           Top = 20
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object Label154: TLabel
-          Left = 92
+          Left = 86
           Top = 20
-          Width = 12
+          Width = 29
           Height = 13
-          Caption = #20998
+          Caption = 'Points'
         end
         object Label153: TLabel
           Left = 9
           Top = 20
-          Width = 27
+          Width = 23
           Height = 13
-          Caption = #20154#29289':'
+          Caption = 'PPL:'
         end
         object EditMakeGhostTime: TSpinEdit
           Left = 156
           Top = 15
           Width = 53
-          Height = 21
-          Hint = #28165#38500#22320#19978#24618#29289#27515#23608#26102#38388#12290
+          Height = 22
+          Hint = 'Clear the ground monster dead time.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -5074,8 +5204,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 269
           Top = 16
           Width = 53
-          Height = 21
-          Hint = #28165#38500#22320#19978#29289#21697#26102#38388#12290
+          Height = 22
+          Hint = 'Time to clear the ground items'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 1
@@ -5086,8 +5216,8 @@ object frmGameConfig: TfrmGameConfig
           Left = 41
           Top = 16
           Width = 45
-          Height = 21
-          Hint = #20154#29289#27515#20129#21518#28165#29702#26102#38388#12290
+          Height = 22
+          Hint = 'People clean up time after death.'
           EditorEnabled = False
           MaxValue = 65535
           MinValue = 1
@@ -5101,28 +5231,30 @@ object frmGameConfig: TfrmGameConfig
         Top = 64
         Width = 113
         Height = 49
-        Caption = #29190#29289#21697#21487#25441#26102#38388
+        Caption = 'Explosive can Pickup'
         TabOrder = 8
         object Label93: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label94: TLabel
           Left = 91
           Top = 24
-          Width = 12
+          Width = 19
           Height = 13
-          Caption = #31186
+          Caption = 'Sec'
         end
         object EditFloorItemCanPickUpTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 45
-          Height = 21
-          Hint = #20182#20154#29190#24618#29289#25110#25481#22320#19978#29289#21697#21487#25441#38388#38548#26102#38388#12290
+          Height = 22
+          Hint = 
+            'Others blasting monsters or items can be picked up off the groun' +
+            'd intervals.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -5135,7 +5267,7 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 9
         OnClick = ButtonTimeSaveClick
       end
@@ -5144,28 +5276,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 64
         Width = 113
         Height = 49
-        Caption = #34892#20250#25112#26102#38271
+        Caption = 'Guild WarTime Long'
         TabOrder = 10
         object Label143: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 36
           Height = 13
-          Caption = #26102#38271':'
+          Caption = 'Length:'
         end
         object Label144: TLabel
           Left = 91
           Top = 24
-          Width = 12
+          Width = 29
           Height = 13
-          Caption = #20998
+          Caption = 'Points'
         end
         object EditGuildWarTime: TSpinEdit
           Left = 44
           Top = 20
           Width = 45
-          Height = 21
-          Hint = #34892#20250#25112#26102#38388#38271#24230#12290
+          Height = 22
+          Hint = 'Line of battle length of time.'
           MaxValue = 6000000
           MinValue = 1
           TabOrder = 0
@@ -5178,28 +5310,28 @@ object frmGameConfig: TfrmGameConfig
         Top = 168
         Width = 128
         Height = 44
-        Caption = #21917#33647#26102#38388#25511#21046
+        Caption = 'Yao Time Control'
         TabOrder = 11
         object Label156: TLabel
           Left = 11
           Top = 20
-          Width = 27
+          Width = 26
           Height = 13
-          Caption = #26102#38388':'
+          Caption = 'Time:'
         end
         object Label157: TLabel
           Left = 97
           Top = 20
-          Width = 24
+          Width = 14
           Height = 13
-          Caption = #27627#31186
+          Caption = 'Ms'
         end
         object EditEatTick: TSpinEdit
           Left = 44
           Top = 16
           Width = 50
-          Height = 21
-          Hint = #25351#23450#20351#29992#33647#21697#31867#30340#26102#38388#38388#38548#65292#20026'0'#21017#19981#38480#21046#12290
+          Height = 22
+          Hint = 'Specify the use of drugs class interval of 0 is not restricted.'
           MaxValue = 6000000
           MinValue = 0
           TabOrder = 0
@@ -5209,28 +5341,28 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet7: TTabSheet
-      Caption = #20215#26684#36153#29992
+      Caption = 'Cost'
       ImageIndex = 10
       object GroupBox48: TGroupBox
         Left = 8
         Top = 8
         Width = 137
         Height = 49
-        Caption = #30003#35831#34892#20250#36153#29992
+        Caption = 'Fees Apply for Guild'
         TabOrder = 0
         object Label95: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 29
           Height = 13
-          Caption = #36153#29992':'
+          Caption = 'Costs:'
         end
         object EditBuildGuildPrice: TSpinEdit
           Left = 44
           Top = 20
           Width = 77
-          Height = 21
-          Hint = #30003#35831#21019#24314#34892#20250#25152#38656#36153#29992#12290
+          Height = 22
+          Hint = 'Create a guild application cost.'
           MaxValue = 100000000
           MinValue = 1000
           TabOrder = 0
@@ -5243,21 +5375,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 64
         Width = 137
         Height = 49
-        Caption = #30003#35831#34892#20250#25112#36153#29992
+        Caption = 'Fees Apply for Battle'
         TabOrder = 1
         object Label96: TLabel
           Left = 11
           Top = 24
-          Width = 27
+          Width = 29
           Height = 13
-          Caption = #36153#29992':'
+          Caption = 'Costs:'
         end
         object EditGuildWarPrice: TSpinEdit
           Left = 44
           Top = 20
           Width = 77
-          Height = 21
-          Hint = #30003#35831#34892#20250#25112#20105#25152#38656#36153#29992#12290
+          Height = 22
+          Hint = 'The required application fee for Guild Wars.'
           MaxValue = 100000000
           MinValue = 1000
           TabOrder = 0
@@ -5270,21 +5402,21 @@ object frmGameConfig: TfrmGameConfig
         Top = 120
         Width = 137
         Height = 49
-        Caption = #28860#33647#20215#26684
+        Caption = 'Lian Drug Prices'
         TabOrder = 2
         object Label97: TLabel
           Left = 11
           Top = 24
           Width = 27
           Height = 13
-          Caption = #20215#26684':'
+          Caption = 'Price:'
         end
         object EditMakeDurgPrice: TSpinEdit
           Left = 44
           Top = 20
           Width = 77
-          Height = 21
-          Hint = #28860#21046#33647#21697#25152#38656#36153#29992#12290
+          Height = 22
+          Hint = 'The cost of refining drugs.'
           MaxValue = 100000000
           MinValue = 10
           TabOrder = 0
@@ -5297,37 +5429,37 @@ object frmGameConfig: TfrmGameConfig
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 3
         OnClick = ButtonPriceSaveClick
       end
       object GroupBox66: TGroupBox
         Left = 152
         Top = 8
-        Width = 137
+        Width = 153
         Height = 73
-        Caption = #20462#29702#29289#21697
+        Caption = 'Repair Items'
         TabOrder = 4
         object Label126: TLabel
           Left = 11
           Top = 24
-          Width = 75
+          Width = 84
           Height = 13
-          Caption = #29305#20462#20215#26684#20493#25968':'
+          Caption = 'SR Price Multiple:'
         end
         object Label127: TLabel
           Left = 11
           Top = 48
-          Width = 63
+          Width = 87
           Height = 13
-          Caption = #26222#20462#25481#25345#20037':'
+          Caption = 'Course Of Lasting:'
         end
         object EditSuperRepairPriceRate: TSpinEdit
-          Left = 92
+          Left = 101
           Top = 20
           Width = 37
-          Height = 21
-          Hint = #29305#20462#29289#21697#20215#26684#20493#25968#65292#40664#35748#20026#19977#20493#12290
+          Height = 22
+          Hint = 'Special repair items price multiples, the default is three-fold.'
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -5336,11 +5468,11 @@ object frmGameConfig: TfrmGameConfig
           OnChange = EditSuperRepairPriceRateChange
         end
         object EditRepairItemDecDura: TSpinEdit
-          Left = 88
-          Top = 44
+          Left = 101
+          Top = 43
           Width = 41
-          Height = 21
-          Hint = #26222#36890#20462#29702#25481#25345#20037#28857#25968#12290
+          Height = 22
+          Hint = 'Points out the persistence of ordinary repairs.'
           EditorEnabled = False
           MaxValue = 100
           MinValue = 1
@@ -5351,14 +5483,14 @@ object frmGameConfig: TfrmGameConfig
       end
     end
     object TabSheet9: TTabSheet
-      Caption = #20154#29289#27515#20129
+      Caption = 'People Died'
       ImageIndex = 12
       object ButtonHumanDieSave: TButton
         Left = 411
         Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 0
         OnClick = ButtonHumanDieSaveClick
       end
@@ -5367,35 +5499,39 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 197
         Height = 105
-        Caption = #27515#20129#25481#29289#21697#35268#21017
+        Caption = 'Death Rules Out Items'
         TabOrder = 1
         object CheckBoxKillByMonstDropUseItem: TCheckBox
           Left = 8
-          Top = 16
+          Top = 15
           Width = 121
           Height = 17
-          Hint = #24403#20154#29289#34987#24618#29289#26432#27515#26102#20250#25353#25481#33853#26426#29575#25481#33853#36523#19978#25140#30340#29289#21697#12290
-          Caption = #34987#24618#29289#26432#27515#25481#35013#22791
+          Hint = 
+            'When a character is killed monster will drop by drop upon the ch' +
+            'ance to wear the items.'
+          Caption = 'Equipped Monster Killed off'
           TabOrder = 0
           OnClick = CheckBoxKillByMonstDropUseItemClick
         end
         object CheckBoxKillByHumanDropUseItem: TCheckBox
           Left = 8
           Top = 32
-          Width = 121
+          Width = 145
           Height = 17
-          Hint = #24403#20154#29289#34987#21035#20154#26432#27515#26102#20250#25353#25481#33853#26426#29575#25481#33853#36523#19978#25140#30340#29289#21697#12290
-          Caption = #34987#20154#29289#26432#27515#25481#35013#22791
+          Hint = 
+            'When a person is killed by someone else would drop him wear a ch' +
+            'ance to drop items.'
+          Caption = 'Char Killed off Equipment'
           TabOrder = 1
           OnClick = CheckBoxKillByHumanDropUseItemClick
         end
         object CheckBoxDieScatterBag: TCheckBox
           Left = 8
           Top = 48
-          Width = 113
+          Width = 145
           Height = 17
-          Hint = #24403#20154#29289#27515#20129#26102#20250#25353#25481#33853#26426#29575#25481#33853#32972#21253#37324#30340#29289#21697#12290
-          Caption = #27515#20129#25481#32972#21253#29289#21697
+          Hint = 'When a person died will drop by drop probability backpack items.'
+          Caption = 'Death BackPack Items'
           TabOrder = 2
           OnClick = CheckBoxDieScatterBagClick
         end
@@ -5404,18 +5540,18 @@ object frmGameConfig: TfrmGameConfig
           Top = 64
           Width = 113
           Height = 17
-          Hint = #24403#20154#29289#27515#20129#26102#20250#25481#33853#36523#19978#30340#37329#24065#12290
-          Caption = #27515#20129#25481#37329#24065
+          Hint = 'When a person who died will drop coins.'
+          Caption = 'Death Drop Gold'
           TabOrder = 3
           OnClick = CheckBoxDieDropGoldClick
         end
         object CheckBoxDieRedScatterBagAll: TCheckBox
           Left = 8
           Top = 80
-          Width = 145
+          Width = 186
           Height = 17
-          Hint = #32418#21517#20154#29289#27515#20129#26102#25481#33853#32972#21253#20013#20840#37096#29289#21697#12290
-          Caption = #32418#21517#25481#20840#37096#32972#21253#29289#21697
+          Hint = 'Red backpack full name figures drop items when killed.'
+          Caption = 'Red Name off all Backpack Items'
           TabOrder = 4
           OnClick = CheckBoxDieRedScatterBagAllClick
         end
@@ -5425,35 +5561,37 @@ object frmGameConfig: TfrmGameConfig
         Top = 8
         Width = 265
         Height = 89
-        Caption = #25481#29289#21697#26426#29575
+        Caption = 'Off Items Probability'
         TabOrder = 2
         object Label130: TLabel
           Left = 8
           Top = 18
-          Width = 51
+          Width = 49
           Height = 13
-          Caption = #25481#33853#35013#22791':'
+          Caption = 'Fall Equip:'
         end
         object Label131: TLabel
           Left = 8
           Top = 42
-          Width = 51
+          Width = 54
           Height = 13
-          Caption = #32418#21517#35013#22791':'
+          Caption = 'Red Name:'
         end
         object Label134: TLabel
           Left = 8
           Top = 66
-          Width = 51
+          Width = 52
           Height = 13
-          Caption = #32972#21253#29289#21697':'
+          Caption = 'Backpack:'
         end
         object ScrollBarDieDropUseItemRate: TScrollBar
           Left = 64
           Top = 16
           Width = 145
           Height = 17
-          Hint = #20154#29289#27515#20129#25481#33853#36523#19978#25140#30340#29289#21697#26426#29575#65292#35774#32622#30340#25968#23383#36234#23567#65292#26426#29575#36234#22823#12290
+          Hint = 
+            'People who wear the probability of death falling objects, and se' +
+            't the smaller the number, the greater the probability.'
           Max = 500
           PageSize = 0
           TabOrder = 0
@@ -5475,7 +5613,9 @@ object frmGameConfig: TfrmGameConfig
           Top = 40
           Width = 145
           Height = 17
-          Hint = #32418#21517#20154#29289#27515#20129#25481#33853#36523#19978#25140#30340#29289#21697#26426#29575#65292#35774#32622#30340#25968#23383#36234#23567#65292#26426#29575#36234#22823#12290
+          Hint = 
+            'Red name figures who died wearing the probability of falling obj' +
+            'ects, set the smaller the number, the greater the probability.'
           PageSize = 0
           TabOrder = 2
           OnChange = ScrollBarDieRedDropUseItemRateChange
@@ -5496,7 +5636,9 @@ object frmGameConfig: TfrmGameConfig
           Top = 64
           Width = 145
           Height = 17
-          Hint = #20154#29289#27515#20129#25481#33853#32972#21253#20013#30340#29289#21697#26426#29575#65292#35774#32622#30340#25968#23383#36234#23567#65292#26426#29575#36234#22823#12290
+          Hint = 
+            'People loot death probability backpack, set the smaller the numb' +
+            'er, the greater the probability.'
           Max = 500
           PageSize = 0
           TabOrder = 4

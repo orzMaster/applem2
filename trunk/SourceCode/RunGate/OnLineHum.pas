@@ -79,18 +79,18 @@ begin
         end;  
         ListItem.SubItems.Add(sSize);
         if GlobaSessionInfo.boStartPlay then
-          ListItem.SubItems.Add('已登录[' + GlobaSessionInfo.sUserName + ']')
+          ListItem.SubItems.Add('Has Logged [' + GlobaSessionInfo.sUserName + ']')
         else
         if GlobaSessionInfo.sUserName <> '' then
-          ListItem.SubItems.Add('已登录[' + IntToStr(GlobaSessionInfo.wGatePort) + '][' + GlobaSessionInfo.sUserName + ']')
+          ListItem.SubItems.Add('Has Logged [' + IntToStr(GlobaSessionInfo.wGatePort) + '][' + GlobaSessionInfo.sUserName + ']')
         else
-          ListItem.SubItems.Add('未登录');
+          ListItem.SubItems.Add('Not Logged In');
       end;
     end;
   finally
     GlobaSessionList.UnLock;
   end;
-  Caption := '全局会话 [' + IntToStr(ListViewOnLine.Items.Count) + ']';
+  Caption := 'Global Session [' + IntToStr(ListViewOnLine.Items.Count) + ']';
 end;
 
 procedure TFrmOnLineHum.Open();
@@ -133,8 +133,8 @@ end;
 
 procedure TFrmOnLineHum.ButtonKickClick(Sender: TObject);
 begin
-  if Application.MessageBox(PChar('是否确认将此连接断开？'),
-    PChar('确认信息 - ' + sSelIPaddr), MB_OKCANCEL + MB_ICONQUESTION) <> IDOK
+  if Application.MessageBox(PChar('Are you sure to disconnect this connection?'),
+    PChar('Confirmation - ' + sSelIPaddr), MB_OKCANCEL + MB_ICONQUESTION) <> IDOK
       then
     Exit;
 
@@ -147,8 +147,8 @@ end;
 procedure TFrmOnLineHum.ButtonAddTempListClick(Sender: TObject);
 begin
   if
-    Application.MessageBox(PChar('是否确认将此IP加入动态过滤列表中？加入过滤列表后，此IP建立的所有连接将被强行中断。'),
-    PChar('确认信息 - ' + sSelIPaddr),
+    Application.MessageBox(PChar('Are you sure this IP add dynamic filter list? After adding filter list, all connections to this IP will be forcibly interrupted established.'),
+    PChar('Confirmation - ' + sSelIPaddr),
     MB_OKCANCEL + MB_ICONQUESTION
     ) <> IDOK then
     Exit;
@@ -158,8 +158,8 @@ end;
 procedure TFrmOnLineHum.ButtonAddBlockListClick(Sender: TObject);
 begin
   if
-    Application.MessageBox(PChar('是否确认将此IP加入永久过滤列表中？加入过滤列表后，此IP建立的所有连接将被强行中断。'),
-    PChar('确认信息 - ' + sSelIPaddr),
+    Application.MessageBox(PChar('Are you sure this IP add permanent filter list? After adding filter list, all connections to this IP will be forcibly interrupted established.'),
+    PChar('Confirmation - ' + sSelIPaddr),
     MB_OKCANCEL + MB_ICONQUESTION
     ) <> IDOK then
     Exit;

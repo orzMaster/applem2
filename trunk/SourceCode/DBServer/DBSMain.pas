@@ -491,7 +491,7 @@ begin
   nCheckCode := -1;
   DBHumDataInfo.UserName := sHumName;
   if (sAccount = '') and (nSessionID = -1) then begin
-    nCheckCode := 1; //系统自动脱机时读取
+    nCheckCode := 1; //The system reads the automatic offline
   end else
   if (sAccount <> '') and (sHumName <> '') then begin
     if (FrmIDSoc.CheckSessionLoadRcd(sAccount, sIPaddr, nSessionID, boFoundSession)) then begin
@@ -499,12 +499,12 @@ begin
     end
     else begin
       if boFoundSession then begin
-        MainOutMessage('[非法重复请求] ' + '帐号: ' + sAccount + ' IP: ' + sIPaddr + ' 标识: ' + IntToStr(nSessionID));
+        MainOutMessage('[Illegal Repeat Request] ' + 'Account Number: ' + sAccount + ' IP: ' + sIPaddr + ' Logo: ' + IntToStr(nSessionID));
       end
       else begin
-        MainOutMessage('[非法请求] ' + '帐号: ' + sAccount + ' IP: ' + sIPaddr + ' 标识: ' + IntToStr(nSessionID));
+        MainOutMessage('[Illegal Request] ' + 'Account Number: ' + sAccount + ' IP: ' + sIPaddr + ' ID: ' + IntToStr(nSessionID));
       end;
-      //nCheckCode:= 1; //测试用，正常去掉
+      //nCheckCode:= 1; //Testing, normally removed
     end;
   end;
   if nCheckCode = 1 then begin
@@ -526,7 +526,7 @@ begin
   end;
   if (nCheckCode = 1) and (DBHumDataInfo.HumDataInfo.Data.sAccount <> '') and (sAccount <> '') and
     (DBHumDataInfo.HumDataInfo.Data.sAccount <> sAccount) then begin
-    MainOutMessage('[非法登录] ' + '帐号: ' + sAccount + ' IP: ' + sIPaddr + ' 标识: ' + IntToStr(nSessionID));
+    MainOutMessage('[Illegal Login] ' + 'Account: ' + sAccount + ' IP: ' + sIPaddr + ' Logo: ' + IntToStr(nSessionID));
     nCheckCode := -1;
   end;
   if nCheckCode = 1 then begin
@@ -675,7 +675,7 @@ begin
     CheckBox1.Checked := False;
   ;
   CheckBox1.Caption := 'Communication(' + IntToStr(ServerList.Count) + ')';
-  //Label2.Caption := '连接数: ' + IntToStr(ServerList.Count);
+  //Label2.Caption := 'Connections: ' + IntToStr(ServerList.Count);
   LbUserCount.Caption := IntToStr(FrmUserSoc.GetUserCount);
   if boOpenDBBusy then begin
     if n4ADB18 > 0 then begin
@@ -940,8 +940,8 @@ begin
   end;
   {if DataManageSocketClientConnected then begin
     if GetModule(nDataManagePort) then
-      UpDateModule(nDataManagePort, '数据管理', DataManage_sRemoteAddress + ':' + IntToStr(DataManage_nRemotePort) + ' → ' + DataManage_sRemoteAddress + ':' + IntToStr(nServerPort), '')
-    else AddModule(nDataManagePort, '数据管理', DataManage_sRemoteAddress + ':' + IntToStr(DataManage_nRemotePort) + ' → ' + DataManage_sRemoteAddress + ':' + IntToStr(nServerPort), '');
+      UpDateModule(nDataManagePort, 'Data Management', DataManage_sRemoteAddress + ':' + IntToStr(DataManage_nRemotePort) + ' → ' + DataManage_sRemoteAddress + ':' + IntToStr(nServerPort), '')
+    else AddModule(nDataManagePort, 'Data Management', DataManage_sRemoteAddress + ':' + IntToStr(DataManage_nRemotePort) + ' → ' + DataManage_sRemoteAddress + ':' + IntToStr(nServerPort), '');
   end else begin
     if GetModule(nDataManagePort) then DelModule(nDataManagePort);
   end;}
@@ -961,7 +961,7 @@ begin
   end;
   m_boRemoteClose := False;
   SendGameCenterMsg(SG_FORMHANDLE, IntToStr(Self.Handle));
-  //MainOutMessage('正在启动数据库服务器...');
+  //MainOutMessage('Starting the Database Server');
   boOpenDBBusy := True;
   Label4.Caption := '';
   LbAutoClean.Caption := '-/-';
@@ -986,7 +986,7 @@ begin
   LoadConfig();
   ServerList := TList.Create;
   //HumSessionList := TList.Create;
-  //AttackIPaddrList := TGList.Create; //攻击IP临时列表
+  //AttackIPaddrList := TGList.Create; //Provisional list of IP attacks
   //Label5.Caption:='FDB: ' + sDataDBFilePath + 'Mir.DB  ' + 'Backup: ' + sBackupPath;
   //n334 := 0;
   n4ADBF4 := 0;
@@ -1039,7 +1039,7 @@ begin
   boAutoClearDB := True;
   Label4.Caption := '';
   LoadFiltrateName();
-  //MainOutMessage('排行榜计算完成(' + IntToStr(LoadGameSort()) + ')...');
+  //MainOutMessage('Ranking calculation is complete(' + IntToStr(LoadGameSort()) + ')...');
   g_boArraySortTime := LongWord(GetTickCount + g_btSortMinute * 60000 + g_btSortHour * 3600000);
   Timer1.Enabled := True;
   Timer2.Enabled := True;

@@ -3,7 +3,7 @@ object frmGeneralConfig: TfrmGeneralConfig
   Top = 225
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #22522#26412#35774#32622
+  Caption = 'Basic Settings'
   ClientHeight = 284
   ClientWidth = 418
   Color = clBtnFace
@@ -35,36 +35,32 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 401
     Height = 249
-    ActivePage = ShareSheet
+    ActivePage = NetWorkSheet
     TabOrder = 0
     OnChanging = PageControlChanging
     object NetWorkSheet: TTabSheet
-      Caption = #32593#32476#35774#32622
+      Caption = 'Network'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBoxNet: TGroupBox
         Left = 8
         Top = 5
         Width = 185
         Height = 68
-        Caption = #32593#32476#25509#21475
+        Caption = 'Gate'
         TabOrder = 0
         object LabelGateIPaddr: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 48
           Height = 12
-          Caption = #32465#23450#22320#22336':'
+          Caption = 'Address:'
         end
         object LabelGatePort: TLabel
           Left = 8
           Top = 44
-          Width = 54
+          Width = 60
           Height = 12
-          Caption = #32593#20851#31471#21475':'
+          Caption = 'Gate Port:'
         end
         object EditGateAddr: TEdit
           Left = 80
@@ -92,7 +88,7 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 189
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 1
         OnClick = ButtonNetWorkSaveClick
       end
@@ -101,21 +97,21 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 77
         Width = 185
         Height = 68
-        Caption = #25968#25454#24211#26381#21153#22120
+        Caption = 'Database Server Configuration'
         TabOrder = 2
         object Label4: TLabel
           Left = 8
           Top = 44
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#31471#21475':'
+          Caption = 'DBServer Por:'
         end
         object Label5: TLabel
           Left = 8
           Top = 20
-          Width = 66
+          Width = 72
           Height = 12
-          Caption = #26381#21153#22120#22320#22336':'
+          Caption = 'DBServer IP:'
         end
         object EditDBPort: TEdit
           Left = 80
@@ -143,21 +139,21 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 5
         Width = 185
         Height = 68
-        Caption = #30331#24405#26381#21153#22120
+        Caption = 'Login Server Configuration'
         TabOrder = 3
         object Label2: TLabel
           Left = 8
           Top = 44
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#31471#21475':'
+          Caption = 'LoginSrv Por:'
         end
         object Label3: TLabel
           Left = 8
           Top = 20
-          Width = 66
+          Width = 72
           Height = 12
-          Caption = #26381#21153#22120#22320#22336':'
+          Caption = 'LoginSrv IP:'
         end
         object EditIDSPort: TEdit
           Left = 80
@@ -185,21 +181,21 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 77
         Width = 185
         Height = 68
-        Caption = #26085#24535#26381#21153#22120
+        Caption = 'Log Server Configuration'
         TabOrder = 4
         object Label6: TLabel
           Left = 8
           Top = 44
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#31471#21475':'
+          Caption = 'LogServer Po:'
         end
         object Label7: TLabel
           Left = 8
           Top = 20
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#22320#22336':'
+          Caption = 'LogServer IP:'
         end
         object EditLogServerPort: TEdit
           Left = 80
@@ -227,21 +223,21 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 149
         Width = 185
         Height = 68
-        Caption = #28216#25103#20027#26381#21153#22120
+        Caption = 'Message Server Configuration'
         TabOrder = 5
         object Label8: TLabel
           Left = 8
           Top = 44
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#31471#21475':'
+          Caption = 'MsgServer Po:'
         end
         object Label9: TLabel
           Left = 8
           Top = 20
-          Width = 66
+          Width = 78
           Height = 12
-          Caption = #26381#21153#22120#22320#22336':'
+          Caption = 'MsgServer IP:'
         end
         object EditMsgSrvPort: TEdit
           Left = 80
@@ -266,38 +262,34 @@ object frmGeneralConfig: TfrmGeneralConfig
       end
     end
     object ServerInfoSheet: TTabSheet
-      Caption = #28216#25103#35774#32622
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      Caption = 'Settings'
       object GroupBoxInfo: TGroupBox
         Left = 8
         Top = 5
         Width = 185
         Height = 97
-        Caption = #22522#26412#21442#25968
+        Caption = 'Basic Parameters'
         TabOrder = 0
         object Label1: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 30
           Height = 12
-          Caption = #28216#25103#21517#31216':'
+          Caption = 'Name:'
         end
         object Label10: TLabel
           Left = 8
           Top = 44
-          Width = 54
+          Width = 42
           Height = 12
-          Caption = #26381#21153#22120#21495':'
+          Caption = 'Number:'
         end
         object Label11: TLabel
           Left = 96
           Top = 44
-          Width = 54
+          Width = 60
           Height = 12
-          Caption = #26381#21153#22120#25968':'
+          Caption = 'No of Srv:'
         end
         object EditGameName: TEdit
           Left = 64
@@ -334,8 +326,8 @@ object frmGeneralConfig: TfrmGeneralConfig
           Top = 64
           Width = 73
           Height = 17
-          Hint = #20813#36153#27169#24335#65292#25171#24320#27492#20808#39033#23558#19981#23545#29992#25143#35745#36153#12290
-          Caption = #20813#36153#27169#24335
+          Hint = 'Free mode, open the first item will not charge users.'
+          Caption = 'Free Mode'
           TabOrder = 3
           Visible = False
           OnClick = EditValueChange
@@ -351,23 +343,23 @@ object frmGeneralConfig: TfrmGeneralConfig
         object Label12: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 36
           Height = 12
-          Caption = #24320#22987#31561#32423':'
+          Caption = 'Level:'
         end
         object Label13: TLabel
           Left = 8
           Top = 44
-          Width = 54
+          Width = 30
           Height = 12
-          Caption = #24320#22987#37329#24065':'
+          Caption = 'Gold:'
         end
         object Label14: TLabel
           Left = 8
           Top = 68
-          Width = 54
+          Width = 48
           Height = 12
-          Caption = #27979#35797#20154#25968':'
+          Caption = 'Test No:'
         end
         object EditTestLevel: TEdit
           Left = 64
@@ -404,18 +396,20 @@ object frmGeneralConfig: TfrmGeneralConfig
           Top = -2
           Width = 73
           Height = 17
-          Hint = #27979#35797#27169#24335#65292#25171#24320#27492#27169#24335#65292#21487#23545#26381#21153#22120#21508#39033#21442#25968#21450#21151#33021#36827#34892#27979#35797#12290
-          Caption = #27979#35797#27169#24335
+          Hint = 
+            'Test mode, open this mode, the server parameters and functions t' +
+            'o be tested.'
+          Caption = 'Test Mode'
           TabOrder = 3
           OnClick = CheckBoxTestServerClick
         end
       end
       object ButtonServerInfoSave: TButton
-        Left = 320
-        Top = 189
+        Left = 317
+        Top = 184
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 2
         OnClick = ButtonServerInfoSaveClick
       end
@@ -424,15 +418,15 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 112
         Width = 185
         Height = 49
-        Caption = #26368#39640#19978#32447#20154#25968
+        Caption = 'Highest Number Online'
         TabOrder = 3
         Visible = False
         object Label15: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 36
           Height = 12
-          Caption = #19978#38480#20154#25968':'
+          Caption = 'Limit:'
         end
         object EditUserFull: TEdit
           Left = 64
@@ -450,14 +444,14 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 168
         Width = 185
         Height = 49
-        Caption = #28216#25103#25968#25454#28304#21517#31216
+        Caption = 'Database Name'
         TabOrder = 4
         object Label16: TLabel
           Left = 8
           Top = 20
-          Width = 54
+          Width = 30
           Height = 12
-          Caption = #25968#25454#24211#21517':'
+          Caption = 'Name:'
         end
         object EditDBName: TEdit
           Left = 64
@@ -471,25 +465,21 @@ object frmGeneralConfig: TfrmGeneralConfig
       end
     end
     object ShareSheet: TTabSheet
-      Caption = #30446#24405#35774#32622
+      Caption = 'Directories'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label17: TLabel
         Left = 8
         Top = 12
         Width = 54
         Height = 12
-        Caption = #34892#20250#30446#24405':'
+        Caption = 'GuildDir:'
       end
       object Label18: TLabel
         Left = 8
         Top = 36
-        Width = 54
+        Width = 48
         Height = 12
-        Caption = #34892#20250#25991#20214':'
+        Caption = 'GuildLs:'
       end
       object Label24: TLabel
         Left = 8
@@ -497,43 +487,43 @@ object frmGeneralConfig: TfrmGeneralConfig
         Width = 54
         Height = 12
         BiDiMode = bdRightToLeft
-        Caption = #21151#33021#25554#20214':'
+        Caption = ' :Plugin:'
         ParentBiDiMode = False
       end
       object Label23: TLabel
         Left = 8
         Top = 156
-        Width = 54
+        Width = 42
         Height = 12
-        Caption = #20844#21578#30446#24405':'
+        Caption = 'Notice:'
       end
       object Label22: TLabel
         Left = 8
         Top = 132
-        Width = 54
+        Width = 42
         Height = 12
-        Caption = #22320#22270#30446#24405':'
+        Caption = 'MapDir:'
       end
       object Label21: TLabel
         Left = 8
         Top = 108
-        Width = 54
+        Width = 36
         Height = 12
-        Caption = #37197#32622#30446#24405':'
+        Caption = 'Envir:'
       end
       object Label20: TLabel
         Left = 8
         Top = 84
-        Width = 54
+        Width = 42
         Height = 12
-        Caption = #22478#22561#30446#24405':'
+        Caption = 'Castle:'
       end
       object Label19: TLabel
         Left = 8
         Top = 60
-        Width = 54
+        Width = 48
         Height = 12
-        Caption = #30331#24405#26085#24535':'
+        Caption = 'ConnDir:'
       end
       object Label25: TLabel
         Left = 8
@@ -624,38 +614,34 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 189
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 9
         OnClick = ButtonShareDirSaveClick
       end
     end
     object TabSheet1: TTabSheet
-      Caption = #25805#20316#30028#38754
+      Caption = 'Tips'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox8: TGroupBox
         Left = 5
         Top = 95
         Width = 193
         Height = 49
-        Caption = #25552#31034#20449#24687
+        Caption = 'Background Message'
         TabOrder = 0
         object Label29: TLabel
           Left = 10
           Top = 22
-          Width = 54
+          Width = 36
           Height = 12
-          Caption = #32972#26223#39068#33394':'
+          Caption = 'Color:'
         end
         object ColorBoxHint: TColorBox
           Left = 70
           Top = 16
           Width = 113
           Height = 22
-          Hint = #24377#20986#35828#26126#25991#26412#26694#39068#33394
+          Hint = 'Pop-up description text box color'
           ItemHeight = 16
           TabOrder = 0
           OnChange = ColorBoxHintChange
@@ -666,28 +652,28 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 8
         Width = 193
         Height = 81
-        Caption = #24341#25806#26085#24535
+        Caption = 'Font + Background'
         TabOrder = 1
         object Label27: TLabel
           Left = 8
           Top = 25
-          Width = 54
+          Width = 36
           Height = 12
-          Caption = #23383#20307#39068#33394':'
+          Caption = 'Color:'
         end
         object Label28: TLabel
           Left = 8
           Top = 48
-          Width = 54
+          Width = 36
           Height = 12
-          Caption = #32972#26223#39068#33394':'
+          Caption = 'Color:'
         end
         object ColorBox1: TColorBox
           Left = 68
           Top = 19
           Width = 113
           Height = 22
-          Hint = #24377#20986#35828#26126#25991#26412#26694#39068#33394
+          Hint = 'Pop-up description text box color'
           ItemHeight = 16
           TabOrder = 0
           OnChange = ColorBoxHintChange
@@ -697,7 +683,7 @@ object frmGeneralConfig: TfrmGeneralConfig
           Top = 44
           Width = 113
           Height = 22
-          Hint = #24377#20986#35828#26126#25991#26412#26694#39068#33394
+          Hint = 'Pop-up description text box color'
           ItemHeight = 16
           TabOrder = 1
           OnChange = ColorBoxHintChange
@@ -708,7 +694,7 @@ object frmGeneralConfig: TfrmGeneralConfig
         Top = 189
         Width = 65
         Height = 25
-        Caption = #20445#23384'(&S)'
+        Caption = 'Save(&S)'
         TabOrder = 2
         OnClick = ButtonNetWorkSaveClick
       end

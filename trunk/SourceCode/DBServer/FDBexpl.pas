@@ -95,7 +95,7 @@ begin
   if ListBox1.ItemIndex <= -1 then
     Exit;
   nIndex := Integer(ListBox1.Items.Objects[ListBox1.ItemIndex]);
-  if MessageDlg('是否确认删除人物数据 ' + IntToStr(nIndex) + ' ？',
+  if MessageDlg('Do you want to delete the character data' + IntToStr(nIndex) + ' ?',
     mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
     try
       if HumDataDB.Open then begin
@@ -109,11 +109,11 @@ end;
 
 procedure TFrmFDBExplore.BtnRebuildClick(Sender: TObject); //0x004A5B64
 begin
-  if MessageDlg('在重建数据库过程中，数据库服务器将停止工作，是否确认继续？',
+  if MessageDlg('In the process of rebuilding the database, The database server will stop working, Do you want to continue?',
     mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
     boAutoClearDB := False;
     HumDataDB.Rebuild();
-    MessageDlg('数据库重建完成！！！', mtInformation, [mbOK], 0);
+    MessageDlg('Database Rebuild complete!!!', mtInformation, [mbOK], 0);
   end;
 end;
 
@@ -149,8 +149,8 @@ var
   boDelete: Boolean;
   ChrNameList: TList;
 begin
-  if MessageDlg('请在服务器停止时使用，是否确认继续？', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
-    if MessageDlg('是否已经备份了数据库文件？', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+  if MessageDlg('Please use when the server has stopped, Do you want to continue?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+    if MessageDlg('Already backed up the database files.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
       OldAutoClearDB := boAutoClearDB;
       boAutoClearDB := False;
       ProgressBar1.Position := 0;
@@ -206,7 +206,7 @@ begin
         HumChrDB.Close;
         boAutoClearDB := OldAutoClearDB;
       end;
-      Application.MessageBox('清理已完成！', '提示信息', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox('Cleanup has been completed!', 'Message', MB_OK + MB_ICONINFORMATION);
     end;
   end;
 end;
@@ -245,9 +245,9 @@ procedure TFrmFDBExplore.BtnAutoCleanClick(Sender: TObject);
 begin
   boAutoClearDB := not boAutoClearDB;
   if boAutoClearDB then
-    BtnAutoClean.Caption := '停止清理'
+    BtnAutoClean.Caption := 'Stop Cleanup'
   else
-    BtnAutoClean.Caption := '自动清理';
+    BtnAutoClean.Caption := 'Automatic Cleanup';
   CkLv1.Enabled := not boAutoClearDB;
   CkLv7.Enabled := not boAutoClearDB;
   CkLv14.Enabled := not boAutoClearDB;
@@ -467,7 +467,7 @@ begin
   sDestChrName := FrmCopyRcd.s2F4;
   sUserId := FrmCopyRcd.s2F8;
   if FrmDBSrv.CopyHumData(sSrcChrName, sDestChrName, sUserId) then
-    ShowMessage(sSrcChrName + ' -> ' + sDestChrName + ' 复制成功！！！');
+    ShowMessage(sSrcChrName + ' -> ' + sDestChrName + ' Copy Successful!!!');
 end;
 
 procedure TFrmFDBExplore.BtnCopyNewClick(Sender: TObject);
@@ -482,7 +482,7 @@ begin
   sUserId := FrmCopyRcd.s2F8;
   if FrmUserSoc.NewChrData(sDestChrName, 0, 0, 0) and
     FrmDBSrv.CopyHumData(sSrcChrName, sDestChrName, sUserId) then
-    ShowMessage(sSrcChrName + ' -> ' + sDestChrName + ' 复制成功！！！');
+    ShowMessage(sSrcChrName + ' -> ' + sDestChrName + ' Copy Successful!!!');
 end;
 
 procedure TFrmFDBExplore.FormDestroy(Sender: TObject);

@@ -3,7 +3,7 @@ object frmGrobalSession: TfrmGrobalSession
   Top = 332
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #26597#30475#20840#23616#20250#35805
+  Caption = 'Global Sessions'
   ClientHeight = 208
   ClientWidth = 458
   Color = clBtnFace
@@ -22,7 +22,7 @@ object frmGrobalSession: TfrmGrobalSession
     Top = 175
     Width = 73
     Height = 25
-    Caption = #21047#26032'(&R)'
+    Caption = '&Refresh'
     TabOrder = 0
   end
   object PanelStatus: TPanel
@@ -43,7 +43,6 @@ object frmGrobalSession: TfrmGrobalSession
       RowCount = 9
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
       TabOrder = 0
-      ExplicitWidth = 483
       ColWidths = (
         34
         132

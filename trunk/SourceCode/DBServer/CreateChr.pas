@@ -58,7 +58,7 @@ begin
     sChrName := Trim(EdChrName.Text);
     nSelectID := StrToIntDef(Trim(EditSelectID.Text), -1);
     if nSelectID < 0 then begin
-      MessageBox(Handle, '选择ID输入不正确！！！', '确认信息', MB_OK +
+      MessageBox(Handle, 'Invalid value for SelectID', 'Error', MB_OK +
         MB_ICONEXCLAMATION);
       Exit;
     end;

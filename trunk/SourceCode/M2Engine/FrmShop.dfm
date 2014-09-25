@@ -3,8 +3,8 @@ object FormShop: TFormShop
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #21830#38138#31649#29702
-  ClientHeight = 409
+  Caption = 'Store Management'
+  ClientHeight = 410
   ClientWidth = 753
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,11 +24,7 @@ object FormShop: TFormShop
     ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = #21830#38138#21015#34920#37197#32622
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      Caption = 'Shop List Configuration'
       object Label5: TLabel
         Left = 321
         Top = 235
@@ -39,52 +35,52 @@ object FormShop: TFormShop
       object Label6: TLabel
         Left = 321
         Top = 283
-        Width = 30
+        Width = 54
         Height = 12
-        Caption = #25240#25187':'
+        Caption = 'Discount:'
       end
       object Label4: TLabel
         Left = 160
         Top = 347
-        Width = 54
+        Width = 48
         Height = 12
-        Caption = #29289#21697#25551#36848':'
+        Caption = 'Descript'
         Visible = False
       end
       object Label2: TLabel
         Left = 160
         Top = 236
-        Width = 54
+        Width = 30
         Height = 12
-        Caption = #29289#21697#21517#31216':'
+        Caption = 'Name:'
       end
       object Label1: TLabel
         Left = 160
         Top = 259
         Width = 54
         Height = 12
-        Caption = #29289#21697#31867#21035':'
+        Caption = 'Category:'
       end
       object Label7: TLabel
         Left = 160
         Top = 307
-        Width = 54
+        Width = 48
         Height = 12
-        Caption = #38480#37327#38144#21806':'
+        Caption = 'Limited:'
       end
       object Label3: TLabel
         Left = 321
         Top = 259
         Width = 30
         Height = 12
-        Caption = #26399#38480':'
+        Caption = 'Term:'
       end
       object Label8: TLabel
         Left = 160
         Top = 282
-        Width = 54
+        Width = 42
         Height = 12
-        Caption = #29289#21697#20215#26684':'
+        Caption = 'Prices:'
       end
       object Label10: TLabel
         Left = 321
@@ -96,56 +92,56 @@ object FormShop: TFormShop
       object Label9: TLabel
         Left = 412
         Top = 235
-        Width = 54
+        Width = 66
         Height = 12
         Hint = #35774#32622#24403#21069#29289#21697#26159#21542#20801#35768#20351#29992#37329#24065#36141#20080#65292#20026'0'#21017#19981#20801#35768
-        Caption = #37329#24065#20215#26684':'
+        Caption = 'Gold Price:'
       end
       object ButtonAdd: TButton
-        Left = 216
+        Left = 544
         Top = 330
-        Width = 75
-        Height = 23
-        Caption = #22686#21152'(&A)'
+        Width = 42
+        Height = 14
+        Caption = 'Add'
         Enabled = False
         TabOrder = 0
         OnClick = ButtonAddClick
       end
       object ButtonDel: TButton
-        Left = 297
+        Left = 489
         Top = 330
-        Width = 75
-        Height = 23
-        Caption = #21024#38500'(&D)'
+        Width = 49
+        Height = 14
+        Caption = 'Delete'
         Enabled = False
         TabOrder = 1
         OnClick = ButtonDelClick
       end
       object ButtonEdit: TButton
-        Left = 378
-        Top = 330
-        Width = 75
-        Height = 23
-        Caption = #20462#25913'(&E)'
+        Left = 559
+        Top = 347
+        Width = 39
+        Height = 15
+        Caption = 'Edit'
         Enabled = False
         TabOrder = 2
         OnClick = ButtonEditClick
       end
       object ButtonSave: TButton
-        Left = 459
-        Top = 330
-        Width = 75
-        Height = 23
-        Caption = #20445#23384'(&S)'
+        Left = 604
+        Top = 347
+        Width = 38
+        Height = 15
+        Caption = 'Save'
         TabOrder = 3
         OnClick = ButtonSaveClick
       end
       object ButtonRefur: TButton
-        Left = 540
-        Top = 330
+        Left = 648
+        Top = 346
         Width = 75
         Height = 23
-        Caption = #37325#21152#36733'(&R)'
+        Caption = 'Heavy Load'
         TabOrder = 4
         OnClick = ButtonRefurClick
       end
@@ -185,7 +181,7 @@ object FormShop: TFormShop
       object EditText: TEdit
         Left = 216
         Top = 343
-        Width = 501
+        Width = 239
         Height = 20
         MaxLength = 127
         TabOrder = 7
@@ -196,7 +192,7 @@ object FormShop: TFormShop
         Top = 19
         Width = 146
         Height = 334
-        Caption = #29289#21697#21015#34920'(Ctrl+F'#26597#25214')'
+        Caption = 'Item List(CTRL+F) Find'
         TabOrder = 8
         object ListBoxitemList: TListBox
           Left = 8
@@ -212,36 +208,36 @@ object FormShop: TFormShop
       object CheckBox1: TCheckBox
         Left = 550
         Top = 235
-        Width = 65
+        Width = 73
         Height = 17
-        Caption = #19981#21487#20132#26131
+        Caption = 'No Trade'
         TabOrder = 9
       end
       object CheckBox2: TCheckBox
         Tag = 1
         Left = 629
         Top = 236
-        Width = 65
+        Width = 94
         Height = 17
-        Caption = #19981#21487#23384#20179
+        Caption = 'No WareHouse'
         TabOrder = 10
       end
       object CheckBox3: TCheckBox
         Tag = 2
         Left = 550
         Top = 251
-        Width = 65
+        Width = 73
         Height = 17
-        Caption = #19981#21487#20462#29702
+        Caption = 'No Repair'
         TabOrder = 11
       end
       object CheckBox4: TCheckBox
         Tag = 3
         Left = 629
         Top = 251
-        Width = 65
+        Width = 76
         Height = 17
-        Caption = #19981#21487#20002#24323
+        Caption = 'No Throw'
         TabOrder = 12
       end
       object CheckBox5: TCheckBox
@@ -250,31 +246,31 @@ object FormShop: TFormShop
         Top = 267
         Width = 65
         Height = 17
-        Caption = #27704#19981#25481#33853
+        Caption = 'No Drop'
         TabOrder = 13
       end
       object CheckBox6: TCheckBox
         Tag = 5
         Left = 629
         Top = 267
-        Width = 65
+        Width = 76
         Height = 17
-        Caption = #19981#21487#25171#36896
+        Caption = 'No Build'
         TabOrder = 14
       end
       object ButtonOutHint: TButton
-        Left = 494
-        Top = 340
-        Width = 96
-        Height = 23
-        Caption = #29983#25104#35828#26126'(&W)'
+        Left = 592
+        Top = 330
+        Width = 131
+        Height = 15
+        Caption = 'Generate Instructions'
         TabOrder = 15
         Visible = False
         OnClick = ButtonOutHintClick
       end
       object ComboBoxAgio: TComboBox
-        Left = 357
-        Top = 280
+        Left = 381
+        Top = 278
         Width = 52
         Height = 20
         Style = csDropDownList
@@ -310,16 +306,16 @@ object FormShop: TFormShop
         Top = 281
         Width = 65
         Height = 17
-        Caption = #19981#21487#20986#21806
+        Caption = 'No Sale'
         TabOrder = 17
       end
       object CheckBox8: TCheckBox
         Tag = 7
         Left = 629
         Top = 281
-        Width = 65
+        Width = 94
         Height = 17
-        Caption = #20002#24323#28040#22833
+        Caption = 'Discard Disapear'
         TabOrder = 18
       end
       object ComboBoxClass: TComboBox
@@ -376,15 +372,15 @@ object FormShop: TFormShop
         Height = 205
         Columns = <
           item
-            Caption = #29289#21697#31867#21035
+            Caption = 'Item Category'
             Width = 60
           end
           item
-            Caption = #29289#21697#21517#31216
+            Caption = 'Item Name'
             Width = 100
           end
           item
-            Caption = #24050#21806
+            Caption = 'Sold'
             Width = 40
           end
           item
@@ -392,54 +388,54 @@ object FormShop: TFormShop
             Width = 36
           end
           item
-            Caption = #20215#26684
+            Caption = 'Price'
           end
           item
-            Caption = #26399#38480
+            Caption = 'Term'
             Width = 36
           end
           item
-            Caption = #25240#25187
+            Caption = 'Discounts'
             Width = 36
           end
           item
-            Caption = #25968#37327
+            Caption = 'Qauntity'
             Width = 36
           end
           item
-            Caption = #20132
+            Caption = 'Post'
             Width = 24
           end
           item
-            Caption = #23384
+            Caption = 'Deposit'
             Width = 24
           end
           item
-            Caption = #20462
+            Caption = 'Repair'
             Width = 24
           end
           item
-            Caption = #20002
+            Caption = 'Throw'
             Width = 24
           end
           item
-            Caption = #32465
+            Caption = 'Tie'
             Width = 24
           end
           item
-            Caption = #36896
+            Caption = 'Made'
             Width = 24
           end
           item
-            Caption = #21806
+            Caption = 'Sale'
             Width = 24
           end
           item
-            Caption = #28040
+            Caption = 'Consumers'
             Width = 24
           end
           item
-            Caption = #37329#24065#20215#26684
+            Caption = 'Gold Prices'
             Width = 60
           end>
         GridLines = True
@@ -510,20 +506,22 @@ object FormShop: TFormShop
           #26143#26399#26085)
       end
       object Button1: TButton
-        Left = 621
-        Top = 330
+        Left = 461
+        Top = 350
         Width = 92
-        Height = 23
-        Caption = #28165#31354#38144#21806'(&R)'
+        Height = 12
+        Caption = 'Empty Sales'
         TabOrder = 28
         OnClick = Button1Click
       end
       object EditGold: TSpinEdit
-        Left = 468
-        Top = 232
+        Left = 478
+        Top = 235
         Width = 66
         Height = 21
-        Hint = #35774#32622#24403#21069#29289#21697#26159#21542#20801#35768#20351#29992#37329#24065#36141#20080#65292#20026'0'#21017#19981#20801#35768
+        Hint = 
+          'Set the current items are allowed to use gold to buy, do not all' +
+          'ow for 0'
         MaxValue = 0
         MinValue = 0
         ParentShowHint = False

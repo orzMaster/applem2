@@ -7,7 +7,7 @@ uses
 const
   tRunGate = 8;
 
-  g_sUpDateTime = '更新日期: 2012/05/01';
+  g_sUpDateTime = 'Update: 2012/05/01';   //  更新日期
   BlockIPListName = '.\BlockIPList.txt';
   TeledataBlockIPListName = '.\Config\RunGate_BlockIPList.txt';
   ConfigFileName = '.\Config.ini';
@@ -161,7 +161,7 @@ var
     btSpeedControlMode: 1;
     boSpeedShowMsg: True;
     sSpeedShowMsg:
-    '〖提示〗: 请爱护游戏环境,不要使用非法外挂!';
+    '[Tip]: Care for the game environment, do not use illegal plugins!';
     btMsgColor: 0;
     nIncErrorCount: 5;
     nDecErrorCount: 3;
@@ -246,7 +246,7 @@ var
   BlockSysMode: TBlockSysMode = mDisMsgorSys;
   boBlockSayMsg: Boolean = False;
   bokickOverPacketSize: Boolean = True;
-  sDropFilterMsgAlert: string = '您发送的信息里包含了非法字符[%s]。';
+  sDropFilterMsgAlert: string = 'Information you send contains illegal characters[%s]。';
 
   //  nClientSendBlockSize        :Integer = 250; //发送给客户端数据包大小限制
   nClientSendBlockSize: Integer = 8192; //发送给客户端数据包大小限制
@@ -327,7 +327,7 @@ procedure LoadAbuseFile();
 var
   sFileName: string;
 begin
-  AddMainLogMsg('正在加载文字过滤配置信息...', 4);
+  AddMainLogMsg('Loading abuse file...', 4);
   sFileName := '.\WordFilter.txt';
   try
     CS_FilterMsg.Enter;
@@ -343,7 +343,7 @@ begin
       CS_FilterMsg.Leave;
     end;
   end;
-  AddMainLogMsg('文字过滤信息加载完成...', 4);
+  AddMainLogMsg('Abuse file loaded...', 4);
 end;   }
 
 procedure LoadBlockIPList();

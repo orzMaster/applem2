@@ -3,7 +3,7 @@ object frmGeneralConfig: TfrmGeneralConfig
   Top = 312
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #22522#26412#35774#32622
+  Caption = 'Basic Settings'
   ClientHeight = 185
   ClientWidth = 394
   Color = clBtnFace
@@ -20,49 +20,49 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 209
     Height = 169
-    Caption = #32593#32476#35774#32622
+    Caption = 'Network Settings'
     TabOrder = 0
     object LabelGateIPaddr: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 78
       Height = 12
-      Caption = #32593#20851#22320#22336':'
+      Caption = 'Gateway Addr:'
     end
     object LabelGatePort: TLabel
       Left = 8
       Top = 44
-      Width = 54
+      Width = 78
       Height = 12
-      Caption = #32593#20851#31471#21475':'
+      Caption = 'Gateway Port:'
     end
     object LabelServerPort: TLabel
       Left = 8
       Top = 92
       Width = 66
       Height = 12
-      Caption = #26381#21153#22120#31471#21475':'
+      Caption = 'ServerPort:'
     end
     object LabelServerIPaddr: TLabel
       Left = 8
       Top = 68
-      Width = 66
+      Width = 72
       Height = 12
-      Caption = #26381#21153#22120#22320#22336':'
+      Caption = 'Server Addr:'
     end
     object Label5: TLabel
       Left = 8
       Top = 118
-      Width = 78
+      Width = 90
       Height = 12
-      Caption = #25511#21046#20013#24515#22320#22336':'
+      Caption = 'CtrlCenterAddr:'
     end
     object Label6: TLabel
       Left = 8
       Top = 144
-      Width = 78
+      Width = 90
       Height = 12
-      Caption = #25511#21046#20013#24515#31471#21475':'
+      Caption = 'CtrlCenterPort:'
     end
     object EditGateIPaddr: TEdit
       Left = 93
@@ -135,46 +135,49 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 161
     Height = 121
-    Caption = #22522#26412#21442#25968
+    Caption = 'Basic Parameters'
     TabOrder = 1
     object Label1: TLabel
       Left = 8
       Top = 20
-      Width = 30
+      Width = 36
       Height = 12
-      Caption = #26631#39064':'
+      Caption = 'Title:'
     end
     object LabelShowLogLevel: TLabel
       Left = 8
       Top = 44
-      Width = 78
+      Width = 90
       Height = 12
-      Caption = #26174#31034#26085#24535#31561#32423':'
+      Caption = 'Show Log Level:'
     end
     object LabelShowBite: TLabel
       Left = 8
       Top = 92
       Width = 78
       Height = 12
-      Caption = #27969#37327#26174#31034#21333#20301':'
+      Caption = 'Flow Display:'
     end
     object EditTitle: TEdit
       Left = 40
       Top = 16
       Width = 105
       Height = 20
-      Hint = #31243#24207#26631#39064#19978#26174#31034#30340#21517#31216#65292#27492#21517#31216#21482#29992#20110#26174#31034#13#10#26242#26102#19981#20570#20854#23427#29992#36884#12290
+      Hint = 
+        'The title is displayed on the program name, the name for display' +
+        ' only '
+      ImeMode = imHanguel
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
-      Text = #28909#34880#20256#22855
+      Text = 'Mir'
     end
     object TrackBarLogLevel: TTrackBar
       Left = 8
       Top = 56
       Width = 145
       Height = 25
-      Hint = #31243#24207#36816#34892#26085#24535#26174#31034#35814#32454#31561#32423#12290
+      Hint = 'Program running log shows the level of detail.'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -184,7 +187,9 @@ object frmGeneralConfig: TfrmGeneralConfig
       Top = 88
       Width = 57
       Height = 20
-      Hint = #31243#24207#20027#20171#38754#19978#26174#31034#30340#30417#25511#25968#25454#27969#37327#26174#31034#21333#20301#12290
+      Hint = 
+        'Monitoring data on the program'#39's main interface displays traffic' +
+        ' display units.'
       Style = csDropDownList
       ItemHeight = 12
       ParentShowHint = False
@@ -200,8 +205,8 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 152
     Width = 65
     Height = 25
-    Hint = #20445#23384#24403#21069#35774#32622#65292#32593#32476#35774#32622#20110#19979#19968#27425#21551#21160#13#10#26381#21153#26102#29983#25928#12290
-    Caption = #30830#23450'(&O)'
+    Hint = 'Save the current settings, network settings at the next start '
+    Caption = 'Okay(&O)'
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2

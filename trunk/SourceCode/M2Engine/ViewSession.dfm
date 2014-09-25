@@ -2,7 +2,7 @@ object frmViewSession: TfrmViewSession
   Left = 606
   Top = 529
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = #26597#30475#20840#23616#20250#35805
+  Caption = 'View Global Session'
   ClientHeight = 175
   ClientWidth = 451
   Color = clBtnFace
@@ -21,7 +21,7 @@ object frmViewSession: TfrmViewSession
     Top = 143
     Width = 73
     Height = 25
-    Caption = #21047#26032'(&R)'
+    Caption = 'Refresh(&R)'
     TabOrder = 0
     OnClick = ButtonRefGridClick
   end
