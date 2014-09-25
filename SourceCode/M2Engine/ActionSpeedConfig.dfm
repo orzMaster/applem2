@@ -4,7 +4,7 @@ object frmActionSpeed: TfrmActionSpeed
   ActiveControl = ButtonClose
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #32452#21512#25805#20316#36895#24230#35774#32622
+  Caption = 'Operation Speed Setting'
   ClientHeight = 257
   ClientWidth = 318
   Color = clBtnFace
@@ -47,14 +47,16 @@ object frmActionSpeed: TfrmActionSpeed
         Top = 24
         Width = 54
         Height = 12
-        Caption = #36305#20301#38388#38548':'
+        Caption = 'Move Int:'
       end
       object EditRunLongHitIntervalTime: TSpinEdit
         Left = 68
         Top = 20
         Width = 53
         Height = 21
-        Hint = #25511#21046#36305#20301#21050#26432#25915#20987#38388#38548#26102#38388#65292#21333#20301#20026'('#27627#31186')'#12290
+        Hint = 
+          'Control moves assassination attack interval, the unit is (in mil' +
+          'liseconds).'
         EditorEnabled = False
         Increment = 10
         MaxValue = 2000
@@ -68,8 +70,8 @@ object frmActionSpeed: TfrmActionSpeed
         Top = -1
         Width = 121
         Height = 17
-        Hint = #26159#21542#23545#36305#20301#21050#26432#36827#34892#25511#21046#12290
-        Caption = #21551#29992#36305#20301#21050#26432#25511#21046
+        Hint = 'Whether moves to assassinate control.'
+        Caption = 'Enable Assa Ctrl'
         TabOrder = 1
         OnClick = CheckBoxControlRunLongHitClick
       end
@@ -79,21 +81,23 @@ object frmActionSpeed: TfrmActionSpeed
       Top = 16
       Width = 137
       Height = 49
-      Caption = #32452#21512#25805#20316#38388#38548
+      Caption = 'Operation Interval'
       TabOrder = 1
       object Label2: TLabel
         Left = 11
         Top = 24
         Width = 54
         Height = 12
-        Caption = #38388#38548#26102#38388':'
+        Caption = 'Interval:'
       end
       object EditActionIntervalTime: TSpinEdit
         Left = 68
         Top = 20
         Width = 53
         Height = 21
-        Hint = #25511#21046#32452#21512#26222#36890#25805#20316#38388#38548#26102#38388#65292#21333#20301#20026'('#27627#31186')'#12290
+        Hint = 
+          'Combination of normal operation control interval, the unit is (i' +
+          'n milliseconds).'
         EditorEnabled = False
         Increment = 10
         MaxValue = 2000
@@ -106,10 +110,10 @@ object frmActionSpeed: TfrmActionSpeed
     object CheckBoxControlActionInterval: TCheckBox
       Left = 8
       Top = -1
-      Width = 121
+      Width = 177
       Height = 17
-      Hint = #26159#21542#23545#32452#21512#25805#20316#36827#34892#25511#21046#12290
-      Caption = #21551#29992#32452#21512#25805#20316#25511#21046
+      Hint = 'Whether a combination of the operation control.'
+      Caption = 'Enable Operation Ctrl'
       TabOrder = 2
       OnClick = CheckBoxControlActionIntervalClick
     end
@@ -124,14 +128,14 @@ object frmActionSpeed: TfrmActionSpeed
         Top = 24
         Width = 54
         Height = 12
-        Caption = #36305#20301#38388#38548':'
+        Caption = 'Move Int:'
       end
       object EditRunHitIntervalTime: TSpinEdit
         Left = 68
         Top = 20
         Width = 53
         Height = 21
-        Hint = #25511#21046#36305#20301#25915#20987#38388#38548#26102#38388#65292#21333#20301#20026'('#27627#31186')'#12290
+        Hint = 'Control moves to attack interval, the unit is (in milliseconds).'
         EditorEnabled = False
         Increment = 10
         MaxValue = 2000
@@ -143,10 +147,10 @@ object frmActionSpeed: TfrmActionSpeed
       object CheckBoxControlRunHit: TCheckBox
         Left = 8
         Top = -1
-        Width = 121
+        Width = 130
         Height = 17
-        Hint = #26159#21542#23545#36305#20301#25915#20987#36827#34892#25511#21046#12290
-        Caption = #21551#29992#36305#20301#25915#20987#25511#21046
+        Hint = 'Moves to control whether the attack.'
+        Caption = 'Enable Move to Atk'
         TabOrder = 1
         OnClick = CheckBoxControlRunHitClick
       end
@@ -162,14 +166,16 @@ object frmActionSpeed: TfrmActionSpeed
         Top = 24
         Width = 54
         Height = 12
-        Caption = #36208#20301#38388#38548':'
+        Caption = 'Walk Int:'
       end
       object EditWalkHitIntervalTime: TSpinEdit
         Left = 68
         Top = 20
         Width = 53
         Height = 21
-        Hint = #25511#21046#36208#20301#25915#20987#38388#38548#26102#38388#65292#21333#20301#20026'('#27627#31186')'#12290
+        Hint = 
+          'Control the time between attacks take place, the unit is (in mil' +
+          'liseconds).'
         EditorEnabled = False
         Increment = 10
         MaxValue = 2000
@@ -183,8 +189,8 @@ object frmActionSpeed: TfrmActionSpeed
         Top = -1
         Width = 121
         Height = 17
-        Hint = #26159#21542#23545#36305#20301#25915#20987#36827#34892#25511#21046#12290
-        Caption = #21551#29992#36208#20301#25915#20987#25511#21046
+        Hint = 'Moves to control whether the attack.'
+        Caption = 'Enable Walk Atk'
         TabOrder = 1
         OnClick = CheckBoxControlWalkHitClick
       end
@@ -196,18 +202,18 @@ object frmActionSpeed: TfrmActionSpeed
       Height = 49
       TabOrder = 5
       object Label4: TLabel
-        Left = 11
-        Top = 24
+        Left = 8
+        Top = 22
         Width = 54
         Height = 12
-        Caption = #36305#20301#38388#38548':'
+        Caption = 'Move Int:'
       end
       object EditRunMagicIntervalTime: TSpinEdit
         Left = 68
         Top = 20
         Width = 53
         Height = 21
-        Hint = #25511#21046#36305#20301#39764#27861#38388#38548#26102#38388#65292#21333#20301#20026'('#27627#31186')'#12290
+        Hint = 'Control moves magic interval, the unit is (in milliseconds).'
         EditorEnabled = False
         Increment = 10
         MaxValue = 2000
@@ -221,8 +227,8 @@ object frmActionSpeed: TfrmActionSpeed
         Top = -1
         Width = 121
         Height = 17
-        Hint = #26159#21542#23545#36305#20301#25915#20987#36827#34892#25511#21046#12290
-        Caption = #21551#29992#36305#20301#39764#27861#25511#21046
+        Hint = 'Moves to control whether the attack.'
+        Caption = 'Enable Magic Ctrl'
         TabOrder = 1
         OnClick = CheckBoxControlRunMagicClick
       end
@@ -233,7 +239,7 @@ object frmActionSpeed: TfrmActionSpeed
     Top = 205
     Width = 65
     Height = 25
-    Caption = #20445#23384'(&S)'
+    Caption = 'Save(&S)'
     TabOrder = 1
     OnClick = ButtonSaveClick
   end
@@ -242,7 +248,7 @@ object frmActionSpeed: TfrmActionSpeed
     Top = 205
     Width = 65
     Height = 25
-    Caption = #40664#35748'(&D)'
+    Caption = 'Default(&D)'
     TabOrder = 2
     OnClick = ButtonDefaultClick
   end
@@ -251,7 +257,7 @@ object frmActionSpeed: TfrmActionSpeed
     Top = 204
     Width = 65
     Height = 25
-    Caption = #20851#38381'(&C)'
+    Caption = 'Close(&C)'
     TabOrder = 3
     OnClick = ButtonCloseClick
   end
@@ -260,7 +266,7 @@ object frmActionSpeed: TfrmActionSpeed
     Top = 208
     Width = 73
     Height = 17
-    Caption = #24494#35843#21442#25968
+    Caption = 'Tuning'
     TabOrder = 4
     OnClick = CheckBoxIncremengClick
   end

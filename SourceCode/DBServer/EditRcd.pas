@@ -252,7 +252,7 @@ begin
   CheckBoxIsMaster.Checked := m_ChrRcd.Data.boMaster;
   EditMasterName1.Text := m_ChrRcd.Data.MasterName[0];
   if CheckBoxIsMaster.Checked then begin
-    Label39.Caption := '徒弟一:';
+    Label39.Caption := 'Apprentice:';
     EditMasterName2.Text := m_ChrRcd.Data.MasterName[1];
     EditMasterName3.Text := m_ChrRcd.Data.MasterName[2];
     EditMasterName4.Text := m_ChrRcd.Data.MasterName[3];
@@ -260,7 +260,7 @@ begin
     EditMasterName6.Text := m_ChrRcd.Data.MasterName[5];
     EditMasterName7.Text := m_ChrRcd.Data.MasterName[6];
   end else begin
-    Label39.Caption := '师父名称:';
+    Label39.Caption := 'Master:';
   end;
 
   ListBoxFirend.Items.Clear;
@@ -304,7 +304,7 @@ end;
 procedure TfrmEditRcd.Open;
 begin
   RefShow();
-  Caption := format('编辑人物数据 [%s]', [m_ChrRcd.Data.sChrName]);
+  Caption := format('Editing character data [%s]', [m_ChrRcd.Data.sChrName]);
   PageControl.ActivePageIndex := 0;
   ShowModal;
 end;
@@ -368,7 +368,7 @@ var
   ListItem: TListItem;
   UserItem: TUserItem;
 const
-  Names: array[0..14] of String[6] = ('衣服', '武器', '头盔', '项链', '照明物', '左手镯', '右手镯', '左戒指', '右戒指', '符毒', '腰带', '靴子', '宝石', '马牌', '道具');
+  Names: array[0..14] of String[16] = ('Clothes', 'Weapons', 'Helmet', 'Necklace', 'Lighting Objects', 'Left Bracelet', 'Right Bracelet', 'Left Ring', 'Right Ring', 'Poison', 'Belt', 'Boots', 'Gem', 'Horse', 'Props');
 begin
   ListViewUserItem.Clear;
   for i := Low(m_ChrRcd.Data.HumItems) to High(m_ChrRcd.Data.HumItems) do begin
@@ -454,12 +454,12 @@ begin
   else
     nFileHandle := FileCreate(sSaveFileName);
   if nFileHandle <= 0 then begin
-    MessageBox(Handle, '保存文件出现错误！！！', '错误信息', MB_OK + MB_ICONEXCLAMATION);
+    MessageBox(Handle, 'Error saving file!', 'Error', MB_OK + MB_ICONEXCLAMATION);
     Exit;
   end;
   FileWrite(nFileHandle, m_ChrRcd, SizeOf(THumDataInfo));
   FileClose(nFileHandle);
-  MessageBox(Handle, '人物数据导出成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+  MessageBox(Handle, 'Character exported successfully!', 'Message', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TfrmEditRcd.ProcessLoadRcdformFile;
@@ -474,17 +474,17 @@ begin
   sLoadFileName := OpenDialog.FileName;
 
   if not FileExists(sLoadFileName) then begin
-    MessageBox(Handle, '指定的文件未找到！！！', '错误信息', MB_OK + MB_ICONEXCLAMATION);
+    MessageBox(Handle, 'Specified file not found!','Error message', MB_OK + MB_ICONEXCLAMATION);
     Exit;
   end;
   nFileHandle := FileOpen(sLoadFileName, fmOpenReadWrite or fmShareDenyNone);
 
   if nFileHandle <= 0 then begin
-    MessageBox(Handle, '打开文件出现错误！！！', '错误信息', MB_OK + MB_ICONEXCLAMATION);
+    MessageBox(Handle, 'File open error!','Error message', MB_OK + MB_ICONEXCLAMATION);
     Exit;
   end;
   if not FileRead(nFileHandle, ChrRcd, SizeOf(THumDataInfo)) = SizeOf(THumDataInfo) then begin
-    MessageBox(Handle, '读取文件出现错误！！！'#13#13'文件格式可能不正确', '错误信息', MB_OK + MB_ICONEXCLAMATION);
+    MessageBox(Handle, 'Error reading file!'#13#13'File format may be incorrect','Error message', MB_OK + MB_ICONEXCLAMATION);
     Exit;
   end;
   ChrRcd.Header := m_ChrRcd.Header;
@@ -494,7 +494,7 @@ begin
   m_ChrRcd := ChrRcd;
   FileClose(nFileHandle);
   RefShow();
-  MessageBox(Handle, '人物数据导入成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+  MessageBox(Handle, 'Character data import success!','Message', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TfrmEditRcd.ProcessSaveRcd;
@@ -515,10 +515,10 @@ begin
     HumDataDB.Close;
   end;
   if boSaveOK then begin
-    MessageBox(Handle, '人物数据保存成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    MessageBox(Handle, 'Character data successfully saved!','Message', MB_OK + MB_ICONINFORMATION);
   end
   else begin
-    MessageBox(Handle, '人物数据保存失败！！！', '错误信息', MB_OK + MB_ICONEXCLAMATION);
+    MessageBox(Handle, 'Character data saving fail!','Error message', MB_OK + MB_ICONEXCLAMATION);
   end;
 end;
 

@@ -3,7 +3,7 @@ object frmConfigMerchant: TfrmConfigMerchant
   Top = 330
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #20132#26131'NPC'#37197#32622
+  Caption = 'Trading NPC Configuration'
   ClientHeight = 510
   ClientWidth = 826
   Color = clBtnFace
@@ -23,29 +23,29 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 332
     Width = 401
     Height = 137
-    Caption = #30456#20851#35774#32622
+    Caption = 'Related Settings'
     Enabled = False
     TabOrder = 0
     object Label2: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 42
       Height = 12
-      Caption = #33050#26412#21517#31216':'
+      Caption = 'Script:'
     end
     object Label3: TLabel
       Left = 208
       Top = 20
       Width = 54
       Height = 12
-      Caption = #22320#22270#21517#31216':'
+      Caption = 'Map Name:'
     end
     object Label4: TLabel
       Left = 8
       Top = 44
-      Width = 36
+      Width = 48
       Height = 12
-      Caption = #24231#26631'X:'
+      Caption = 'Coord X:'
     end
     object Label5: TLabel
       Left = 120
@@ -55,39 +55,39 @@ object frmConfigMerchant: TfrmConfigMerchant
       Caption = 'Y:'
     end
     object Label6: TLabel
-      Left = 8
-      Top = 68
-      Width = 54
+      Left = 4
+      Top = 66
+      Width = 30
       Height = 12
-      Caption = #26174#31034#21517#31216':'
+      Caption = 'Name:'
     end
     object Label7: TLabel
       Left = 208
       Top = 68
-      Width = 30
+      Width = 24
       Height = 12
-      Caption = #26041#21521':'
+      Caption = 'Dir:'
     end
     object Label8: TLabel
-      Left = 304
+      Left = 295
       Top = 68
       Width = 30
       Height = 12
-      Caption = #22806#24418':'
+      Caption = 'Looks'
     end
     object Label10: TLabel
       Left = 208
       Top = 44
-      Width = 54
+      Width = 24
       Height = 12
-      Caption = #22320#22270#25551#36848':'
+      Caption = 'Map:'
     end
     object Label11: TLabel
       Left = 288
       Top = 92
-      Width = 54
+      Width = 42
       Height = 12
-      Caption = #31227#21160#38388#38548':'
+      Caption = 'Mobile:'
     end
     object EditScriptName: TEdit
       Left = 64
@@ -103,7 +103,7 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 16
       Width = 121
       Height = 20
-      Hint = #22320#22270#21517#31216#12290
+      Hint = 'Map name.'
       TabOrder = 1
       OnChange = EditMapNameChange
     end
@@ -118,10 +118,12 @@ object frmConfigMerchant: TfrmConfigMerchant
     object CheckBoxOfCastle: TCheckBox
       Left = 64
       Top = 88
-      Width = 81
+      Width = 113
       Height = 17
-      Hint = #25351#23450#27492'NPC'#23646#20110#22478#22561#31649#29702#65292#24403#25915#22478#26102'NPC'#23558#20572#27490#33829#19994#12290
-      Caption = #23646#20110#22478#22561
+      Hint = 
+        'The castle belongs to the specified NPC management, when the sie' +
+        'ge NPC will stop operating.'
+      Caption = 'Belong to Castle'
       TabOrder = 3
       OnClick = CheckBoxOfCastleClick
     end
@@ -130,7 +132,7 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 64
       Width = 49
       Height = 20
-      Hint = #40664#35748#31449#31435#26041#21521#12290
+      Hint = 'Default standing direction.'
       Style = csDropDownList
       ItemHeight = 12
       TabOrder = 4
@@ -141,7 +143,7 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 63
       Width = 49
       Height = 21
-      Hint = #22806#35266#22270#24418#12290
+      Hint = 'Exterior graphics.'
       EditorEnabled = False
       MaxValue = 65535
       MinValue = 0
@@ -154,7 +156,6 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 39
       Width = 49
       Height = 21
-      Hint = #24403#21069#24231#26631'X'#12290
       EditorEnabled = False
       MaxValue = 1000
       MinValue = 1
@@ -167,7 +168,6 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 39
       Width = 49
       Height = 21
-      Hint = #24403#21069#24231#26631'Y'#12290
       EditorEnabled = False
       MaxValue = 1000
       MinValue = 1
@@ -189,8 +189,8 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 88
       Width = 81
       Height = 17
-      Hint = 'NPC'#20250#22312#22320#22270#36827#34892#38543#35201#31227#21160
-      Caption = #33258#21160#31227#21160
+      Hint = 'NPC will have to move with the map'
+      Caption = 'Auto Move'
       TabOrder = 9
       OnClick = CheckBoxAutoMoveClick
     end
@@ -199,7 +199,7 @@ object frmConfigMerchant: TfrmConfigMerchant
       Top = 87
       Width = 41
       Height = 21
-      Hint = #38543#26426#31227#21160#38388#38548#26102#38388#31186
+      Hint = 'Random movement interval seconds'
       EditorEnabled = False
       MaxValue = 65535
       MinValue = 0
@@ -213,7 +213,7 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 8
     Width = 401
     Height = 494
-    Caption = #33050#26412#32534#36753
+    Caption = 'Script Editor'
     Enabled = False
     TabOrder = 1
     object MemoScript: TMemo
@@ -226,28 +226,27 @@ object frmConfigMerchant: TfrmConfigMerchant
       OnChange = MemoScriptChange
     end
     object ButtonScriptSave: TButton
-      Left = 335
-      Top = 25
+      Left = 341
+      Top = 59
       Width = 57
       Height = 25
-      Hint = #20445#23384#33050#26412#25991#20214#12290
-      Caption = #20445#23384'(&S)'
+      Hint = 'Save the script file.'
+      Caption = 'Save(&S)'
       TabOrder = 1
       OnClick = ButtonScriptSaveClick
     end
     object GroupBox3: TGroupBox
       Left = 8
       Top = 16
-      Width = 321
+      Width = 329
       Height = 113
-      Caption = #33050#26412#21442#25968
       TabOrder = 2
       object Label9: TLabel
         Left = 8
         Top = 88
         Width = 54
         Height = 12
-        Caption = #20132#26131#25240#25187':'
+        Caption = 'Discount:'
         Visible = False
       end
       object CheckBoxBuy: TCheckBox
@@ -255,7 +254,7 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 16
         Width = 33
         Height = 17
-        Caption = #20080
+        Caption = 'Buy'
         TabOrder = 0
         OnClick = CheckBoxBuyClick
       end
@@ -264,7 +263,7 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 32
         Width = 33
         Height = 17
-        Caption = #21334
+        Caption = 'Sell'
         TabOrder = 1
         OnClick = CheckBoxSellClick
       end
@@ -273,7 +272,7 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 32
         Width = 65
         Height = 17
-        Caption = #21462#20179#24211
+        Caption = 'Take WH'
         TabOrder = 2
         OnClick = CheckBoxStorageClick
       end
@@ -282,7 +281,7 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 16
         Width = 65
         Height = 17
-        Caption = #23384#20179#24211
+        Caption = 'Give WH'
         TabOrder = 3
         OnClick = CheckBoxGetbackClick
       end
@@ -291,25 +290,25 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 48
         Width = 73
         Height = 17
-        Caption = #21512#25104#29289#21697
+        Caption = 'Synth Mat'
         TabOrder = 4
         OnClick = CheckBoxMakedrugClick
       end
       object CheckBoxArmStrengthen: TCheckBox
         Left = 152
         Top = 16
-        Width = 73
+        Width = 97
         Height = 17
-        Caption = #24378#21270#35013#22791
+        Caption = 'Strengthen'
         TabOrder = 5
         OnClick = CheckBoxArmStrengthenClick
       end
       object CheckBoxArmUnseal: TCheckBox
         Left = 152
         Top = 32
-        Width = 73
+        Width = 82
         Height = 17
-        Caption = #35013#22791#24320#20809
+        Caption = 'Equip Open'
         TabOrder = 6
         OnClick = CheckBoxArmUnsealClick
       end
@@ -318,16 +317,16 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 16
         Width = 73
         Height = 17
-        Caption = #20462#29702#29289#21697
+        Caption = 'Repair '
         TabOrder = 7
         OnClick = CheckBoxRepairClick
       end
       object CheckBoxS_repair: TCheckBox
         Left = 240
         Top = 32
-        Width = 73
+        Width = 94
         Height = 17
-        Caption = #29305#27530#20462#29702
+        Caption = 'Special Rep'
         TabOrder = 8
         OnClick = CheckBoxS_repairClick
       end
@@ -336,7 +335,7 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 84
         Width = 49
         Height = 21
-        Hint = 'NPC'#20132#26131#26102#25240#25187#65292'80'#20026'80%'
+        Hint = 'NPC transaction discount, 80 to 80%'
         EditorEnabled = False
         MaxValue = 500
         MinValue = 60
@@ -349,16 +348,16 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 48
         Width = 73
         Height = 17
-        Caption = #31069#31119#35821
+        Caption = 'Greeting'
         TabOrder = 10
         OnClick = CheckBoxSendMsgClick
       end
       object CheckBoxArmRemoveStone: TCheckBox
         Left = 152
         Top = 48
-        Width = 73
+        Width = 82
         Height = 17
-        Caption = #21368#19979#23453#30707
+        Caption = 'Remov Stone'
         TabOrder = 11
         OnClick = CheckBoxArmRemoveStoneClick
       end
@@ -367,16 +366,16 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 64
         Width = 73
         Height = 17
-        Caption = #21319#32423#27494#22120
+        Caption = 'Upgr Weap'
         TabOrder = 12
         OnClick = CheckBoxUpgradeNowClick
       end
       object CheckBoxGetBackUpgnow: TCheckBox
         Left = 152
         Top = 64
-        Width = 73
+        Width = 86
         Height = 17
-        Caption = #21462#22238#27494#22120
+        Caption = 'Retriev Wep'
         TabOrder = 13
         OnClick = CheckBoxGetBackUpgnowClick
       end
@@ -385,18 +384,18 @@ object frmConfigMerchant: TfrmConfigMerchant
         Top = 64
         Width = 81
         Height = 17
-        Caption = #23646#24615#36716#31227
+        Caption = 'Prop Trans'
         TabOrder = 14
         OnClick = CheckBoxArmAbilityMoveClick
       end
     end
     object ButtonReLoadNpc: TButton
-      Left = 336
-      Top = 56
+      Left = 341
+      Top = 28
       Width = 57
       Height = 25
-      Hint = #37325#26032#21152#36733'NPC'#33050#26412#12290
-      Caption = #21152#36733'(&L)'
+      Hint = 'Reload NPC script.'
+      Caption = 'Load(&L)'
       Enabled = False
       TabOrder = 3
       OnClick = ButtonReLoadNpcClick
@@ -407,8 +406,8 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 476
     Width = 57
     Height = 25
-    Hint = #20445#23384#20132#26131'NPC'#35774#32622
-    Caption = #20445#23384'(&S)'
+    Hint = 'Save the transaction NPC settings'
+    Caption = 'Save(&S)'
     TabOrder = 2
     OnClick = ButtonSaveClick
   end
@@ -417,8 +416,11 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 476
     Width = 73
     Height = 17
-    Hint = #20351#29992#27492#26041#27861#65292#21487#20197#21047#26032'NPC'#22312#28216#25103#20013#30340#25968#25454#12290#25171#24320#27492#36873#39033#20960#31186#21518#20877#20851#38381#65292'NPC'#26356#25913#30340#21442#25968#23601#20250#22312#28216#25103#20013#21047#26032#12290
-    Caption = #21047#26032#29366#24577
+    Hint = 
+      'Using this method, you can refresh the NPC data in the game. Tur' +
+      'n this option off after a few seconds, the parameter changes wil' +
+      'l refresh the NPC in the game.'
+    Caption = 'Refresh'
     TabOrder = 3
     OnClick = CheckBoxDenyRefStatusClick
   end
@@ -427,8 +429,11 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 476
     Width = 89
     Height = 25
-    Hint = #28165#38500#25152#26377'NPC'#30340#20020#26102#25991#20214#65292#21253#25324#20020#26102#20215#26684#34920#21450#20132#26131#29289#21697#24211#23384#65292#22312'NPC'#20080#21334#29289#21697#26377#38382#39064#26102#21487#20351#29992#27492#21151#33021#28165#29702#12290
-    Caption = #28165#38500#25968#25454'(&C)'
+    Hint = 
+      'NPC clear all temporary files, including temporary price list an' +
+      'd trading goods inventory, you can use this feature to clean up ' +
+      'the sale of goods when there is a problem in the NPC.'
+    Caption = 'Clear(&C)'
     TabOrder = 4
     OnClick = ButtonClearTempDataClick
   end
@@ -437,7 +442,7 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 476
     Width = 89
     Height = 25
-    Caption = #26597#30475#25968#25454'(&V)'
+    Caption = 'View(&V)'
     TabOrder = 5
     Visible = False
     OnClick = ButtonClearTempDataClick
@@ -447,7 +452,7 @@ object frmConfigMerchant: TfrmConfigMerchant
     Top = 8
     Width = 401
     Height = 318
-    Caption = 'NPC'#21015#34920':'
+    Caption = 'NPC List'
     TabOrder = 6
     object ListBoxMerChant: TListBox
       Left = 8

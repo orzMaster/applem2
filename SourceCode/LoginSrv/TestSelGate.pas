@@ -43,7 +43,7 @@ begin
   sSelGateIPaddr := Trim(EditSelGate.Text);
   sGameGateIPaddr := GetSelGateInfo(@g_Config, sSelGateIPaddr, nGameGatePort);
   if sGameGateIPaddr = '' then begin
-    EditGameGate.Text := '无此网关设置';
+    EditGameGate.Text := 'No such Gateway settings';
     Exit;
   end;
   EditGameGate.Text := format('%s:%d', [sGameGateIPaddr, nGameGatePort]);

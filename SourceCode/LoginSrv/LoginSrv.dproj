@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-    <DCC_DependencyCheckOutputName>C:\MirServer\LoginSrv\LoginSrv.exe</DCC_DependencyCheckOutputName>
+    <DCC_DependencyCheckOutputName>D:\MirServer\LoginSrv\LoginSrv.exe</DCC_DependencyCheckOutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Version>7.0</Version>
@@ -16,7 +16,7 @@
     <DCC_Define>RELEASE</DCC_Define>
     <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
     <DCC_UNIT_PLATFORM>False</DCC_UNIT_PLATFORM>
-    <DCC_ExeOutput>C:\MirServer\LoginSrv</DCC_ExeOutput>
+    <DCC_ExeOutput>D:\MirServer\LoginSrv</DCC_ExeOutput>
     <DCC_WriteableConstants>True</DCC_WriteableConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -2,7 +2,7 @@ object FrmRegister: TFrmRegister
   Left = 513
   Top = 418
   BorderStyle = bsDialog
-  Caption = #27880#20876
+  Caption = 'Sign Up'
   ClientHeight = 154
   ClientWidth = 289
   Color = clBtnFace
@@ -19,28 +19,28 @@ object FrmRegister: TFrmRegister
     Top = 8
     Width = 273
     Height = 105
-    Caption = #27880#20876#20449#24687
+    Caption = 'Registration Information'
     TabOrder = 0
     object Label1: TLabel
       Left = 8
-      Top = 24
-      Width = 48
+      Top = 26
+      Width = 42
       Height = 12
-      Caption = #26426#22120#30721#65306
+      Caption = 'Encode:'
     end
     object Label2: TLabel
       Left = 8
       Top = 72
       Width = 48
       Height = 12
-      Caption = #27880#20876#30721#65306
+      Caption = 'License:'
     end
     object Label3: TLabel
       Left = 8
       Top = 48
-      Width = 48
+      Width = 30
       Height = 12
-      Caption = #29992#25143#21517#65306
+      Caption = 'User:'
     end
     object EditUserName: TRzEdit
       Left = 56
@@ -73,7 +73,7 @@ object FrmRegister: TFrmRegister
     Left = 208
     Top = 120
     FrameColor = 7617536
-    Caption = #27880#20876'(&R)'
+    Caption = 'Sign Up'
     HotTrack = True
     TabOrder = 1
     Glyph.Data = {

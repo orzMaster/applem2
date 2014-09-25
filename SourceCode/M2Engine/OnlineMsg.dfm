@@ -3,7 +3,7 @@ object frmOnlineMsg: TfrmOnlineMsg
   Top = 319
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #22312#32447#21457#36865#28040#24687
+  Caption = 'Send Message'
   ClientHeight = 332
   ClientWidth = 440
   Color = clBtnFace
@@ -20,9 +20,9 @@ object frmOnlineMsg: TfrmOnlineMsg
   object Label1: TLabel
     Left = 4
     Top = 169
-    Width = 54
+    Width = 48
     Height = 12
-    Caption = #22312#32447#20449#24687':'
+    Caption = 'Message:'
   end
   object ComboBoxMsg: TComboBox
     Left = 63
@@ -30,7 +30,7 @@ object frmOnlineMsg: TfrmOnlineMsg
     Width = 374
     Height = 20
     Style = csSimple
-    ItemHeight = 0
+    ItemHeight = 12
     TabOrder = 0
     OnChange = ComboBoxMsgChange
     OnKeyPress = ComboBoxMsgKeyPress
@@ -66,7 +66,7 @@ object frmOnlineMsg: TfrmOnlineMsg
     Top = 191
     Width = 67
     Height = 23
-    Caption = #22686#21152'(&A)'
+    Caption = 'Add(&A)'
     Enabled = False
     TabOrder = 3
     OnClick = ButtonAddClick
@@ -76,7 +76,7 @@ object frmOnlineMsg: TfrmOnlineMsg
     Top = 191
     Width = 67
     Height = 23
-    Caption = #21024#38500'(&D)'
+    Caption = 'Delete(&D)'
     Enabled = False
     TabOrder = 4
     OnClick = ButtonDeleteClick
@@ -86,7 +86,7 @@ object frmOnlineMsg: TfrmOnlineMsg
     Top = 190
     Width = 67
     Height = 23
-    Caption = #21457#36865'(&S)'
+    Caption = 'Send(&S)'
     TabOrder = 5
     OnClick = ButtonSendClick
   end

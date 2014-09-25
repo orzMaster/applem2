@@ -3,7 +3,7 @@ object frmGeneralConfig: TfrmGeneralConfig
   Top = 143
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #22522#26412#35774#32622
+  Caption = 'Basic Settings'
   ClientHeight = 158
   ClientWidth = 370
   Color = clBtnFace
@@ -20,35 +20,35 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 185
     Height = 113
-    Caption = #32593#32476#35774#32622
+    Caption = 'IP / Ports'
     TabOrder = 0
     object LabelGateIPaddr: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 48
       Height = 12
-      Caption = #32593#20851#22320#22336':'
+      Caption = 'Gate IP:'
     end
     object LabelGatePort: TLabel
       Left = 8
       Top = 44
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #32593#20851#31471#21475':'
+      Caption = 'Gate Port:'
     end
     object LabelServerPort: TLabel
       Left = 8
       Top = 92
-      Width = 66
+      Width = 72
       Height = 12
-      Caption = #26381#21153#22120#31471#21475':'
+      Caption = 'Server Port:'
     end
     object LabelServerIPaddr: TLabel
       Left = 8
       Top = 68
-      Width = 66
+      Width = 60
       Height = 12
-      Caption = #26381#21153#22120#22320#22336':'
+      Caption = 'Server IP:'
     end
     object EditGateIPaddr: TEdit
       Left = 80
@@ -88,21 +88,21 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 161
     Height = 113
-    Caption = #22522#26412#21442#25968
+    Caption = 'Basic Parameters'
     TabOrder = 1
     object Label1: TLabel
       Left = 8
       Top = 20
-      Width = 30
+      Width = 36
       Height = 12
-      Caption = #26631#39064':'
+      Caption = 'Title:'
     end
     object LabelShowLogLevel: TLabel
       Left = 8
       Top = 44
       Width = 78
       Height = 12
-      Caption = #26174#31034#26085#24535#31561#32423':'
+      Caption = 'Show Log Rank'
     end
     object EditTitle: TEdit
       Left = 40
@@ -110,7 +110,7 @@ object frmGeneralConfig: TfrmGeneralConfig
       Width = 105
       Height = 20
       TabOrder = 0
-      Text = #28909#34880#20256#22855
+      Text = 'Mir'
     end
     object TrackBarLogLevel: TTrackBar
       Left = 8
@@ -125,7 +125,7 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 128
     Width = 65
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'Okay(&O)'
     TabOrder = 2
     OnClick = ButtonOKClick
   end

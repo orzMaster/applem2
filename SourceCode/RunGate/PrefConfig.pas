@@ -23,7 +23,7 @@ type
   private
     { Private declarations }
   public
-    boShowOK: Boolean; //在设置显示数据前，不触发事件
+    boShowOK: Boolean; //Before setting the display data, do not trigger event
     { Public declarations }
   end;
 

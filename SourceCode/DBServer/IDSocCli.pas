@@ -134,7 +134,7 @@ begin
     end;
   end;
   m_sSockMsg := sScoketText;
-  //MainOutMessage('服务器已启动...');
+  //MainOutMessage('Server started...');
 end;
 
 procedure TFrmIDSoc.SendSocket(sSENDMSG: string);

@@ -3,7 +3,7 @@ object frmPrefConfig: TfrmPrefConfig
   Top = 363
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24615#33021#35774#32622
+  Caption = 'Performance'
   ClientHeight = 98
   ClientWidth = 376
   Color = clBtnFace
@@ -20,28 +20,30 @@ object frmPrefConfig: TfrmPrefConfig
     Top = 8
     Width = 177
     Height = 49
-    Caption = #26381#21153#22120#36890#35759
+    Caption = 'Server Communication'
     TabOrder = 0
     object LabelCheckTimeOut: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #26816#27979#36229#26102':'
+      Caption = 'Detection:'
     end
     object Label1: TLabel
       Left = 128
       Top = 20
-      Width = 12
+      Width = 18
       Height = 12
-      Caption = #31186
+      Caption = 'Sec'
     end
     object EditServerCheckTimeOut: TSpinEdit
       Left = 72
       Top = 16
       Width = 49
       Height = 21
-      Hint = #19982#28216#25103#26381#21153#22120#20043#38388#36890#35759#26816#27979#36229#26102#26102#38388#38271#24230
+      Hint = 
+        'Communication between the game server and the length of the time' +
+        'out detection'
       EditorEnabled = False
       Increment = 30
       MaxLength = 600
@@ -59,28 +61,28 @@ object frmPrefConfig: TfrmPrefConfig
     Top = 8
     Width = 177
     Height = 49
-    Caption = #23458#25143#31471#36890#35759
+    Caption = 'Client Communications'
     TabOrder = 1
     object LabelSendBlockSize: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #25968#25454#22823#23567':'
+      Caption = 'Data Size:'
     end
     object Label3: TLabel
       Left = 136
       Top = 20
-      Width = 24
+      Width = 30
       Height = 12
-      Caption = #23383#33410
+      Caption = 'Bytes'
     end
     object EditSendBlockSize: TSpinEdit
       Left = 72
       Top = 16
       Width = 57
       Height = 21
-      Hint = #21457#36865#32473#23458#25143#31471#25968#25454#21253#22823#23567
+      Hint = 'Sent to the client packet size'
       EditorEnabled = False
       Increment = 50
       MaxLength = 600
@@ -98,7 +100,7 @@ object frmPrefConfig: TfrmPrefConfig
     Top = 63
     Width = 74
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'Okay(&O)'
     TabOrder = 2
     OnClick = ButtonOKClick
   end

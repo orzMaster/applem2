@@ -3,7 +3,7 @@ object frmOnlineEmail: TfrmOnlineEmail
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #32676#21457#37038#20214
+  Caption = 'Ingame E-Mail'
   ClientHeight = 455
   ClientWidth = 309
   Color = clBtnFace
@@ -21,21 +21,21 @@ object frmOnlineEmail: TfrmOnlineEmail
     Top = 136
     Width = 289
     Height = 273
-    Caption = #21457#36865#20449#24687
+    Caption = 'Send Message'
     TabOrder = 0
     object Label1: TLabel
       Left = 16
       Top = 24
-      Width = 54
+      Width = 36
       Height = 12
-      Caption = #37038#20214#26631#39064':'
+      Caption = 'Title:'
     end
     object Label2: TLabel
       Left = 16
       Top = 56
-      Width = 54
+      Width = 48
       Height = 12
-      Caption = #37038#20214#27491#25991':'
+      Caption = 'Message:'
     end
     object EditTitle: TEdit
       Left = 76
@@ -63,23 +63,23 @@ object frmOnlineEmail: TfrmOnlineEmail
     Top = 8
     Width = 289
     Height = 122
-    Caption = #21457#36865#23545#20687
+    Caption = 'Send to:'
     TabOrder = 1
     object RButtonT: TRadioButton
-      Left = 16
+      Left = 3
       Top = 24
-      Width = 105
+      Width = 134
       Height = 17
-      Caption = #21457#36865#32473#25351#23450#29609#23478
+      Caption = 'Designated Player'
       TabOrder = 0
       OnClick = RButtonTClick
     end
     object RButtonAll: TRadioButton
-      Left = 16
+      Left = 3
       Top = 47
-      Width = 105
+      Width = 118
       Height = 17
-      Caption = #21457#36865#32473#25152#26377#29609#23478
+      Caption = 'All Players'
       Checked = True
       TabOrder = 1
       TabStop = True
@@ -102,7 +102,7 @@ object frmOnlineEmail: TfrmOnlineEmail
     Top = 422
     Width = 75
     Height = 25
-    Caption = #21457#36865'(&E)'
+    Caption = 'Send(&S)'
     TabOrder = 2
     OnClick = Button1Click
   end
@@ -111,7 +111,7 @@ object frmOnlineEmail: TfrmOnlineEmail
     Top = 422
     Width = 75
     Height = 25
-    Caption = #20851#38381'(&E)'
+    Caption = 'Close(&E)'
     TabOrder = 3
     OnClick = Button2Click
   end

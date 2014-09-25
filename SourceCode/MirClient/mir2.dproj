@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-    <DCC_DependencyCheckOutputName>C:\Users\Dazz\Desktop\HeroesClient-1\HeroesClient\mir2.exe</DCC_DependencyCheckOutputName>
+    <DCC_DependencyCheckOutputName>D:\Client\mir2.exe</DCC_DependencyCheckOutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Version>7.0</Version>
@@ -14,7 +14,7 @@
     <DCC_DebugInformation>False</DCC_DebugInformation>
     <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
     <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
-    <DCC_ExeOutput>C:\Users\Dazz\Desktop\HeroesClient-1\HeroesClient</DCC_ExeOutput>
+    <DCC_ExeOutput>D:\Client</DCC_ExeOutput>
     <DCC_UnitSearchPath>..\Common\;..\WIL;..\HGEDelphi\Source;..\HGEDelphi\Source\DirectX;..\HGEDelphi\Source\Sound;..\..\Component\RSA;..\..\Component\WebBrowserUI</DCC_UnitSearchPath>
     <DCC_ResourcePath>..\Common\;..\WIL;..\HGEDelphi\Source;..\HGEDelphi\Source\DirectX;..\HGEDelphi\Source\Sound;..\..\Component\RSA;..\..\Component\WebBrowserUI</DCC_ResourcePath>
     <DCC_ObjPath>..\Common\;..\WIL;..\HGEDelphi\Source;..\HGEDelphi\Source\DirectX;..\HGEDelphi\Source\Sound;..\..\Component\RSA;..\..\Component\WebBrowserUI</DCC_ObjPath>

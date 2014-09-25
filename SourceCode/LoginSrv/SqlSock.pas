@@ -222,7 +222,7 @@ begin
   m_SendStr := '';
   m_ReadStr := '';
   if not m_boConn then
-    MainOutMessage('连接SQL服务器成功...');
+    MainOutMessage('SQL Server connected successfully');
   m_boConn := True;
   m_boSendKeepAlive := False;
   m_dwKeepAliveTick := GetTickCount;
@@ -233,7 +233,7 @@ begin
   m_SendStr := '';
   m_ReadStr := '';
   if m_boConn then
-    MainOutMessage('与SQL服务器断开连接...');
+    MainOutMessage('SQL Server disconnected...');
   m_boConn := False;
 end;
 

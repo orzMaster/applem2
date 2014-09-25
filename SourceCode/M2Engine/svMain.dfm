@@ -270,219 +270,219 @@ object FrmMain: TFrmMain
       object MENU_CONTROL_RELOAD: TMenuItem
         Caption = 'Reload(&R)'
         object MENU_CONTROL_RELOAD_ITEMDB: TMenuItem
-          Caption = #29289#21697#25968#25454#24211'(&I)'
+          Caption = 'Item Database(&I)'
           OnClick = MENU_CONTROL_RELOAD_ITEMDBClick
         end
         object MENU_CONTROL_RELOAD_MAGICDB: TMenuItem
-          Caption = #25216#33021#25968#25454#24211'(&S)'
+          Caption = 'Magic Database(&S)'
           OnClick = MENU_CONTROL_RELOAD_MAGICDBClick
         end
         object MENU_CONTROL_RELOAD_MONSTERDB: TMenuItem
-          Caption = #24618#29289#25968#25454#24211'(&M)'
+          Caption = 'Monster Database(&M)'
           OnClick = MENU_CONTROL_RELOAD_MONSTERDBClick
         end
         object MENU_CONTROL_RELOAD_MONSTERSAY: TMenuItem
-          Caption = #24618#29289#35828#35805#35774#32622'(&M)'
+          Caption = 'Monster Talk Settings(&M)'
           OnClick = MENU_CONTROL_RELOAD_MONSTERSAYClick
         end
         object MENU_CONTROL_RELOAD_DISABLEMAKE: TMenuItem
-          Caption = #25968#25454#21015#34920'(&D)'
+          Caption = 'Data List(&D)'
           OnClick = MENU_CONTROL_RELOAD_DISABLEMAKEClick
         end
         object MENU_CONTROL_RELOAD_CONF: TMenuItem
-          Caption = #21442#25968#35774#32622'(&C)'
+          Caption = 'Parameter Settings(&C)'
           OnClick = MENU_CONTROL_RELOAD_CONFClick
         end
         object QFunctionNPC: TMenuItem
-          Caption = #21151#33021#33050#26412'(&Q)'
+          Caption = 'Function Script(&Q)'
           OnClick = QFunctionNPCClick
         end
         object QManageNPC: TMenuItem
-          Caption = #30331#38470#33050#26412'(&L)'
+          Caption = 'Login Script(&L)'
           OnClick = QManageNPCClick
         end
         object P1: TMenuItem
-          Caption = #22320#22270#20107#20214#33050#26412'(&P)'
+          Caption = 'Map Event Script(&P)'
           object E1: TMenuItem
-            Caption = #37325#26032#21152#36733#22320#22270#20107#20214#37197#32622'(&E)'
+            Caption = 'Reload Map Event Configuration(&E)'
             OnClick = E1Click
           end
           object S1: TMenuItem
-            Caption = #37325#26032#21152#36733#22320#22270#20107#20214#33050#26412'(&S)'
+            Caption = 'Map Event Script Reload(&S)'
             OnClick = S1Click
           end
         end
         object RobotManageNPC: TMenuItem
-          Caption = #26426#22120#20154#33050#26412'(&R)'
+          Caption = 'Robot Script(&R)'
           OnClick = RobotManageNPCClick
         end
         object MonItems: TMenuItem
-          Caption = #24618#29289#29190#29575'(&M)'
+          Caption = 'Monster Burst Rate(&M)'
           OnClick = MonItemsClick
         end
         object M1: TMenuItem
-          Caption = #25171#36896#21015#34920'(&K)'
+          Caption = 'Create a List(&K)'
           OnClick = M1Click
         end
         object N2: TMenuItem
-          Caption = #33050#26412#24120#37327#21015#34920'(&A)'
+          Caption = 'Script Constant List(&A)'
           OnClick = N2Click
         end
         object B1: TMenuItem
-          Caption = #23453#31665#37197#32622'(&B)'
+          Caption = 'Chest Configuration(&B)'
           OnClick = B1Click
         end
         object V1: TMenuItem
-          Caption = #20219#21153#25552#31034#37197#32622'(&V)'
+          Caption = 'Configuration Task Tips(&V)'
           OnClick = V1Click
         end
         object L1: TMenuItem
-          Caption = #29983#27963#25216#33021#25171#36896#21015#34920'(&L)'
+          Caption = 'Life Skills Build a List(&L)'
           OnClick = L1Click
         end
         object NPC1: TMenuItem
-          Caption = #25152#26377'NPC'#37197#32622
+          Caption = 'All NPC Configuration'
           OnClick = NPC1Click
         end
         object F1: TMenuItem
-          Caption = #36807#28388#21015#34920'(&F)'
+          Caption = 'Filter the List(&F)'
           OnClick = F1Click
         end
       end
       object MENU_CONTROL_GATE: TMenuItem
         Caption = 'Game Gateway'
         object MENU_CONTROL_GATE_OPEN: TMenuItem
-          Caption = #25171#24320'(&O)'
+          Caption = 'Open(&O)'
           OnClick = MENU_CONTROL_GATE_OPENClick
         end
         object MENU_CONTROL_GATE_CLOSE: TMenuItem
-          Caption = #20851#38381'(&C)'
+          Caption = 'Close(&C)'
           OnClick = MENU_CONTROL_GATE_CLOSEClick
         end
       end
       object MENU_CONTROL_TESTSERVER: TMenuItem
-        Caption = #27979#35797#26381#21153#22120'(&T)'
+        Caption = 'Test Server(&T)'
         Visible = False
         OnClick = MENU_CONTROL_TESTSERVERClick
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = #36864#20986'(&X)'
+        Caption = 'Exit(&X)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object MENU_VIEW: TMenuItem
       Caption = 'View'
       object MENU_VIEW_ONLINEHUMAN: TMenuItem
-        Caption = #22312#32447#20154#29289'(&O)'
+        Caption = 'Online People(&O)'
         OnClick = MENU_VIEW_ONLINEHUMANClick
       end
       object MENU_VIEW_SESSION: TMenuItem
-        Caption = #20840#23616#20250#35805'(&S)'
+        Caption = 'Global Session(&S)'
         OnClick = MENU_VIEW_SESSIONClick
       end
       object MENU_VIEW_LEVEL: TMenuItem
-        Caption = #31561#32423#23646#24615'(&L)'
+        Caption = 'Level Properties(&L)'
         OnClick = MENU_VIEW_LEVELClick
       end
       object MENU_VIEW_LIST: TMenuItem
-        Caption = #21015#34920#20449#24687'(&L)'
+        Caption = 'List Information(&L)'
         OnClick = MENU_VIEW_LISTClick
       end
       object MENU_VIEW_COM: TMenuItem
-        Caption = #35013#22791#21512#25104'(&C)'
+        Caption = 'Equipment Synthesis(&C)'
         OnClick = MENU_VIEW_COMClick
       end
       object MENU_VIEW_KERNELINFO: TMenuItem
-        Caption = #20869#26680#25968#25454'(&K)'
+        Caption = 'Kernal Data(&K)'
         OnClick = MENU_VIEW_KERNELINFOClick
       end
     end
     object MENU_OPTION: TMenuItem
       Caption = 'Options'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = #22522#26412#35774#32622'(&G)'
+        Caption = 'Basic Settings(&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_GAME: TMenuItem
-        Caption = #21442#25968#35774#32622'(&O)'
+        Caption = 'Parameter Settings(&O)'
         OnClick = MENU_OPTION_GAMEClick
       end
       object MENU_OPTION_ITEMFUNC: TMenuItem
-        Caption = #29289#21697#35013#22791'(&I)'
+        Caption = 'Equipment Items(&I)'
         OnClick = MENU_OPTION_ITEMFUNCClick
       end
       object MENU_OPTION_FUNCTION: TMenuItem
-        Caption = #21151#33021#35774#32622'(&F)'
+        Caption = 'Feature Set(&F)'
         OnClick = MENU_OPTION_FUNCTIONClick
       end
       object G1: TMenuItem
-        Caption = #28216#25103#21629#20196'(&C)'
+        Caption = 'Game Command(&C)'
         OnClick = G1Click
       end
       object MENU_OPTION_MONSTER: TMenuItem
-        Caption = #24618#29289#35774#32622'(&M)'
+        Caption = 'Monster Set(&M)'
         OnClick = MENU_OPTION_MONSTERClick
       end
       object MENU_OPTION_SERVERCONFIG: TMenuItem
-        Caption = #24615#33021#21442#25968'(&P)'
+        Caption = 'Server Configuration(&P)'
         OnClick = MENU_OPTION_SERVERCONFIGClick
       end
     end
     object MENU_MANAGE: TMenuItem
       Caption = 'Management '
       object MENU_MANAGE_ONLINEMSG: TMenuItem
-        Caption = #22312#32447#28040#24687'(&M)'
+        Caption = 'Send Message(&M)'
         OnClick = MENU_MANAGE_ONLINEMSGClick
       end
       object MENU_MANAGE_ONLINEEMAIL: TMenuItem
-        Caption = #21457#36865#37038#20214'(&E)'
+        Caption = 'Send E-MAIL(&E)'
         OnClick = MENU_MANAGE_ONLINEEMAILClick
       end
       object MENU_MANAGE_PLUG: TMenuItem
-        Caption = #21151#33021#25554#20214'(&P)'
+        Caption = 'Function Plugin(&P)'
         Visible = False
         OnClick = MENU_MANAGE_PLUGClick
       end
       object MENU_MANAGE_CASTLE: TMenuItem
-        Caption = #22478#22561#31649#29702'(&C)'
+        Caption = 'Castle Management(&C)'
         OnClick = MENU_MANAGE_CASTLEClick
       end
       object MENU_MANAGE_SHOP: TMenuItem
-        Caption = #21830#38138#31649#29702'(&S)'
+        Caption = 'Store Management(&S)'
         OnClick = MENU_MANAGE_SHOPClick
       end
     end
     object MENU_TOOLS: TMenuItem
       Caption = 'Tools'
       object MENU_TOOLS_MERCHANT: TMenuItem
-        Caption = #20132#26131'NPC'#37197#32622'(&M)'
+        Caption = 'Trading NPC Configuration(&M)'
         OnClick = MENU_TOOLS_MERCHANTClick
       end
       object MENU_TOOLS_NPC: TMenuItem
-        Caption = #31649#29702'NPC'#37197#32622'(&N)'
+        Caption = 'NPC Configuration Management(&N)'
         OnClick = MENU_TOOLS_NPCClick
       end
       object MENU_TOOLS_MONGEN: TMenuItem
-        Caption = #21047#24618#37197#32622'(&G)'
+        Caption = 'MonGen Configuration(&G)'
         OnClick = MENU_TOOLS_MONGENClick
       end
       object MENU_TOOLS_IPSEARCH: TMenuItem
-        Caption = #22320#21306#26597#35810'(&S)'
+        Caption = 'IP Search(&S)'
         OnClick = MENU_TOOLS_IPSEARCHClick
       end
       object MENU_TOOLS_TEST: TMenuItem
-        Caption = #27979#35797
+        Caption = 'Test'
         Visible = False
         OnClick = MENU_TOOLS_TESTClick
       end
       object MENU_TOOLS_OFFLINE: TMenuItem
-        Caption = #33073#26426#31649#29702'(&O)'
+        Caption = 'Offline Management(&O)'
         object MENU_TOOLS_OFFLINE_SAVENAME: TMenuItem
-          Caption = #20445#23384#24403#21069#33073#26426#21517#21333'(&S)'
+          Caption = 'Save Current Offline List(&S)'
           OnClick = MENU_TOOLS_OFFLINE_SAVENAMEClick
         end
         object MENU_TOOLS_OFFLINE_LOADNAME: TMenuItem
-          Caption = #20174#21517#21333#21152#25130#33258#21160#33073#26426'(&A)'
+          Caption = 'Automatic Cut off from the List(&A)'
           OnClick = MENU_TOOLS_OFFLINE_LOADNAMEClick
         end
       end
@@ -490,7 +490,7 @@ object FrmMain: TFrmMain
     object MENU_HELP: TMenuItem
       Caption = 'Help'
       object MENU_HELP_ABOUT: TMenuItem
-        Caption = #20851#20110'(&A)'
+        Caption = 'About(&A)'
         OnClick = MENU_HELP_ABOUTClick
       end
     end

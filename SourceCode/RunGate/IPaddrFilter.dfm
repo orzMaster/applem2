@@ -3,7 +3,7 @@ object frmIPaddrFilter: TfrmIPaddrFilter
   Top = 266
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #32593#32476#23433#20840#36807#28388
+  Caption = 'Network Security Filtering'
   ClientHeight = 347
   ClientWidth = 704
   Color = clBtnFace
@@ -21,14 +21,14 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 8
     Width = 116
     Height = 331
-    Caption = #24403#21069#36830#25509
+    Caption = 'Current Connection'
     TabOrder = 0
     object Label4: TLabel
       Left = 8
       Top = 16
-      Width = 54
+      Width = 30
       Height = 12
-      Caption = #36830#25509#21015#34920':'
+      Caption = 'List:'
     end
     object ListBoxActiveList: TListBox
       Left = 8
@@ -50,35 +50,38 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 8
     Width = 225
     Height = 331
-    Caption = #36807#28388#21015#34920
+    Caption = 'Filter List'
     TabOrder = 1
     object LabelTempList: TLabel
       Left = 8
       Top = 16
-      Width = 54
+      Width = 48
       Height = 12
-      Caption = #21160#24577#36807#28388':'
+      Caption = 'Dynamic:'
     end
     object Label1: TLabel
       Left = 113
       Top = 16
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #27704#20037#36807#28388':'
+      Caption = 'Permanent:'
     end
     object Label23: TLabel
       Left = 7
       Top = 187
-      Width = 54
+      Width = 78
       Height = 12
-      Caption = #36807#28388'IP'#27573':'
+      Caption = 'Filtering IP:'
     end
     object ListBoxBlockList: TListBox
       Left = 113
       Top = 34
       Width = 99
       Height = 146
-      Hint = #27704#20037#36807#28388#21015#34920#65292#22312#27492#21015#34920#20013#30340'IP'#23558#26080#27861#24314#31435#36830#25509#65292#27492#21015#34920#23558#20445#23384#20110#37197#32622#25991#20214#20013#65292#22312#31243#24207#37325#26032#21551#21160#26102#20250#37325#26032#21152#36733#27492#21015#34920
+      Hint = 
+        'Permanent filter list, in this list of IP will not be able to es' +
+        'tablish a connection, this list will be saved in the configurati' +
+        'on file, restart when the program will re-load this list'
       ItemHeight = 12
       Items.Strings = (
         '888.888.888.888')
@@ -93,7 +96,10 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       Top = 34
       Width = 99
       Height = 146
-      Hint = #21160#24577#36807#28388#21015#34920#65292#22312#27492#21015#34920#20013#30340'IP'#23558#26080#27861#24314#31435#36830#25509#65292#20294#22312#31243#24207#37325#26032#21551#21160#26102#27492#21015#34920#30340#20449#24687#23558#34987#28165#31354
+      Hint = 
+        'Dynamic filter list, in this list of IP will not be able to esta' +
+        'blish a connection, but when the program is restarted the inform' +
+        'ation in this list will be empty'
       ItemHeight = 12
       Items.Strings = (
         '888.888.888.888')
@@ -123,42 +129,44 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 8
     Width = 187
     Height = 331
-    Caption = #25915#20987#20445#25252
+    Caption = 'Attack Protection'
     TabOrder = 2
     object GroupBox4: TGroupBox
       Left = 10
       Top = 204
       Width = 168
       Height = 117
-      Caption = #27969#37327#25511#21046
+      Caption = 'Flow Control'
       TabOrder = 0
       object Label6: TLabel
         Left = 8
         Top = 44
-        Width = 54
+        Width = 60
         Height = 12
-        Caption = #26368#22823#38480#21046':'
+        Caption = 'Max Limit:'
       end
       object Label8: TLabel
         Left = 8
         Top = 68
-        Width = 54
+        Width = 60
         Height = 12
-        Caption = #25968#37327#38480#21046':'
+        Caption = 'Qaunt Res:'
       end
       object Label5: TLabel
         Left = 8
         Top = 20
         Width = 54
         Height = 12
-        Caption = #20020#30028#22823#23567':'
+        Caption = 'Crit Size'
       end
       object EditMaxSize: TSpinEdit
         Left = 64
         Top = 40
         Width = 65
         Height = 21
-        Hint = #25509#25910#21040#30340#25968#25454#20449#24687#26368#22823#38480#21046#65292#22914#26524#36229#36807#27492#22823#23567#65292#21017#34987#35270#20026#25915#20987#12290
+        Hint = 
+          'The maximum limit data received, if more than this size, it is c' +
+          'onsidered an attack.'
         Increment = 10
         MaxValue = 10000
         MinValue = 1
@@ -173,7 +181,9 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 64
         Width = 65
         Height = 21
-        Hint = #19968#27425#25509#25910#21040#25968#25454#20449#24687#30340#25968#37327#22810#23569#65292#36229#36807#25351#23450#25968#37327#23558#34987#35270#20026#25915#20987#12290
+        Hint = 
+          'A number of data received much more than the specified number wi' +
+          'll be regarded as an attack.'
         MaxValue = 100
         MinValue = 1
         ParentShowHint = False
@@ -185,11 +195,13 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       object CheckBoxLostLine: TCheckBox
         Left = 8
         Top = 91
-        Width = 97
+        Width = 157
         Height = 17
-        Hint = #25171#24320#27492#21151#33021#21518#65292#22914#26524#23458#25143#31471#30340#21457#36865#30340#25968#25454#36229#36807#25351#23450#38480#21046#23558#20250#30452#25509#23558#20854#25481#32447
+        Hint = 
+          'After opening this function, if the data sent by the client exce' +
+          'eds the specified limit will be dropped directly'
         BiDiMode = bdLeftToRight
-        Caption = #24322#24120#25481#32447#22788#29702
+        Caption = 'Exception Hand Dropped'
         ParentBiDiMode = False
         ParentShowHint = False
         ShowHint = True
@@ -201,7 +213,9 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 16
         Width = 65
         Height = 21
-        Hint = #25509#25910#21040#30340#25968#25454#20449#24687#20020#30028#22823#23567#65292#22914#26524#36229#36807#27492#22823#23567#65292#23558#34987#29305#27530#22788#29702#12290
+        Hint = 
+          'Critical information received data size exceeds this size, it is' +
+          ' treated specially.'
         Increment = 10
         MaxValue = 1000
         MinValue = 1
@@ -217,70 +231,72 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       Top = 19
       Width = 168
       Height = 179
-      Caption = #36830#25509#20445#25252
+      Caption = 'Connection Protection'
       TabOrder = 1
       object Label7: TLabel
         Left = 57
         Top = 89
-        Width = 66
+        Width = 54
         Height = 12
-        Caption = #27627#31186'/'#36830#25509#25968
+        Caption = 'Ms / Conn'
       end
       object Label2: TLabel
         Left = 57
         Top = 114
-        Width = 66
+        Width = 54
         Height = 12
-        Caption = #27627#31186'/'#36830#25509#25968
+        Caption = 'Ms / Conn'
       end
       object Label9: TLabel
         Left = 7
         Top = 41
         Width = 66
         Height = 12
-        Caption = #31354#36830#25509#36229#26102':'
+        Caption = 'Empty Conn:'
       end
       object Label3: TLabel
         Left = 7
         Top = 19
-        Width = 54
+        Width = 66
         Height = 12
-        Caption = #36830#25509#38480#21046':'
+        Caption = 'Conn Limit:'
       end
       object Label10: TLabel
         Left = 119
         Top = 17
-        Width = 42
+        Width = 48
         Height = 12
-        Caption = #36830#25509'/IP'
+        Caption = 'Conn /IP'
       end
       object Label11: TLabel
         Left = 119
         Top = 41
-        Width = 12
+        Width = 18
         Height = 12
-        Caption = #31186
+        Caption = 'Sec'
       end
       object Label19: TLabel
         Left = 119
         Top = 64
-        Width = 12
+        Width = 30
         Height = 12
-        Caption = #20998
+        Caption = 'Point'
       end
       object Label20: TLabel
         Left = 7
         Top = 64
-        Width = 66
+        Width = 72
         Height = 12
-        Caption = #26080#20256#36755#36229#26102':'
+        Caption = 'Transfer TO:'
       end
       object Edit_CountLimit1: TSpinEdit
         Left = 126
         Top = 85
         Width = 38
         Height = 21
-        Hint = #36229#36830#25509#20445#25252#65292#22312#25351#23450#30340#36830#25509#26102#38388#20869#26368#22823#20801#35768#36830#25509#25968#12290
+        Hint = 
+          'Ultra-connection protection, the maximum allowable number of con' +
+          'nections in the connection time specified.'
         MaxValue = 255
         MinValue = 1
         ParentShowHint = False
@@ -294,7 +310,9 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 110
         Width = 38
         Height = 21
-        Hint = #36229#36830#25509#20445#25252#65292#22312#25351#23450#30340#36830#25509#26102#38388#20869#26368#22823#20801#35768#36830#25509#25968#12290
+        Hint = 
+          'Ultra-connection protection, the maximum allowable number of con' +
+          'nections in the connection time specified.'
         MaxValue = 255
         MinValue = 1
         ParentShowHint = False
@@ -308,7 +326,7 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 85
         Width = 47
         Height = 21
-        Hint = #36229#36830#25509#20445#25252#65292#36830#25509#25351#23450#26102#38388#12290
+        Hint = 'Ultra-connection protection, connect the specified time.'
         Increment = 100
         MaxValue = 20000
         MinValue = 1
@@ -323,7 +341,7 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 110
         Width = 47
         Height = 21
-        Hint = #36229#36830#25509#20445#25252#65292#36830#25509#25351#23450#26102#38388#12290
+        Hint = 'Ultra-connection protection, connect the specified time.'
         Increment = 100
         MaxValue = 20000
         MinValue = 1
@@ -364,7 +382,9 @@ object frmIPaddrFilter: TfrmIPaddrFilter
         Top = 60
         Width = 41
         Height = 21
-        Hint = #19982#23458#25143#31471#36890#20449#38388#38548#26102#38388','#36229#36807#35813#26102#38388#27809#26377#25968#25454#20256#36755#23558#26029#24320#36830#25509'..'
+        Hint = 
+          'And client communications interval, no data transmission over th' +
+          'e time will be disconnected ..'
         MaxValue = 999
         MinValue = 1
         ParentShowHint = False
@@ -376,10 +396,10 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       object CheckBoxCCProtect: TCheckBox
         Left = 7
         Top = 146
-        Width = 147
+        Width = 158
         Height = 17
-        Hint = #26412#35774#32622#21487#38450#19968#23450#37327#30340'CC'#25915#20987#13#10#35831#19981#35201#24403#38450#28779#22681#20351#29992#65292#23545#20110#22823#27969#37327#30340#25915#20987#36824#26159#26080#33021#20026#21147#30340
-        Caption = #33258#21160#21028#26029'CC'#24182#24320#21551#38450#24481
+        Hint = 'This setting can prevent a certain amount of CC attack '
+        Caption = 'Auto Det CCAtk Open Def'
         ParentShowHint = False
         ShowHint = True
         TabOrder = 7
@@ -392,7 +412,7 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 313
     Width = 79
     Height = 26
-    Caption = #30830#23450'(&O)'
+    Caption = 'Okay(&O)'
     TabOrder = 3
     OnClick = ButtonOKClick
   end
@@ -401,56 +421,56 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 8
     Width = 148
     Height = 135
-    Caption = #21457#35328#35774#32622
+    Caption = 'Statement Settings'
     TabOrder = 4
     object Label12: TLabel
       Left = 120
       Top = 90
-      Width = 12
+      Width = 18
       Height = 12
-      Caption = #31186
+      Caption = 'Sec'
     end
     object Label13: TLabel
       Left = 120
       Top = 66
-      Width = 12
+      Width = 30
       Height = 12
-      Caption = #27425
+      Caption = 'Times'
     end
     object Label14: TLabel
       Left = 120
       Top = 42
-      Width = 24
+      Width = 12
       Height = 12
-      Caption = #27627#31186
+      Caption = 'Ms'
     end
     object Label15: TLabel
       Left = 8
       Top = 43
       Width = 54
       Height = 12
-      Caption = #26102#38388#38388#38548':'
+      Caption = 'Interval:'
     end
     object Label16: TLabel
       Left = 8
       Top = 19
-      Width = 54
+      Width = 66
       Height = 12
-      Caption = #25991#23383#38271#24230':'
+      Caption = 'Txt Length:'
     end
     object Label17: TLabel
       Left = 8
       Top = 67
-      Width = 54
+      Width = 66
       Height = 12
-      Caption = #21457#35328#27425#25968':'
+      Caption = 'Statements:'
     end
     object Label18: TLabel
       Left = 8
       Top = 91
       Width = 54
       Height = 12
-      Caption = #31105#35328#26102#38388':'
+      Caption = 'Gag Time:'
     end
     object MsgMaxLenSpinEdit: TSpinEdit
       Left = 64
@@ -505,10 +525,10 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     object CheckBoxBlockSay: TCheckBox
       Left = 8
       Top = 111
-      Width = 105
+      Width = 137
       Height = 19
       BiDiMode = bdLeftToRight
-      Caption = #24320#21551#21457#35328#25511#21046
+      Caption = 'Open Speech Ctrl'
       Enabled = False
       ParentBiDiMode = False
       ParentShowHint = False
@@ -522,15 +542,17 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 230
     Width = 148
     Height = 73
-    Caption = #25915#20987#25805#20316
+    Caption = 'Attack Actions'
     TabOrder = 5
     object RadioAddBlockList: TRadioButton
       Left = 16
       Top = 48
       Width = 129
       Height = 17
-      Hint = #23558#27492#36830#25509#30340'IP'#21152#20837#27704#20037#36807#28388#21015#34920#65292#24182#23558#27492'IP'#30340#25152#26377#36830#25509#24378#34892#20013#26029
-      Caption = #21152#20837#27704#20037#36807#28388#21015#34920
+      Hint = 
+        'Join this connection permanent IP filter list, and this forced b' +
+        'reak all connected IP'
+      Caption = 'Add Permanent'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
@@ -541,8 +563,10 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       Top = 32
       Width = 129
       Height = 17
-      Hint = #23558#27492#36830#25509#30340'IP'#21152#20837#21160#24577#36807#28388#21015#34920#65292#24182#23558#27492'IP'#30340#25152#26377#36830#25509#24378#34892#20013#26029
-      Caption = #21152#20837#21160#24577#36807#28388#21015#34920
+      Hint = 
+        'Join this dynamic IP connection filter list, and this forced bre' +
+        'ak all connected IP'
+      Caption = 'Add Dynamic'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -553,8 +577,8 @@ object frmIPaddrFilter: TfrmIPaddrFilter
       Top = 15
       Width = 129
       Height = 17
-      Hint = #23558#36830#25509#31616#21333#30340#26029#24320#22788#29702
-      Caption = #26029#24320#36830#25509
+      Hint = 'Connect a simple disconnection processing'
+      Caption = 'Disconnect'
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -566,21 +590,21 @@ object frmIPaddrFilter: TfrmIPaddrFilter
     Top = 149
     Width = 148
     Height = 75
-    Caption = #21464#36895#25511#21046
+    Caption = 'Variable Speed Control'
     TabOrder = 6
     object Label21: TLabel
       Left = 8
       Top = 20
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #21464#36895#38388#38548':'
+      Caption = 'Speed Int:'
     end
     object Label22: TLabel
       Left = 8
       Top = 44
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #21464#36895#27425#25968':'
+      Caption = 'ShiftTime:'
     end
     object EditSpeedTick: TSpinEdit
       Left = 64

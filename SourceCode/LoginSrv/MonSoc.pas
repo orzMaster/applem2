@@ -57,9 +57,9 @@ begin
       sMsg := sMsg + sServerName + '/' + IntToStr(MsgServer.nServerIndex) + '/'
         + IntToStr(MsgServer.nOnlineCount) + '/';
       if (GetTickCount - MsgServer.dwKeepAliveTick) < 30000 then
-        sMsg := sMsg + 'Õý³£ ;'
+        sMsg := sMsg + 'Normal ;'
       else
-        sMsg := sMsg + '³¬Ê± ;';
+        sMsg := sMsg + 'Timeout ;';
     end
     else
       sMsg := '-/-/-/-;';

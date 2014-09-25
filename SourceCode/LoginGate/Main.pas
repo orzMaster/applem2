@@ -164,7 +164,7 @@ begin
 
   if IsBlockIP(sRemoteIPaddr) then begin
     Inc(nCCHeadOffCount);
-    MainOutMessage('过滤连接: ' + sRemoteIPaddr, 3);
+    MainOutMessage('Block IP: ' + sRemoteIPaddr, 3);
     Socket.Close;
     Exit;
   end;
@@ -183,7 +183,7 @@ begin
           CloseConnect(sRemoteIPaddr);
         end;
     end;
-    MainOutMessage('端口攻击: ' + sRemoteIPaddr, 3);
+    MainOutMessage('Port Attack: ' + sRemoteIPaddr, 3);
     Exit;
   end;
 
@@ -270,7 +270,7 @@ begin
     UserSession.SocketHandle := -1;
     //UserSession.MsgList.Clear;
     Dec(nSessionCount);
-    MainOutMessage('DisConnect: ' + sRemoteIPaddr, 5);
+    MainOutMessage('Disconnect: ' + sRemoteIPaddr, 5);
   end;
 end;
 

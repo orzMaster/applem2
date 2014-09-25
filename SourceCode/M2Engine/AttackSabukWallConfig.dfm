@@ -2,7 +2,7 @@ object FrmAttackSabukWall: TFrmAttackSabukWall
   Left = 513
   Top = 235
   BorderStyle = bsDialog
-  Caption = 'FrmAttackSabukWall'
+  Caption = 'Attack Sabuk Wall'
   ClientHeight = 360
   ClientWidth = 295
   Color = clBtnFace
@@ -17,23 +17,23 @@ object FrmAttackSabukWall: TFrmAttackSabukWall
   object Label1: TLabel
     Left = 8
     Top = 308
-    Width = 60
+    Width = 36
     Height = 12
-    Caption = #34892#20250#21517#31216#65306
+    Caption = 'Guild:'
   end
   object Label2: TLabel
     Left = 8
     Top = 332
-    Width = 60
+    Width = 54
     Height = 12
-    Caption = #25915#22478#26102#38388#65306
+    Caption = 'War Time:'
   end
   object GroupBox1: TGroupBox
     Left = 8
     Top = 8
     Width = 281
     Height = 289
-    Caption = #34892#20250#21015#34920
+    Caption = 'Guild List'
     TabOrder = 0
     object ListBoxGuild: TListBox
       Left = 8
@@ -68,7 +68,7 @@ object FrmAttackSabukWall: TFrmAttackSabukWall
     Top = 328
     Width = 75
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'Okay(&O)'
     TabOrder = 3
     OnClick = ButtonOKClick
   end
@@ -77,7 +77,7 @@ object FrmAttackSabukWall: TFrmAttackSabukWall
     Top = 304
     Width = 73
     Height = 17
-    Caption = #25152#26377#34892#20250
+    Caption = 'All Guild'
     TabOrder = 4
     OnClick = CheckBoxAllClick
   end

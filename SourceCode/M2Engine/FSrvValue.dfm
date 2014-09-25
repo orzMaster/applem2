@@ -3,7 +3,7 @@ object FrmServerValue: TFrmServerValue
   Top = 246
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24615#33021#21442#25968#37197#32622
+  Caption = 'Performance Parameters'
   ClientHeight = 192
   ClientWidth = 468
   Color = clBtnFace
@@ -35,7 +35,7 @@ object FrmServerValue: TFrmServerValue
     Top = 136
     Width = 161
     Height = 17
-    Caption = #26174#31034#28216#25103#36895#24230#24322#24120#20449#24687
+    Caption = 'Display Speed Anomalies'
     Checked = True
     State = cbChecked
     TabOrder = 0
@@ -46,7 +46,7 @@ object FrmServerValue: TFrmServerValue
     Top = 152
     Width = 209
     Height = 17
-    Caption = #26174#31034#38750#27861#30331#24405#20449#24687
+    Caption = 'Illegal Login Display'
     TabOrder = 1
     OnClick = CkViewAdmfailClick
   end
@@ -55,38 +55,38 @@ object FrmServerValue: TFrmServerValue
     Top = 8
     Width = 169
     Height = 121
-    Caption = #32593#20851#25968#25454#20256#36755
+    Caption = 'Gateway Data Transfer'
     TabOrder = 2
     object Label8: TLabel
       Left = 11
       Top = 24
       Width = 66
       Height = 12
-      Caption = #25968#25454#22359#22823#23567':'
+      Caption = 'Data Block:'
       Enabled = False
     end
     object Label7: TLabel
       Left = 11
       Top = 47
-      Width = 66
+      Width = 60
       Height = 12
-      Caption = #33258#26816#25968#25454#22359':'
+      Caption = 'Self-Test:'
       Enabled = False
     end
     object Label9: TLabel
       Left = 11
       Top = 71
-      Width = 66
+      Width = 60
       Height = 12
-      Caption = #20445#30041#25968#25454#22359':'
+      Caption = 'Retention:'
       Enabled = False
     end
     object Label10: TLabel
       Left = 11
       Top = 95
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #36127#36733#27979#35797':'
+      Caption = 'Load Test:'
     end
     object Label11: TLabel
       Left = 145
@@ -169,49 +169,49 @@ object FrmServerValue: TFrmServerValue
     Top = 8
     Width = 137
     Height = 161
-    Caption = #22788#29702#26102#38388#20998#37197'('#27627#31186')'
+    Caption = 'Processing Time (MS)'
     TabOrder = 3
     object Label1: TLabel
       Left = 16
       Top = 16
       Width = 54
       Height = 12
-      Caption = #20154#29289#22788#29702':'
+      Caption = 'PPL Deal:'
     end
     object Label2: TLabel
       Left = 16
       Top = 40
       Width = 54
       Height = 12
-      Caption = #24618#29289#22788#29702':'
+      Caption = 'Mon Deal:'
     end
     object Label3: TLabel
       Left = 16
       Top = 64
       Width = 54
       Height = 12
-      Caption = #24618#29289#21047#26032':'
+      Caption = 'Mon Refr:'
     end
     object Label4: TLabel
       Left = 16
       Top = 88
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #21047#26032#22788#29702':'
+      Caption = 'Refr Proc:'
     end
     object Label5: TLabel
       Left = 16
       Top = 136
-      Width = 48
+      Width = 60
       Height = 12
-      Caption = 'NPC'#22788#29702':'
+      Caption = 'NPC Treat:'
     end
     object Label6: TLabel
       Left = 16
       Top = 112
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #25968#25454#20256#36755':'
+      Caption = 'Data Tran:'
     end
     object EHum: TSpinEdit
       Left = 76
@@ -285,35 +285,35 @@ object FrmServerValue: TFrmServerValue
     Top = 8
     Width = 129
     Height = 121
-    Caption = #24618#29289#22788#29702#25511#21046
+    Caption = 'Monster Process Ctrl'
     TabOrder = 4
     object Label15: TLabel
       Left = 8
       Top = 24
-      Width = 54
+      Width = 66
       Height = 12
-      Caption = #21047#24618#20493#25968':'
+      Caption = 'Brush Mult:'
     end
     object Label16: TLabel
       Left = 8
       Top = 71
       Width = 54
       Height = 12
-      Caption = #22788#29702#38388#38548':'
+      Caption = 'Proc Int:'
     end
     object Label17: TLabel
       Left = 8
       Top = 47
-      Width = 54
+      Width = 60
       Height = 12
-      Caption = #21047#24618#38388#38548':'
+      Caption = 'Brush Int:'
     end
     object Label19: TLabel
       Left = 8
       Top = 95
       Width = 54
       Height = 12
-      Caption = #24618#29289#31354#38386':'
+      Caption = 'Mon Idle:'
     end
     object EditZenMonRate: TSpinEdit
       Left = 68
@@ -364,20 +364,20 @@ object FrmServerValue: TFrmServerValue
     end
   end
   object ButtonDefault: TButton
-    Left = 328
-    Top = 137
-    Width = 62
+    Left = 321
+    Top = 135
+    Width = 71
     Height = 25
-    Caption = #40664#35748'(&D)'
+    Caption = 'Default(&D)'
     TabOrder = 5
     OnClick = ButtonDefaultClick
   end
   object BitBtn1: TButton
-    Left = 396
-    Top = 137
+    Left = 398
+    Top = 135
     Width = 62
     Height = 25
-    Caption = #30830#35748'(&O)'
+    Caption = 'Confirm(&O)'
     TabOrder = 6
     OnClick = BitBtn1Click
   end

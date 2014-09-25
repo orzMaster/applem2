@@ -3,9 +3,9 @@ object frmMonsterConfig: TfrmMonsterConfig
   Top = 429
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24618#29289#35774#32622
+  Caption = 'Monster Set'
   ClientHeight = 320
-  ClientWidth = 616
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
@@ -25,7 +25,7 @@ object frmMonsterConfig: TfrmMonsterConfig
     ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = #22522#26412#21442#25968
+      Caption = 'Basic'
       object GroupBox1: TGroupBox
         Left = 8
         Top = 8
@@ -37,14 +37,14 @@ object frmMonsterConfig: TfrmMonsterConfig
           Top = 16
           Width = 153
           Height = 73
-          Caption = #29190#29289#21697#35774#32622
+          Caption = 'Drops'
           TabOrder = 0
           object Label23: TLabel
             Left = 11
             Top = 24
-            Width = 42
+            Width = 30
             Height = 12
-            Caption = #37329#24065#22534':'
+            Caption = 'Gold:'
           end
           object EditMonOneDropGoldCount: TSpinEdit
             Left = 60
@@ -62,7 +62,7 @@ object frmMonsterConfig: TfrmMonsterConfig
             Top = 48
             Width = 137
             Height = 17
-            Caption = #37329#24065#30452#25509#20837#32972#21253
+            Caption = 'Gold Drop in Bag'
             TabOrder = 1
             OnClick = CheckBoxDropGoldToPlayBagClick
           end
@@ -72,7 +72,7 @@ object frmMonsterConfig: TfrmMonsterConfig
           Top = 221
           Width = 65
           Height = 25
-          Caption = #20445#23384'(&S)'
+          Caption = 'Save(&S)'
           TabOrder = 1
           OnClick = ButtonGeneralSaveClick
         end
@@ -81,21 +81,21 @@ object frmMonsterConfig: TfrmMonsterConfig
           Top = 95
           Width = 153
           Height = 73
-          Caption = #26174#31034#24618#29289#31561#32423
+          Caption = 'Show Moster Level'
           TabOrder = 2
           object Label1: TLabel
             Left = 12
             Top = 44
-            Width = 30
+            Width = 42
             Height = 12
-            Caption = #26684#24335':'
+            Caption = 'Format:'
           end
           object CheckBoxShowMonLevel: TCheckBox
             Left = 13
             Top = 18
             Width = 124
             Height = 17
-            Caption = #26159#21542#21551#29992#26174#31034#31561#32423
+            Caption = 'Display Level'
             TabOrder = 0
             OnClick = CheckBoxShowMonLevelClick
           end
@@ -112,7 +112,7 @@ object frmMonsterConfig: TfrmMonsterConfig
       end
     end
     object TabSheet2: TTabSheet
-      Caption = #24618#29289#31867#22411
+      Caption = 'Monster Type'
       ImageIndex = 1
     end
   end

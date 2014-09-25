@@ -62,16 +62,16 @@ type
   pTIdxRecord = ^TIdxRecord;
   //TNotifyEvent = procedure(Sender: TObject) of object;
   TFileIDDB = class
-    m_nLastReadIdx: Integer; //0x4  最后访问的记录号
-    m_nDeletedIdx: Integer; //0x8  已删除的最后一个记录号
+    m_nLastReadIdx: Integer; //0x4  The last record number accessd
+    m_nDeletedIdx: Integer; //0x8  Deleted the last record number
     nC: Integer; //0x0C
     //    w10         :Word;           //0x10
     //    w12         :Word;           //0x12
     //    n14         :Integer;
     m_OnChange: TNotifyEvent;
-    m_boChanged: Boolean; //0x18 数据库已被更改
-    m_nLastIndex: Integer; //0x1C 最后一次写数据的记录号
-    m_dLastDate: TDateTime; //0x20 最后修改日期
+    m_boChanged: Boolean; //0x18 Database has been changed
+    m_nLastIndex: Integer; //0x1C Last written data record number
+    m_dLastDate: TDateTime; //0x20 Last Updated
     m_nFileHandle: Integer; //0x28
     m_Header: TDBHeader; //0x2C 数据库头
     m_QuickList: TQuickList; //0xA4 数据索引表

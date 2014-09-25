@@ -54,7 +54,7 @@ begin
 
   if not IsIPaddr(sGateIPaddr) then
   begin
-    Application.MessageBox('网关地址设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('The Gate IP is not valid','Error', MB_OK +
       MB_ICONERROR);
     EditGateIPaddr.SetFocus;
     exit;
@@ -62,7 +62,7 @@ begin
 
   if (nGatePort < 0) or (nGatePort > 65535) then
   begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('The Gate Port is not valid','Error', MB_OK +
       MB_ICONERROR);
     EditGatePort.SetFocus;
     exit;
@@ -70,7 +70,7 @@ begin
 
   if not IsIPaddr(sServerIPaddr) then
   begin
-    Application.MessageBox('服务器地址设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('The Server IP is not valid','Error', MB_OK +
       MB_ICONERROR);
     EditServerIPaddr.SetFocus;
     exit;
@@ -78,14 +78,14 @@ begin
 
   if (nServerPort < 0) or (nServerPort > 65535) then
   begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('The Server Port is not valid','Error', MB_OK +
       MB_ICONERROR);
     EditServerPort.SetFocus;
     exit;
   end;
   if sTitle = '' then
   begin
-    Application.MessageBox('标题设置错误！！！', '错误信息', MB_OK +
+    Application.MessageBox('The title is set incorrectly!!!', 'Error', MB_OK +
       MB_ICONERROR);
     EditTitle.SetFocus;
     exit;

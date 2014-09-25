@@ -68,14 +68,14 @@ begin
   Edit1.Text := '';
   Edit2.Text := '';
 
-  ChrGrid.Cells[0, 0] := '索引号';
-  ChrGrid.Cells[1, 0] := '人物名称';
-  ChrGrid.Cells[2, 0] := '登录帐号';
-  ChrGrid.Cells[3, 0] := '是否禁用';
-  ChrGrid.Cells[4, 0] := '禁用时间';
-  ChrGrid.Cells[5, 0] := '操作计数';
-  ChrGrid.Cells[6, 0] := '选择编号';
-  ChrGrid.Cells[7, 0] := 'GM禁用';
+  ChrGrid.Cells[0, 0] := 'Index';
+  ChrGrid.Cells[1, 0] := 'Character';
+  ChrGrid.Cells[2, 0] := 'User ID';
+  ChrGrid.Cells[3, 0] := 'Deleted';
+  ChrGrid.Cells[4, 0] := 'Modification Date';
+  ChrGrid.Cells[5, 0] := 'Counter';
+  ChrGrid.Cells[6, 0] := 'Select ID';
+  ChrGrid.Cells[7, 0] := 'Hero';
 end;
 
 procedure TFrmIDHum.EdUserIdKeyPress(Sender: TObject; var Key: Char);
@@ -158,7 +158,7 @@ begin
   sChrName := EdChrName.Text;
   if sChrName = '' then
     Exit;
-  if MessageDlg('是否确认删除人物 ' + sChrName + ' ？', mtConfirmation, [mbYes,
+  if MessageDlg('Are you sure you want to delete ' + sChrName + ' ?', mtConfirmation, [mbYes,
     mbNo], 0) = mrYes then begin
     try
       if HumChrDB.Open then begin
@@ -201,7 +201,7 @@ begin
   sChrName := EdChrName.Text;
   if sChrName = '' then
     Exit;
-  if MessageDlg('是否确认禁用人物 ' + sChrName + ' ？', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+  if MessageDlg('Are you sure you want to disable ' + sChrName + ' ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
     try
       if HumChrDB.Open then begin
         nIndex := HumChrDB.Index(sChrName);
@@ -228,7 +228,7 @@ begin
   sChrName := EdChrName.Text;
   if sChrName = '' then
     Exit;
-  if MessageDlg('是否确认启用人物 ' + sChrName + ' ？', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+  if MessageDlg('Are you sure you want to enable ' + sChrName + ' ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
     try
       if HumChrDB.Open then begin
         nIndex := HumChrDB.Index(sChrName);
@@ -278,9 +278,9 @@ begin
     HumChrDB.Close;
   end;
   if nCheckCode = 0 then
-    ShowMessage('人物创建成功...')
+    ShowMessage('Character created successfully...')
   else
-    ShowMessage('人物创建失败！！！')
+    ShowMessage('Character creation failed!!!')
 end;
 
 procedure TFrmIDHum.BtnDeleteChrAllInfoClick(Sender: TObject); //0x004A0610
@@ -290,7 +290,7 @@ begin
   sChrName := EdChrName.Text;
   if sChrName = '' then
     Exit;
-  if MessageDlg('是否确认删除人物 ' + sChrName + ' 及人物数据？', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+  if MessageDlg('Are you sure you want to delete the character '+ sChrName +' and the Characters data?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
     try
       if HumChrDB.Open then begin
         HumChrDB.Delete(sChrName);
@@ -319,7 +319,7 @@ begin
   if ChrGrid.RowCount - 1 < nRow then
     Exit;
   nIndex := StrToIntDef(ChrGrid.Cells[0, nRow], 0);
-  if MessageDlg('是否确认禁用记录 ' + IntToStr(nIndex) + ' ？', mtConfirmation,
+  if MessageDlg('Are you sure you want to disable logging ' + IntToStr(nIndex) + ' ?', mtConfirmation,
     [mbYes, mbNo], 0) = mrYes then begin
     try
       if HumChrDB.Open then begin
@@ -370,7 +370,7 @@ end;
 
 procedure TFrmIDHum.RefChrGrid(n08: Integer; HumDBRecord: THumInfo); //0x004A00C4
 const
-  IsHeroName: array[Boolean] of string = ('', '英雄');
+  IsHeroName: array[Boolean] of string = ('', 'Heroes');
 var
   nRowCount: Integer;
 begin

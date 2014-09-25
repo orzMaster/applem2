@@ -3,7 +3,7 @@ object FrmOnLineHum: TFrmOnLineHum
   Top = 287
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #20840#23616#20250#35805
+  Caption = 'Global Session'
   ClientHeight = 320
   ClientWidth = 633
   Color = clBtnFace
@@ -21,7 +21,7 @@ object FrmOnLineHum: TFrmOnLineHum
     Top = 8
     Width = 617
     Height = 273
-    Caption = #22312#32447#20154#29289
+    Caption = 'Online People'
     TabOrder = 0
     object ListViewOnLine: TListView
       Left = 8
@@ -30,26 +30,26 @@ object FrmOnLineHum: TFrmOnLineHum
       Height = 249
       Columns = <
         item
-          Caption = #24207#21495
+          Caption = 'No.'
         end
         item
-          Caption = #30331#38470'IP'#22320#22336
+          Caption = 'Login IP Addr'
           Width = 105
         end
         item
-          Caption = #30331#24405#24080#21495
+          Caption = 'Login Account'
           Width = 110
         end
         item
-          Caption = #20250#35805#26631#35782
+          Caption = 'Session ID'
           Width = 60
         end
         item
-          Caption = #32593#32476#24310#26102
+          Caption = 'Network Delay'
           Width = 60
         end
         item
-          Caption = #24403#21069#29366#24577
+          Caption = 'Current Status'
           Width = 190
         end>
       GridLines = True
@@ -72,7 +72,7 @@ object FrmOnLineHum: TFrmOnLineHum
     Top = 288
     Width = 75
     Height = 25
-    Caption = #21047#26032'(&R)'
+    Caption = 'Refresh(&R)'
     TabOrder = 1
     OnClick = ButtonRefClick
   end
@@ -81,7 +81,7 @@ object FrmOnLineHum: TFrmOnLineHum
     Top = 288
     Width = 75
     Height = 25
-    Caption = #36386#19979#32447'(&T)'
+    Caption = 'KickOff(&T)'
     TabOrder = 2
     OnClick = ButtonKickClick
   end
@@ -90,7 +90,7 @@ object FrmOnLineHum: TFrmOnLineHum
     Top = 288
     Width = 129
     Height = 25
-    Caption = #21152#20837#21160#24577#36807#28388#21015#34920'(&A)'
+    Caption = 'Add Dynamic(&A)'
     TabOrder = 3
     OnClick = ButtonAddTempListClick
   end
@@ -99,16 +99,16 @@ object FrmOnLineHum: TFrmOnLineHum
     Top = 288
     Width = 129
     Height = 25
-    Caption = #21152#20837#27704#20037#36807#28388#21015#34920'(&D)'
+    Caption = 'Add Permanent(&D)'
     TabOrder = 4
     OnClick = ButtonAddBlockListClick
   end
   object CheckBoxShowLogin: TCheckBox
     Left = 169
     Top = 292
-    Width = 113
+    Width = 160
     Height = 17
-    Caption = #21482#26597#30475#24050#30331#24405#20250#35805
+    Caption = 'View Only Login Session'
     Checked = True
     State = cbChecked
     TabOrder = 5

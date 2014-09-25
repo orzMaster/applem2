@@ -24,13 +24,13 @@ object frmRouteEdit: TfrmRouteEdit
     object Label1: TLabel
       Left = 16
       Top = 20
-      Width = 54
+      Width = 84
       Height = 12
-      Caption = #30331#24405#32593#20851':'
+      Caption = 'Login Gateway:'
     end
     object EditSelGate: TEdit
-      Left = 72
-      Top = 16
+      Left = 106
+      Top = 17
       Width = 97
       Height = 20
       TabOrder = 0
@@ -40,63 +40,63 @@ object frmRouteEdit: TfrmRouteEdit
       Top = 40
       Width = 369
       Height = 121
-      Caption = #35282#33394#32593#20851
+      Caption = 'Gateway Role'
       TabOrder = 3
       object Label2: TLabel
         Left = 16
         Top = 20
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #19968':'
+        Caption = '1:'
       end
       object Label3: TLabel
         Left = 16
         Top = 44
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #20108':'
+        Caption = '2:'
       end
       object Label4: TLabel
         Left = 16
         Top = 68
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #19977':'
+        Caption = '3:'
       end
       object Label5: TLabel
         Left = 16
         Top = 92
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #22235':'
+        Caption = '4:'
       end
       object Label6: TLabel
         Left = 192
         Top = 20
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #20116':'
+        Caption = '5:'
       end
       object Label7: TLabel
         Left = 192
         Top = 44
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #20845':'
+        Caption = '6:'
       end
       object Label8: TLabel
         Left = 192
         Top = 68
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #19971':'
+        Caption = '7:'
       end
       object Label9: TLabel
         Left = 192
         Top = 92
-        Width = 18
+        Width = 12
         Height = 12
-        Caption = #20843':'
+        Caption = '8:'
       end
       object EditGateIPaddr1: TEdit
         Left = 40
@@ -216,7 +216,7 @@ object frmRouteEdit: TfrmRouteEdit
       Top = 168
       Width = 73
       Height = 25
-      Caption = #30830#23450'(&O)'
+      Caption = 'Okay(&O)'
       TabOrder = 1
       OnClick = ButtonOKClick
     end
@@ -225,7 +225,7 @@ object frmRouteEdit: TfrmRouteEdit
       Top = 168
       Width = 73
       Height = 25
-      Caption = #21462#28040'(&C)'
+      Caption = 'Cancel(&C)'
       TabOrder = 2
       OnClick = ButtonOKClick
     end

@@ -138,13 +138,13 @@ var
 begin
   nNulIdx := ListViewRoute.Items.Count;
   if nNulIdx >= 20 then begin
-    MessageBox(Handle, '路由条数已经达到指定数量,不能再增加路由！！！',
-      '提示信息', MB_OK + MB_ICONINFORMATION);
+    MessageBox(Handle, 'The number of routes has reached the specified number, can not increase the route!!!',
+      'Message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   RouteInfo := @g_Config.GateRoute[nNulIdx];
   frmRouteEdit.m_RouteInfo := RouteInfo^;
-  frmRouteEdit.Caption := '增加网关路由';
+  frmRouteEdit.Caption := 'Increae Gateway Routing';
   AddRoute := frmRouteEdit.Open;
   if AddRoute.nGateCount >= 1 then begin
     RouteInfo^ := AddRoute;
@@ -163,7 +163,7 @@ begin
     Exit;
   RouteInfo := ListItem.Data;
   frmRouteEdit.m_RouteInfo := RouteInfo^;
-  frmRouteEdit.Caption := '修改网关路由';
+  frmRouteEdit.Caption := 'Modify Gateway Routing';
   EditRoute := frmRouteEdit.Open;
   if EditRoute.nGateCount >= 1 then begin
     RouteInfo^ := EditRoute;

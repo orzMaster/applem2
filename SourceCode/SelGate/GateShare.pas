@@ -7,7 +7,7 @@ uses
   //GATEMAXSESSION = 2000;   //最大用户连接数
 
 resourcestring
-  g_sUpDateTime = '更新日期: 2012/05/01';
+  g_sUpDateTime = 'Update: 2012/05/01';//更新日期
   BlockIPListName = '.\BlockIPList.txt';
   TeledataBlockIPListName = '.\Config\SelGate_BlockIPList.txt';
   ConfigFileName = '.\Config.ini';
@@ -61,7 +61,7 @@ var
   nShowLogLevel: Integer = 0;
 
   GateClass: string = 'SelGate';
-  GateName: string = '角色网关';
+  GateName: string = 'Gateway Role';
   TitleName: string = 'GameOfMir';
   ServerPort: Integer = 5100;
   ServerAddr: string = '127.0.0.1';
@@ -83,8 +83,8 @@ var
   dwConnectTimeOut: LongWord = 10 * 1000;
   
   g_dwGameCenterHandle: THandle;
-  g_sNowStartGate: string = '正在启动角色网关...';
-  g_sNowStartOK: string = '启动角色网关完成...';
+  g_sNowStartGate: string = 'Starting Role Gateway...';
+  g_sNowStartOK: string = 'Role Gateway Started...';
 
   g_boTeledata: Boolean = False;
 

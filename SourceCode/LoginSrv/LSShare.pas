@@ -7,8 +7,8 @@ const
   VAR_DB = 0;
   VAR_SQL = 1;
   RUNVAR = VAR_DB;
-  
-  g_sUpDateTime = '更新日期: 2012/05/01';
+
+  g_sUpDateTime = 'Update: 2012/05/01';  //更新日期
 
   {sConfFileName = '.\Config\Config.ini';
   sGateConfFileName = '.\Config\LoginSrv_GateInfo.txt';

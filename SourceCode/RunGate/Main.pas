@@ -1488,7 +1488,7 @@ begin
             AddAttackInfo(sRemoteAddress, Socket);
           end;
          { if bokickOverPacketSize then begin
-            AddMainLogMsg('踢除连接: IP(' + sRemoteAddress + '),信息数量(' + IntToStr(nMsgCount) + '),数据包长度(' +
+            AddMainLogMsg('Kicked connection: IP(' + sRemoteAddress + '), Number of messages(' + IntToStr(nMsgCount) + '), Packet length(' +
               IntToStr(nReviceLen) + ')', 1);
             AddAttackInfo(sRemoteAddress, Socket);
           end;}
@@ -1528,14 +1528,14 @@ begin
                 UserData.nSocketHandle := UserSession.nSckHandle;
                 UserData.sMsg := g_CodeHead + sSTATUS_SPEED + g_CodeEnd;
                 SendMsgList.Add(UserData);   }
-                AddMainLogMsg('变速操作: IP(' + sRemoteAddress + '), 延时(' + IntToStr(nSpeedTick) + ')', 1);
-                SendClientMsg(UserSession, '请爱护游戏环境，不要使用非法加速软件！');
+                AddMainLogMsg('Variable speed operation: IP(' + sRemoteAddress + '), Delay(' + IntToStr(nSpeedTick) + ')', 1);
+                SendClientMsg(UserSession, 'Please take care of the game environment, do not use illegal acceleration software!');
                 UserSession.Socket.Close;
                 exit;
               end;
               boLuck := True; *)
-              {AddMainLogMsg('变速操作: IP(' + sRemoteAddress + '), 延时(' + IntToStr(nSpeedTick) + ')', 1);
-              SendClientMsg(UserSession, '请爱护游戏环境，不要使用非法加速软件！');
+              {AddMainLogMsg('Variable Speed Operation: IP(' + sRemoteAddress + '), Delay(' + IntToStr(nSpeedTick) + ')', 1);
+              SendClientMsg(UserSession, 'Please take care of the game environment, do not use illegal acceleration software!');
               UserSession.Socket.Close;   }
               SendSpeedClose(nSocketIndex, UserSession);
             end;
@@ -2425,8 +2425,8 @@ end;
 
 function TFrmMain.CheckSayMsg(UserData: pTSendUserData): Boolean;
 resourcestring
-  sText = '禁止聊天';
-  sText1 = '由于您说话太快，%d分钟内禁止聊天！！！';
+  sText = 'Prohibit Chat';
+  sText1 = 'Because you speak too fast, the %d minute ban chat! ! !';
 var
   LTime: LongWord;
 begin

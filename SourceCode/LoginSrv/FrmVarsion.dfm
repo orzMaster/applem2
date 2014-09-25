@@ -3,7 +3,7 @@ object FormVersion: TFormVersion
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #29256#26412#21495#35774#32622
+  Caption = 'Version'
   ClientHeight = 74
   ClientWidth = 406
   Color = clBtnFace
@@ -93,7 +93,7 @@ object FormVersion: TFormVersion
     Top = 40
     Width = 75
     Height = 25
-    Caption = #20445#23384
+    Caption = 'Save'
     TabOrder = 4
     OnClick = btn1Click
   end

@@ -1,7 +1,7 @@
 object frmConfigMonGen: TfrmConfigMonGen
   Left = 350
   Top = 201
-  Caption = #21047#24618#37197#21046
+  Caption = 'MonGen Configuration'
   ClientHeight = 330
   ClientWidth = 582
   Color = clBtnFace
