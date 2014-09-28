@@ -65,6 +65,10 @@ object frmCastleManage: TfrmCastleManage
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = 'Basic'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox3: TGroupBox
           Left = 5
           Top = 5
@@ -158,6 +162,10 @@ object frmCastleManage: TfrmCastleManage
       object TabSheet3: TTabSheet
         Caption = 'Guard Status'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox5: TGroupBox
           Left = 5
           Top = 0
@@ -210,6 +218,10 @@ object frmCastleManage: TfrmCastleManage
       object TabSheet2: TTabSheet
         Caption = 'Set'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox4: TGroupBox
           Left = 5
           Top = 5
@@ -328,6 +340,10 @@ object frmCastleManage: TfrmCastleManage
       object TabSheet4: TTabSheet
         Caption = 'Siege'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox6: TGroupBox
           Left = 8
           Top = 0

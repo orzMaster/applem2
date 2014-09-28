@@ -26,6 +26,10 @@ object frmHumanInfo: TfrmHumanInfo
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Character Info'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 8
         Top = 13
@@ -986,6 +990,10 @@ object frmHumanInfo: TfrmHumanInfo
     object TabSheet4: TTabSheet
       Caption = 'Equipment'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox7: TGroupBox
         Left = 8
         Top = 8
@@ -1021,6 +1029,10 @@ object frmHumanInfo: TfrmHumanInfo
     object TabSheet5: TTabSheet
       Caption = 'Backpack Items'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox8: TGroupBox
         Left = 8
         Top = 8
@@ -1056,6 +1068,10 @@ object frmHumanInfo: TfrmHumanInfo
     object TabSheet6: TTabSheet
       Caption = 'WH Items'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox10: TGroupBox
         Left = 8
         Top = 8

@@ -349,7 +349,7 @@ begin
         end
         else begin
           Dispose(StdItem);
-          Memo.Lines.Add(format('加载物品(Idx:%d Name:%s)数据失败.', [Idx, StdItem.Name]));
+          Memo.Lines.Add(format('Item (Idx:%d Name:%s) failed to load', [Idx, StdItem.Name]));
           Result := -100;
           Exit;
         end;
@@ -443,7 +443,7 @@ begin
   CallNameList := TStringList.Create;
   while (I < LoadList.Count) do begin //Jason 071209修改
     if Ing > 5000 then begin
-      MainOutMessage('#CALL调用死循环 ' + sLoadName);
+      MainOutMessage('#CALL ' + sLoadName);
       break;
     end;
     s14 := Trim(LoadList.Strings[i]);
@@ -464,7 +464,7 @@ begin
         nCount := Integer(CallNameList.Objects[nIdx]);
         Inc(nCount);
         if nCount > 100 then begin
-          MainOutMessage('#CALL调用死循环 ' + sLoadName + ' ' + s20 + ' ' + s18);
+          MainOutMessage('#CALL ' + sLoadName + ' ' + s20 + ' ' + s18);
           break;
         end;
         CallNameList.Objects[nIdx] := TObject(nCount);
@@ -475,7 +475,7 @@ begin
       //if CallNameList.IndexOf(s20 + '*' + s18) = -1 then begin
         //CallNameList.Add(s20 + '*' + s18);
       if not LoadCallList(s34, s18, I + 1, LoadList) then begin
-        MainOutMessage('加载文件错误, load fail: ' + s20 + ' ' + s18);
+        MainOutMessage('Error loading file: ' + s20 + ' ' + s18);
       end;
       //end;// else
         //MainOutMessage('脚本重复调用: ' + s20 + ' ' + s18);
@@ -763,25 +763,25 @@ function TFrmDB.LoadBoxs(): Integer;
               nType := StrToIntDef(sType, -1);
               if (nType in [0..4]) and (sName <> '') and (nCount > 0) then begin
                 BoxItemInfo := nil;
-                if CompareText(sName, '经验值') = 0 then begin
+                if CompareText(sName, 'Experience') = 0 then begin
                   New(BoxItemInfo);
                   SafeFillChar(BoxItemInfo^, SizeOf(TBoxItemInfo), #0);
                   BoxItemInfo.ItemType := bit_Exp;
                   BoxItemInfo.Item.MakeIndex := nCount;
                 end
-                else if CompareText(sName, '金币') = 0 then begin
+                else if CompareText(sName, 'Gold') = 0 then begin
                   New(BoxItemInfo);
                   SafeFillChar(BoxItemInfo^, SizeOf(TBoxItemInfo), #0);
                   BoxItemInfo.ItemType := bit_Gold;
                   BoxItemInfo.Item.MakeIndex := nCount;
                 end
-                else if CompareText(sName, '元宝') = 0 then begin
+                else if CompareText(sName, 'Ingot') = 0 then begin
                   New(BoxItemInfo);
                   SafeFillChar(BoxItemInfo^, SizeOf(TBoxItemInfo), #0);
                   BoxItemInfo.ItemType := bit_GameGold;
                   BoxItemInfo.Item.MakeIndex := nCount;
                 end
-                else if CompareText(sName, '绑定金币') = 0 then begin
+                else if CompareText(sName, 'Binding Gold') = 0 then begin
                   New(BoxItemInfo);
                   SafeFillChar(BoxItemInfo^, SizeOf(TBoxItemInfo), #0);
                   BoxItemInfo.ItemType := bit_BindGold;
@@ -806,12 +806,12 @@ function TFrmDB.LoadBoxs(): Integer;
                   BoxInfo.ItemList[nType].Add(BoxItemInfo);
                 end
                 else begin
-                  FrmMain.MemoLog.Lines.Add('加载宝箱数据[' + IntToStr(nIndex) + '.txt]物品[' + sName + ']失败！');
+                  FrmMain.MemoLog.Lines.Add('Load chest data [' + IntToStr(nIndex) + '.txt] Items [' + sName + '] Failed!');
                   break;
                 end;
               end
               else begin
-                FrmMain.MemoLog.Lines.Add('加载宝箱数据[' + IntToStr(nIndex) + '.txt]物品[' + sName + ']失败！');
+                FrmMain.MemoLog.Lines.Add('Load chest data[' + IntToStr(nIndex) + '.txt] Items [' + sName + '] Failed!');
                 break;
               end;
             end;
@@ -823,7 +823,7 @@ function TFrmDB.LoadBoxs(): Integer;
           Result := BoxInfo;
         end
         else
-          FrmMain.MemoLog.Lines.Add('加载宝箱数据[' + IntToStr(nIndex) + '.txt]失败！');
+          FrmMain.MemoLog.Lines.Add('Load chest data [' + IntToStr(nIndex) + '.txt] Failed!');
       finally
         LoadList.Free;
       end;
@@ -895,8 +895,8 @@ begin
   sFileName := g_Config.sEnvirDir + 'UserCmd.txt';
   LoadList := TStringList.Create();
   if not FileExists(sFileName) then begin
-    LoadList.Add(';自定义GM命令配置文件');
-    LoadList.Add(';命令名称'#9'对应编号');
+    LoadList.Add(';GM Commands custom configuration file');
+    LoadList.Add(';Command name '#9' Corresponding numbers');
     LoadList.SaveToFile(sFileName);
     LoadList.Free;
     exit;
@@ -1069,7 +1069,7 @@ begin
             MakeItem.btMaxRate := nMaxRate;
           end
           else begin
-            MainOutMessage('加载打造物品失败: ' + s24 + ' 不存在或信息不正确！');
+            MainOutMessage('Load create items failed: ' + s24 + ' The information is incorrect or does not exist!');
           end;
         end
         else begin
@@ -1097,7 +1097,7 @@ begin
                 end;
               end
               else begin
-                MainOutMessage('加载打造材料失败: ' + s20 + ' 不存在或参数不正确！');
+                MainOutMessage('Load Failed to create material: ' + s20 + ' The parameter is incorrect or does not exist!');
                 Dispose(MakeItem);
                 MakeItem := nil;
               end;
@@ -1255,7 +1255,7 @@ begin
               boJob := True;
             if sFBName = '' then begin
               Result := -12;
-              FrmMain.MemoLog.Lines.Add(sMapName + ' 副本名称不能为空.');
+              FrmMain.MemoLog.Lines.Add(sMapName + ' 副本名称不能为空.'); //Translate
               Exit;
             end;
             if not (nFBCount in [2..99]) then begin

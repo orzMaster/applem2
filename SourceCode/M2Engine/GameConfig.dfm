@@ -43,6 +43,10 @@ object frmGameConfig: TfrmGameConfig
     object GeneralSheet: TTabSheet
       Caption = 'Enviroment Settings'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBoxInfo: TGroupBox
         Left = 168
         Top = 53
@@ -150,7 +154,7 @@ object frmGameConfig: TfrmGameConfig
           Height = 21
           Hint = 'Announcement text display the default color.'
           Style = csDropDownList
-          ItemHeight = 13
+          ItemHeight = 0
           TabOrder = 1
           OnChange = ComboBoxLineNoticeColorChange
         end
@@ -386,6 +390,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet4: TTabSheet
       Caption = 'Game Options(1)'
       ImageIndex = 7
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox28: TGroupBox
         Left = 1
         Top = 0
@@ -805,6 +813,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet2: TTabSheet
       Caption = 'Game Options(2)'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox17: TGroupBox
         Left = 280
         Top = 8
@@ -925,21 +937,21 @@ object frmGameConfig: TfrmGameConfig
         object Label20: TLabel
           Left = 3
           Top = 20
-          Width = 74
+          Width = 69
           Height = 13
           Caption = 'Trade Interval:'
         end
         object Label104: TLabel
           Left = 3
           Top = 44
-          Width = 73
+          Width = 68
           Height = 13
           Caption = 'Comfirm Trade'
         end
         object Label105: TLabel
           Left = 111
           Top = 20
-          Width = 20
+          Width = 19
           Height = 13
           Caption = 'Sec'
         end
@@ -1143,6 +1155,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet1: TTabSheet
       Caption = 'Coordinate Range'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ButtonOptionSave: TButton
         Left = 411
         Top = 184
@@ -1395,6 +1411,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet3: TTabSheet
       Caption = 'PK Control'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ButtonOptionSave2: TButton
         Left = 411
         Top = 184
@@ -1717,6 +1737,10 @@ object frmGameConfig: TfrmGameConfig
     end
     object GameSpeedSheet: TTabSheet
       Caption = 'Game Speed'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 8
         Top = 8
@@ -2277,6 +2301,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet10: TTabSheet
       Caption = 'State Control'
       ImageIndex = 13
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ButtonCharStatusSave: TButton
         Left = 411
         Top = 184
@@ -2346,6 +2374,10 @@ object frmGameConfig: TfrmGameConfig
     object ExpSheet: TTabSheet
       Caption = 'Upgrade EXP'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox8: TGroupBox
         Left = 184
         Top = 8
@@ -2422,7 +2454,7 @@ object frmGameConfig: TfrmGameConfig
           Width = 113
           Height = 21
           Style = csDropDownList
-          ItemHeight = 13
+          ItemHeight = 0
           TabOrder = 0
           OnClick = ComboBoxLevelExpClick
         end
@@ -3957,6 +3989,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet5: TTabSheet
       Caption = 'Information Control'
       ImageIndex = 8
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox36: TGroupBox
         Left = 8
         Top = 8
@@ -4178,6 +4214,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet8: TTabSheet
       Caption = 'Text Color'
       ImageIndex = 11
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ButtonMsgColorSave: TButton
         Left = 411
         Top = 184
@@ -4895,6 +4935,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet6: TTabSheet
       Caption = 'Time Control'
       ImageIndex = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox39: TGroupBox
         Left = 8
         Top = 8
@@ -5343,6 +5387,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet7: TTabSheet
       Caption = 'Cost'
       ImageIndex = 10
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox48: TGroupBox
         Left = 8
         Top = 8
@@ -5485,6 +5533,10 @@ object frmGameConfig: TfrmGameConfig
     object TabSheet9: TTabSheet
       Caption = 'People Died'
       ImageIndex = 12
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ButtonHumanDieSave: TButton
         Left = 411
         Top = 184

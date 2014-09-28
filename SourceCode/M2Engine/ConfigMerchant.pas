@@ -142,7 +142,7 @@ end;
 
 procedure TfrmConfigMerchant.ButtonClearTempDataClick(Sender: TObject);
 begin
-  if Application.MessageBox(PChar('是否确认清除NPC临时数据？'), '确认信息',
+  if Application.MessageBox(PChar('Are you sure to clear the NPC temporary data? '), 'Confirmation',
     MB_YESNO + MB_ICONQUESTION) = mrYes then begin
     ClearMerchantData();
   end;
@@ -192,7 +192,7 @@ begin
     UserEngine.m_MerchantList.UnLock;
   end;
   SaveList.Free;
-  uModValue();  }
+  uModValue(); }
   uModValue();
 end;
 

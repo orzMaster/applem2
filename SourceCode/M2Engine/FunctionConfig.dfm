@@ -43,7 +43,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheetGeneral: TTabSheet
       Caption = 'Basic'
       ImageIndex = 3
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object ButtonGeneralSave: TButton
         Left = 368
@@ -561,7 +563,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet33: TTabSheet
       Caption = 'Mentoring'
       ImageIndex = 5
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox21: TGroupBox
         Left = 8
@@ -661,7 +665,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet38: TTabSheet
       Caption = 'Reincarnation'
       ImageIndex = 9
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox29: TGroupBox
         Left = 8
@@ -1031,7 +1037,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet39: TTabSheet
       Caption = 'Baby Upgrade?'
       ImageIndex = 10
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object ButtonMonUpgradeSave: TButton
         Left = 365
@@ -1608,8 +1616,6 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet1: TTabSheet
       Caption = 'Skill Magic'
       ImageIndex = 1
-      ExplicitTop = 42
-      ExplicitHeight = 299
       object ButtonSkillSave: TButton
         Left = 379
         Top = 275
@@ -1628,6 +1634,10 @@ object frmFunctionConfig: TfrmFunctionConfig
         TabOrder = 1
         object TabSheet54: TTabSheet
           Caption = 'Basic'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object GroupBox17: TGroupBox
             Left = 8
             Top = 8
@@ -1688,6 +1698,10 @@ object frmFunctionConfig: TfrmFunctionConfig
         object TabSheet2: TTabSheet
           Caption = 'Warrior'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object PageControl2: TPageControl
             Left = 3
             Top = 3
@@ -1697,6 +1711,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             TabOrder = 0
             object TabSheet3: TTabSheet
               Caption = 'Fencing'
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox9: TGroupBox
                 Left = 8
                 Top = 8
@@ -1758,6 +1776,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet4: TTabSheet
               Caption = 'Toru Nail'
               ImageIndex = 1
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox56: TGroupBox
                 Left = 159
                 Top = 86
@@ -1840,6 +1862,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet5: TTabSheet
               Caption = 'Idiom'
               ImageIndex = 2
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox48: TGroupBox
                 Left = 3
                 Top = 3
@@ -1871,6 +1897,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet6: TTabSheet
               Caption = 'Qinlong '
               ImageIndex = 3
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox50: TGroupBox
                 Left = 8
                 Top = 8
@@ -1901,6 +1931,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts1: TTabSheet
               Caption = 'Three Lore'
               ImageIndex = 4
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp3: TGroupBox
                 Left = 10
                 Top = 9
@@ -1932,6 +1966,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts2: TTabSheet
               Caption = 'Thorn Heart'
               ImageIndex = 5
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp4: TGroupBox
                 Left = 10
                 Top = 9
@@ -1964,6 +2002,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts3: TTabSheet
               Caption = 'CutOff Yue'
               ImageIndex = 6
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp5: TGroupBox
                 Left = 10
                 Top = 9
@@ -1995,6 +2037,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts4: TTabSheet
               Caption = 'Total Annihilation'
               ImageIndex = 7
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp6: TGroupBox
                 Left = 10
                 Top = 9
@@ -2026,6 +2072,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet24: TTabSheet
               Caption = 'Ten Steps to a kill'
               ImageIndex = 8
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox59: TGroupBox
                 Left = 10
                 Top = 9
@@ -2156,6 +2206,10 @@ object frmFunctionConfig: TfrmFunctionConfig
         object TabSheet7: TTabSheet
           Caption = 'Wizard'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object PageControl3: TPageControl
             Left = 3
             Top = 3
@@ -2165,6 +2219,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             TabOrder = 0
             object TabSheet8: TTabSheet
               Caption = 'Light Temptation'
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox38: TGroupBox
                 Left = 8
                 Top = 8
@@ -2279,6 +2337,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet12: TTabSheet
               Caption = 'Burst Of Flame'
               ImageIndex = 4
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox13: TGroupBox
                 Left = 8
                 Top = 8
@@ -2311,6 +2373,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet9: TTabSheet
               Caption = 'FireWall'
               ImageIndex = 1
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox53: TGroupBox
                 Left = 8
                 Top = 55
@@ -2440,6 +2506,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet11: TTabSheet
               Caption = 'Hell Leiguang'
               ImageIndex = 3
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox15: TGroupBox
                 Left = 8
                 Top = 8
@@ -2472,7 +2542,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet10: TTabSheet
               Caption = 'Word Surgery'
               ImageIndex = 2
+              ExplicitLeft = 0
               ExplicitTop = 32
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox37: TGroupBox
                 Left = 8
                 Top = 8
@@ -2507,6 +2580,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet13: TTabSheet
               Caption = 'Ice Roar'
               ImageIndex = 5
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox14: TGroupBox
                 Left = 8
                 Top = 8
@@ -2539,6 +2616,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet17: TTabSheet
               Caption = 'SkyFire'
               ImageIndex = 7
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox51: TGroupBox
                 Left = 8
                 Top = 8
@@ -2560,6 +2641,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet36: TTabSheet
               Caption = 'Frost, Snow and Rain'
               ImageIndex = 13
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox70: TGroupBox
                 Left = 8
                 Top = 8
@@ -2581,6 +2666,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet27: TTabSheet
               Caption = 'Yixinghuanwei'
               ImageIndex = 12
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox64: TGroupBox
                 Left = 10
                 Top = 9
@@ -2651,6 +2740,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts5: TTabSheet
               Caption = 'Ssangyong Break'
               ImageIndex = 7
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp7: TGroupBox
                 Left = 10
                 Top = 9
@@ -2682,6 +2775,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts6: TTabSheet
               Caption = 'FengWu Technology'
               ImageIndex = 8
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp8: TGroupBox
                 Left = 10
                 Top = 9
@@ -2713,6 +2810,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts7: TTabSheet
               Caption = 'Thunder Burst'
               ImageIndex = 9
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp9: TGroupBox
                 Left = 10
                 Top = 9
@@ -2744,6 +2845,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts8: TTabSheet
               Caption = 'Ice and Snow'
               ImageIndex = 10
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp10: TGroupBox
                 Left = 10
                 Top = 9
@@ -2775,6 +2880,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet25: TTabSheet
               Caption = 'Frost group Rain'
               ImageIndex = 11
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox60: TGroupBox
                 Left = 10
                 Top = 9
@@ -2893,6 +3002,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet18: TTabSheet
               Caption = 'Summon Skeleton'
               ImageIndex = 1
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox5: TGroupBox
                 Left = 5
                 Top = 2
@@ -2967,6 +3080,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet19: TTabSheet
               Caption = 'Call animal'
               ImageIndex = 2
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox11: TGroupBox
                 Left = 5
                 Top = 2
@@ -3040,6 +3157,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet31: TTabSheet
               Caption = 'Summon Spirit month'
               ImageIndex = 9
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox67: TGroupBox
                 Left = 5
                 Top = 2
@@ -3114,6 +3235,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet20: TTabSheet
               Caption = 'Fire Ice'
               ImageIndex = 3
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox41: TGroupBox
                 Left = 8
                 Top = 8
@@ -3231,10 +3356,18 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet32: TTabSheet
               Caption = 'Crack rune'
               ImageIndex = 10
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
             end
             object ts9: TTabSheet
               Caption = 'Tigers decision'
               ImageIndex = 4
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp11: TGroupBox
                 Left = 10
                 Top = 9
@@ -3266,6 +3399,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts10: TTabSheet
               Caption = 'Bagua'
               ImageIndex = 5
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp12: TGroupBox
                 Left = 10
                 Top = 9
@@ -3297,6 +3434,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts11: TTabSheet
               Caption = 'Three flame curse'
               ImageIndex = 6
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp13: TGroupBox
                 Left = 10
                 Top = 9
@@ -3328,6 +3469,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object ts12: TTabSheet
               Caption = 'Wan Jian Zong return'
               ImageIndex = 7
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object grp14: TGroupBox
                 Left = 10
                 Top = 9
@@ -3359,6 +3504,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet26: TTabSheet
               Caption = 'Eye of Death'
               ImageIndex = 8
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox61: TGroupBox
                 Left = 10
                 Top = 9
@@ -3449,6 +3598,10 @@ object frmFunctionConfig: TfrmFunctionConfig
         object TabSheet28: TTabSheet
           Caption = 'Generic'
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object PageControl1: TPageControl
             Left = 3
             Top = 3
@@ -3458,6 +3611,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             TabOrder = 0
             object TabSheet29: TTabSheet
               Caption = 'Aegis'
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox69: TGroupBox
                 Left = 8
                 Top = 8
@@ -3650,6 +3807,10 @@ object frmFunctionConfig: TfrmFunctionConfig
             object TabSheet30: TTabSheet
               Caption = 'Metin '
               ImageIndex = 1
+              ExplicitLeft = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object GroupBox65: TGroupBox
                 Left = 8
                 Top = 8
@@ -3717,6 +3878,8 @@ object frmFunctionConfig: TfrmFunctionConfig
       ImageIndex = 6
       ExplicitLeft = 2
       ExplicitTop = 64
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox8: TGroupBox
         Left = 8
         Top = 8
@@ -4139,6 +4302,8 @@ object frmFunctionConfig: TfrmFunctionConfig
       ImageIndex = 7
       ExplicitLeft = 2
       ExplicitTop = 52
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox24: TGroupBox
         Left = 8
         Top = 8
@@ -4468,7 +4633,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet42: TTabSheet
       Caption = 'Blessing Oil'
       ImageIndex = 12
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox44: TGroupBox
         Left = 8
@@ -4716,7 +4883,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet37: TTabSheet
       Caption = 'Lottery Control'
       ImageIndex = 8
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox27: TGroupBox
         Left = 8
@@ -5067,7 +5236,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet40: TTabSheet
       Caption = 'Prayer'
       ImageIndex = 11
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox36: TGroupBox
         Left = 8
@@ -5139,7 +5310,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet14: TTabSheet
       Caption = 'Life Skills'
       ImageIndex = 10
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object ButtonMakeMagicSave: TButton
         Left = 365
@@ -5294,7 +5467,7 @@ object frmFunctionConfig: TfrmFunctionConfig
           Width = 149
           Height = 20
           Style = csDropDownList
-          ItemHeight = 12
+          ItemHeight = 0
           ItemIndex = 0
           TabOrder = 1
           Text = #25171#36896#27494#22120
@@ -5316,7 +5489,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet21: TTabSheet
       Caption = 'Attribute Points'
       ImageIndex = 11
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox2: TGroupBox
         Left = 8
@@ -5665,7 +5840,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet22: TTabSheet
       Caption = 'Liberary Talent'
       ImageIndex = 12
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox4: TGroupBox
         Left = 8
@@ -5705,7 +5882,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet23: TTabSheet
       Caption = 'Options'
       ImageIndex = 13
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox40: TGroupBox
         Left = 10
@@ -5831,7 +6010,9 @@ object frmFunctionConfig: TfrmFunctionConfig
     object TabSheet41: TTabSheet
       Caption = 'Horse'
       ImageIndex = 14
+      ExplicitLeft = 0
       ExplicitTop = 42
+      ExplicitWidth = 0
       ExplicitHeight = 299
       object GroupBox71: TGroupBox
         Left = 10
@@ -5972,7 +6153,7 @@ object frmFunctionConfig: TfrmFunctionConfig
         object Label178: TLabel
           Left = 3
           Top = 22
-          Width = 129
+          Width = 120
           Height = 12
           Caption = 'ResTime Horse Death:'
         end
@@ -5986,7 +6167,7 @@ object frmFunctionConfig: TfrmFunctionConfig
         object Label183: TLabel
           Left = 3
           Top = 45
-          Width = 81
+          Width = 72
           Height = 12
           Caption = 'Launch Prep:'
         end

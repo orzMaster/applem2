@@ -58,7 +58,7 @@ type
     m_dwSaveTick: LongWord; //0x48
     m_AttackWarList: TList; //0x4C
     m_boGuardRule: Boolean;      //防御方式 (True 进攻PK者 False 正常防御)
-//    m_AttackGuildList: TList; //0x50
+    m_AttackGuildList: TList; //0x50
     m_MainDoor: TObjUnit; //0x54
     m_LeftWall: TObjUnit; //0x6C
     m_CenterWall: TObjUnit; //0x84
@@ -101,11 +101,11 @@ type
     function IsMember(Cert: TBaseObject): Boolean;
     function IsMasterGuild(Guild: TGuild): Boolean;
     function IsAttackGuild(Guild: TGuild): Boolean;
-    //function IsAttackAllyGuild(Guild: TGUild): Boolean;
+    function IsAttackAllyGuild(Guild: TGUild): Boolean;
     function IsDefenseGuild(Guild: TGuild): Boolean;
     function IsDefenseAllyGuild(Guild: TGuild): Boolean;
 
-    //function CanGetCastle(Guild: TGUild): Boolean;
+    function CanGetCastle(Guild: TGUild): Boolean;
     procedure GetCastle(Guild: TGuild);
     procedure StartWallconquestWar;
     procedure StartWallconquestWarEx;
@@ -170,7 +170,7 @@ begin
   m_sHomeMap := g_Config.sCastleHomeMap {'3'};
   m_nHomeX := g_Config.nCastleHomeX {644};
   m_nHomeY := g_Config.nCastleHomeY {290};
-  m_sName := g_Config.sCASTLENAME {'沙巴克'};
+  m_sName := g_Config.sCASTLENAME {'SabukWall'};
 
   m_sConfigDir := sCastleDir;
   m_sPalaceMap := '0150';
@@ -183,7 +183,7 @@ begin
   m_boShowOverMsg := False;
   m_AttackWarList := TList.Create;
   m_dwGetCastleTick := GetTickCount;
-  //m_AttackGuildList := TList.Create;
+  m_AttackGuildList := TList.Create;
   m_dwSaveTick := 0;
   m_nWarRangeX := g_Config.nCastleWarRangeX;
   m_nWarRangeY := g_Config.nCastleWarRangeY;
@@ -198,7 +198,7 @@ begin
     DisPose(pTAttackerInfo(m_AttackWarList.Items[i]));
   end;
   m_AttackWarList.Free;
-  //m_AttackGuildList.Free;
+  m_AttackGuildList.Free;
   m_EnvirList.Free;
   inherited;
 end;
@@ -215,11 +215,11 @@ begin
     //m_MapPalace:=EnvirList.FindMap('0150');
     m_MapPalace := g_MapManager.FindMap(m_sPalaceMap);
     if m_MapPalace = nil then begin
-      MainOutMessage(format('皇宫地图%s没找到.', [m_sPalaceMap]));
+      MainOutMessage(format('%s No map found. ( No inner wall map of wall conquest war )', [m_sPalaceMap]));
     end;
     m_MapSecret := g_MapManager.FindMap(m_sSecretMap);
     if m_MapSecret = nil then begin
-      MainOutMessage(format('密道地图%s没找到.', [m_sSecretMap]));
+      MainOutMessage(format('%s - secret map not found !!', [m_sSecretMap]));
       //ShowMessage('0150 没有找到地图...');
     end;
     m_MapCastle := g_MapManager.FindMap(m_sMapName);
@@ -235,7 +235,7 @@ begin
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[MainDoor.BaseObject.m_sCharName,MainDoor.BaseObject.m_sMapName,MainDoor.BaseObject.m_nCurrX,MainDoor.BaseObject.m_nCurrY,MainDoor.BaseObject.m_Wabil.HP]));
       end
       else begin
-        MainOutMessage('[错误信息] 城堡初始化城门失败，检查怪物数据库里有没城门的设置: ' + m_MainDoor.sName);
+        MainOutMessage('[Castle] Failed to load Castle MainDoor, check Monster DB: ' + m_MainDoor.sName);
       end;
 
       m_LeftWall.BaseObject := UserEngine.RegenMonsterByName(m_sMapName, m_LeftWall.nX, m_LeftWall.nY, m_LeftWall.sName);
@@ -246,7 +246,7 @@ begin
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[LeftWall.BaseObject.m_sCharName,LeftWall.BaseObject.m_sMapName,LeftWall.BaseObject.m_nCurrX,LeftWall.BaseObject.m_nCurrY,LeftWall.BaseObject.m_Wabil.HP]));
       end
       else begin
-        MainOutMessage('[错误信息] 城堡初始化左城墙失败，检查怪物数据库里有没左城墙的设置: ' + m_LeftWall.sName);
+        MainOutMessage('[Castle] Failed to load Castle LeftWall, check Monster DB: ' + m_LeftWall.sName);
       end;
 
       m_CenterWall.BaseObject := UserEngine.RegenMonsterByName(m_sMapName,
@@ -257,7 +257,7 @@ begin
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[CenterWall.BaseObject.m_sCharName,CenterWall.BaseObject.m_sMapName,CenterWall.BaseObject.m_nCurrX,CenterWall.BaseObject.m_nCurrY,CenterWall.BaseObject.m_Wabil.HP]));
       end
       else begin
-        MainOutMessage('[错误信息] 城堡初始化中城墙失败，检查怪物数据库里有没中城墙的设置: ' + m_CenterWall.sName);
+        MainOutMessage('[Castle] Failed to load Castle CenterWall, check Monster DB: ' + m_CenterWall.sName);
       end;
 
       m_RightWall.BaseObject := UserEngine.RegenMonsterByName(m_sMapName,
@@ -268,7 +268,7 @@ begin
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[RightWall.BaseObject.m_sCharName,RightWall.BaseObject.m_sMapName,RightWall.BaseObject.m_nCurrX,RightWall.BaseObject.m_nCurrY,RightWall.BaseObject.m_Wabil.HP]));
       end
       else begin
-        MainOutMessage('[错误信息] 城堡初始化右城墙失败，检查怪物数据库里有没右城墙的设置: ' + m_RightWall.sName);
+        MainOutMessage('[Castle] Failed to load Castle RightWall, check Monster DB: ' + m_RightWall.sName);
       end;
       for i := Low(m_Archer) to High(m_Archer) do begin
         ObjUnit := @m_Archer[i];
@@ -283,7 +283,7 @@ begin
         end
         else begin
           //MainOutMessage('[错误信息] UserCastle.Initialize Archer -> UnitObj = nil');
-          MainOutMessage('[错误信息] 城堡初始化弓箭手失败，检查怪物数据库里有没弓箭手的设置: ' + ObjUnit.sName);
+          MainOutMessage('[Castle] Failed to load Castle Archers: ' + ObjUnit.sName);
         end;
       end;
       for i := Low(m_Guard) to High(m_Guard) do begin
@@ -295,7 +295,7 @@ begin
           ObjUnit.BaseObject.m_Castle := Self;
         end
         else begin
-          MainOutMessage('[错误信息] 城堡初始化守卫失败(检查怪物数据库里有没守卫怪物)');
+          MainOutMessage('[Castle] Failed to load Castle Guard)');
           //MainOutMessage('[错误信息] UserCastle.Initialize Guard -> UnitObj = nil');
         end;
       end;
@@ -307,7 +307,7 @@ begin
       end;
     end
     else begin
-      MainOutMessage(format('[错误信息] 城堡所在地图不存在(检查地图配置文件里是否有地图%s的设置)', [m_sMapName]));
+      MainOutMessage(format('[Castle] Failed to load Castle Map: %s)', [m_sMapName]));
       //MainOutMessage('[错误信息] TUserCastle.Initialize CastleMap -> nil');
     end;
   end;
@@ -335,7 +335,7 @@ begin
     m_IncomeToday := CastleConf.ReadDateTime('Setup', 'IncomeToday', Now);
     m_nTotalGold := CastleConf.ReadInteger('Setup', 'TotalGold', 0);
     m_nTodayIncome := CastleConf.ReadInteger('Setup', 'TodayIncome', 0);
-    //m_boGuardRule := CastleConf.ReadBool('Setup', 'GuardRule', False);
+    m_boGuardRule := CastleConf.ReadBool('Setup', 'GuardRule', False);
 
     sMapList := CastleConf.ReadString('Defense', 'CastleMapList', '');
     if sMapList <> '' then begin
@@ -398,7 +398,7 @@ begin
       ObjUnit := @m_Archer[i];
       ObjUnit.nX := CastleConf.ReadInteger('Defense', 'Archer_' + IntToStr(i + 1) + '_X', 0);
       ObjUnit.nY := CastleConf.ReadInteger('Defense', 'Archer_' + IntToStr(i + 1) + '_Y', 0);
-      ObjUnit.sName := CastleConf.ReadString('Defense', 'Archer_' + IntToStr(i + 1) + '_Name', '弓箭手');
+      ObjUnit.sName := CastleConf.ReadString('Defense', 'Archer_' + IntToStr(i + 1) + '_Name', 'Archer');
       ObjUnit.nHP := CastleConf.ReadInteger('Defense', 'Archer_' + IntToStr(i +  1) + '_HP', 2000);
       ObjUnit.BaseObject := nil;
     end;
@@ -407,7 +407,7 @@ begin
       ObjUnit := @m_Guard[i];
       ObjUnit.nX := CastleConf.ReadInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_X', 0);
       ObjUnit.nY := CastleConf.ReadInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_Y', 0);
-      ObjUnit.sName := CastleConf.ReadString('Defense', 'Guard_' + IntToStr(i + 1) + '_Name', '守卫');
+      ObjUnit.sName := CastleConf.ReadString('Defense', 'Guard_' + IntToStr(i + 1) + '_Name', 'Guard');
       ObjUnit.nHP := CastleConf.ReadInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_HP', 2000);
       ObjUnit.BaseObject := nil;
     end;
@@ -444,7 +444,7 @@ begin
       CastleConf.WriteInteger('Setup', 'TotalGold', m_nTotalGold);
     if m_nTodayIncome <> 0 then
       CastleConf.WriteInteger('Setup', 'TodayIncome', m_nTodayIncome);
-    //CastleConf.WriteBool('Setup', 'GuardRule', m_boGuardRule);
+      CastleConf.WriteBool('Setup', 'GuardRule', m_boGuardRule);
 
     for i := 0 to m_EnvirList.Count - 1 do begin
       sMapList := sMapList + m_EnvirList.Strings[i] + ',';
@@ -523,10 +523,10 @@ begin
     end;
     for i := Low(m_Archer) to High(m_Archer) do begin
       ObjUnit := @m_Archer[i];
-      {if ObjUnit.nX <> 0 then
+      if ObjUnit.nX <> 0 then
         CastleConf.WriteInteger('Defense', 'Archer_' + IntToStr(i + 1) + '_X', ObjUnit.nX);
       if ObjUnit.nY <> 0 then
-        CastleConf.WriteInteger('Defense', 'Archer_' + IntToStr(i + 1) + '_Y', ObjUnit.nY);  }
+        CastleConf.WriteInteger('Defense', 'Archer_' + IntToStr(i + 1) + '_Y', ObjUnit.nY);
       if ObjUnit.sName <> '' then
         CastleConf.WriteString('Defense', 'Archer_' + IntToStr(i + 1) + '_Name', ObjUnit.sName);
       if ObjUnit.BaseObject <> nil then begin
@@ -539,10 +539,10 @@ begin
 
     for i := Low(m_Guard) to High(m_Guard) do begin
       ObjUnit := @m_Guard[i];
-      {if ObjUnit.nX <> 0 then
+      if ObjUnit.nX <> 0 then
         CastleConf.WriteInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_X', ObjUnit.nX);
       if ObjUnit.nY <> 0 then
-        CastleConf.WriteInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_Y', ObjUnit.nY); }
+        CastleConf.WriteInteger('Defense', 'Guard_' + IntToStr(i + 1) + '_Y', ObjUnit.nY);
       if ObjUnit.sName <> '' then
         CastleConf.WriteString('Defense', 'Guard_' + IntToStr(i + 1) + '_Name', ObjUnit.sName);
       if ObjUnit.BaseObject <> nil then begin
@@ -626,7 +626,7 @@ begin
   try
     LoadLis.SaveToFile(sFileName);
   except
-    MainOutMessage('保存攻城信息失败: ' + sFileName);
+    MainOutMessage('Failed to save Castle War information: ' + sFileName);
   end;
   LoadLis.Free;
 end;
@@ -641,8 +641,8 @@ var
   s20: string;
 {$IFEND}
 resourcestring
-  sWarStartMsg = '[%s 攻城战已经开始]';
-  sWarStopTimeMsg = '[%s 攻城战离结束还有%d分钟]';
+  sWarStartMsg = '[%s War has started]';
+  sWarStopTimeMsg = '[%s War has %d minutes togo]';
   sExceptionMsg = '[Exception] TUserCastle::Run';
 begin
   try
@@ -660,7 +660,7 @@ begin
       DecodeTime(Time, Hour, Min, Sec, MSec);
       if Hour = g_Config.nStartCastlewarTime {20} then begin
         m_boStartWar := True;
-        //m_AttackGuildList.Clear;
+        m_AttackGuildList.Clear;
         for i := m_AttackWarList.Count - 1 downto 0 do begin
           if m_AttackWarList.Count <= 0 then break;
           AttackerInfo := m_AttackWarList.Items[i];
@@ -672,13 +672,13 @@ begin
             m_dwStartCastleWarTick := GetTickCount();
             m_dwGetCastleTick := GetTickCount;
             AttackerInfo.Guild.m_AttackCastle := Self;
-            //m_AttackGuildList.Add(AttackerInfo.Guild);
+            m_AttackGuildList.Add(AttackerInfo.Guild);
             DisPose(AttackerInfo);
             m_AttackWarList.Delete(i);
           end;
         end;
         if m_boUnderWar then begin
-          //m_AttackGuildList.Add(m_MasterGuild);
+          m_AttackGuildList.Add(m_MasterGuild);
           if m_MasterGuild <> nil then
             m_MasterGuild.m_AttackCastle := Self;
           StartWallconquestWar();
@@ -775,7 +775,7 @@ begin
 end;
 
 //检查是否为攻城方行会的联盟行会
-{
+
 function TUserCastle.IsAttackAllyGuild(Guild: TGUild): Boolean;
 var
   i: Integer;
@@ -784,33 +784,33 @@ begin
   Result := False;
   if (Guild.m_AttackCastle = Self) and (Guild <> m_MasterGuild) then
     Result := True;
-  {for i := 0 to m_AttackGuildList.Count - 1 do begin
+  for i := 0 to m_AttackGuildList.Count - 1 do begin
     AttackGuild := TGUild(m_AttackGuildList.Items[i]);
     if (AttackGuild <> m_MasterGuild) and AttackGuild.IsAllyGuild(Guild) then begin
       Result := True;
       break;
     end;
   end;
-end;     }
+end;
 //检查是否为攻城方行会
 
 function TUserCastle.IsAttackGuild(Guild: TGuild): Boolean; //00491160
-{var
+var
   i: Integer;
-  AttackGuild: TGUild;     }
+  AttackGuild: TGUild;
 begin
   Result := False;
   if (Guild.m_AttackCastle = Self) and (Guild <> m_MasterGuild) then
     Result := True;
-  {for i := 0 to m_AttackGuildList.Count - 1 do begin
+  for i := 0 to m_AttackGuildList.Count - 1 do begin
     AttackGuild := TGUild(m_AttackGuildList.Items[i]);
     if (AttackGuild <> m_MasterGuild) and (AttackGuild = Guild) then begin
       Result := True;
       break;
     end;
-  end; }
+  end;
 end;
- (*
+
 function TUserCastle.CanGetCastle(Guild: TGUild): Boolean; //004911D0
 var
   i: Integer;
@@ -832,13 +832,13 @@ begin
     List14.Free;
   end;
 end;
-      *)
+
 procedure TUserCastle.GetCastle(Guild: TGuild);
 var
   OldGuild: TGuild;
   s10: string;
 resourcestring
-  sGetCastleMsg = '[%s 被(#6FFFF/8#6%s#5)占领]';
+  sGetCastleMsg = '[%s is (#6FFFF/8#6%s#5) Occupation]';
 begin
   OldGuild := m_MasterGuild;
   m_MasterGuild := Guild;
@@ -851,7 +851,7 @@ begin
     m_MasterGuild.RefMemberName;
   s10 := format(sGetCastleMsg, [m_sName, m_sOwnGuild]);
   UserEngine.SendBroadCastMsgExt(s10, t_System);
-  MainOutMessage(format('[%s 被(%s)占领]', [m_sName, m_sOwnGuild]));
+  MainOutMessage(format('[%s by (%s) Occupied]', [m_sName, m_sOwnGuild]));
 end;
 
 procedure TUserCastle.StartWallconquestWar; //00491074
@@ -877,8 +877,8 @@ var
   AttackerInfo: pTAttackerInfo;
   s20: string;
 resourcestring
-  sWarStartMsg = '[%s 攻城战已经开始]';
-  sWarStopTimeMsg = '[%s 攻城战离结束还有%d分钟]';
+  sWarStartMsg = '[%s War has started]';
+  sWarStopTimeMsg = '[%s War has %d minutes togo]';
   sExceptionMsg = '[Exception] TUserCastle::Run';
 begin
   DecodeDate(Now, Year, Month, Day);
@@ -920,8 +920,8 @@ var
   s20: string;
   Guild: TGuild;
 resourcestring
-  sWarStartMsg = '[%s 攻城战已经开始]';
-  sWarStopTimeMsg = '[%s 攻城战离结束还有%d分钟]';
+  sWarStartMsg = '[%s War has started]';
+  sWarStopTimeMsg = '[%s War has %d minutes togo]';
   sExceptionMsg = '[Exception] TUserCastle::Run';
 begin
   DecodeDate(Now, Year, Month, Day);
@@ -959,12 +959,12 @@ end;
 
 procedure TUserCastle.StopWallconquestWar;
 var
-  //  i: Integer;
-  //  ListC: TList;
-  //  PlayObject: TPlayObject;
+  //I: Integer;
+  //ListC: TList;
+  //PlayObject: TPlayObject;
   s14: string;
 resourcestring
-  sWallWarStop = '[%s 攻城战已经结束]';
+  sWallWarStop = '[%s War has ended]';
 begin
   m_boUnderWar := False;
   g_GuildManager.ClearGuildAttackCastle;
@@ -1080,7 +1080,7 @@ var
   Month: Word;
   Day: Word;
 resourcestring
-  sMsg = '%d年%d月%d日';
+  sMsg = '%d Year %d Month %d Day';
 begin
   Result := '';
   if m_AttackWarList.Count <= 0 then
@@ -1111,7 +1111,7 @@ begin
       wDay := Day;
       if Result <> '' then
         Result := Result + '\';
-      Result := Result + IntToStr(wYear) + '年' + IntToStr(wMonth) + '月' + IntToStr(wDay) + '日\';
+      Result := Result + IntToStr(wYear) + 'Year' + IntToStr(wMonth) + 'Month' + IntToStr(wDay) + 'Day\';
     end;
     s20 := '　"' + AttackerInfo.sGuildName + '"\';
     Result := Result + s20;
@@ -1143,20 +1143,20 @@ begin
       m_nTotalGold := g_Config.nCastleGoldMax;
     end;
   end;
-  //if (GetTickCount - m_dwSaveTick) > 10 * 60 * 1000 then begin
-    //m_dwSaveTick := GetTickCount();
- { if g_boGameLogGold then
-    AddGameDataLog(nil, LOG_CASTLEADDGOLD, sSTRING_GOLDNAME, 0, )
-    AddGameDataLog('23' + #9 +
-      '0' + #9 +
-      '0' + #9 +
-      '0' + #9 +
-      'autosave' + #9 +
-      sSTRING_GOLDNAME + #9 +
-      IntToStr(m_nTotalGold) + #9 +
-      '1' + #9 +
-      '0');  }
-  //end;
+  if (GetTickCount - m_dwSaveTick) > 10 * 60 * 1000 then begin
+    m_dwSaveTick := GetTickCount();
+  //if g_boGameLogGold then
+    //AddGameDataLog(nil, LOG_CASTLEADDGOLD, sSTRING_GOLDNAME, 0, )
+    //AddGameDataLog('23' + #9 +
+      //'0' + #9 +
+      //'0' + #9 +
+      //'0' + #9 +
+      //'autosave' + #9 +
+      //sSTRING_GOLDNAME + #9 +
+      //IntToStr(m_nTotalGold) + #9 +
+      //'1' + #9 +
+      //'0');
+  end;
 end;
 
 function TUserCastle.WithDrawalGolds(PlayObject: TPlayObject; nGold: Integer):
@@ -1175,7 +1175,7 @@ begin
         PlayObject.IncGold(nGold);
         if g_boGameLogGold then
           AddGameLog(PlayObject, LOG_GOLDCHANGED, sSTRING_GOLDNAME, 0, PlayObject.m_nGold, m_sName,
-            '+', IntToStr(nGold), '城堡', nil);
+            '+', IntToStr(nGold), 'Castle', nil);
         PlayObject.GoldChanged;
         Result := 1;
       end
@@ -1203,7 +1203,7 @@ begin
         Inc(m_nTotalGold, nGold);
         if g_boGameLogGold then
           AddGameLog(PlayObject, LOG_GOLDCHANGED, sSTRING_GOLDNAME, 0, PlayObject.m_nGold, m_sName,
-            '-', IntToStr(nGold), '城堡', nil);
+            '-', IntToStr(nGold), 'Castle', nil);
         PlayObject.GoldChanged;
         Result := 1;
       end
@@ -1305,8 +1305,8 @@ begin
     m_AttackWarList.Add(AttackerInfo);
     nCode := 2;
     if m_MasterGuild <> nil then
-      m_MasterGuild.SendGuildMsg(Guild.m_sGuildName + ' 行会申请了攻城战争，攻城时间为：' +
-        FormatDateTime('YYYY年MM月DD日 ', AttackerInfo.AttackDate) + IntToStr(g_Config.nStartCastlewarTime) + '时.');
+      m_MasterGuild.SendGuildMsg(Guild.m_sGuildName + ' Will apply for War, Time is: ' +
+        FormatDateTime('YYYY/MM/DD ', AttackerInfo.AttackDate) + IntToStr(g_Config.nStartCastlewarTime) + 'when.');
     nCode := 3;
     SaveAttackSabukWall();
     nCode := 4;
@@ -1314,11 +1314,11 @@ begin
       nCode := 5;
       m_MasterGuild.DelAllyGuild(Guild);
       nCode := 6;
-      Guild.SendGuildMsg(m_MasterGuild.m_sGuildName + ' 与您行会联盟解除成功.');
+      Guild.SendGuildMsg(m_MasterGuild.m_sGuildName + ' gained successfully with your guild alliance.');
       nCode := 7;
       Guild.DelAllyGuild(m_MasterGuild);
       nCode := 8;
-      m_MasterGuild.SendGuildMsg(Guild.m_sGuildName + ' 解除了与您行会的联盟.');
+      m_MasterGuild.SendGuildMsg(Guild.m_sGuildName + ' gained successfully with your guild.');
       nCode := 9;
       Guild.RefMemberName();
       nCode := 10;

@@ -48,7 +48,7 @@ var
 function GetIPStr(sIP: string): string;
 begin
   if MyCoralWry <> nil then Result := MyCoralWry.GetIp(sIP)
-  else Result := 'δ֪';
+  else Result := 'Unknown';
 end;
 
 procedure InitCoralWry();
@@ -94,7 +94,7 @@ var
   RecNo, RangB, RangE: integer;
   ip: LongWord;
 begin
-  Result := 'δ֪';
+  Result := 'Unknown';
   try
     if m_fhandle = 0 then
       exit;
@@ -123,7 +123,7 @@ begin
         Result := Format('%s(%s)', [m_Country, m_Local]);
     end
     else begin
-      m_Country := 'δ֪';
+      m_Country := 'Unknown';
       m_Local := '';
     end;
   except
@@ -177,7 +177,7 @@ end;
 
 procedure TCoralWry.GetCountry();
 begin
-  m_Country := 'δ֪';
+  m_Country := 'Unknown';
   m_Local := '';
   case m_CountryFlag of
     1..2: begin

@@ -382,18 +382,18 @@ var
   UserOpenInfo: pTUserOpenInfo;
   ///  PlayObject: TPlayObject;
 resourcestring
-  sReLoginFailMsg = '[非法登录] 全局会话验证失败(%s/%s/%s/%d)';
+  sReLoginFailMsg = '[Illegal log] global session validation failed (%s/%s/%s/%d)';
 begin
   Result := False;
   boReTry := False;
 
   if InSaveRcdList(LoadUser.sAccount, LoadUser.sCharName) then begin
-    boReTry := True; //反回TRUE,则重新加入队列
+    boReTry := True; //In return TRUE, then rejoin the queue
     Exit;
   end;
   if (UserEngine.GetPlayObjectEx(LoadUser.sAccount, LoadUser.sCharName) <> nil) then begin
     UserEngine.KickPlayObjectEx(LoadUser.sAccount, LoadUser.sCharName);
-    boReTry := True; //反回TRUE,则重新加入队列
+    boReTry := True; //In return TRUE, then rejoin the queue
     Exit;
   end;
   if not LoadHumRcdFromDB(LoadUser.sAccount, LoadUser.sCharName, LoadUser.sIPaddr, HumanRcd, LoadUser.nSessionID) then

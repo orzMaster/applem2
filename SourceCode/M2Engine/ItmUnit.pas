@@ -93,7 +93,7 @@ begin
   end;
 end;
 
-//手镯
+//Bracelet
 procedure TItemUnit.RandomUpgradeArmRing(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 8;
@@ -132,7 +132,7 @@ begin
   end;
 end;
 
-//腰带
+//Belts
 procedure TItemUnit.RandomUpgradeBelt(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 7;
@@ -172,7 +172,7 @@ begin
 end;
 
 
-//靴子
+//Shoes
 procedure TItemUnit.RandomUpgradeBoot(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 7;
@@ -211,7 +211,7 @@ begin
   end;
 end;
 
-//衣服
+//Armour
 procedure TItemUnit.RandomUpgradeDress(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 6;
@@ -250,7 +250,7 @@ begin
   end;
 end;
 
-//头盔
+//Helmet
 procedure TItemUnit.RandomUpgradeHelmet(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 6;
@@ -380,7 +380,7 @@ begin
   SetByteStatus(Item.btBindMode2, Ib2_Unknown, False);
 end;
 
-//项链
+//Necklace
 procedure TItemUnit.RandomUpgradeNecklace(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 9;
@@ -419,7 +419,7 @@ begin
   end;
 end;
 
-//戒指
+//Ring
 procedure TItemUnit.RandomUpgradeRing(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 6;
@@ -458,7 +458,7 @@ begin
   end;
 end;
 
-//武器
+//Weapon
 procedure TItemUnit.RandomUpgradeWeapon(UserItem: pTUserItem; UnsealItem: TUnsealItem; UpgradeRate: pTGameItemUpgradeRate);
 Const
   EspecialCount = 6;
@@ -531,7 +531,7 @@ begin
     StdItem.HealthRecover := StdItem.HealthRecover + UserItem.Value.btValue[tb_HealthRecover];
     StdItem.SpellRecover := StdItem.SpellRecover + UserItem.Value.btValue[tb_SpellRecover];
     StdItem.PoisonRecover := StdItem.PoisonRecover + UserItem.Value.btValue[tb_PoisonRecover];
-    StdItem.Deadliness := StdItem.Deadliness + UserItem.Value.btValue[tb_Deadliness]; 
+    StdItem.Deadliness := StdItem.Deadliness + UserItem.Value.btValue[tb_Deadliness];
     //StdItem.HitSpeed := StdItem.HitSpeed + UserItem.Value.btValue[tb_HitSpeed];
     if sm_ArmingStrong in StdItem.StdModeEx then begin
       if not g_Config.boCloseWuXin then begin

@@ -263,6 +263,10 @@ object frmGeneralConfig: TfrmGeneralConfig
     end
     object ServerInfoSheet: TTabSheet
       Caption = 'Settings'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBoxInfo: TGroupBox
         Left = 8
         Top = 5
@@ -467,6 +471,10 @@ object frmGeneralConfig: TfrmGeneralConfig
     object ShareSheet: TTabSheet
       Caption = 'Directories'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label17: TLabel
         Left = 8
         Top = 12
@@ -622,6 +630,10 @@ object frmGeneralConfig: TfrmGeneralConfig
     object TabSheet1: TTabSheet
       Caption = 'Tips'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox8: TGroupBox
         Left = 5
         Top = 95

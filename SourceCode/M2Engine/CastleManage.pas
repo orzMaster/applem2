@@ -126,14 +126,14 @@ begin
       [CurCastle.m_MainDoor.BaseObject.m_WAbil.HP,
       CurCastle.m_MainDoor.BaseObject.m_WAbil.MaxHP]));
     if CurCastle.m_MainDoor.BaseObject.m_boDeath then begin
-      ListItem.SubItems.Add('损坏');
+      ListItem.SubItems.Add('Damage');
     end
     else if (CurCastle.m_DoorStatus <> nil) and CurCastle.m_DoorStatus.boOpened
       then begin
-      ListItem.SubItems.Add('开启');
+      ListItem.SubItems.Add('Open');
     end
     else begin
-      ListItem.SubItems.Add('关闭');
+      ListItem.SubItems.Add('Close');
     end;
   end
   else begin
@@ -328,10 +328,10 @@ var
   ListItem: TListItem;
 begin
   Result := False;
-  //  Guild := nil;
+  //Guild := nil;
   Guild := InListOfGuildName(sGuildName);
   if Guild = nil then begin
-    Application.MessageBox('输入的行会名不存在.', '提示信息', MB_ICONQUESTION);
+    Application.MessageBox('The entered guild name does not exist!!!','Message', MB_ICONQUESTION);
     Exit;
   end;
   if CurCastle = nil then
@@ -384,11 +384,11 @@ var
   boFound: Boolean;
 begin
   Result := False;
-  //  Guild := nil;
+  //Guild := nil;
   boFound := False;
   Guild := InListOfGuildName(sGuildName);
   if Guild = nil then begin
-    Application.MessageBox('输入的行会名不存在.', '提示信息',
+    Application.MessageBox('The entered guild name does not exist!!!','Message',
       MB_ICONQUESTION);
     Exit;
   end;
@@ -415,7 +415,7 @@ end;
 procedure TfrmCastleManage.ButtonAttackAdClick(Sender: TObject);
 begin
   FrmAttackSabukWall := TFrmAttackSabukWall.Create(Owner);
-  FrmAttackSabukWall.Caption := '增加攻城申请';
+  FrmAttackSabukWall.Caption := 'Enter application for siege';
   nStute := 0;
   FrmAttackSabukWall.Top := frmCastleManage.Top - 50;
   FrmAttackSabukWall.Left := frmCastleManage.Left + 150;
@@ -430,7 +430,7 @@ begin
   if SelAttackGuildInfo = nil then
     Exit;
   FrmAttackSabukWall := TFrmAttackSabukWall.Create(Owner);
-  FrmAttackSabukWall.Caption := '编辑攻城申请';
+  FrmAttackSabukWall.Caption := 'Editing application for siege';
   nStute := 1;
   FrmAttackSabukWall.Top := frmCastleManage.Top - 50;
   FrmAttackSabukWall.Left := frmCastleManage.Left + 150;
@@ -468,9 +468,9 @@ begin
     Exit;
   if SelAttackGuildInfo = nil then
     Exit;
-  if Application.MessageBox(PChar('是否确认删除此行会攻城申请？' + #10#10 +
-    '行会名称：' + SelAttackGuildInfo.sGuildName + #10 +
-    '攻城时间：' + DateToStr(SelAttackGuildInfo.AttackDate)), '确认信息',
+  if Application.MessageBox(PChar('Are you sure to delete this guild application for siege?' + #10#10 +
+    'Guild name：' + SelAttackGuildInfo.sGuildName + #10 +
+    'Siege time：' + DateToStr(SelAttackGuildInfo.AttackDate)), 'Confirmation',
       MB_YESNO + MB_ICONQUESTION) = IDYES then begin
     for i := 0 to CurCastle.m_AttackWarList.Count - 1 do begin
       AttackerInfo := pTAttackerInfo(CurCastle.m_AttackWarList.Items[i]);
@@ -489,7 +489,7 @@ end;
 
 procedure TfrmCastleManage.ButtonSaveClick(Sender: TObject);
 begin
-{  if CurCastle = nil then
+  if CurCastle = nil then
     Exit;
   CurCastle.m_sHomeMap := EditHomeMap.Text;
   CurCastle.m_sPalaceMap := EditPalace.Text;
@@ -498,7 +498,7 @@ begin
   CurCastle.m_nHomeY := SpinEditNomeY.Value;
   CurCastle.m_sSecretMap := EditTunnelMap.Text;
   CurCastle.Save;
-  ButtonSave.Enabled := False;   }
+  ButtonSave.Enabled := False;
 end;
 
 end.

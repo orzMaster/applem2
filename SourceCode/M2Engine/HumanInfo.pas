@@ -173,54 +173,54 @@ var
 
 procedure TfrmHumanInfo.FormCreate(Sender: TObject);
 begin
-  GridUserItem.Cells[0, 0] := '装备位置';
-  GridUserItem.Cells[1, 0] := '装备名称';
-  GridUserItem.Cells[2, 0] := '系列号';
-  GridUserItem.Cells[3, 0] := '持久';
-  GridUserItem.Cells[4, 0] := '攻';
-  GridUserItem.Cells[5, 0] := '魔';
-  GridUserItem.Cells[6, 0] := '道';
-  GridUserItem.Cells[7, 0] := '防';
-  GridUserItem.Cells[8, 0] := '魔防';
-  GridUserItem.Cells[9, 0] := '附加属性';
+  GridUserItem.Cells[0, 0] := 'Item Slot';
+  GridUserItem.Cells[1,0]:='Item Name';
+  GridUserItem.Cells[2,0]:='Item No';
+  GridUserItem.Cells[3,0]:='Durability';
+  GridUserItem.Cells[4,0]:='DC';
+  GridUserItem.Cells[5,0]:='MC';
+  GridUserItem.Cells[6,0]:='SC';
+  GridUserItem.Cells[7,0]:='AC';
+  GridUserItem.Cells[8,0]:='MAC';
+  GridUserItem.Cells[9,0]:='Added Stats';
 
-  GridUserItem.Cells[0, 1] := '衣服';
-  GridUserItem.Cells[0, 2] := '武器';
-  GridUserItem.Cells[0, 3] := '头盔';
-  GridUserItem.Cells[0, 4] := '项链';
-  GridUserItem.Cells[0, 5] := '照明物';
-  GridUserItem.Cells[0, 6] := '左手镯';
-  GridUserItem.Cells[0, 7] := '右手镯';
-  GridUserItem.Cells[0, 8] := '左戒指';
-  GridUserItem.Cells[0, 9] := '右戒指';
-  GridUserItem.Cells[0, 10] := '符毒';
-  GridUserItem.Cells[0, 11] := '腰带';
-  GridUserItem.Cells[0, 12] := '鞋子';
-  GridUserItem.Cells[0, 13] := '宝石';
-  GridUserItem.Cells[0, 14] := '马牌';
-  GridUserItem.Cells[0, 15] := '道具';
+  GridUserItem.Cells[0, 1] := 'Armour';
+  GridUserItem.Cells[0, 2] := 'Weapon';
+  GridUserItem.Cells[0, 3] := 'Helmet';
+  GridUserItem.Cells[0, 4] := 'Necklace';
+  GridUserItem.Cells[0, 5] := 'Candle';
+  GridUserItem.Cells[0, 6] := 'Left Bracelet';
+  GridUserItem.Cells[0, 7] := 'Right Bracelet';
+  GridUserItem.Cells[0, 8] := 'Left Ring';
+  GridUserItem.Cells[0, 9] := 'Right Ring';
+  GridUserItem.Cells[0, 10] := 'Amulet';
+  GridUserItem.Cells[0, 11] := 'Belt';
+  GridUserItem.Cells[0, 12] := 'Shoe';
+  GridUserItem.Cells[0, 13] := 'Stone';
+  GridUserItem.Cells[0, 14] := 'Horse';
+  GridUserItem.Cells[0, 15] := 'Props';
 
-  GridBagItem.Cells[0, 0] := '序号';
-  GridBagItem.Cells[1, 0] := '装备名称';
-  GridBagItem.Cells[2, 0] := '系列号';
-  GridBagItem.Cells[3, 0] := '持久';
-  GridBagItem.Cells[4, 0] := '攻';
-  GridBagItem.Cells[5, 0] := '魔';
-  GridBagItem.Cells[6, 0] := '道';
-  GridBagItem.Cells[7, 0] := '防';
-  GridBagItem.Cells[8, 0] := '魔防';
-  GridBagItem.Cells[9, 0] := '附加属性';
+  GridBagItem.Cells[0, 0] := 'Slot ID';
+  GridBagItem.Cells[1,0]:='Item Name';
+  GridBagItem.Cells[2,0]:='Item No';
+  GridBagItem.Cells[3,0]:='Durability';
+  GridBagItem.Cells[4,0]:='DC';
+  GridBagItem.Cells[5,0]:='MC';
+  GridBagItem.Cells[6,0]:='SC';
+  GridBagItem.Cells[7,0]:='AC';
+  GridBagItem.Cells[8,0]:='MAC';
+  GridBagItem.Cells[9,0]:='Added Stats';
 
-  GridStorageItem.Cells[0, 0] := '序号';
-  GridStorageItem.Cells[1, 0] := '装备名称';
-  GridStorageItem.Cells[2, 0] := '系列号';
-  GridStorageItem.Cells[3, 0] := '持久';
-  GridStorageItem.Cells[4, 0] := '攻';
-  GridStorageItem.Cells[5, 0] := '魔';
-  GridStorageItem.Cells[6, 0] := '道';
-  GridStorageItem.Cells[7, 0] := '防';
-  GridStorageItem.Cells[8, 0] := '魔防';
-  GridStorageItem.Cells[9, 0] := '附加属性';
+  GridStorageItem.Cells[0, 0] := 'Slot ID';
+  GridStorageItem.Cells[1,0]:='Item Name';
+  GridStorageItem.Cells[2,0]:='Item No';
+  GridStorageItem.Cells[3,0]:='Durability';
+  GridStorageItem.Cells[4,0]:='DC';
+  GridStorageItem.Cells[5,0]:='MC';
+  GridStorageItem.Cells[6,0]:='SC';
+  GridStorageItem.Cells[7,0]:='AC';
+  GridStorageItem.Cells[8,0]:='MAC';
+  GridStorageItem.Cells[9,0]:='Added Stats';
   PageControl1.ActivePageIndex := 0;
 end;
 
@@ -256,7 +256,7 @@ begin
   EditAccount.Text := PlayObject.m_sUserID;
   EditIPaddr.Text := PlayObject.m_sIPaddr;
   EditLogonTime.Text := DateTimeToStr(PlayObject.m_dLogonTime);
-  EditLogonLong.Text := IntToStr((GetTickCount - PlayObject.m_dwLogonTick) div (60 * 1000)) + ' 分钟';
+  EditLogonLong.Text := IntToStr((GetTickCount - PlayObject.m_dwLogonTick) div (60 * 1000)) + ' Minuets';
   EditLevel.Value := PlayObject.m_Abil.Level;
   EditGold.Value := PlayObject.m_nGold;
   EditBindGold.Value := PlayObject.m_nBindGold;
@@ -316,18 +316,18 @@ begin
   CheckBoxObserver.Checked := PlayObject.m_boObMode;
 
   if PlayObject.m_boDeath then begin
-    EditHumanStatus.Text := '死亡';
+    EditHumanStatus.Text := 'Dead';
   end
   else
   if PlayObject.m_boSafeOffLine then begin
-    EditHumanStatus.Text := '离线挂机';
+    EditHumanStatus.Text := 'Offline';
   end
   else if PlayObject.m_boGhost then begin
-    EditHumanStatus.Text := '下线';
+    EditHumanStatus.Text := 'Offline';
     PlayObject := nil;
   end
   else
-    EditHumanStatus.Text := '在线';
+    EditHumanStatus.Text := 'Online';
   for i := Low(PlayObject.m_UseItems) to High(PlayObject.m_UseItems) do begin
     UserItem := @PlayObject.m_UseItems[i];
     if UserItem.wIndex <= 0 then begin
@@ -448,7 +448,7 @@ begin
   if PlayObject = nil then
     Exit;
   if PlayObject.m_boGhost then begin
-    EditHumanStatus.Text := '下线';
+    EditHumanStatus.Text := 'Offline';
     PlayObject := nil;
     Exit;
   end;
@@ -509,7 +509,7 @@ begin
     or (dwExp > MAXINTCOUNT) or (nGameDiamond > MAXINTCOUNT) or (nGameDiamond < 0) or (nGameGird > MAXINTCOUNT) or (nGameGird < 0)
     or (nPullulation > 10000) or (nPullulation < 0) or (nStorageGold < 0) or (nStorageGold > MAXINTCOUNT)
     or (nPKPOINT < 0) or (nPKPOINT > 65535) or (nCreditPoint < 0) or (nCreditPoint > MAXINTCOUNT) then begin
-    MessageBox(Handle, '输入数据不正确.', '错误信息', MB_OK);
+    MessageBox(Handle, 'Please enter a valid value!', 'Error!', MB_OK);
     Exit;
   end;
   PlayObject.m_CustomVariable[0] := EditC0.Value;
@@ -552,7 +552,7 @@ begin
   PlayObject.GameGirdChanged;
   PlayObject.DiamondChanged;
   PlayObject.GameGoldChanged;
-  MessageBox(Handle, '人物数据已保存。', '提示信息', MB_OK);
+  MessageBox(Handle, 'Character data is saved.', 'Message', MB_OK);
 end;
 
 end.

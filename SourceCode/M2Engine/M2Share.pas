@@ -10,7 +10,7 @@ uses
 
 const
 
-  g_sUpDateTime = '更新日期: 2012/05/01';
+  g_sUpDateTime = 'Update: 2012/05/01';///更新日期: 2012/05/01';
 
   TESTMODE = 0;
   nVersionType = 0;
@@ -530,8 +530,8 @@ const
   nSC_UNMARRY = 56;
   sSC_GETMARRY = 'GETMARRY';
   nSC_GETMARRY = 57;
-  //sSC_GETMASTER = 'GETMASTER';
-  //nSC_GETMASTER = 58;
+  sSC_GETMASTER = 'GETMASTER';
+  nSC_GETMASTER = 58;
   sSC_CLEARSKILL = 'CLEARSKILL';
   nSC_CLEARSKILL = 59;
   sSC_DELNOJOBSKILL = 'DELNOJOBSKILL';
@@ -577,8 +577,8 @@ const
   nSC_RESTRENEWLEVEL = 80;
   sSC_DELMARRY = 'DELMARRY';
   nSC_DELMARRY = 81;
-  { sSC_DELMASTER = 'DELMASTER';
-   nSC_DELMASTER = 82;    }
+   sSC_DELMASTER = 'DELMASTER';
+   nSC_DELMASTER = 82;
   sSC_MASTER = 'MASTER';
   nSC_MASTER = 83;
   sSC_UNMASTER = 'UNMASTER';
@@ -3215,21 +3215,21 @@ var
     nRegServerPort: 10888;
     nRegSerialNumber: 0;
     nRegSerialPassWord: 0;  }
-    sWebSite: 'http://www.XXXX.com';
-    sBbsSite: 'http://www.XXXX.com';
-    sClientDownload: 'http://www.XXXX.com';
-    sQQ: '88888888';
-    sPhone: '123456789';
-    sBankAccount0: '银行信息';
-    sBankAccount1: '银行信息';
-    sBankAccount2: '银行信息';
-    sBankAccount3: '银行信息';
-    sBankAccount4: '银行信息';
-    sBankAccount5: '银行信息';
-    sBankAccount6: '银行信息';
-    sBankAccount7: '银行信息';
-    sBankAccount8: '银行信息';
-    sBankAccount9: '银行信息';
+    sWebSite                :'http://www.lomcn.co.uk';
+    sBbsSite                :'http://www.lomcn.co.uk';
+    sClientDownload         :'http://www.lomcn.co.uk';
+    sQQ                     :'N/A';
+    sPhone                  :'00000 000000';
+    sBankAccount0           :'N/A';
+    sBankAccount1           :'N/A';
+    sBankAccount2           :'N/A';
+    sBankAccount3           :'N/A';
+    sBankAccount4           :'N/A';
+    sBankAccount5           :'N/A';
+    sBankAccount6           :'N/A';
+    sBankAccount7           :'N/A';
+    sBankAccount8           :'N/A';
+    sBankAccount9           :'N/A';
     nServerNumber: 0;
     boVentureServer: False;
     boTestServer: True;
@@ -3283,26 +3283,26 @@ var
     sClientFile2: 'mir.2';
     sClientFile3: 'mir.3';
 
-    sClothsMan: '布衣(男)';
-    sClothsWoman: '布衣(女)';
-    sWoodenSword: '木剑';
-    sCandle: '蜡烛';
-    sBasicDrug: '金创药(小量)';
-    sGoldStone: '金矿';
-    sSilverStone: '银矿';
-    sSteelStone: '铁矿';
-    sCopperStone: '铜矿';
-    sBlackStone: '黑铁矿石';
-    sZuma: ('祖玛卫士', '祖玛雕像', '祖玛弓箭手', '楔蛾');
-    sBee: '小角蝇';
-    sSpider: '爆裂蜘蛛';
-    sWomaHorn: '沃玛号角';
-    sZumaPiece: '祖玛头像';
+    sClothsMan: 'BaseDress(M)';
+    sClothsWoman: 'BaseDress(F)';
+    sWoodenSword: 'WoodenSword';
+    sCandle: 'Candle';
+    sBasicDrug: '(HP)DrugSmall';
+    sGoldStone: 'GoldOre';
+    sSilverStone: 'SilverOre';
+    sSteelStone: 'IronOre';
+    sCopperStone: 'CopperOre';
+    sBlackStone: 'BlackIronOre';
+    sZuma: ('ZumaGuardian','ZumaStatue','ZumaArcher','WedgeMoth');
+    sBee: 'BugBat';
+    sSpider: 'BombSpider';
+    sWomaHorn: 'WoomaHorn';
+    sZumaPiece: 'ZumaRelic';
     sGameGoldName: sSTRING_GAMEGOLD;
     {sGameGoldName: sSTRING_GAMEGOLD;
     sGamePointName: sSTRING_GAMEPOINT;
-    sGameDiamondName: '积分';
-    sPayMentPointName: '秒卡点'; }
+    sGameDiamondName: 'Points';
+    sPayMentPointName: 'PaymentPoint'; }
     DBSocket: INVALID_SOCKET;
     nHealthFillTime: 300;
     nSpellFillTime: 800;
@@ -3378,8 +3378,8 @@ var
     nStartPointSize: 2;
     dwHumanGetMsgTime: 200;
     nGroupMembersMax: 8;
-    sFireBallSkill: '火球术';
-    sHealSkill: '治愈术';
+    sFireBallSkill: 'Fireball';
+    sHealSkill: 'Healing';
     ReNewNameColor: ($FF, $FE, $93, $9A, $E5, $A8, $B4, $FC, $B4, $FC);
     dwReNewNameColorTime: 2000;
     boReNewChangeColor: True;
@@ -3933,14 +3933,14 @@ var
     btMakeMagicMaxLevel: 50;
     nMakeMagicBeginLevel: 40;
     nMagicAttackRage: 8;
-    sBoneFamm: '变异骷髅';
+    sBoneFamm: 'BoneFamiliar';
     nBoneFammCount: 1;
 
-    sDogz: '神兽';
+    sDogz: 'Shinsu';
     nDogzCount: 1;
-    sMoonSpirit: '月灵';
+    sMoonSpirit: 'HolyDeva';
     nMoonSpiritCount: 1;
-    sBoneDog: '尸兽';
+    sBoneDog: 'Corpse';
 
     nAmyOunsulPoint: 10;
 
@@ -4094,23 +4094,23 @@ var
     boLowLevelKillMonContainExp: False;
     nLowLevelKillMonLevel: 0;
     nLowLevelKillMonGetExpRate: 100;
-    sLineNoticePreFix: '〖公告〗';
-    sSysMsgPreFix: '〖系统〗';
-    sGuildMsgPreFix: '〖行会〗';
-    sGroupMsgPreFix: '〖组队〗';
-    sHintMsgPreFix: '〖提示〗';
-    sGMRedMsgpreFix: '〖ＧＭ〗';
-    sMonSayMsgpreFix: '〖怪物〗';
-    sCustMsgpreFix: '〖祝福〗';
-    sCastleMsgpreFix: '〖城主〗';
-    sClairaudientFix: '〖传音〗';
-    sGuildInfo: '行会信息';
-    sGuildNotice: '公告';
-    sGuildWar: '敌对行会';
-    sGuildAll: '联盟行会';
-    sGuildMember: '行会成员';
-    sGuildMemberRank: '行会成员';
-    sGuildChief: '掌门人';
+     sLineNoticePreFix: '[!]';
+    sSysMsgPreFix: '[*!*]';
+    sGuildMsgPreFix: '[Guild]';
+    sGroupMsgPreFix: '[Group]';
+    sHintMsgPreFix: '[Hint]';
+    sGMRedMsgpreFix: '[GM]';
+    sMonSayMsgpreFix: '[Mon]';
+    sCustMsgpreFix: '[*]';
+    sCastleMsgpreFix: '[l^l^l]';
+    sClairaudientFix: '[1*1^1]';
+    sGuildInfo: 'Guild Information';
+    sGuildNotice: 'Guild Notice';
+    sGuildWar: 'Guild Enemies';
+    sGuildAll: 'Guild Alliances';
+    sGuildMember: 'Guild Member';
+    sGuildMemberRank: 'Guild Member';
+    sGuildChief: 'Guild Chief';
     boKickAllUser: False;
     boTestSpeedMode: False;
     ClientConf: (
@@ -4169,7 +4169,7 @@ var
     nBigStorageLimitCount: 100;
     boDropGoldToPlayBag: True;
     boChangeUseItemNameByPlayName: True;
-    sChangeUseItemName: '〖改〗';
+    sChangeUseItemName: '[Change]';
     boUseFixExp: True;
     nBaseExp: 100000000;
     nAddExp: 1000000;
@@ -4475,465 +4475,447 @@ var
     OPENBOX: (sCmd: 'OpenBox'; nPermissionMin: 10; nPermissionMax: 10);
     AllSysMsg: (sCmd: '传'; nPermissionMin: 0; nPermissionMax: 10); );
 
-  sClientSoftVersionError: string = '游戏版本错误.';
-  sDownLoadNewClientSoft: string = '请到网站上下载最新版本游戏客户端软件。';
-  sForceDisConnect: string = '连接被强行中断.';
-  sClientSoftVersionTooOld: string = '您现在使用的客户端软件版本太老了，大量的游戏效果新将无法使用。';
-  sDownLoadAndUseNewClient: string = '为了更好的进行游戏，请下载最新的客户端软件.';
-  sOnlineUserFull: string = '可允许的玩家数量已满';
-  sYouNowIsTryPlayMode: string = '你现在处于测试中，你可以在七级以前使用，但是会限制你的一些功能.';
-  g_sNowIsFreePlayMode: string = '当前服务器运行于测试模式.';
-  sAttackModeOfAll: string = '[攻击模式: 全体攻击]';
-  sAttackModeOfPeaceful: string = '[攻击模式: 和平攻击]';
-  sAttackModeOfDear: string = '[攻击模式: 夫妻攻击]';
-  sAttackModeOfMaster: string = '[攻击模式: 师徒攻击]';
-  sAttackModeOfGroup: string = '[攻击模式: 编组攻击]';
-  sAttackModeOfGuild: string = '[攻击模式: 行会攻击]';
-  sAttackModeOfRedWhite: string = '[攻击模式: 红名攻击]';
-  sStartChangeAttackModeHelp: string = '使用组合快捷键 CTRL-H 更改攻击模式.';
-  sStartNoticeMsg: string = '欢迎进入本服务器进行游戏.';
+  sClientSoftVersionError             :String = 'Wrong client version!';
+  sDownLoadNewClientSoft              :String = 'Please download the new client';
+  sForceDisConnect                    :String = 'The connection has been forcefully disconnected.';
+  sClientSoftVersionTooOld            :String = 'The client version  you are using is too far out of date.';
+  sDownLoadAndUseNewClient            :String = 'Please download and use the latest client.';
+  sOnlineUserFull                     :String = 'Server is full.';
+  sYouNowIsTryPlayMode                :String = 'You are connected in trial mode.';
+  g_sNowIsFreePlayMode                :String = 'You are connected in free mode.';
+  sAttackModeOfAll                    :String = '[Attack Mode: All]';
+  sAttackModeOfPeaceful               :String = '[Attack Mode: Peaceful]';
+  sAttackModeOfDear                   :String = '[Attack Mode: Marriage]';
+  sAttackModeOfMaster                 :String = '[Attack Mode: Master]';
+  sAttackModeOfGroup                  :String = '[Attack Mode: Group]';
+  sAttackModeOfGuild                  :String = '[Attack Mode: Guild]';
+  sAttackModeOfRedWhite               :String = '[Attack Mode: Red and White(Only attack PK players)]';
+  sStartChangeAttackModeHelp          :String = 'To change attack mode press CTRL+H';
+  sStartNoticeMsg                     :String = 'Welcome to the server...';
 
-  sThrustingOn: string = '启用刺杀剑法';
-  sThrustingOff: string = '关闭刺杀剑法';
-  sHalfMoonOn: string = '开启半月弯刀';
-  sHalfMoonOff: string = '关闭半月弯刀';
-  sCrsHitOn: string = '开启光风斩';
-  sCrsHitOff: string = '关闭光风斩';
-  sFireSpiritsSummoned: string = '召唤烈火精灵成功...';
-  sFireSpiritsFail: string = '召唤烈火精灵失败';
-  sSpiritsGone: string = '召唤烈火结束.';
-  sMateDoTooweak: string = '冲撞力不够.';
+  sThrustingOn                        :String = 'Thrusting Enabled';
+  sThrustingOff                       :String = 'Thrusting Disabled';
+  sHalfMoonOn                         :String = 'Halfmoon Enabled';
+  sHalfMoonOff                        :String = 'Halfmoon Disabled';
+  sCrsHitOn                           :String = 'CrossHalfmoon Enabled';
+  sCrsHitOff                          :String = 'CrossHalfmoon Disabled';
+  sDoubleSlashHitOn                   :String = 'Double Slash has been Enabled';
+  sDoubleSlashHitOff                  :String = 'Double Slash has been Disabled';
+  sFireSpiritsSummoned                :String = 'The spirit of fire has posessed your sword...';
+  sFireSpiritsFail                    :String = 'The fire spirits failed';
+  sSpiritsGone                        :string = 'The spirits have disappeared.';
+  sMateDoTooweak                      :String = 'You are too weak.';
 
-  g_sTheWeaponBroke: string = '武器破碎.';
-  sTheWeaponRefineSuccessfull: string = '升级成功.';
+  g_sTheWeaponBroke                   :String = 'Your weapon is crushed to pieces.';
+  sTheWeaponRefineSuccessfull         :String = 'Your weapon is enhanced.';
+  sTheWeaponRefineFail                :String = 'Weapon refine failed.';
 
-  sYouPoisoned: string = '你中毒了.';
+  sYouPoisoned                    :String = 'Poison dwells throughout your body for %d seconds.';
+  sPOISON_DECHEALTH               :String = 'A sickness takes hold of your body for %d seconds.';
+  sPOISON_DAMAGEARMOR             :String = 'A sickness takes hold of your body for %d seconds.';
+  sPOISON_FREEZE                  :String = 'Your body turns to ice for %d seconds.';
+  sPOISON_LOCKSPELL               :String = 'You are stunned for %d seconds.';
+  sPOISON_DONTMOVE                :String = 'Unknown/report to Scorpian (sPOISON_DONTMOVE) for %d seconds.';
+  sPOISON_STONE                   :String = 'Paralysis takes hold for %d seconds.';
+  sPOISON_SLOWDOWN                :String = 'Your body feels cold for %d seconds.';
 
-  sPetRest: string = '下属：休息';
-  sPetAttack: string = '下属：攻击';
+  sPOISON_DECHEALTHoff               :String = 'You feel well.';
+  sPOISON_DAMAGEARMORoff             :String = 'You feel well.';
+  sPOISON_FREEZEoff                  :String = 'Your body feels warm.';
+  sPOISON_LOCKSPELLoff               :String = 'You are no longer stunned.';
+  sPOISON_DONTMOVEoff                :String = 'Unknown/report to Scorpian (sPOISON_DONTMOVEoff).';
+  sPOISON_STONEoff                   :String = 'You are released from paralysis.';
+  sPOISON_SLOWDOWNoff                :String = 'Your body feels warm.';
 
-  sWearNotOfWoMan: string = '该装备为男性专用.';
-  sWearNotOfMan: string = '该装备为女性专用.';
-  sHandWeightNot: string = '你的腕力不够.';
-  sWearWeightNot: string = '你的负重力不够.';
+  sPetRest                            :String = 'Pet Mode: Rest';
+  sPetAttack                          :String = 'Pet Mode: Attack';
 
-  g_sCastleMasterNot: string = '你不能穿戴城主专用装备.';
-  g_sLevelNot: string = '你的等级不符合要求.';
-  g_sJobNot: string = '你的职业不符合要求.';
-  g_sDCNot: string = '你的攻击不符合要求.';
-  g_sMCNot: string = '你的魔法不符合要求.';
-  g_sSCNot: string = '你的道术不符合要求.';
-  g_sReNewLevelNot: string = '你的转生等级不符合要求.';
-  g_sCreditPointNot: string = '你的声望不符合要求.';
-  g_sGuildNot: string = '你不是行会成员不能穿戴.';
-  g_sGuildMasterNot: string = '你不是行会掌门人不能穿戴.';
-  g_sSabukHumanNot: string = '你不是沙巴克成员不能穿戴.';
-  g_sSabukMasterManNot: string = '你不是沙城城主不能穿戴.';
-  g_sMemberNot: string = '你不是会员不能穿戴.';
-  g_sMemberTypeNot: string = '你的会员类型不符号要求';
-  g_sMemberLevelNot: string = '你的会员等级不符号要求';
-  
+  sWearNotOfWoMan                     :String = 'Only females may wear.';
+  sWearNotOfMan                       :String = 'Only males may wear.';
+  sHandWeightNot                      :String = 'Too Heavy to hold.';
+  sWearWeightNot                      :String = 'Too Heavy to wear.';
 
-  sCanotUseDrugOnThisMap: string = '此地图不允许使用任何药品.';
-  sGameMasterMode: string = '已进入管理员模式';
-  sReleaseGameMasterMode: string = '已退出管理员模式';
-  sObserverMode: string = '已进入隐身模式';
-  g_sReleaseObserverMode: string = '已退出隐身模式';
-  sSupermanMode: string = '已进入无敌模式';
-  sReleaseSupermanMode: string = '已退出无敌模式';
-  sYouFoundNothing: string = '未获取任何物品.';
+  g_sCastleMasterNot: string = '你不能穿戴城主专用装备.'; //Translate
+  g_sLevelNot                         :String = 'Level is not high enough.';
+  g_sJobNot                           :string = 'Not the correct class.';
+  g_sDCNot                            :String = 'Not enough DC.';
+  g_sMCNot                            :String = 'Not enough MC.';
+  g_sSCNot                            :String = 'Not enough SC.';
+  g_sReNewLevelNot                    :String = 'Not rebirthed.';
+  g_sCreditPointNot                   :String = 'Not enough CreditPoints.';
+  g_sGuildNot                         :String = 'Not in a guild.';
+  g_sGuildMasterNot                   :String = 'Not guild leader.';
+  g_sSabukHumanNot                    :String = 'Not in Sabuk guild.';
+  g_sSabukMasterManNot                :String = 'Not Sabuk guild leader.';
+  g_sMemberNot                        :String = 'You are not a member.';
+  g_sMemberTypeNot                    :String = 'You are not a member.';
+  g_sMemberLevelNot                   :string = 'You are not a member.';
 
-  g_sCanotDropGoldMsg: string = '太少的金币不允许扔在地上.';
-  g_sCanotDropInSafeZoneMsg: string = '安全区不允许扔东西在地上.';
-  g_sCanotDropItemMsg: string = '当前无法进行此操作.';
-  g_sCanotUseItemMsg: string = '当前无法进行此操作.';
-  g_sCanotMapUseItemMsg: string = '当前地图不允许使用%s.';
+  sCanotUseDrugOnThisMap              :String = 'Cannot use drugs on this map.';
+  sGameMasterMode                     :String = 'GameMaster Mode Enabled.';
+  sReleaseGameMasterMode              :String = 'GameMaster Mode Disabled.';
+  sObserverMode                       :String = 'Observer Mode Enabled.';
+  g_sReleaseObserverMode              :String = 'Observer Mode Disabled.';
+  sSupermanMode                       :String = 'Superman Mode Enabled.';
+  sReleaseSupermanMode                :String = 'Superman Mode Disabled.';
+  sYouFoundNothing                    :String = 'Nothing was found.';
 
-  g_sCanotUserDropItem: string = '此物品禁止扔在地上.';
-  g_sCanotUserRepairItem: string = '此物品禁止修理.';
-  g_sCanotUserStorageItem: string = '此物品禁止存仓库.';
-  g_sCanotUserDealItem: string = '当前物品不允许进行交易！';
+  g_sCanotDropGoldMsg                 :String = 'You cannot drop gold.';
+  g_sCanotDropInSafeZoneMsg           :String = 'You cannot drop items in safezone.';
+  g_sCanotDropItemMsg                 :String = 'You cannot drop items.';
+  g_sCanotUseItemMsg                  :String = 'You cannot use items.';
+  g_sCanotMapUseItemMsg               :String = 'The current map is not allowed to use %s!!!';
 
-  g_sCanotTryDealMsg: string = '当前无法进行此操作.';
-  g_sPleaseTryDealLaterMsg: string = '请稍候再交易.';
-  g_sDealItemsDenyGetBackMsg: string = '交易的金币或物品不可以取回，要取回请取消再重新交易.';
-  g_sDisableDealItemsMsg: string = '交易功能暂时关闭.';
-  g_sDealActionCancelMsg: string = '交易取消.';
-  g_sPoseDisableDealMsg: string = '对方禁止进入交易';
-  g_sDealSuccessMsg: string = '交易成功...';
-  g_sDealOKTooFast: string = '过早按了成交按钮。';
-  g_sYourBagSizeTooSmall: string = '你的背包空间不够，无法装下对方交易给你的物品.';
-  g_sDealHumanBagSizeTooSmall: string = '交易对方的背包空间不够，无法装下对方交易给你的物品.';
-  g_sYourGoldLargeThenLimit: string = '你的所带的金币太多，无法装下对方交易给你的金币.';
-  g_sDealHumanGoldLargeThenLimit: string = '交易对方的所带的金币太多，无法装下对方交易给你的金币.';
-  g_sYouDealOKMsg: string = '你已经确认交易了。';
-  g_sPoseDealOKMsg: string = '对方已经确认交易了。';
-  g_sKickClientUserMsg: string = '请不要使用非法外挂软件.';
+  g_sCanotUserDropItem                :String = 'This item cannot be dropped on the floor!!!';
+  g_sCanotUserRepairItem              :String = 'This item cannot be repaired!!!';
+  g_sCanotUserStorageItem             :String = 'This item cannot be put into storage!!!';
+  g_sCanotUserDealItem                :String = 'This item cannot be used in a deal with another player!!!';
 
-  g_sStartMarryManMsg: string = '[%n]: #7%s#7 与 #7%d#7 的婚礼现在开始！';
-  g_sStartMarryWoManMsg: string = '[%n]: #%d7 与 #7%s#7 的婚礼现在开始！';
-  g_sStartMarryManAskQuestionMsg: string = '[%n]: #7%s#7 你愿意娶 #7%d#7 小姐为妻，并且照顾她一生一世吗？';
-  g_sStartMarryWoManAskQuestionMsg: string = '[%n]: #7%d#7 你愿意娶 #7%s#7 小姐为妻，并且照顾她一生一世吗？';
+  g_sCanotTryDealMsg                  :String = 'You cannot deal.';
+  g_sPleaseTryDealLaterMsg            :String = 'Please try to trade later.';
+  g_sDealItemsDenyGetBackMsg          :String = 'Trade was unsuccessful.';
+  g_sDisableDealItemsMsg              :String = 'Trade has been disabled.';
+  g_sDealActionCancelMsg              :String = 'The trade has been cancled.';
+  g_sPoseDisableDealMsg               :String = 'The person you are faceing is not allowing trade.';
+  g_sDealSuccessMsg                   :String = 'Trade has been successful...';
+  g_sDealOKTooFast                    :String = 'You pressed Ok to fast.';
+  g_sYourBagSizeTooSmall              :String = 'You dont have enough space in your bag.';
+  g_sDealHumanBagSizeTooSmall         :String = 'You have no more room in your bag.';
+  g_sYourGoldLargeThenLimit           :String = 'You cannot hold anymore gold.';
+  g_sDealHumanGoldLargeThenLimit      :String = 'You cannot carry anymore gold!';
+  g_sYouDealOKMsg                     :String = 'Deal was successful.';
+  g_sPoseDealOKMsg                    :String = 'Deal was successful.';
+  g_sKickClientUserMsg                :String = 'You are using the wrong client please use the latest version.';
 
-  g_sMarryManAnswerQuestionMsg: string =
-  '[#7%s#7]: 我愿意！ #7%d#7 小姐我会尽我一生的时间来照顾您，让您过上快乐美满的日子的。';
-  g_sMarryManAskQuestionMsg: string = '[%n]: #7%d#7 你愿意嫁给 #7%s#7 先生为妻，并照顾他一生一世吗？';
+  g_sStartMarryManMsg                 :String = '[%n]: %s and %d are about to get married.';
+  g_sStartMarryWoManMsg               :String = '[%n]: %d and %s are about to get married.';
+  g_sStartMarryManAskQuestionMsg      :String = '[%n]: %s do you take %d to be your wife?.';
+  g_sStartMarryWoManAskQuestionMsg    :String = '[%n]: %d do you take %s to be your husband?.';
 
-  g_sMarryWoManAnswerQuestionMsg: string = '[#7%s#7]: 我愿意！ #7%d#7 先生我愿意让你来照顾我，保护我。';
-  g_sMarryWoManGetMarryMsg: string = '[%n]: 恭喜 #7%d#7 先生与 #7%s#7 小姐正式成为合法夫妻。';
+  g_sMarryManAnswerQuestionMsg        :String = '[%s]: I do.';
+  g_sMarryManAskQuestionMsg           :String = '[%n]: %d do you take %s to be your wife?.';
+  g_sMarryWoManAnswerQuestionMsg      :String = '[%s]: I do.';
+  g_sMarryWoManGetMarryMsg            :String = '[%n]: Congratulations to %d and %s who are now married';
+  g_sMarryWoManDenyMsg                :String = '[%s]: %d I do not wish to marry you.';
+  g_sMarryWoManCancelMsg              :String = '[%n]: %d does not wish to marry today.';
+  g_sfUnMarryManLoginMsg              :String = 'Your wife has left you.';
+  g_sfUnMarryWoManLoginMsg            :String = 'Your husband has left you.';
 
-  g_sMarryWoManDenyMsg: string = '[#7%s#7]: #7%d#7 你这个好色之徒，谁会愿意嫁给你呀！癞蛤蟆想吃天鹅肉。';
-  g_sMarryWoManCancelMsg: string = '[%n]: 真是可惜，二个人这个时候才翻脸，你们培养好感情后再来找我吧。';
+  g_sManLoginDearOnlineSelfMsg        :String = 'You have just logged on at: %m(%x:%y)';
+  g_sManLoginDearOnlineDearMsg        :String = 'Your wife has just logged on at: %m(%x:%y)';
+  g_sWoManLoginDearOnlineSelfMsg      :String = 'You have just logged on at: %m(%x:%y)';
+  g_sWoManLoginDearOnlineDearMsg      :String = 'Your husband has just logged on at: %m(%x:%y)';
 
-  g_sfUnMarryManLoginMsg: string = '你的老婆[#7%d#7]已经强行与你脱离了夫妻关系了.';
-  g_sfUnMarryWoManLoginMsg: string = '你的老公[#7%d#7]已经强行与你脱离了夫妻关系了.';
+  g_sManLoginDearNotOnlineMsg         :String = 'Your wife is not online.';
+  g_sWoManLoginDearNotOnlineMsg       :String = 'Your husband is not online.';
+  g_sManLongOutDearOnlineMsg          :String = 'Your wife just logged out at: %m(%x:%y).';
+  g_sWoManLongOutDearOnlineMsg        :String = 'Your husband just logged out at: %m(%x:%y).';
 
-  g_sManLoginDearOnlineSelfMsg: string = '你的老婆[#7%d#7]当前位于[%m(%x,%y)].';
-  g_sManLoginDearOnlineDearMsg: string = '你的老公[#7%s#7]在[%m(%x,%y)]上线了.';
+  g_sYouAreNotMarryedMsg              :String = 'You are not married.';
+  g_sYourWifeNotOnlineMsg             :String = 'Your wife is not online.';
+  g_sYourHusbandNotOnlineMsg          :String = 'Your husband is not online.';
 
-  g_sWoManLoginDearOnlineSelfMsg: string = '你的老公[#7%d#7]当前位于[%m(%x,%y)].';
-  g_sWoManLoginDearOnlineDearMsg: string = '你的老婆[#7%s#7]在[%m(%x,%y)]上线了.';
+  g_sYourWifeNowLocateMsg             :String = 'Your wife is located at:';
+  g_sYourHusbandSearchLocateMsg       :String = 'Your husband is looking for you:';
+  g_sYourHusbandNowLocateMsg          :String = 'Your husbaned is located at:';
+  g_sYourWifeSearchLocateMsg          :String = 'Your wife is looking for you:';
 
-  g_sManLoginDearNotOnlineMsg: string = '你的老婆现在不在线.';
-  g_sWoManLoginDearNotOnlineMsg: string = '你的老公现在不在线.';
+  g_sfUnMasterLoginMsg                :String = 'You are no longer a master';
+  g_sfUnMasterListLoginMsg            :String = '%d has been removed from the list of masters';
+  g_sMasterListOnlineSelfMsg          :String = 'Your apprentice is online at: %m(%x:%y).';
+  g_sMasterListOnlineMasterMsg        :String = 'Your master is online at: %m(%x:%y).';
 
-  g_sManLongOutDearOnlineMsg: string = '你的老公在[%m(%x,%y)]下线了.';
-  g_sWoManLongOutDearOnlineMsg: string = '你的老婆在[%m(%x,%y)]下线了.';
+  g_sMasterOnlineSelfMsg              :String = 'Your apprentice is online at: %m(%x:%y).';
+  g_sMasterOnlineSelfMsgEx            :string = 'Your apprentice is not online %m.'; //你的徒弟[#7%d#7]没有上线
+  g_sMasterOnlineMasterListMsg        :String = 'Your master is online at: %m(%x:%y).';
 
-  g_sYouAreNotMarryedMsg: string = '你都没结婚查什么？';
-  g_sYourWifeNotOnlineMsg: string = '你的老婆没有在线.';
-  g_sYourHusbandNotOnlineMsg: string = '你的老公没有在线.';
+  g_sMasterLongOutMasterListOnlineMsg :String = 'Your apprentice logged out at: %m(%x:%y).';
+  g_sMasterListLongOutMasterOnlineMsg :String = 'Your master logged out at: %m(%x:%y).';
+  g_sMasterListNotOnlineMsg           :String = 'Your apprentice is not online.';
+  g_sMasterNotOnlineMsg               :String = 'Your master is not online.';
+  g_sYouAreNotMasterMsg               :String = 'You do not have a master.';
+  g_sYourMasterNotOnlineMsg           :String = 'Your master is not online.';
+  g_sYourMasterListNotOnlineMsg       :String = 'Your apprentice is not online.';
 
-  g_sYourWifeNowLocateMsg: string = '你的老婆[#7%d#7]现在位于:';
-  g_sYourHusbandSearchLocateMsg: string = '你的老公[#7%s#7]正找你，他位于:';
-  g_sYourHusbandNowLocateMsg: string = '你的老公[#7%d#7]现在位于:';
-  g_sYourWifeSearchLocateMsg: string = '你的老婆[#7%s#7]正找你，他位于:';
+  g_sYourMasterNowLocateMsg           :String = 'Your master is located at: ';
+  g_sYourMasterListSearchLocateMsg    :String = 'Your master searches for you from: ';
+  g_sYourMasterListNowLocateMsg       :String = 'Your master is now at: ';
+  g_sYourMasterSearchLocateMsg        :String = 'Your master searches for you from:';
+  g_sYourMasterListUnMasterOKMsg      :String = 'You have left your master %d.';
+  g_sYouAreUnMasterOKMsg              :String = 'You have no master anymore.';
+  g_sUnMasterLoginMsg                 :String = 'Your master logged in.';
+  //g_sEnableMasterRecall               :String = '[Master Recall Enabled]';
+  //g_sDisableMasterRecall              :String = '[Master Recall Disabled]';
 
-  g_sfUnMasterLoginMsg: string = '你的徒弟[#7%s#7]已经背叛师门了.';
-  g_sfUnMasterListLoginMsg: string = '你的师父[#7%s#7]已经将你逐出师门了.';
+  g_sNPCSayUnMasterOKMsg              :String = '[%n]: %d, has left his master, %s.';
+  g_sNPCSayForceUnMasterMsg           :String = '[%n]: %s has forced leaving his master, %d';
+  g_sMyInfo                           :String = 'Name:%name Location:%map(%x:%y) Level:%level ' +
+  ' Gold:%gold PK Points:%pk HP:%minhp/%maxhp MP:%minmp/%maxmp\' +
+    ' DC:%mindc/%maxdc MC:%minmc/%maxmc SC:%minsc/%maxsc CC:%mincc/%maxcc Login Time' +
+    ':%logontime Online Time:%logonlong Minutes';
 
-  g_sMasterListOnlineSelfMsg: string = '你的师父[#7%d#7]当前位于%m(%x,%y).';
-  g_sMasterListOnlineMasterMsg: string = '你的徒弟[#7%s#7]在%m(%x,%y)上线了.';
+  g_sSendOnlineCountMsg               :String = 'Amount of users online: %c';
+  g_sOpenedDealMsg                    :String = 'Trade has started.';
+  g_sSendCustMsgCanNotUseNowMsg       :String = 'You cannot use that now.';
+  g_sSubkMasterMsgCanNotUseNowMsg     :String = 'You are not a sabuk owner!';
 
-  g_sMasterOnlineSelfMsg: string = '你的徒弟[#7%d#7]当前位于%m(%x,%y).';
-  g_sMasterOnlineSelfMsgEx: string = '你的徒弟[#7%d#7]没有上线.';
-  g_sMasterOnlineMasterListMsg: string = '你的师父[#7%s#7]在%m(%x,%y)上线了.';
+  g_sWeaponRepairSuccess              :String = 'Your weapon has been repaired...';
+  g_sDefenceUpTime                    :String = 'Defence increased for %d seconds';
+  g_sDefenceDownTime                  :String = 'Defence power reduced for %d seconds';
+  g_sMagDefenceUpTime                 :String = 'Magic defence increased for %d seconds';
+  g_sMagDefenceDownTime               :String = 'Magic defence removed for %d seconds';
+  g_sWinLottery1Msg                   :String = 'Congratulations! You won 1st prize';
+  g_sWinLottery2Msg                   :String = 'Congratulations! You won 2nd prize';
+  g_sWinLottery3Msg                   :String = 'Congratulations! You won 3rd prize';
+  g_sWinLottery4Msg                   :String = 'Congratulations! You won 4th prize';
+  g_sWinLottery5Msg                   :String = 'Congratulations! You won 5th prize';
+  g_sWinLottery6Msg                   :String = 'Congratulations! You won 6th prize';
+  g_sNotWinLotteryMsg                 :String = 'You did not win the lottery this time!';
+  g_sWeaptonMakeLuck                  :String = 'Your weapon gains luck...';
+  g_sWeaptonNotMakeLuck               :String = 'No effect on weapon.';
+  g_sTheWeaponIsCursed                :String = 'Your weapon has been cursed.';
+  g_sCanotTakeOffItem                 :String = 'Item is cursed.';
+  g_sJoinGroup                        :String = '%s has been grouped.';
+  g_sTryModeCanotUseStorage           :String = 'You are in trial mode, you can not use storage.';
+  g_sCanotGetItems                    :String = 'Cannot get items from trade.';
+  g_sEnableDearRecall                 :String = '[Marriage Recall Enabled]';
+  g_sDisableDearRecall                :String = '[Marriage Recall Disabled]';
+  g_sEnableMasterRecall               :string = '[Master Recall Enabled]';
+  g_sDisableMasterRecall              :string = '[Master Recall Disabled]';
+  g_sNowCurrDateTime                  :String = 'Current DateTime: ';
+  g_sEnableAllowRebirth               :String = '[Allow revival]';
+  g_sDisableAllowRebirth              :String = '[Prohibit revival]';
+  g_sEnableHearWhisper                :String = '[Whisper Enabled]';
+  g_sDisableHearWhisper               :String = '[Whisper Disabled]';
+  g_sEnableShoutMsg                   :String = '[Shout Enabled]';
+  g_sDisableShoutMsg                  :String = '[Shout Disabled]';
+  g_sEnableDealMsg                    :String = '[Transaction Enabled]';
+  g_sDisableDealMsg                   :String = '[Transaction Disabled]';
+  g_sEnableGuildChat                  :String = '[Guild Chat Enabled]';
+  g_sDisableGuildChat                 :String = '[Guild Chat Disabled]';
+  g_sEnableJoinGuild                  :String = '[Joining Guild Enabled]';
+  g_sDisableJoinGuild                 :String = '[Joining Guild Disabled]';
+  g_sEnableAuthAllyGuild              :String = '[Allow Alliance]';
+  g_sDisableAuthAllyGuild             :String = '[Disable Alliance]';
+  g_sEnableGroupRecall                :String = '[Group Recall Enabled]';
+  g_sDisableGroupRecall               :String = '[Group Recall Disabled]';
+  g_sEnableGuildRecall                :String = '[Guild Recall Enabled]';
+  g_sDisableGuildRecall               :String = '[Guild Recall Disabled]';
+  g_sEnableAddFriend                  :string = '[Allow Friend]';
+  g_sDisableAddFriend                 :string = '[Disable Friend]';
+  g_sPleaseInputPassword              :String = 'Please input password:';
+  g_sTheMapDisableMove                :String = 'You can not use @move here %s(%s)';
+  g_sTheMapNotFound                   :String = '%s not found.';
+  g_sYourIPaddrDenyLogon              :String = 'Your IP has been banned.';
+  g_sYourAccountDenyLogon             :String = 'Your account has been banned.';
+  g_sYourCharNameDenyLogon            :String = 'Your character is denied access.';
+  g_sCanotPickUpItem                  :String = 'You cannot pick up this item.';
+  g_sCanotSendmsg                     :String = 'Cannot send message.';
+  g_sUserDenyWhisperMsg               :String = 'The user is denying whisper.';
+  g_sUserNotOnLine                    :String = ' is not online.';
+  g_sRevivalRecoverMsg                :String = 'The force of ring revived your body.';
+  g_sClientVersionTooOld              :String = 'Using old client, please use new one.';
 
-  g_sMasterLongOutMasterListOnlineMsg: string = '你的师父[#7%s#7]在[%m(%x,%y)]下线了.';
-  g_sMasterListLongOutMasterOnlineMsg: string = '你的徒弟[#7%s#7]在[%m(%x,%y)]下线了.';
+  g_sCastleGuildName                  :string = '(%CastleName)%Guildname[%RankName]';
+  g_sNoCastleGuildName                :string = '%GuildName[%RankName]';
+  g_sWarrReNewName                    :String = '%chrname\*<Warrior>*';
+  g_sWizardReNewName                  :String = '%chrname\*<Wizard>*';
+  g_sTaosReNewName                    :String = '%chrname\*<Taoist>*';
 
-  g_sMasterListNotOnlineMsg: string = '你的师父现不在线.';
-  g_sMasterNotOnlineMsg: string = '你的徒弟没有一个在线.';
+  g_sRankLevelName                    :String = '%s\Level';
+  g_sManDearName                      :String = '%s''s Husband';
+  g_sWoManDearName                    :String = '%s''s Wife';
+  g_sMasterName                       :String = '%s''s Master';
+  g_sNoMasterName                     :String = '%s''s Slave';
+  g_sHumanShowName                    :String = '%chrname\%guildname\%dearname\%mastername';
 
-  g_sYouAreNotMasterMsg: string = '你都没师徒关系查什么？';
-  g_sYourMasterNotOnlineMsg: string = '你的师父还没有上线.';
-  g_sYourMasterListNotOnlineMsg: string = '你的徒弟没有一个在线.';
+  g_sChangePermissionMsg              :String = 'Permission changed:%d';
+  g_sChangeKillMonExpRateMsg          :String = 'Experience multiplied by %g for %d seconds.';
+  g_sChangePowerRateMsg               :String = 'Monster: %g Power: %d';
+  g_sChangeMemberLevelMsg             :String = 'Member level changed: %d';
+  g_sChangeMemberTypeMsg              :String = 'Member typed message: %d';
+  g_sScriptChangeHumanHPMsg           :String = 'HP Changed: %d';
+  g_sScriptChangeHumanMPMsg           :String = 'MP Changed: %d';
 
-  g_sYourMasterNowLocateMsg: string = '你的师父[#7%d#7]现在位于:';
-  g_sYourMasterListSearchLocateMsg: string = '你的徒弟[#7%s#7]正在找你，他现在位于:';
-  g_sYourMasterListNowLocateMsg: string = '你的徒弟[#7%d#7]现在位于:';
-  g_sYourMasterSearchLocateMsg: string = '你的师父[#7%s#7]正在找你，他现在位于:';
-  g_sYourMasterListUnMasterOKMsg: string = '你的徒弟[#7%s#7]已经出师了.';
-  g_sYouAreUnMasterOKMsg: string = '你已经出师了.';
+  g_sScriptGuildAuraePointNoGuild     :String = 'You are not in a guild.';
+  g_sScriptGuildAuraePointMsg         :String = 'Guild aurae points: %d';
+  g_sScriptGuildBuildPointNoGuild     :String = 'You are not in a guild.';
+  g_sScriptGuildBuildPointMsg         :String = 'Guild build points: %d';
+  g_sScriptGuildFlourishPointNoGuild  :String = 'You are not in a guild.';
+  g_sScriptGuildFlourishPointMsg      :String = 'Guild flourish points: %d';
+  g_sScriptGuildStabilityPointNoGuild :String = 'FixMsg[104]: %d';
+  g_sScriptGuildStabilityPointMsg     :String = 'Guild stability points: %d';
 
-  g_sUnMasterLoginMsg: string = '你的徒弟[#7%s#7]已经出师了.';
+  g_sScriptChiefItemCountMsg          :String = 'FixMsg[106]: %d';
+  g_sDisableSayMsg                    :String = '[You cannot chat for %d seconds.]';
+  g_sOnlineCountMsg                   :String = 'Users Online: %d';
+  g_sTotalOnlineCountMsg              :String = 'Total Users Online: %d';
+  g_sYouNeedLevelMsg                  :String = 'You are not a high enough level.';
+  g_sThisMapDisableSendCyCyMsg        :String = 'Cannot shout on this map.';
+  g_sYouCanSendCyCyLaterMsg           :String = '%d seconds till you can shout.';
+  g_sYouIsDisableSendMsg              :String = 'You cannot chat.';
+  g_sYouMurderedMsg                   :String = 'You commited murder.';
+  g_sYouKilledByMsg                   :String = 'You were murdered by %s';
+  g_sYouProtectedByLawOfDefense       :String = '[You are protected by the law of defence]';
+  g_sYourUseItemIsNul                 :String = 'Item %s cannot be used.';
 
-  g_sNPCSayUnMasterOKMsg: string = '[%n]: 我宣布%d与%s正式脱离师徒关系。';
+  g_sSlaveLevelUp: string = 'Your slave has been upgraded.';//您的宠物升级了
+  g_sRepairItemMsg: string = 'Repair is Successful.(%s)';
 
-  g_sNPCSayForceUnMasterMsg: string = '[%n]: 我宣布%s与%d已经正式脱离师徒关系.';
+  g_sGropuIsCheckMsg: string = 'Group invitation send, please wait for a response!';
+  g_sGropuIsCheckMsgNot: string = ''; //请不要重复提交操作
+  g_sGropuIsCheckMsgTimeOut: string = '';//你发送给[#7%s#7]的组队邀请,因超时已取消.
+  g_sGropuIsCheckMsgNo: string = '[#7%s#7] Rejected your group invitation.';
 
-  g_sMyInfo: string =
-  '『人物名称』:%name 『当前位置』:%map(%x:%y)\『当前等级』:%level ' +
-    '『金 币 数』:%gold 『PK 点 数』:%pk\『生 命 值』:%minhp/%maxhp 『魔 法 值』:%minmp/%maxmp\' +
-    '『攻 击 力』:%mindc/%maxdc『魔 法 力』:%minmc/%maxmc『道 术 力』:%minsc/%maxsc\『登录时间』' +
-    ':%logontime 『在线时长』:%logonlong 分钟';
+  g_sGroupCheckMsg: string = '[%s](Level: %d) Would like you to join their Group,Do you accept? [%s].';
+  g_sGroupItemClass1: string = '[Free for All]';
+  g_sGroupItemClass2: string = '[Assigned Randomly]';
 
-  g_sSendOnlineCountMsg: string = '当前在线人数: %c';
+  g_sGuildCheckMsg: string = '[%s] Would like you to join the Guild [%s],Do you accept?';
+  g_sGuildIsCheckMsg: string = 'Successfully sent Guild invitation, Please wait for a response!';
+  g_sGuildIsCheckMsgNot: string = '';//请不要重复提交操作
+  g_sGuildIsCheckMsgNo: string = '[#7%s#7] has rejected your invitation.';
 
-  g_sOpenedDealMsg: string = '开始交易。';
-  g_sSendCustMsgCanNotUseNowMsg: string =
-  '祝福语功能还没有开放.';
-  g_sSubkMasterMsgCanNotUseNowMsg: string =
-  '城主发信息功能还没有开放.';
-  g_sWeaponRepairSuccess: string = '武器修复成功.';
-  g_sDefenceUpTime: string = '防御力增加%d秒';
-  g_sDefenceDownTime: string = '防御力减少%d秒';
-  g_sMagDefenceUpTime: string = '魔法防御力增加%d秒';
-  g_sMagDefenceDownTime: string = '魔法防御力减少%d秒';
-  g_sWinLottery1Msg: string = '祝贺您，中了一等奖。';
-  g_sWinLottery2Msg: string = '祝贺您，中了二等奖。';
-  g_sWinLottery3Msg: string = '祝贺您，中了三等奖。';
-  g_sWinLottery4Msg: string = '祝贺您，中了四等奖。';
-  g_sWinLottery5Msg: string = '祝贺您，中了五等奖。';
-  g_sWinLottery6Msg: string = '祝贺您，中了六等奖。';
-  g_sNotWinLotteryMsg: string = '等下次机会吧.';
-  g_sWeaptonMakeLuck: string = '武器被加幸运了.';
-  g_sWeaptonNotMakeLuck: string = '无效.';
-  g_sTheWeaponIsCursed: string = '你的武器被诅咒了.';
-  g_sCanotTakeOffItem: string = '无法取下物品.';
-  g_sJoinGroup: string = '%s 加入小组.';
-  g_sTryModeCanotUseStorage: string = '试玩模式不可以使用仓库功能.';
-  g_sCanotGetItems: string = '无法携带更多的东西.';
-  g_sEnableDearRecall: string = '允许夫妻传送.';
-  g_sDisableDearRecall: string = '禁止夫妻传送.';
-  g_sEnableMasterRecall: string = '允许师徒传送.';
-  g_sDisableMasterRecall: string = '禁止师徒传送.';
-  g_sNowCurrDateTime: string = '服务器时间: ';
-  g_sEnableAllowRebirth: string = '[允许复活]';
-  g_sDisableAllowRebirth: string = '[禁止复活]';
-  g_sEnableHearWhisper: string = '[允许私聊]';
-  g_sDisableHearWhisper: string = '[禁止私聊]';
-  g_sEnableShoutMsg: string = '[允许群聊]';
-  g_sDisableShoutMsg: string = '[禁止群聊]';
-  g_sEnableDealMsg: string = '[允许交易]';
-  g_sDisableDealMsg: string = '[禁止交易]';
-  g_sEnableGuildChat: string = '[允许行会聊天]';
-  g_sDisableGuildChat: string = '[禁止行会聊天]';
-  g_sEnableJoinGuild: string = '[允许加入行会]';
-  g_sDisableJoinGuild: string = '[禁止加入行会]';
-  g_sEnableAuthAllyGuild: string = '[允许行会联盟]';
-  g_sDisableAuthAllyGuild: string = '[禁止行会联盟]';
-  g_sEnableGroupRecall: string = '[允许天地合一]';
-  g_sDisableGroupRecall: string = '[禁止天地合一]';
-  g_sEnableGuildRecall: string = '[允许行会合一]';
-  g_sDisableGuildRecall: string = '[禁止行会合一]';
-  g_sEnableAddFriend: string = '[允许加为好友]';
-  g_sDisableAddFriend: string = '[拒绝加为好友]';
-  g_sPleaseInputPassword: string = '请输入密码:';
-  g_sTheMapDisableMove: string = '地图%s(%s)不允许传送.';
-  g_sTheMapNotFound: string = '%s 此地图号不存在.';
-  g_sYourIPaddrDenyLogon: string = '你当前登录的IP地址已被禁止登录了.';
-  g_sYourAccountDenyLogon: string = '你当前登录的帐号已被禁止登录了.';
-  g_sYourCharNameDenyLogon: string = '你当前登录的人物已被禁止登录了.';
-  g_sCanotPickUpItem: string = '在一定时间以内无法捡起此物品.';
-  g_sCanotSendmsg: string = '无法发送信息.';
-  g_sUserDenyWhisperMsg: string = ' 拒绝私聊.';
-  g_sUserNotOnLine: string = '  没有在线.';
-  g_sRevivalRecoverMsg: string = '复活戒指生效，体力恢复.';
-  g_sClientVersionTooOld: string =
-  '由于您使用的客户端版本太老了，无法正确显示人物信息.';
+  g_sFriendCheckMsg: string = '[%s] would like to be your Friend,Do you accept?';
+  g_sFriendIsCheckMsg: string = 'Friend invitation sent successfully, Please wait for a response.';
+  g_sFriendIsCheckMsgNot: string = '';//请不要重复提交操作
+  g_sFriendIsCheckMsgNo: string = '[#7%s#7] has rejected your Friend Request.';
 
-  g_sCastleGuildName: string = '(%CastleName)%Guildname[%RankName]';
-  g_sNoCastleGuildName: string = '%GuildName[%RankName]';
-  g_sWarrReNewName: string = '%ChrName\*<圣>*';
-  g_sWizardReNewName: string = '%ChrName\*<神>*';
-  g_sTaosReNewName: string = '%ChrName\*<尊>*';
-  g_sRankLevelName: string = '%s';
-  g_sManDearName: string = '[%s 的老公]';
-  g_sWoManDearName: string = '[%s 的老婆]';
-  g_sMasterName: string = '[%s 的师父]';
-  g_sNoMasterName: string = '[%s 的徒弟]';
-  g_sHumanShowName: string = '%ChrName\%GuildName\%DearName\%MasterName';
-
-  g_sChangePermissionMsg: string = '当前权限等级为:%d';
-  g_sChangeKillMonExpRateMsg: string = '经验倍数:%g 时长%d秒';
-  g_sChangePowerRateMsg: string = '攻击力倍数:%g 时长%d秒';
-  g_sChangeMemberLevelMsg: string = '当前会员等级为:%d';
-  g_sChangeMemberTypeMsg: string = '当前会员类型为:%d';
-  g_sScriptChangeHumanHPMsg: string = '当前HP值为:%d';
-  g_sScriptChangeHumanMPMsg: string = '当前MP值为:%d';
-
-  g_sScriptGuildAuraePointNoGuild: string = '你还没加入行会.';
-  g_sScriptGuildAuraePointMsg: string = '你的行会人气值为:%d';
-
-  g_sScriptGuildBuildPointNoGuild: string = '你还没加入行会.';
-  g_sScriptGuildBuildPointMsg: string = '你的行会的建设值为:%d';
-
-  g_sScriptGuildFlourishPointNoGuild: string = '你还没加入行会.';
-  g_sScriptGuildFlourishPointMsg: string = '你的行会的繁荣值为:%d';
-
-  g_sScriptGuildStabilityPointNoGuild: string = '你还没加入行会.';
-  g_sScriptGuildStabilityPointMsg: string = '你的行会的安定值为:%d';
-
-  g_sScriptChiefItemCountMsg: string = '你的行会的超级装备数为:%d';
-
-  g_sDisableSayMsg: string = '[%d分钟内你将被禁止发言]';
-  g_sOnlineCountMsg: string = '在线数: (%d/%d) %d';
-  g_sTotalOnlineCountMsg: string = '总在线数: (%d/%d) %d';
-  g_sYouNeedLevelMsg: string = '你的等级要在%d级以上才能用此功能.';
-  g_sThisMapDisableSendCyCyMsg: string = '本地图不允许喊话.';
-  g_sYouCanSendCyCyLaterMsg: string = '%d秒后才可以再发文字.';
-  g_sYouIsDisableSendMsg: string = '禁止聊天.';
-  g_sYouMurderedMsg: string = '你犯了谋杀罪.';
-  g_sYouKilledByMsg: string = '你被[#7%s#7]杀害了.';
-  g_sYouProtectedByLawOfDefense: string = '[你受到正当防卫的规则保护]';
-  g_sYourUseItemIsNul: string = '你的%s处没有放上装备.';
-
-  g_sSlaveLevelUp: string = '您的宠物升级了.';
-  g_sRepairItemMsg: string = '(%s)修复成功.';
-
-  g_sGropuIsCheckMsg: string = '正在发送组队邀请，请稍候.';
-  g_sGropuIsCheckMsgNot: string = '请不要重复提交操作.';
-  g_sGropuIsCheckMsgTimeOut: string = '你发送给[#7%s#7]的组队邀请,因超时已取消.';
-  g_sGropuIsCheckMsgNo: string = '[#7%s#7] 拒绝了你的组队邀请.';
-
-  g_sGroupCheckMsg: string = '[%s](%d级)  想邀请你加入队伍，你是否同意？\分配模式[%s].';
-  g_sGroupItemClass1: string = '默认自由分配';
-  g_sGroupItemClass2: string = '共享随机分配';
-
-  g_sGuildCheckMsg: string = '[%s] 想邀请你加入行会[%s]，你是否同意？';
-  g_sGuildIsCheckMsg: string = '正在发送邀请，请稍候.';
-  g_sGuildIsCheckMsgNot: string = '请不要重复提交操作.';
-  g_sGuildIsCheckMsgNo: string = '[#7%s#7] 拒绝了你的行会邀请.';
-
-  g_sFriendCheckMsg: string = '[%s] 希望将你加为好友. 你是否同意?';
-  g_sFriendIsCheckMsg: string = '正在发送好友申请，请稍候.';
-  g_sFriendIsCheckMsgNot: string = '请不要重复提交操作.';
-  g_sFriendIsCheckMsgNo: string = '[#7%s#7] 拒绝了你的好友申请.';
-
-  g_sDealCheckMsg: string = '[%s] 请求与你进行交易，你是否同意?';
-  g_sDealIsCheckMsg: string = '正在发送交易请求，请稍候.';
-  g_sDealIsCheckMsgNot: string = '请不要重复提交操作.';
-  g_sDealIsCheckMsgNo: string = '[#7%s#7] 拒绝了你的交易请求.';
-
-resourcestring
-  g_sGameLogMsg1 = '%d'#9'%s'#9'%d'#9'%d'#9'%s'#9'%s'#9'%d'#9'%s'#9'%s';
-  g_sHumanDieEvent = '人物死亡事件';
-  g_sHitOverSpeed = '[攻击超速] %s 间隔:%d 数量:%d';
-  g_sRunOverSpeed = '[跑步超速] %s 间隔:%d 数量:%d';
-  g_sWalkOverSpeed = '[行走超速] %s 间隔:%d 数量:%d';
-  g_sSpellOverSpeed = '[魔法超速] %s 间隔:%d 数量:%d';
-  g_sBunOverSpeed = '[游戏超速] %s 间隔:%d 数量:%d';
-
-  g_sGameCommandPermissionTooLow = '权限不够.';
-  g_sGameCommandParamUnKnow = '命令格式: @%s %s';
-  g_sGameCommandMoveHelpMsg = '地图号';
-  g_sGameCommandPositionMoveHelpMsg = '地图号 座标X 座标Y';
-  g_sGameCommandPositionMoveCanotMoveToMap =
-    '无法移动到地图: %s X:%s Y:%s';
-  g_sGameCommandInfoHelpMsg = '人物名称';
-
-  g_sNowNotOnLineOrOnOtherServer = '%s 现在不在线，或在其它服务器上.';
-  g_sGameCommandMobCountHelpMsg = '地图号';
-  g_sGameCommandMobCountMapNotFound = '指定的地图不存在.';
-  g_sGameCommandMobCountMonsterCount = '怪物数量：%d';
-  g_sGameCommandHumanCountHelpMsg = '地图号';
-  g_sGameCommandKickHumanHelpMsg = '人物名称';
-  g_sGameCommandTingHelpMsg = '人物名称';
-  g_sGameCommandSuperTingHelpMsg = '人物名称 范围(0-10)';
-  g_sGameCommandMapMoveHelpMsg = '源地图  目标地图';
-  g_sGameCommandMapMoveMapNotFound = '地图%s不存在.';
-  g_sGameCommandShutupHelpMsg = '人物名称  时间长度(分钟)';
-  g_sGameCommandShutupHumanMsg = '%s 已被禁言%d分钟';
-  g_sGameCommandGamePointHelpMsg =
-    '人物名称 控制符(+,-,=) 游戏点数(1-100000000)';
-  g_sGameCommandGamePointHumanMsg =
-    '你的游戏点已增加%d点，当前总点数为%d点。';
-  g_sGameCommandGamePointGMMsg =
-    '%s的游戏点已增加%d点，当前总点数为%d点。';
-
-  g_sGameCommandCreditPointHelpMsg =
-    '人物名称 控制符(+,-,=) 声望点数(0-255)';
-  g_sGameCommandCreditPointHumanMsg =
-    '你的声望点已增加%d点，当前总声望点数为%d点。';
-  g_sGameCommandCreditPointGMMsg =
-    '%s的声望点已增加%d点，当前总声望点数为%d点。';
-
-  g_sGameCommandGameGoldHelpMsg =
-    ' 人物名称 控制符(+,-,=) 元宝(1-200000000)';
-  g_sGameCommandGameGoldHumanMsg = '你的%s已增加%d，当前拥有%d%s。';
-  g_sGameCommandGameGoldGMMsg = '%s的%s已增加%d，当前拥有%d%s。';
-
-  g_sGameCommandMapInfoMsg = '地图名称: %s(%s)';
-  g_sGameCommandMapInfoSizeMsg = '地图大小: X(%d) Y(%d)';
-  g_sGameCommandMapInfoCountMsg = '地图人数: %d';
-
-  g_sGameCommandShutupReleaseHelpMsg = '人物名称';
-  g_sGameCommandShutupReleaseCanSendMsg =
-    '你已经恢复聊天功能.';
-  g_sGameCommandShutupReleaseHumanCanSendMsg = '%s 已经恢复聊天。';
-  g_sGameCommandShutupListIsNullMsg = '禁言列表为空.';
-
-  g_sGameCommandLevelConsoleMsg = '[等级调整] %s (%d -> %d)';
-  g_sGameCommandSbkGoldHelpMsg =
-    '城堡名称 控制符(=、-、+) 金币数(1-100000000)';
-  g_sGameCommandSbkGoldCastleNotFoundMsg = '城堡%s未找到.';
-  g_sGameCommandSbkGoldShowMsg = '%s的金币数为: %d 今天收入: %d';
-  g_sGameCommandRecallHelpMsg = '人物名称';
-  g_sGameCommandReGotoHelpMsg = '人物名称';
-  g_sGameCommandShowHumanFlagHelpMsg = '人物名称 标识号';
-  g_sGameCommandShowHumanFlagONMsg = '%s: [%d] = ON';
-  g_sGameCommandShowHumanFlagOFFMsg = '%s: [%d] = OFF';
-
-  g_sGameCommandShowHumanUnitHelpMsg = '人物名称 单元号';
-  g_sGameCommandShowHumanUnitONMsg = '%s: [%d] = ON';
-  g_sGameCommandShowHumanUnitOFFMsg = '%s: [%d] = OFF';
-  g_sGameCommandMobHelpMsg = '怪物名称 数量 等级 五行(1-5)';
-  g_sGameCommandMobMsg = '怪物名称不正确或其它未问题.';
-  g_sGameCommandMobNpcHelpMsg =
-    'NPC名称 脚本文件名 外形(数字) 属沙城(0,1)';
-  g_sGameCommandNpcScriptHelpMsg = '？？？？';
-  g_sGameCommandDelNpcMsg =
-    '命令使用方法不正确，必须与NPC面对面，才能使用此命令.';
-  g_sGameCommandRecallMobHelpMsg = '怪物名称 数量 等级';
-  g_sGameCommandLuckPointHelpMsg = '人物名称 控制符 幸运点数';
-
-  g_sGameCommandLuckPointMsg = '%s 的幸运点数为:%d/%g 幸运值为:%d';
-  g_sGameCommandLotteryTicketMsg =
-    '已中彩票数:%d 未中彩票数:%d 一等奖:%d 二等奖:%d 三等奖:%d 四等奖:%d 五等奖:%d 六等奖:%d ';
-  g_sGameCommandReloadGuildHelpMsg = '行会名称';
-  g_sGameCommandReloadGuildOnMasterserver =
-    '此命令只能在主游戏服务器上执行.';
-  g_sGameCommandReloadGuildNotFoundGuildMsg = '未找到行会%s.';
-  g_sGameCommandReloadGuildSuccessMsg = '行会%s重加载成功...';
-
-  g_sGameCommandReloadLineNoticeSuccessMsg = '重新加载公告设置信息完成.';
-  g_sGameCommandReloadLineNoticeFailMsg = '重新加载公告设置信息失败.';
-  g_sGameCommandFreePKHelpMsg = '人物名称';
-  g_sGameCommandFreePKHumanMsg = '你的PK值已经被清除...';
-  g_sGameCommandFreePKMsg = '%s的PK值已经被清除...';
-  g_sGameCommandPKPointHelpMsg = '人物名称';
-  g_sGameCommandPKPointMsg = '%s的PK点数为:%d';
-  g_sGameCommandIncPkPointHelpMsg = '人物名称 PK点数';
-  g_sGameCommandIncPkPointAddPointMsg = '%s的PK值已增加%d点...';
-  g_sGameCommandIncPkPointDecPointMsg = '%s的PK值已减少%d点...';
-  g_sGameCommandHumanLocalHelpMsg = '人物名称';
-  g_sGameCommandHumanLocalMsg = '%s来自:%s';
-  g_sGameCommandPrvMsgHelpMsg = '人物名称';
-  g_sGameCommandPrvMsgUnLimitMsg = '%s 已从禁止私聊列表中删除...';
-  g_sGameCommandPrvMsgLimitMsg = '%s 已被加入禁止私聊列表...';
-  g_sGamecommandMakeHelpMsg = ' 物品名称  数量';
-  g_sGamecommandMakeItemNameOrPerMissionNot = '输入的物品名称不正确，或权限不够.';
-  g_sGamecommandMakeInCastleWarRange = '攻城区域，禁止使用此功能.';
-  g_sGamecommandMakeInSafeZoneRange =
-    '非安全区，禁止使用此功能.';
-
-  g_sGamecommandMakeItemNameNotFound = '%s 物品名称不正确.';
-  g_sGamecommandSuperMakeHelpMsg = '身上没指定物品.';
-  g_sGameCommandViewWhisperHelpMsg = ' 人物名称';
-  g_sGameCommandViewWhisperMsg1 = '已停止侦听%s的私聊信息...';
-  g_sGameCommandViewWhisperMsg2 = '正在侦听%s的私聊信息...';
-  g_sGameCommandReAliveHelpMsg = ' 人物名称';
-  g_sGameCommandReAliveMsg = '%s 已获重生.';
-  g_sGameCommandChangeJobHelpMsg =
-    ' 人物名称 职业类型(Warr Wizard Taos)';
-  g_sGameCommandChangeJobMsg = '%s 的职业更改成功。';
-  g_sGameCommandChangeJobHumanMsg = '职业更改成功。';
-  g_sGameCommandTestGetBagItemsHelpMsg =
-    '(用于测试升级武器方面参数)';
-  g_sGameCommandShowUseItemInfoHelpMsg = '人物名称';
-  g_sGameCommandBindUseItemHelpMsg = '人物名称 物品类型 绑定方法';
-  g_sGameCommandBindUseItemNoItemMsg = '%s的%s没有戴物品.';
-  g_sGameCommandBindUseItemAlreadBindMsg =
-    '%s的%s上的物品早已绑定过了.';
-  g_sGameCommandMobFireBurnHelpMsg = '命令格式: %s %s %s %s %s %s %s';
-  g_sGameCommandMobFireBurnMapNotFountMsg = '地图%s 不存在';
+  g_sDealCheckMsg: string = '[%s] Woul like to Trade with you, Do you accept?';
+  g_sDealIsCheckMsg: string = 'Trade invitation was send successfully, Please wait for a response.';
+  g_sDealIsCheckMsgNot: string = ''; //请不要重复提交操作.
+  g_sDealIsCheckMsgNo: string = '[#7%s#7] has rejected your Trade Request.';
 
 resourcestring
-  U_DRESSNAME = '衣服';
-  U_WEAPONNAME = '武器';
-  U_RIGHTHANDNAME = '照明物';
-  U_NECKLACENAME = '项链';
-  U_HELMETNAME = '头盔';
-  U_ARMRINGLNAME = '左手镯';
-  U_ARMRINGRNAME = '右手镯';
-  U_RINGLNAME = '左戒指';
-  U_RINGRNAME = '右戒指';
+  g_sGameLogMsg1                              = '%d'#9'%s'#9'%d'#9'%d'#9'%s'#9'%s'#9'%d'#9'%s'#9'%s';
+  g_sHumanDieEvent                            = 'Character death';
+  g_sHitOverSpeed                             = '[Attack Speed] %s Interval:%d Amount:%d';
+  g_sRunOverSpeed                             = '[Running speed] %s Interval:%d Amount:%d';
+  g_sWalkOverSpeed                            = '[Walking speed] %s Interval:%d Amount:%d';
+  g_sSpellOverSpeed                           = '[Magic Speed] %s Interval:%d Amount:%d';
+  g_sBunOverSpeed                             = '[Game speed] %s Interval:%d Amount:%d';
 
-  U_BUJUKNAME = '物品';
-  U_BELTNAME = '腰带';
-  U_BOOTSNAME = '鞋子';
-  U_CHARMNAME = '宝石';
+  g_sGameCommandPermissionTooLow              = 'Your GM permission is too low';
+  g_sGameCommandParamUnKnow                   = 'Use this: @%s %s';
+  g_sGameCommandMoveHelpMsg                   = '<Map No>';
+  g_sGameCommandPositionMoveHelpMsg           = '<Map No> <X Co-ordinate> <Y Co-ordinate>';
+  g_sGameCommandPositionMoveCanotMoveToMap    = 'Cannot move to: %s X:%s Y:%s';
+  g_sGameCommandInfoHelpMsg                   = '<Username>';
+
+  g_sNowNotOnLineOrOnOtherServer              = '%s not found.';
+  g_sGameCommandMobCountHelpMsg               = '<Map>';
+  g_sGameCommandMobCountMapNotFound           = 'Map not found.';
+  g_sGameCommandMobCountMonsterCount          = 'Monster Count: %d';
+  g_sGameCommandHumanCountHelpMsg             = '<Map>';
+  g_sGameCommandKickHumanHelpMsg              = '<Username>';
+  g_sGameCommandTingHelpMsg                   = '<Username>';
+  g_sGameCommandSuperTingHelpMsg              = '<Username> <Radius(0-10)>';
+  g_sGameCommandMapMoveHelpMsg                = '<Map> <Co-ordinates>';
+  g_sGameCommandMapMoveMapNotFound            = 'Map %s does not exist.';
+  g_sGameCommandShutupHelpMsg                 = '<Username> <Length of time(minutes)>';
+  g_sGameCommandShutupHumanMsg                = '%s cannot chat for %d.';
+  g_sGameCommandGamePointHelpMsg              = '<Username> <Action(+,-,=)> <Amount(1-100000000)>';
+  g_sGameCommandGamePointHumanMsg             = 'Your gamepoints have changed from %d to %d points';
+  g_sGameCommandGamePointGMMsg                = '%s''s gamepoints have changed from %d to %d points';
+
+  g_sGameCommandCreditPointHelpMsg            = '<Username> <Action(+,-,=)? <Points(0-255)>';
+  g_sGameCommandCreditPointHumanMsg           = 'Your credit points have changed from %d to %d';
+  g_sGameCommandCreditPointGMMsg              = '%s''s credit points have been changed from %d to %d';
+
+  g_sGameCommandGameGoldHelpMsg               = '<Username> <Action>(+,-,=) <Amount(1-200000000)>';
+  g_sGameCommandGameGoldHumanMsg              = 'Your %s has increased %d, currently has %d %s.';
+  g_sGameCommandGameGoldGMMsg                 = '%s of %s has increased by %d, currently has %d %s.';
+
+  g_sGameCommandMapInfoMsg                    = 'Map Info: %s(%s)';
+  g_sGameCommandMapInfoSizeMsg                = 'Map Size: X(%d) Y(%d)';
+  g_sGameCommandMapInfoCountMsg               = 'Map Number: %d';
+
+  g_sGameCommandShutupReleaseHelpMsg          = '<Username>';
+  g_sGameCommandShutupReleaseCanSendMsg       = 'You can now chat again.';
+  g_sGameCommandShutupReleaseHumanCanSendMsg  = '%s can now chat again.';
+  g_sGameCommandShutupListIsNullMsg           = 'Chat ban list is empty.';
+
+  g_sGameCommandLevelConsoleMsg               = '[Level Changed] %s (%d -> %d)';
+  g_sGameCommandSbkGoldHelpMsg                = '<Castlename> <Action(=,-,+)> <Amount(1-100000000)>';
+  g_sGameCommandSbkGoldCastleNotFoundMsg      = 'Castle not found.';
+  g_sGameCommandSbkGoldShowMsg                = '%s Today''s income: %d Total gold: %d';
+  g_sGameCommandRecallHelpMsg                 = '<Username>';
+  g_sGameCommandReGotoHelpMsg                 = '<Username>';
+  g_sGameCommandShowHumanFlagHelpMsg          = '<Username> <Flag No>';
+  g_sGameCommandShowHumanFlagONMsg            = '%s: [%d] = ON';
+  g_sGameCommandShowHumanFlagOFFMsg           = '%s: [%d] = OFF';
+
+  g_sGameCommandShowHumanUnitHelpMsg          = '<Username> <Unit No>';
+  g_sGameCommandShowHumanUnitONMsg            = '%s: [%d] = ON';
+  g_sGameCommandShowHumanUnitOFFMsg           = '%s: [%d] = OFF';
+  g_sGameCommandMobHelpMsg                    = '<Monster> <Amount> <Level>';
+  g_sGameCommandMobMsg                        = 'Mob requested doesnt exist in the DB...';
+  g_sGameCommandMobNpcHelpMsg                 = 'NPC Name of script file(Number) is town(0,1)';
+  g_sGameCommandNpcScriptHelpMsg              = '???? - Needs translating NpcScriptHelpMsg';
+  g_sGameCommandDelNpcMsg                     = 'Command to use is not correct, must be facing the NPC to use this command!!!';
+  g_sGameCommandRecallMobHelpMsg              = '<Monster> <Amount> <Level>';
+  g_sGameCommandLuckPointHelpMsg              = '<Username> <Luck> ? FixMsg[120]';
+
+  g_sGameCommandLuckPointMsg                  = '%s Luck points:%d/%g Luck is:%d';
+  g_sGameCommandLotteryTicketMsg              = 'Lottery Number:%d Lottery Number is not:%d 1st Prize:%d 2nd Prize:%d 3rd Prize:%d 4th Prize:%d 5th Prize:%d 6th Prize:%d ';
+  g_sGameCommandReloadGuildHelpMsg            = '<Guild>';
+  g_sGameCommandReloadGuildOnMasterserver     = 'Guilds reloaded successfully.';
+  g_sGameCommandReloadGuildNotFoundGuildMsg   = '%s does not exist.';
+  g_sGameCommandReloadGuildSuccessMsg         = 'Guild %s has been reloaded successfully.';
+
+  g_sGameCommandReloadLineNoticeSuccessMsg    = 'Line notice reloaded successfully.';
+  g_sGameCommandReloadLineNoticeFailMsg       = 'Line notice reloading failed.';
+  g_sGameCommandFreePKHelpMsg                 = '<Username>';
+  g_sGameCommandFreePKHumanMsg                = 'Your PK points have been reset.';
+  g_sGameCommandFreePKMsg                     = '%s has had their PK Point set to 0.';
+  g_sGameCommandPKPointHelpMsg                = '<Username>';
+  g_sGameCommandPKPointMsg                    = '%s now has a PK Point of %d.';
+  g_sGameCommandIncPkPointHelpMsg             = '<Username> <PK Point>';
+  g_sGameCommandIncPkPointAddPointMsg         = '%s PK Point has been increased to %d.';
+  g_sGameCommandIncPkPointDecPointMsg         = '%s PK Point has been reduced to %d.';
+  g_sGameCommandHumanLocalHelpMsg             = '<Username>';
+  g_sGameCommandHumanLocalMsg                 = '%s Comes from: %s';
+  g_sGameCommandPrvMsgHelpMsg                 = '<Username>';
+  g_sGameCommandPrvMsgUnLimitMsg              = '%s removed from the list of prohibited private chat...';
+  g_sGameCommandPrvMsgLimitMsg                = '%s has been added to the list of banned private chat...';
+  g_sGamecommandMakeHelpMsg                   = ' <Itemname> <Amount>';
+  g_sGamecommandMakeItemNameOrPerMissionNot   = 'This item cannot be created manually.';
+  g_sGamecommandMakeInCastleWarRange          = 'You cannot do this in a war zone!!!';
+  g_sGamecommandMakeInSafeZoneRange           = 'You cannot do this i a safe zone!!!';
+
+  g_sGamecommandMakeItemNameNotFound          = '%s is not a valid item name in the database';
+  g_sGamecommandSuperMakeHelpMsg              = 'You did not specify an item!!!';
+  g_sGameCommandViewWhisperHelpMsg            = ' <Username>';
+  g_sGameCommandViewWhisperMsg1               = 'Monitoring PM''s...';
+  g_sGameCommandViewWhisperMsg2               = 'No longer monitoring PM''s...';
+  g_sGameCommandReAliveHelpMsg                = ' <Username>';
+  g_sGameCommandReAliveMsg                    = '%s has been brought back to life.';
+  g_sGameCommandChangeJobHelpMsg              = ' <Username> <Class(Warr Wizard Taos)>';
+  g_sGameCommandChangeJobMsg                  = '%s Changed Job Successfully';
+  g_sGameCommandChangeJobHumanMsg             = 'Changed Job Successfully';
+  g_sGameCommandTestGetBagItemsHelpMsg        = '(Upgrade weapons test parameters)';
+  g_sGameCommandShowUseItemInfoHelpMsg        = '<Username>';
+  g_sGameCommandBindUseItemHelpMsg            = '<Character> <Itemname> <Type of binding>';
+  g_sGameCommandBindUseItemNoItemMsg          = 'Item %s cannot be bound to %s!!!';
+  g_sGameCommandBindUseItemAlreadBindMsg      = 'Item %s has already been bound to %s!!!';
+  g_sGameCommandMobFireBurnHelpMsg            = 'Use this: %s %s %s %s %s %s %s';
+  g_sGameCommandMobFireBurnMapNotFountMsg     = 'Map file %s not found.';
+
+resourcestring
+  U_DRESSNAME       = 'Dress';
+  U_WEAPONNAME      = 'Weapon';
+  U_RIGHTHANDNAME   = 'RightHand';
+  U_NECKLACENAME    = 'Necklace';
+  U_HELMETNAME      = 'Helmet';
+  U_ARMRINGLNAME    = 'BraceL';
+  U_ARMRINGRNAME    = 'BraceR';
+  U_RINGLNAME       = 'RingL';
+  U_RINGRNAME       = 'RingR';
+
+  U_BUJUKNAME       = 'Items';
+  U_BELTNAME        = 'Belt';
+  U_BOOTSNAME       = 'Shoes';
+  U_CHARMNAME       = 'Gemstone';
 
 var
 {$IFDEF PLUGOPEN}
@@ -5631,7 +5613,7 @@ begin
   except
 
   end;
-end;  }
+end;}
 
 function IntegerChange(var pInt: Integer; nCount: Integer; btChange: Byte): Boolean;
 var
