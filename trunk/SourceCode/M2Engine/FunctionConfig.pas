@@ -1023,8 +1023,7 @@ procedure TfrmFunctionConfig.FunctionConfigControlChanging(Sender: TObject;
 begin
   if boModValued then begin
     if
-      Application.MessageBox('参数设置已经被修改，是否确认不保存修改的设置？',
-      '确认信息', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
+      Application.MessageBox('Parameter settings have been modified to confirm the settings without saving changes?','Confirmation', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
       uModValue
     end
     else
@@ -1088,7 +1087,7 @@ begin
   CheckBoxFireChgMapExtinguish.Checked := g_Config.boChangeMapFireExtinguish;
 
   SpinEditDidingPowerRate.Value := g_Config.nDidingPowerRate;
-  
+
 
   EditBoneFammName.Text := g_Config.sBoneFamm;
   EditBoneFammCount.Value := g_Config.nBoneFammCount;
@@ -1173,8 +1172,8 @@ begin
   EditNakedScPoint.Value := g_Config.NakedAddInfo.nNakedScMaxCount;
   EditNakedHPPoint.Value := g_Config.NakedAddInfo.nNakedHPCount;
 
-  GridLiterary.Cells[0, 0] := '文采数量';
-  GridLiterary.Cells[1, 0] := '经验倍数';
+  GridLiterary.Cells[0, 0] := 'Literary Talent';
+  GridLiterary.Cells[1, 0] := 'Experience in Multiples';
 
   for i := Low(g_Config.LiteraryConfine) to High(g_Config.LiteraryConfine) do begin
     if g_Config.LiteraryConfine[i].nLiteraryCount <= 0 then break;
@@ -1206,20 +1205,20 @@ end;
 
 procedure TfrmFunctionConfig.FormCreate(Sender: TObject);
 begin
-  GridBoneFamm.Cells[0, 0] := '人物等级';
-  GridBoneFamm.Cells[1, 0] := '怪物名称';
-  GridBoneFamm.Cells[2, 0] := '数量';
-  GridBoneFamm.Cells[3, 0] := '等级';
+  GridBoneFamm.Cells[0, 0] := 'Char Lvl';
+  GridBoneFamm.Cells[1, 0] := 'Mob Name';
+  GridBoneFamm.Cells[2, 0] := 'Amount';
+  GridBoneFamm.Cells[3, 0] := 'Level';
 
-  GridDogz.Cells[0, 0] := '人物等级';
-  GridDogz.Cells[1, 0] := '怪物名称';
-  GridDogz.Cells[2, 0] := '数量';
-  GridDogz.Cells[3, 0] := '等级';
+  GridDogz.Cells[0, 0] := 'Char Lvl';
+  GridDogz.Cells[1, 0] := 'Mob Name';
+  GridDogz.Cells[2, 0] := 'Amount';
+  GridDogz.Cells[3, 0] := 'Level';
 
-  GridMoonSpirit.Cells[0, 0] := '人物等级';
-  GridMoonSpirit.Cells[1, 0] := '怪物名称';
-  GridMoonSpirit.Cells[2, 0] := '数量';
-  GridMoonSpirit.Cells[3, 0] := '等级';
+  GridMoonSpirit.Cells[0, 0] := 'Char Lvl';
+  GridMoonSpirit.Cells[1, 0] := 'Mob Name';
+  GridMoonSpirit.Cells[2, 0] := 'Amount';
+  GridMoonSpirit.Cells[3, 0] := 'Level';
   FunctionConfigControl.ActivePageIndex := 0;
   MagicPageControl.ActivePageIndex := 0;
   PageControl1.ActivePageIndex := 0;
@@ -1228,7 +1227,7 @@ begin
   PageControl4.ActivePageIndex := 0;
 
 {$IF SoftVersion = VERDEMO}
-  Caption := '功能设置[演示版本，所有设置调整有效，但不能保存]'
+  Caption := 'Feature set [demo version, all settings adjusted effectively, but can not save]'
 {$IFEND}
 end;
 
@@ -1704,7 +1703,7 @@ begin
     if GridBoneFamm.Cells[0, i + 1] = '' then
       break;
     if (RecallArray[i].nHumLevel <= 0) then begin
-      Application.MessageBox('人物等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Character level is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 0;
       Rect.Top := i + 1;
       Rect.Right := 0;
@@ -1713,7 +1712,7 @@ begin
       Exit;
     end;
     if UserEngine.GetMonRace(RecallArray[i].sMonName) <= 0 then begin
-      Application.MessageBox('怪物名称设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Monster Name is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 1;
       Rect.Top := i + 1;
       Rect.Right := 1;
@@ -1722,7 +1721,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nCount <= 0 then begin
-      Application.MessageBox('召唤数量设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon number is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 2;
       Rect.Top := i + 1;
       Rect.Right := 2;
@@ -1731,7 +1730,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nLevel < 0 then begin
-      Application.MessageBox('召唤等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon level is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 3;
       Rect.Top := i + 1;
       Rect.Right := 3;
@@ -1749,7 +1748,7 @@ begin
     RecallArray[i].nLevel := StrToIntDef(GridDogz.Cells[3, i + 1], -1);
     if GridDogz.Cells[0, i + 1] = '' then break;
     if (RecallArray[i].nHumLevel <= 0) then begin
-      Application.MessageBox('人物等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Character level is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 0;
       Rect.Top := i + 1;
       Rect.Right := 0;
@@ -1758,7 +1757,7 @@ begin
       Exit;
     end;
     if UserEngine.GetMonRace(RecallArray[i].sMonName) <= 0 then begin
-      Application.MessageBox('怪物名称设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Monster Name is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 1;
       Rect.Top := i + 1;
       Rect.Right := 1;
@@ -1767,7 +1766,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nCount <= 0 then begin
-      Application.MessageBox('召唤数量设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon number is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 2;
       Rect.Top := i + 1;
       Rect.Right := 2;
@@ -1776,7 +1775,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nLevel < 0 then begin
-      Application.MessageBox('召唤等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon level is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 3;
       Rect.Top := i + 1;
       Rect.Right := 3;
@@ -1794,7 +1793,7 @@ begin
     RecallArray[i].nLevel := StrToIntDef(GridMoonSpirit.Cells[3, i + 1], -1);
     if GridMoonSpirit.Cells[0, i + 1] = '' then break;
     if (RecallArray[i].nHumLevel <= 0) then begin
-      Application.MessageBox('人物等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Character level is set incorrectly','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 0;
       Rect.Top := i + 1;
       Rect.Right := 0;
@@ -1803,7 +1802,7 @@ begin
       Exit;
     end;
     if UserEngine.GetMonRace(RecallArray[i].sMonName) <= 0 then begin
-      Application.MessageBox('怪物名称设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Monster name is set incorrectly','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 1;
       Rect.Top := i + 1;
       Rect.Right := 1;
@@ -1812,7 +1811,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nCount <= 0 then begin
-      Application.MessageBox('召唤数量设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon number is set incorrectly!!!','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 2;
       Rect.Top := i + 1;
       Rect.Right := 2;
@@ -1821,7 +1820,7 @@ begin
       Exit;
     end;
     if RecallArray[i].nLevel < 0 then begin
-      Application.MessageBox('召唤等级设置错误.', '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Summon level setting error','Error message', MB_OK + MB_ICONERROR);
       Rect.Left := 3;
       Rect.Top := i + 1;
       Rect.Right := 3;
@@ -2002,9 +2001,9 @@ begin
 
   Config.WriteInteger('Setup', 'MagicAttackMonsteRate', g_Config.nMagicAttackMonsteRate);
 
-  {分身术}
+  {Two Places at once}
   {if g_Config.sCopyHumName = '' then begin
-    Application.MessageBox('分身人物名称不能为空.', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Character name can not be empty!!!','Error message', MB_OK + MB_ICONERROR);
     Exit;
   end;
   Config.WriteInteger('Setup', 'CopyHumanBagCount', g_Config.nCopyHumanBagCount);
@@ -2255,7 +2254,7 @@ end;
 procedure TfrmFunctionConfig.ButtonUpgradeWeaponDefaulfClick(
   Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息',
+  if Application.MessageBox('Are you sure you want to restore default settings?', 'Confirmation',
     MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     Exit;
@@ -2354,7 +2353,7 @@ end;
 
 procedure TfrmFunctionConfig.ButtonMakeMineDefaultClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息',
+  if Application.MessageBox('Are you sure you want to restore default settings?','Confirmation',
     MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     Exit;
@@ -2386,8 +2385,8 @@ begin
   EditMakeMagicMaxLevel.Value := g_Config.btMakeMagicMaxLevel;
   seEditMakeMagicMaxBeginLevel.Value := g_Config.nMakeMagicBeginLevel;
 
-  GridMakeMagic.Cells[0, 0] := '技能等级';
-  GridMakeMagic.Cells[1, 0] := '人物等级';
+  GridMakeMagic.Cells[0, 0] := 'Skill Level';
+  GridMakeMagic.Cells[1, 0] := 'Character Level';
   ComboBoxMakeMagicTypeChange(ComboBoxMakeMagicType);
 end;
 
@@ -2628,7 +2627,7 @@ end;
 
 procedure TfrmFunctionConfig.ButtonWinLotteryDefaultClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息',
+  if Application.MessageBox('Are you sure you want to restore default settings?','Confirmation',
     MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     Exit;
@@ -4150,7 +4149,7 @@ end;
 procedure TfrmFunctionConfig.ButtonWeaponMakeLuckDefaultClick(
   Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息',
+  if Application.MessageBox('Are you sure you want to restore default settings?','Confirmation',
     MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     Exit;

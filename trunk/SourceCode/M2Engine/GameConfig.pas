@@ -756,94 +756,74 @@ var
   i: Integer;
 begin
   GameConfigControl.TabIndex := 0;
-  ComboBoxLineNoticeColor.Items.Add('红色');
-  ComboBoxLineNoticeColor.Items.Add('绿色');
-  ComboBoxLineNoticeColor.Items.Add('蓝色');
+  ComboBoxLineNoticeColor.Items.Add('Red');
+  ComboBoxLineNoticeColor.Items.Add('Green');
+  ComboBoxLineNoticeColor.Items.Add('Blue');
   GridLevelExp.ColWidths[0] := 30;
   GridLevelExp.ColWidths[1] := 100;
-  GridLevelExp.Cells[0, 0] := '等级';
-  GridLevelExp.Cells[1, 0] := '经验值';
+  GridLevelExp.Cells[0, 0] := 'Lvl';
+  GridLevelExp.Cells[1, 0] := 'Exp';
   for i := 1 to GridLevelExp.RowCount - 1 do begin
     GridLevelExp.Cells[0, i] := IntToStr(i);
   end;
 
-  ComboBoxLevelExp.AddItem('原始经验值', TObject(s_OldLevelExp));
-  ComboBoxLevelExp.AddItem('标准经验值', TObject(s_StdLevelExp));
-  ComboBoxLevelExp.AddItem('当前1/2倍经验', TObject(s_2Mult));
-  ComboBoxLevelExp.AddItem('当前1/5倍经验', TObject(s_5Mult));
-  ComboBoxLevelExp.AddItem('当前1/8倍经验', TObject(s_8Mult));
-  ComboBoxLevelExp.AddItem('当前1/10倍经验', TObject(s_10Mult));
-  ComboBoxLevelExp.AddItem('当前1/20倍经验', TObject(s_20Mult));
-  ComboBoxLevelExp.AddItem('当前1/30倍经验', TObject(s_30Mult));
-  ComboBoxLevelExp.AddItem('当前1/40倍经验', TObject(s_40Mult));
-  ComboBoxLevelExp.AddItem('当前1/50倍经验', TObject(s_50Mult));
-  ComboBoxLevelExp.AddItem('当前1/60倍经验', TObject(s_60Mult));
-  ComboBoxLevelExp.AddItem('当前1/70倍经验', TObject(s_70Mult));
-  ComboBoxLevelExp.AddItem('当前1/80倍经验', TObject(s_80Mult));
-  ComboBoxLevelExp.AddItem('当前1/90倍经验', TObject(s_90Mult));
-  ComboBoxLevelExp.AddItem('当前1/100倍经验', TObject(s_100Mult));
-  ComboBoxLevelExp.AddItem('当前1/150倍经验', TObject(s_150Mult));
-  ComboBoxLevelExp.AddItem('当前1/200倍经验', TObject(s_200Mult));
-  ComboBoxLevelExp.AddItem('当前1/250倍经验', TObject(s_250Mult));
-  ComboBoxLevelExp.AddItem('当前1/300倍经验', TObject(s_300Mult));
+  ComboBoxLevelExp.AddItem('Original Experience', TObject(s_OldLevelExp));
+  ComboBoxLevelExp.AddItem('Standard Experience', TObject(s_StdLevelExp));
+  ComboBoxLevelExp.AddItem('1/2 times the current experience', TObject(s_2Mult));
+  ComboBoxLevelExp.AddItem('1/5 times the current experience', TObject(s_5Mult));
+  ComboBoxLevelExp.AddItem('1/8 times the current experience', TObject(s_8Mult));
+  ComboBoxLevelExp.AddItem('1/10 times the current experience', TObject(s_10Mult));
+  ComboBoxLevelExp.AddItem('1/20 times the current experience', TObject(s_20Mult));
+  ComboBoxLevelExp.AddItem('1/30 times the current experience', TObject(s_30Mult));
+  ComboBoxLevelExp.AddItem('1/40 times the current experience', TObject(s_40Mult));
+  ComboBoxLevelExp.AddItem('1/50 times the current experience', TObject(s_50Mult));
+  ComboBoxLevelExp.AddItem('1/60 times the current experience', TObject(s_60Mult));
+  ComboBoxLevelExp.AddItem('1/70 times the current experience', TObject(s_70Mult));
+  ComboBoxLevelExp.AddItem('1/80 times the current experience', TObject(s_80Mult));
+  ComboBoxLevelExp.AddItem('1/90 times the current experience', TObject(s_90Mult));
+  ComboBoxLevelExp.AddItem('1/100 times the current experience', TObject(s_100Mult));
+  ComboBoxLevelExp.AddItem('1/150 times the current experience', TObject(s_150Mult));
+  ComboBoxLevelExp.AddItem('1/200 times the current experience', TObject(s_200Mult));
+  ComboBoxLevelExp.AddItem('1/250 times the current experience', TObject(s_250Mult));
+  ComboBoxLevelExp.AddItem('1/300 times the current experience', TObject(s_300Mult));
 
-  EditSoftVersionDate.Hint :=
-    '客户端版本日期设置，此参数默认为 20020522，此版本日期必须与客户端相匹配，否则在进入游戏时将提示版本不正确';
-  EditConsoleShowUserCountTime.Hint :=
-    '程序控制台上显示当前在线人数间隔时间，此参数默认为 10分钟。';
-  EditShowLineNoticeTime.Hint :=
-    '游戏中显示公告信息的间隔时间，此参数默认为 300秒。';
-  ComboBoxLineNoticeColor.Hint :=
-    '游戏中显示公告信息的文字颜色，此参数默认为 蓝色。';
-  EditLineNoticePreFix.Hint := '游戏中显示公告信息的文字行前缀文字。';
-  EditHitIntervalTime.Hint :=
-    '游戏中人物二次攻击间隔时间，此参数默认为 1400毫秒。';
-  EditMagicHitIntervalTime.Hint :=
-    '游戏中人物二次魔法攻击间隔时间，此参数默认为 700毫秒。';
-  EditRunIntervalTime.Hint :=
-    '游戏中人物二次跑动间隔时间，此参数默认为 570毫秒。';
-  EditWalkIntervalTime.Hint :=
-    '游戏中人物二次走动间隔时间，此参数默认为 570毫秒。';
-  EditTurnIntervalTime.Hint :=
-    '游戏中人物二次变方向间隔时间，此参数默认为 750毫秒。';
+  EditSoftVersionDate.Hint := 'Client version date setting, Default is 20140928, this date must match with the client, otherwise you will be prompted that the game version is incorrect';
+  EditConsoleShowUserCountTime.Hint := 'Shows the current online count at the specified interval, Default is 10 minutes.';
+  EditShowLineNoticeTime.Hint := 'Line notice display interval, Default is 300 seconds';
+  ComboBoxLineNoticeColor.Hint := 'Line notice colour, Default is Blue.';
+  EditLineNoticePreFix.Hint := 'Prefix to show before Line otice, Default is [Notice]';
+  EditHitIntervalTime.Hint := 'Character attack interDefault is 900 milliseconds.';
+  EditMagicHitIntervalTime.Hint := 'Magic attack interval, Default is 800 milliseconds.';
+  EditRunIntervalTime.Hint := 'Character run interval, Default is 600 milliseconds.';
+  EditWalkIntervalTime.Hint := 'Character walk interval, Default is 600 milliseconds.';
+  EditTurnIntervalTime.Hint := 'Character turn interval, Default is 600 milliseconds.';
   EditDigUpIntervalTime.Hint :=
-    '游戏中人物二次挖物品间隔时间，此参数默认为 600毫秒。';
-  EditItemSpeedTime.Hint :=
-    '装备加速属性速度控制，数字越小控制越严，此参数默认为 50毫秒。';
+    '游戏中人物二次挖物品间隔时间，此参数默认为 600毫秒。';//Translate
+  EditItemSpeedTime.Hint := 'Equipped item speed increase, the smaller the number the stricter the control, Default is 50 milliseconds.';
 
-  EditStruckTime.Hint := '人物被攻击后弯腰停留时间控制，此参数默认为 100毫秒。';
-  CheckBoxDisableStruck.Hint := '人物在被攻击后是否显示弯腰动作。';
+  EditStruckTime.Hint := 'Time character stays bent over after an attack, Default is 100 milliseconds.';
+  CheckBoxDisableStruck.Hint := 'Show a bent over character after being attacked.';
 
-  GridLevelExp.Hint := '修改的经验在点击保存按钮后生效。';
-  ComboBoxLevelExp.Hint := '选择的经验计划，立即生效。';
-  EditKillMonExpMultiple.Hint :=
-    '人物杀怪物所得经验值倍，此参数默认为 1，此经验值以怪物数据库里的经验值为基准。';
-  CheckBoxHighLevelKillMonFixExp.Hint :=
-    '高等级人物杀怪经验是否保持不变，此参数默认为关闭(不打钩)。';
-  EditRepairDoorPrice.Hint := '维修城门所需费用，此参数默认为 2000000金币。';
-  EditRepairWallPrice.Hint := '维修城墙所需费用，此参数默认为 500000金币。';
-  EditHireArcherPrice.Hint := '雇用弓箭手所需费用，此参数默认为 300000金币。';
-  EditHireGuardPrice.Hint := '维修守卫所需费用，此参数默认为 300000金币。';
-  EditCastleGoldMax.Hint :=
-    '城堡内最高可存金币数量，此参数默认为 10000000金币。';
-  EditCastleOneDayGold.Hint :=
-    '城堡一天内最高收入上限，此参数默认为 2000000金币。';
-  EditCastleHomeMap.Hint :=
-    '行会回城点默认所在地图号，此参数默认地图号为 3，以城堡配置文件中的参数为准';
-  EditCastleHomeX.Hint :=
-    '行会回城点默认所在地图座标X，此参数默认座标为 644，以城堡配置文件中的参数为准';
-  EditCastleHomeY.Hint :=
-    '行会回城点默认所在地图座标Y，此参数默认座标为 290，以城堡配置文件中的参数为准';
-  EditCastleName.Hint := '城堡默认的名称，以城堡配置文件中的参数为准。';
-  EditWarRangeX.Hint :=
-    '攻城区域默认座标X范围大小，此参数默认为 100，以城堡配置文件中的参数为准';
-  EditWarRangeY.Hint :=
-    '攻城区域默认座标Y范围大小，此参数默认为 100，以城堡配置文件中的参数为准';
-  CheckBoxGetAllNpcTax.Hint :=
-    '是否收取所有交易NPC的交易税，此参数默认为关闭(不打钩)。';
-  EditTaxRate.Hint := '交易税率，此参为默认为 5，也就是 0.05%。';
+  GridLevelExp.Hint := 'Experience changes take effect after you click the Save button';
+  ComboBoxLevelExp.Hint := 'Choose the experience of planning, effective immediately.';
+  EditKillMonExpMultiple.Hint := 'Experience gained from killing monster multipplier, this parameter defaults to 1, the value of this is used to multiply the experience in the monster database baseline.';
+  CheckBoxHighLevelKillMonFixExp.Hint := 'Experience of high-level character killing monsters remain the same, this parameter is off by default (unchecked).';
+  EditRepairDoorPrice.Hint := 'The cost of repairing gate, Default is 2000000 gold.';
+  EditRepairWallPrice.Hint := 'The cost of repairing walls, Default is 500000 gold.';
+  EditHireArcherPrice.Hint := 'The cost of hiring archers, Default is 300000 gold.';
+  EditHireGuardPrice.Hint := 'The cost of hiring archers, Default is 300000 gold.';
+  EditCastleGoldMax.Hint := 'Castle deposit maximum, Default is 10000000 gold.';
+  EditCastleOneDayGold.Hint := 'Maximum castle income in one day, Default is 2000000 gold.';
+  EditCastleHomeMap.Hint := 'Map that castle is located on, eault is 3. Configuration is subject to parameters file.';
+  EditCastleHomeX.Hint := 'Castle X coordinate, Default is 644. Configuration is subject to parameters file.';
+  EditCastleHomeY.Hint := 'Castle X coordinate, Default is 290. Configuration is subject to parameters file.';
+  EditCastleName.Hint := 'Default Castle name in configuration files. Default is Sabuk. Configuration is subject to parameters file.';
+  EditWarRangeX.Hint := 'Siege range on X cordinates, Default is 100 cells.';
+  EditWarRangeY.Hint := 'Siege range on Y cordinates, Default is 100 cells.';
+  CheckBoxGetAllNpcTax.Hint := 'Collect tax from all NPCs for all transactions, Default is off (unchecked).';
+  EditTaxRate.Hint := 'Transaction tax amount, Default is 5 which is 0.05%.';
 {$IF SoftVersion = VERDEMO}
-  Caption := '游戏参数[演示版本，所有设置调整有效，但不能保存]'
+  Caption := 'Game parameters [demo version, all set to adjust valid, but can not save]'
 {$IFEND}
 
 end;
@@ -852,8 +832,7 @@ procedure TfrmGameConfig.GameConfigControlChanging(Sender: TObject;
   var AllowChange: Boolean);
 begin
   if boModValued then begin
-    if Application.MessageBox('参数设置已经被修改，是否确认不保存修改的设置？',
-      '确认信息', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
+    if Application.MessageBox('Parameter settings have been modified, confirm the settings without saving changes?','Confirmation', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
       uModValue
     end
     else
@@ -930,18 +909,18 @@ begin
   for i := 1 to GridLevelExp.RowCount - 1 do begin
     GridLevelExp.Cells[1, i] := IntToStr(g_Config.dwNeedExps[i]);
   end;
-  GroupBoxLevelExp.Caption := format('升级经验(最高有效等级%d)', [MAXUPLEVEL]);
+  GroupBoxLevelExp.Caption := format('Upgrade experience (the maximum valid Level %d)', [MAXUPLEVEL]);
   (*
   {$IF SoftVersion = VERFREE}
-    GroupBoxLevelExp.Caption:='升级经验(最高有效等级255)';
+    GroupBoxLevelExp.Caption:='Upgrade experience (Maximum Level 255)';
   {$ELSEIF SoftVersion = VERSTD}
-    GroupBoxLevelExp.Caption:='升级经验(最高有效等级350)';
+    GroupBoxLevelExp.Caption:='Upgrade experience (Maximum Level 300)';
   {$ELSEIF SoftVersion = VEROEM}
-    GroupBoxLevelExp.Caption:='升级经验(最高有效等级350)';
+    GroupBoxLevelExp.Caption:='Upgrade experience (Maximum Level 350)';
   {$ELSEIF SoftVersion = VERPRO}
-    GroupBoxLevelExp.Caption:='升级经验(最高有效等级450)';
+    GroupBoxLevelExp.Caption:='Upgrade experience (Maximum Level 450)';
   {$ELSEIF SoftVersion = VERENT}
-    GroupBoxLevelExp.Caption:='升级经验(最高有效等级500)';
+    GroupBoxLevelExp.Caption:='Upgrade experience (Maximum Level 500)';
   {$IFEND}
   *)
   CheckBoxDisHumRun.Checked := not g_Config.boDiableHumanRun;
@@ -1118,7 +1097,7 @@ begin
 
   EditLowLevelKillMonGetExpRate.Enabled := CheckBoxLowLevelKillMonContainExp.Checked;
   EditLowLevelKillMonLevel.Enabled := CheckBoxLowLevelKillMonContainExp.Checked;
-  
+
   SpinEditLimitExpLevel.Value := g_Config.nLimitExpLevel;
   SpinEditLimitExpValue.Value := g_Config.nLimitExpValue;
 
@@ -1176,7 +1155,7 @@ end;
 
 procedure TfrmGameConfig.ButtonGameSpeedDefaultClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息', MB_YESNO +
+  if Application.MessageBox('Are you sure to restore default settings?', 'Confirmation', MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     Exit;
   end;
@@ -1661,7 +1640,7 @@ var
 begin
   SoftVersionDate := StrToIntDef(Trim(EditSoftVersionDate.Text), -1);
   if (SoftVersionDate < 0) {or (SoftVersionDate > High(Integer))} then begin
-    Application.MessageBox('客户端版号设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Client version number is set incorrectly!!!', ' Error message', MB_OK +
       MB_ICONERROR);
     EditSoftVersionDate.SetFocus;
     Exit;
@@ -1729,7 +1708,7 @@ begin
   if not boOpened then
     Exit;
   if
-    Application.MessageBox('升级经验计划设置的经验将立即生效，是否确认使用此经验计划？', '确认信息', MB_YESNO + MB_ICONQUESTION) = IDNO then begin
+    Application.MessageBox('Are you sure you want to ajust the experience settings?', 'Confirmation', MB_YESNO + MB_ICONQUESTION) = IDNO then begin
     Exit;
   end;
 
@@ -1901,7 +1880,7 @@ begin
   for i := 1 to GridLevelExp.RowCount - 1 do begin
     dwExp := StrToIntDef(GridLevelExp.Cells[1, i], 0);
     if (dwExp <= 0) {or (dwExp > High(LongWord))} then begin
-      Application.MessageBox(PChar('等级 ' + IntToStr(i) + ' 升级经验设置错误.'), '错误信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox(PChar('Level ' + IntToStr(i) + 'Error upgrading experience!!!'),'Error', MB_OK + MB_ICONERROR);
       GridLevelExp.Row := i;
       GridLevelExp.SetFocus;
       Exit;
@@ -2382,7 +2361,7 @@ end;
 procedure TfrmGameConfig.ButtonOptionSaveClick(Sender: TObject);
 begin
   if EditRedHomeMap.Text = '' then begin
-    Application.MessageBox('红名村地图设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('PK village map is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditRedHomeMap.SetFocus;
     Exit;
@@ -2390,7 +2369,7 @@ begin
   g_Config.sRedHomeMap := Trim(EditRedHomeMap.Text);
 
   if EditRedDieHomeMap.Text = '' then begin
-    Application.MessageBox('红名村地图设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('PK village map is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditRedDieHomeMap.SetFocus;
     Exit;
@@ -2398,7 +2377,7 @@ begin
   g_Config.sRedDieHomeMap := Trim(EditRedDieHomeMap.Text);
 
   if EditHomeMap.Text = '' then begin
-    Application.MessageBox('应急回城地图设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Home map is set incorrectly!!!', 'Error message', MB_OK +
       MB_ICONERROR);
     EditHomeMap.SetFocus;
     Exit;

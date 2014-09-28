@@ -151,7 +151,7 @@ procedure TFormShop.Button1Click(Sender: TObject);
 var
   ShopItem: pTShopItem;
 begin
-  if Application.MessageBox('是否确定清空所有销售记录？', '提示信息',
+  if Application.MessageBox('Are you sure you want to clear all the sales records?', 'Message',
     MB_OKCANCEL + MB_ICONQUESTION) = IDCANCEL then
   begin
     Exit;
@@ -171,7 +171,7 @@ begin
   for ShopItem in m_ShopItemList do begin
     if ShopItem.wIdent = SpinEditItems.Value then begin
       if ShopItem.wTime = SpinEditTime.Value then begin
-        MessageBox(Handle, '列表当中已有相同的物品...', '提示信息', MB_OK or MB_ICONASTERISK);
+        MessageBox(Handle, 'Which has the same list of items...', 'Message', MB_OK or MB_ICONASTERISK);
         exit;
       end;
     end;
@@ -235,7 +235,7 @@ begin
   end
   else begin
     Dispose(ShopItem);
-    Application.MessageBox('提交的信息不正确，请认真检查！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('The information submitted is incorrect, Please check carefully!', 'Message', MB_OK + MB_ICONINFORMATION);
   end;
 end;
 
@@ -287,7 +287,7 @@ begin
       ShopItemEx.nSupplySellCount := SpinEditSupplyCount.Value;
       ShopItemEx.btSupplyType := ComboBoxSupplyType.ItemIndex;
       ShopItemEx.btSupplyTime := ComboBoxSupplyTime.ItemIndex;
-      ShopItemEx.boSupply := False;  
+      ShopItemEx.boSupply := False;
       //ShopItemEx.boGameGoldBuy := CheckBoxGameGoldBuy.Checked;
 
       SetByteStatus(ShopItemEx.btStatus, Ib_NoDeal, CheckBox1.Checked);
@@ -326,7 +326,7 @@ begin
         ModValue;
       end
       else begin
-        Application.MessageBox('提交的信息不正确，请认真检查！', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('The information submitted is incorrect, Please check carefully!', 'Message', MB_OK + MB_ICONINFORMATION);
       end;
       Dispose(ShopItemEx);
     end;
@@ -349,12 +349,12 @@ begin
   Finally
     SaveList.Free;
   End;
-  MessageBox(Handle, '生成完成...', '提示信息', MB_OK or MB_ICONASTERISK);   }
+  MessageBox(Handle, 'Generate a complete...', 'Message', MB_OK or MB_ICONASTERISK);   }
 end;
 
 procedure TFormShop.ButtonRefurClick(Sender: TObject);
 begin
-  if MessageBox(Handle, PChar('是否确定重新加载物品列表?...'), '提示信息', MB_YESNO or MB_ICONQUESTION) = IDYES then begin
+  if MessageBox(Handle, PChar('Are you sure you want to reload the list of items?'), 'Message', MB_YESNO or MB_ICONQUESTION) = IDYES then begin
     ShopEngine.LoadShopItems;
     ShopEngine.m_boInitialize := True;
     RefShopItems;
@@ -387,7 +387,7 @@ var
   I, nIdx: Integer;
 begin
   if (ssCtrl in Shift) and (Key = word('F')) then begin
-    sIPaddr := InputBox('查找信息', '请输入要查找的内容(支持模糊查找)', '');
+    sIPaddr := InputBox('Finding Information', 'Please enter what youre looking for.', '');
     nIdx := ListBoxitemList.ItemIndex + 1;
     if nIdx >= ListBoxitemList.Count then
       nIdx := 0;
@@ -750,7 +750,7 @@ begin
   if (nBack <> 0) and (nGameCount >= 0) and (nCount > 0) and (nIdent > 0) and (nPic > 0) then begin
     if nBack = 1 then begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nPic,
-        '商铺', '扣除', '成功', '购买', nil);
+        'Shops', 'Deduction', 'Success', 'Buy', nil);
       nBack := -1; //购买的物品不存在
       if (nItemIndex >= 0) and (nItemIndex < m_ShopItemList.Count) then begin
         ShopItem := m_ShopItemList[nItemIndex];
@@ -789,8 +789,8 @@ begin
           PlayObject.m_nGamePoint := nGameCount + (nPic - Pic64);
           IntegerChange(PlayObject.m_nGameDiamond, Pic64, INT_ADD);
           if g_boGameLogGameDiamond then begin
-            AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, '商铺',
-              '+', IntToStr(Pic64), '购买', nil);
+            AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, 'Shop',
+              '+', IntToStr(Pic64), 'Buy', nil);
           end;
           PlayObject.GameGoldChanged;
           PlayObject.DiamondChanged;
@@ -801,8 +801,8 @@ begin
           PlayObject.m_nGamePoint := nGameCount;
           IntegerChange(PlayObject.m_nGameDiamond, nPic, INT_ADD);
           if g_boGameLogGameDiamond then begin
-            AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, '商铺',
-              '+', IntToStr(nPic), '购买', nil);
+            AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, 'Shop',
+              '+', IntToStr(nPic), 'Buy', nil);
           end;
           PlayObject.GameGoldChanged;
           PlayObject.DiamondChanged;
@@ -813,7 +813,7 @@ begin
       end;
     end else begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nPic,
-          '商铺', '扣除', '失败', '购买 ID=' + sBack, nil);
+          'Shops', 'Deduction', 'Failure', 'Buy ID=' + sBack, nil);
       if nBack = -4 then nBack := -5 //点卷不足
       else nBack := -7;
     end;
@@ -824,7 +824,7 @@ end;
 
 procedure TShopEngine.ServerChangeGameGold(PlayObject: TPlayObject; nParam1, nParam2, nParam3, wParam: Integer; sData: string);
 const
-  GOLDMODNAME: array[Boolean] of string[4] = ('扣除', '增加');
+  GOLDMODNAME: array[Boolean] of string[9] = ('Deduction', 'Increase');
 var
   sBack, sGameCount: string;
   nBack, nGameCount, nCount: Integer;
@@ -839,12 +839,12 @@ begin
   if (nBack <> 0) and (nGameCount >= 0) and (nCount > 0) then begin
     if nBack = 1 then begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nCount,
-        '商铺', GOLDMODNAME[boAdd], '成功', '修改', nil);
+        'Shop', GOLDMODNAME[boAdd], 'Success', 'Modified', nil);
       PlayObject.m_nGamePoint := nGameCount;
       PlayObject.GameGoldChanged;
     end else begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nCount,
-        '商铺', GOLDMODNAME[boAdd], '失败', '修改 ID=' + sBack, nil);
+        'Shop', GOLDMODNAME[boAdd], 'Failure', 'Modified ID=' + sBack, nil);
     end;
   end;
 end;
@@ -862,24 +862,24 @@ begin
   if (nBack <> 0) and (nGameCount >= 0) and (nTradeCount > 0) then begin
     if nBack = 1 then begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nTradeCount,
-          '商铺', '扣除', '成功', '对换', nil);
+          'Shops', 'Deduction', 'Success', 'Swap', nil);
       PlayObject.m_nGamePoint := nGameCount;
       IntegerChange(PlayObject.m_nGameGold, nTradeCount, INT_ADD);
       IntegerChange(PlayObject.m_nGameDiamond, nTradeCount, INT_ADD);
       if g_boGameLogGameGold then begin
-        AddGameLog(PlayObject, LOG_GAMEGOLDCHANGED, sSTRING_GAMEGOLD, 0, PlayObject.m_nGameGold, '商铺',
-          '+', IntToStr(nTradeCount), '对换', nil);
+        AddGameLog(PlayObject, LOG_GAMEGOLDCHANGED, sSTRING_GAMEGOLD, 0, PlayObject.m_nGameGold, 'Shop',
+          '+', IntToStr(nTradeCount), 'Swap', nil);
       end;
       if g_boGameLogGameDiamond then begin
-        AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, '商铺',
-          '+', IntToStr(nTradeCount), '对换', nil);
+        AddGameLog(PlayObject, LOG_GAMEDIAMONDCHANGED, sSTRING_GAMEDIAMOND, 0, PlayObject.m_nGameDiamond, 'Shop',
+          '+', IntToStr(nTradeCount), 'Swap', nil);
       end;
       PlayObject.GameGoldChanged;
       PlayObject.DiamondChanged;
       PlayObject.SendDefMessage(SM_CLIENTBUYITEM, -6, LoWord(nTradeCount), HiWord(nTradeCount), 0, '');
     end else begin
       AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, nParam1, nTradeCount,
-          '商铺', '扣除', '失败', '对换 ID=' + sBack, nil);
+          'Shops', 'Deduction', 'Failure', 'Swap ID=' + sBack, nil);
       if nBack = -4 then PlayObject.SendDefMessage(SM_CLIENTBUYITEM, -2, 0, 0, 0, '')
       else PlayObject.SendDefMessage(SM_CLIENTBUYITEM, -20, 0, 0, 0, '');
     end;
@@ -915,8 +915,8 @@ begin
     MainOutMessage(IntToStr(UserItem.EffectValue.btEffect));
         PlayObject.SendAddItem(UserItem);
         if StdItem.NeedIdentify = 1 then
-          AddGameLog(PlayObject, LOG_ADDITEM, StdItem.Name, UserItem.MakeIndex, UserItem.Dura, '商铺',
-            IntToStr(nCount), GoldName, '购买', UserItem);
+          AddGameLog(PlayObject, LOG_ADDITEM, StdItem.Name, UserItem.MakeIndex, UserItem.Dura, 'Shop',
+            IntToStr(nCount), GoldName, 'Buy', UserItem);
       end else begin
         while (nCount > 0) do begin
           New(UserItem2);
@@ -926,8 +926,8 @@ begin
     MainOutMessage(IntToStr(UserItem.EffectValue.btEffect));
           PlayObject.SendAddItem(UserItem2);
           if StdItem.NeedIdentify = 1 then
-            AddGameLog(PlayObject, LOG_ADDITEM, StdItem.Name, UserItem2.MakeIndex, UserItem2.Dura, '商铺',
-              '1', GoldName, '购买', UserItem2);
+            AddGameLog(PlayObject, LOG_ADDITEM, StdItem.Name, UserItem2.MakeIndex, UserItem2.Dura, 'Shops',
+              '1', GoldName, 'Buy', UserItem2);
           Dec(nCount);
         end;
         Dispose(UserItem);
@@ -982,7 +982,7 @@ begin
                   PlayObject.m_nSQLAppendBool := True; //扣除
                   PlayObject.m_nSQLAppendString := IntToStr(Pic64) + '/' + IntToStr(nIdent) + '/';
                   AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, PlayObject.m_nWaitIndex, Pic64,
-                    '商铺', '扣除', '申请', '购买', nil);
+                    'Shops', 'Deduction', 'Application', 'Buy', nil);
                   sSendMsg := IntToStr(PlayObject.m_nWaitIndex) + '/';
                   sSendMsg := sSendMsg + IntToStr(PlayObject.m_nDBIndex) + '/';
                   sSendMsg := sSendMsg + IntToStr(RM_SHOPGAMEGOLDCHANGE) + '/';
@@ -1007,7 +1007,7 @@ begin
                     if nBack = 1 then begin
                       IntegerChange(PlayObject.m_nGold, Pic64, INT_DEL);
                       if g_boGameLogGold then
-                        AddGameLog(PlayObject, LOG_GOLDCHANGED, sSTRING_GOLDNAME, 0, PlayObject.m_nGold, '商铺', '-', IntToStr(Pic64), '购买', nil);
+                        AddGameLog(PlayObject, LOG_GOLDCHANGED, sSTRING_GOLDNAME, 0, PlayObject.m_nGold, 'Shop', '-', IntToStr(Pic64), 'Buy', nil);
                       nShopCount := ShopItem.nCount;
                       PlayObject.GoldChanged;
                     end;
@@ -1022,8 +1022,8 @@ begin
                 if nBack = 1 then begin
                   IntegerChange(PlayObject.m_nGameGold, Pic64, INT_DEL);
                   if g_boGameLogGameGold then
-                    AddGameLog(PlayObject, LOG_GAMEGOLDCHANGED, sSTRING_GAMEGOLD, 0, PlayObject.m_nGameGold, '商铺',
-                      '-', IntToStr(Pic64), '购买', nil);
+                    AddGameLog(PlayObject, LOG_GAMEGOLDCHANGED, sSTRING_GAMEGOLD, 0, PlayObject.m_nGameGold, 'Shop',
+                      '-', IntToStr(Pic64), 'Buy', nil);
                   nShopCount := ShopItem.nCount;
                   PlayObject.GameGoldChanged;
                 end;
@@ -1042,7 +1042,7 @@ end;
 
 procedure TShopEngine.ClientChangeGameGold(PlayObject: TPlayObject; nGoldCount: Integer; boAdd: Boolean);
 const
-  GOLDMODNAME: array[Boolean] of string[4] = ('扣除', '增加');
+  GOLDMODNAME: array[Boolean] of string[9] = ('Deduction', 'Increase');
 var
   sSendMsg: string;
 begin
@@ -1051,7 +1051,7 @@ begin
     PlayObject.m_nSQLAppendCount := nGoldCount;
     PlayObject.m_nSQLAppendBool := boAdd; //是否扣除
     AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, PlayObject.m_nWaitIndex, nGoldCount,
-      '商铺', GOLDMODNAME[boAdd], '申请', '修改', nil);
+      'Shops', GOLDMODNAME[boAdd], 'Application', 'Modified', nil);
     sSendMsg := IntToStr(PlayObject.m_nWaitIndex) + '/';
     sSendMsg := sSendMsg + IntToStr(PlayObject.m_nDBIndex) + '/';
     sSendMsg := sSendMsg + IntToStr(RM_SHOPGETPOINT) + '/';
@@ -1110,7 +1110,7 @@ begin
     PlayObject.m_nSQLAppendCount := nTradeCount;
     PlayObject.m_nSQLAppendBool := True; //扣除
     AddGameLog(PlayObject, LOG_GAMEPOINTCHANGED, sSTRING_GAMEPOINT, PlayObject.m_nWaitIndex, nTradeCount,
-      '商铺', '扣除', '申请', '对换', nil);
+      'Shops', 'Deduction', 'Application', 'Swap', nil);
     sSendMsg := IntToStr(PlayObject.m_nWaitIndex) + '/';
     sSendMsg := sSendMsg + IntToStr(PlayObject.m_nDBIndex) + '/';
     sSendMsg := sSendMsg + IntToStr(RM_SHOPGETGAMEPOINT) + '/';

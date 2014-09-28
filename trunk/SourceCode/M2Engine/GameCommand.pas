@@ -94,23 +94,23 @@ uses M2Share;
 procedure TfrmGameCmd.FormCreate(Sender: TObject);
 begin
   PageControl.ActivePageIndex := 0;
-  StringGridGameCmd.RowCount := 2;
-  StringGridGameCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameCmd.Cells[1, 0] := '所需权限';
-  StringGridGameCmd.Cells[2, 0] := '命令格式';
-  StringGridGameCmd.Cells[3, 0] := '命令说明';
+  StringGridGameCmd.RowCount := 50;
+  StringGridGameCmd.Cells[0, 0] := 'Command';
+  StringGridGameCmd.Cells[1, 0] := 'Permission';
+  StringGridGameCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameCmd.Cells[3, 0] := 'Description';
 
-  StringGridGameMasterCmd.RowCount := 2;
-  StringGridGameMasterCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameMasterCmd.Cells[1, 0] := '所需权限';
-  StringGridGameMasterCmd.Cells[2, 0] := '命令格式';
-  StringGridGameMasterCmd.Cells[3, 0] := '命令说明';
+  StringGridGameMasterCmd.RowCount := 105;
+  StringGridGameMasterCmd.Cells[0, 0] := 'Command';
+  StringGridGameMasterCmd.Cells[1, 0] := 'Permission';
+  StringGridGameMasterCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameMasterCmd.Cells[3, 0] := 'Description';
 
-  StringGridGameDebugCmd.RowCount := 2;
-  StringGridGameDebugCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameDebugCmd.Cells[1, 0] := '所需权限';
-  StringGridGameDebugCmd.Cells[2, 0] := '命令格式';
-  StringGridGameDebugCmd.Cells[3, 0] := '命令说明';
+  StringGridGameDebugCmd.RowCount := 41;
+  StringGridGameDebugCmd.Cells[0, 0] := 'Command';
+  StringGridGameDebugCmd.Cells[1, 0] := 'Permission';
+  StringGridGameDebugCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameDebugCmd.Cells[3, 0] := 'Description';
 
 end;
 
@@ -145,113 +145,164 @@ begin
 
   RefGameUserCmd(@g_GameCommand.Data,
     '@' + g_GameCommand.Data.sCmd,
-    '查看当前服务器日期时间');
+                   'Shows system date');
   RefGameUserCmd(@g_GameCommand.PRVMSG,
     '@' + g_GameCommand.PRVMSG.sCmd,
-    '禁止指定人物发的私聊信息');
+                   'Block private messages');
   RefGameUserCmd(@g_GameCommand.ALLOWMSG,
     '@' + g_GameCommand.ALLOWMSG.sCmd,
-    '禁止别人向自己发私聊信息');
+                   'Allow chat to show');
   RefGameUserCmd(@g_GameCommand.LETSHOUT,
     '@' + g_GameCommand.LETSHOUT.sCmd,
-    '禁止接收组队聊天信息');
+                   'Allow shouts to show');
   RefGameUserCmd(@g_GameCommand.LETTRADE,
     '@' + g_GameCommand.LETTRADE.sCmd,
-    '禁止交易交易物品');
+                   'Allow trading');
   RefGameUserCmd(@g_GameCommand.LETGUILD,
     '@' + g_GameCommand.LETGUILD.sCmd,
-    '允许加入行会');
+                   'Allow player to join a guild');
   RefGameUserCmd(@g_GameCommand.ENDGUILD,
     '@' + g_GameCommand.ENDGUILD.sCmd,
-    '退出当前所加入的行会');
+                   'Leaves the players current guild');
   RefGameUserCmd(@g_GameCommand.BANGUILDCHAT,
     '@' + g_GameCommand.BANGUILDCHAT.sCmd,
-    '禁止接收行会聊天信息');
+                   'Block guild chats from showing');
   RefGameUserCmd(@g_GameCommand.AUTHALLY,
     '@' + g_GameCommand.AUTHALLY.sCmd,
-    '许行会进入联盟');
+                   'Allow allying of two guilds');
   RefGameUserCmd(@g_GameCommand.AUTH,
     '@' + g_GameCommand.AUTH.sCmd,
-    '开始进行行会联盟');
+                   'Ally two guilds');
   RefGameUserCmd(@g_GameCommand.AUTHCANCEL,
     '@' + g_GameCommand.AUTHCANCEL.sCmd,
-    '取消行会联盟关系');
-  RefGameUserCmd(@g_GameCommand.USERMOVE,
-    '@' + g_GameCommand.USERMOVE.sCmd,
-    '移动地图指定座标(需要戴传送装备)');
-  RefGameUserCmd(@g_GameCommand.SEARCHING,
-    '@' + g_GameCommand.SEARCHING.sCmd,
-    '探测人物所在位置(需要戴探测装备)');
-  RefGameUserCmd(@g_GameCommand.ALLOWGROUPCALL,
-    '@' + g_GameCommand.ALLOWGROUPCALL.sCmd,
-    '允许天地合一');
-  RefGameUserCmd(@g_GameCommand.GROUPRECALLL,
-    '@' + g_GameCommand.GROUPRECALLL.sCmd,
-    '将组队人员传送到身边(需要戴记忆全套装备)');
-  RefGameUserCmd(@g_GameCommand.ALLOWGUILDRECALL,
-    '@' + g_GameCommand.ALLOWGUILDRECALL.sCmd,
-    '允许行会合一');
-  RefGameUserCmd(@g_GameCommand.GUILDRECALLL,
-    '@' + g_GameCommand.GUILDRECALLL.sCmd,
-    '将行会成员传送身边(需要戴行会传送装备)');
+                   'Cancel a guild alliance');
   RefGameUserCmd(@g_GameCommand.ALLOWFIREND,
     '@' + g_GameCommand.ALLOWFIREND.sCmd,
-    '允许/拒绝加为好友');
-  {RefGameUserCmd(@g_GameCommand.UNLOCKSTORAGE,
-    '@' + g_GameCommand.UNLOCKSTORAGE.sCmd,
-    '仓库解锁');
-  RefGameUserCmd(@g_GameCommand.UnLock,
-    '@' + g_GameCommand.UnLock.sCmd,
-    '开启登录密码锁');
-  RefGameUserCmd(@g_GameCommand.Lock,
-    '@' + g_GameCommand.Lock.sCmd,
-    '锁定仓库');
-  RefGameUserCmd(@g_GameCommand.SETPASSWORD,
-    '@' + g_GameCommand.SETPASSWORD.sCmd,
-    '设置仓库密码');
-  RefGameUserCmd(@g_GameCommand.CHGPASSWORD,
-    '@' + g_GameCommand.CHGPASSWORD.sCmd,
-    '修改仓库密码');
-  RefGameUserCmd(@g_GameCommand.UNPASSWORD,
-    '@' + g_GameCommand.UNPASSWORD.sCmd,
-    '清除密码(先开锁再清除密码)');    }
-  RefGameUserCmd(@g_GameCommand.DEAR,
-    '@' + g_GameCommand.DEAR.sCmd,
-    '查询夫妻位置');
-  RefGameUserCmd(@g_GameCommand.ALLOWDEARRCALL,
-    '@' + g_GameCommand.ALLOWDEARRCALL.sCmd,
-    '允许夫妻传送');
-  RefGameUserCmd(@g_GameCommand.DEARRECALL,
-    '@' + g_GameCommand.DEARRECALL.sCmd,
-    '夫妻将对方传送到身边');
-  RefGameUserCmd(@g_GameCommand.MASTER,
-    '@' + g_GameCommand.MASTER.sCmd,
-    '查询师徒位置');
-  RefGameUserCmd(@g_GameCommand.ALLOWMASTERRECALL,
-    '@' + g_GameCommand.ALLOWMASTERRECALL.sCmd,
-    '允许师徒传送');
-  RefGameUserCmd(@g_GameCommand.MASTERECALL,
-    '@' + g_GameCommand.MASTERECALL.sCmd,
-    '师父将徒弟召唤到身边');
-  RefGameUserCmd(@g_GameCommand.TAKEONHORSE,
-    '@' + g_GameCommand.TAKEONHORSE.sCmd,
-    '带马牌后骑上马');
-  RefGameUserCmd(@g_GameCommand.TAKEOFHORSE,
-    '@' + g_GameCommand.TAKEOFHORSE.sCmd,
-    '从马上下来');
-  {RefGameUserCmd(@g_GameCommand.LOCKLOGON,
-    '@' + g_GameCommand.LOCKLOGON.sCmd,
-    '开启/关闭登录锁');   }
-
+                    'Allow Friendship');
   RefGameUserCmd(@g_GameCommand.AllSysMsg,
     '@' + g_GameCommand.AllSysMsg.sCmd,
-    '千里传音');
-  RefGameUserCmd(@g_GameCommand.MEMBERFUNCTION,
-    '@' + g_GameCommand.MEMBERFUNCTION.sCmd,
-    '调用QManage中的@Member');
-  RefGameUserCmd(@g_GameCommand.MEMBERFUNCTIONEX,
-    '@' + g_GameCommand.MEMBERFUNCTIONEX.sCmd,
-    '调用QFunction中的@Member');
+                    '千里传音');     //Translate
+  Exit;
+
+  StringGridGameCmd.Cells[0, 12] := g_GameCommand.DIARY.sCmd;
+  StringGridGameCmd.Cells[1, 12] := IntToStr(g_GameCommand.DIARY.nPermissionMin);
+  StringGridGameCmd.Cells[2, 12] := '@' + g_GameCommand.DIARY.sCmd;
+  StringGridGameCmd.Objects[0, 12] := TObject(@g_GameCommand.DIARY);
+
+  StringGridGameCmd.Cells[0, 13] := g_GameCommand.USERMOVE.sCmd;
+  StringGridGameCmd.Cells[1, 13] := IntToStr(g_GameCommand.USERMOVE.nPermissionMin);
+  StringGridGameCmd.Cells[2, 13] := '@' + g_GameCommand.USERMOVE.sCmd;
+  StringGridGameCmd.Objects[0, 13] := TObject(@g_GameCommand.USERMOVE);
+
+  StringGridGameCmd.Cells[0, 14] := g_GameCommand.SEARCHING.sCmd;
+  StringGridGameCmd.Cells[1, 14] := IntToStr(g_GameCommand.SEARCHING.nPermissionMin);
+  StringGridGameCmd.Cells[2, 14] := '@' + g_GameCommand.SEARCHING.sCmd;
+  StringGridGameCmd.Objects[0, 14] := TObject(@g_GameCommand.SEARCHING);
+
+  StringGridGameCmd.Cells[0, 15] := g_GameCommand.ALLOWGROUPCALL.sCmd;
+  StringGridGameCmd.Cells[1, 15] := IntToStr(g_GameCommand.ALLOWGROUPCALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 15] := '@' + g_GameCommand.ALLOWGROUPCALL.sCmd;
+  StringGridGameCmd.Objects[0, 15] := TObject(@g_GameCommand.ALLOWGROUPCALL);
+
+  StringGridGameCmd.Cells[0, 16] := g_GameCommand.GROUPRECALLL.sCmd;
+  StringGridGameCmd.Cells[1, 16] := IntToStr(g_GameCommand.GROUPRECALLL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 16] := '@' + g_GameCommand.GROUPRECALLL.sCmd;
+  StringGridGameCmd.Objects[0, 16] := TObject(@g_GameCommand.GROUPRECALLL);
+
+  StringGridGameCmd.Cells[0, 17] := g_GameCommand.ALLOWGUILDRECALL.sCmd;
+  StringGridGameCmd.Cells[1, 17] := IntToStr(g_GameCommand.ALLOWGUILDRECALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 17] := '@' + g_GameCommand.ALLOWGUILDRECALL.sCmd;
+  StringGridGameCmd.Objects[0, 17] := TObject(@g_GameCommand.ALLOWGUILDRECALL);
+
+  StringGridGameCmd.Cells[0, 18] := g_GameCommand.GUILDRECALLL.sCmd;
+  StringGridGameCmd.Cells[1, 18] := IntToStr(g_GameCommand.GUILDRECALLL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 18] := '@' + g_GameCommand.GUILDRECALLL.sCmd;
+  StringGridGameCmd.Objects[0, 18] := TObject(@g_GameCommand.GUILDRECALLL);
+
+  StringGridGameCmd.Cells[0, 19] := g_GameCommand.UNLOCKSTORAGE.sCmd;
+  StringGridGameCmd.Cells[1, 19] := IntToStr(g_GameCommand.UNLOCKSTORAGE.nPermissionMin);
+  StringGridGameCmd.Cells[2, 19] := '@' + g_GameCommand.UNLOCKSTORAGE.sCmd;
+  StringGridGameCmd.Objects[0, 19] := TObject(@g_GameCommand.UNLOCKSTORAGE);
+
+  StringGridGameCmd.Cells[0, 20] := g_GameCommand.UnLock.sCmd;
+  StringGridGameCmd.Cells[1, 20] := IntToStr(g_GameCommand.UnLock.nPermissionMin);
+  StringGridGameCmd.Cells[2, 20] := '@' + g_GameCommand.UnLock.sCmd;
+  StringGridGameCmd.Objects[0, 20] := TObject(@g_GameCommand.UnLock);
+
+  StringGridGameCmd.Cells[0, 21] := g_GameCommand.Lock.sCmd;
+  StringGridGameCmd.Cells[1, 21] := IntToStr(g_GameCommand.Lock.nPermissionMin);
+  StringGridGameCmd.Cells[2, 21] := '@' + g_GameCommand.Lock.sCmd;
+  StringGridGameCmd.Objects[0, 21] := TObject(@g_GameCommand.Lock);
+
+  StringGridGameCmd.Cells[0, 22] := g_GameCommand.SETPASSWORD.sCmd;
+  StringGridGameCmd.Cells[1, 22] := IntToStr(g_GameCommand.SETPASSWORD.nPermissionMin);
+  StringGridGameCmd.Cells[2, 22] := '@' + g_GameCommand.SETPASSWORD.sCmd;
+  StringGridGameCmd.Objects[0, 22] := TObject(@g_GameCommand.SETPASSWORD);
+
+  StringGridGameCmd.Cells[0, 23] := g_GameCommand.CHGPASSWORD.sCmd;
+  StringGridGameCmd.Cells[1, 23] := IntToStr(g_GameCommand.CHGPASSWORD.nPermissionMin);
+  StringGridGameCmd.Cells[2, 23] := '@' + g_GameCommand.CHGPASSWORD.sCmd;
+  StringGridGameCmd.Objects[0, 23] := TObject(@g_GameCommand.CHGPASSWORD);
+
+  StringGridGameCmd.Cells[0, 24] := g_GameCommand.UNPASSWORD.sCmd;
+  StringGridGameCmd.Cells[1, 24] := IntToStr(g_GameCommand.UNPASSWORD.nPermissionMin);
+  StringGridGameCmd.Cells[2, 24] := '@' + g_GameCommand.UNPASSWORD.sCmd;
+  StringGridGameCmd.Objects[0, 24] := TObject(@g_GameCommand.UNPASSWORD);
+
+   StringGridGameCmd.Cells[0, 26] := g_GameCommand.DEAR.sCmd;
+  StringGridGameCmd.Cells[1, 26] := IntToStr(g_GameCommand.DEAR.nPermissionMin);
+  StringGridGameCmd.Cells[2, 26] := '@' + g_GameCommand.DEAR.sCmd;
+  StringGridGameCmd.Objects[0, 26] := TObject(@g_GameCommand.DEAR);
+
+  StringGridGameCmd.Cells[0, 27] := g_GameCommand.ALLOWDEARRCALL.sCmd;
+  StringGridGameCmd.Cells[1, 27] := IntToStr(g_GameCommand.ALLOWDEARRCALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 27] := '@' + g_GameCommand.ALLOWDEARRCALL.sCmd;
+  StringGridGameCmd.Objects[0, 27] := TObject(@g_GameCommand.ALLOWDEARRCALL);
+
+  StringGridGameCmd.Cells[0, 28] := g_GameCommand.DEARRECALL.sCmd;
+  StringGridGameCmd.Cells[1, 28] := IntToStr(g_GameCommand.DEARRECALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 28] := '@' + g_GameCommand.DEARRECALL.sCmd;
+  StringGridGameCmd.Objects[0, 28] := TObject(@g_GameCommand.DEARRECALL);
+
+  StringGridGameCmd.Cells[0, 29] := g_GameCommand.Master.sCmd;
+  StringGridGameCmd.Cells[1, 29] := IntToStr(g_GameCommand.Master.nPermissionMin);
+  StringGridGameCmd.Cells[2, 29] := '@' + g_GameCommand.Master.sCmd;
+  StringGridGameCmd.Objects[0, 29] := TObject(@g_GameCommand.Master);
+
+  StringGridGameCmd.Cells[0, 30] := g_GameCommand.ALLOWMASTERRECALL.sCmd;
+  StringGridGameCmd.Cells[1, 30] := IntToStr(g_GameCommand.ALLOWMASTERRECALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 30] := '@' + g_GameCommand.ALLOWMASTERRECALL.sCmd;
+  StringGridGameCmd.Objects[0, 30] := TObject(@g_GameCommand.ALLOWMASTERRECALL);
+
+  StringGridGameCmd.Cells[0, 31] := g_GameCommand.MASTERECALL.sCmd;
+  StringGridGameCmd.Cells[1, 31] := IntToStr(g_GameCommand.MASTERECALL.nPermissionMin);
+  StringGridGameCmd.Cells[2, 31] := '@' + g_GameCommand.MASTERECALL.sCmd;
+  StringGridGameCmd.Objects[0, 31] := TObject(@g_GameCommand.MASTERECALL);
+
+  StringGridGameCmd.Cells[0, 34] := g_GameCommand.TAKEONHORSE.sCmd;
+  StringGridGameCmd.Cells[1, 34] := IntToStr(g_GameCommand.TAKEONHORSE.nPermissionMin);
+  StringGridGameCmd.Cells[2, 34] := '@' + g_GameCommand.TAKEONHORSE.sCmd;
+  StringGridGameCmd.Objects[0, 34] := TObject(@g_GameCommand.TAKEONHORSE);
+
+  StringGridGameCmd.Cells[0, 35] := g_GameCommand.TAKEOFHORSE.sCmd;
+  StringGridGameCmd.Cells[1, 35] := IntToStr(g_GameCommand.TAKEOFHORSE.nPermissionMin);
+  StringGridGameCmd.Cells[2, 35] := '@' + g_GameCommand.TAKEOFHORSE.sCmd;
+  StringGridGameCmd.Objects[0, 35] := TObject(@g_GameCommand.TAKEOFHORSE);
+
+  StringGridGameCmd.Cells[0, 37] := g_GameCommand.LOCKLOGON.sCmd;
+  StringGridGameCmd.Cells[1, 37] := IntToStr(g_GameCommand.LOCKLOGON.nPermissionMin);
+  StringGridGameCmd.Cells[2, 37] := '@' + g_GameCommand.LOCKLOGON.sCmd;
+  StringGridGameCmd.Objects[0, 37] := TObject(@g_GameCommand.LOCKLOGON);
+
+  StringGridGameCmd.Cells[0, 25] := g_GameCommand.MEMBERFUNCTION.sCmd;
+  StringGridGameCmd.Cells[1, 25] := IntToStr(g_GameCommand.MEMBERFUNCTION.nPermissionMin);
+  StringGridGameCmd.Cells[2, 25] := '@' + g_GameCommand.MEMBERFUNCTION.sCmd;
+  StringGridGameCmd.Objects[0, 25] := TObject(@g_GameCommand.MEMBERFUNCTION);
+
+  StringGridGameCmd.Cells[0, 36] := g_GameCommand.MEMBERFUNCTIONEX.sCmd;
+  StringGridGameCmd.Cells[1, 36] := IntToStr(g_GameCommand.MEMBERFUNCTIONEX.nPermissionMin);
+  StringGridGameCmd.Cells[2, 36] := '@' + g_GameCommand.MEMBERFUNCTIONEX.sCmd;
+  StringGridGameCmd.Objects[0, 36] := TObject(@g_GameCommand.MEMBERFUNCTIONEX);
 end;
 
 procedure TfrmGameCmd.StringGridGameCmdClick(Sender: TObject);
@@ -292,7 +343,7 @@ begin
   sCmd := Trim(EditUserCmdName.Text);
   nPermission := EditUserCmdPerMission.Value;
   if sCmd = '' then begin
-    Application.MessageBox('命令名称不能为空.', '提示信息',
+    Application.MessageBox('Command name can not be empty!!!','Message',
       MB_OK +
       MB_ICONERROR);
     EditUserCmdName.SetFocus;
@@ -376,362 +427,351 @@ begin
   EditGameMasterCmdOK.Enabled := False;
   nRefGameMasterIndex := 0;
 
-  {RefGameMasterCmd(@g_GameCommand.CLRPASSWORD,
-    '@' + g_GameCommand.CLRPASSWORD.sCmd + ' 人物名称',
-    '清除人物仓库/登录密码(支持权限分配)'); }
+  RefGameMasterCmd(@g_GameCommand.CLRPASSWORD,
+    '@' + g_GameCommand.CLRPASSWORD.sCmd + ' <Username>',
+                   'Clears a users password if they forget it');
 
-  {RefGameMasterCmd(@g_GameCommand.WHO,
+  RefGameMasterCmd(@g_GameCommand.WHO,
     '@' + g_GameCommand.WHO.sCmd,
-    '查看当前服务器在线人数(支持权限分配)');  }
+                   'Shows total no of users connected to current server');
 
-  {RefGameMasterCmd(@g_GameCommand.TOTAL,
+  RefGameMasterCmd(@g_GameCommand.TOTAL,
     '@' + g_GameCommand.TOTAL.sCmd,
-    '查看所有服务器在线人数(支持权限分配)');    }
+                   'Shows total no of users connected accross all servers');
 
   RefGameMasterCmd(@g_GameCommand.GAMEMASTER,
     '@' + g_GameCommand.GAMEMASTER.sCmd,
-    '进入/退出管理员模式(进入模式后不会受到任何角色攻击)(支持权限分配)');
+                   'Puts a user in/out of GameMaster mode (Invisible to mobs)');
 
   RefGameMasterCmd(@g_GameCommand.OBSERVER,
     '@' + g_GameCommand.OBSERVER.sCmd,
-    '进入/退出隐身模式(进入模式后别人看不到自己)(支持权限分配)');
+                   'Puts a user in/out of observer mode (Invisible to all)');
 
   RefGameMasterCmd(@g_GameCommand.SUEPRMAN,
     '@' + g_GameCommand.SUEPRMAN.sCmd,
-    '进入/退出无敌模式(进入模式后人物不会死亡)(支持权限分配)');
+                   'Makes the user invincible');
 
   RefGameMasterCmd(@g_GameCommand.MAKE,
-    '@' + g_GameCommand.MAKE.sCmd + ' 物品名称 数量',
-    '制造指定物品(支持权限分配，小于最大权限受允许、禁止制造列表限制)');
+    '@' + g_GameCommand.MAKE.sCmd + ' <Itemname> <Amount>',
+                   'Manually creates an item');
 
   RefGameMasterCmd(@g_GameCommand.SMAKE,
-    '@' + g_GameCommand.SMAKE.sCmd + ' 参数详见使用说明',
-    '调整自己身上的物品属性(支持权限分配)');
+    '@' + g_GameCommand.SMAKE.sCmd + ' <Itemname> <DC> <MC> <SC>',
+                   'Creates an item with added stats');
 
   RefGameMasterCmd(@g_GameCommand.Move,
-    '@' + g_GameCommand.Move.sCmd + ' 地图号',
-    '移动到指定地图(支持权限分配，小于最大权限受受禁止传送地图列表限制)');
+    '@' + g_GameCommand.Move.sCmd + ' <Map No>',
+                   'Moves a player to a random location on the specified map');
 
   RefGameMasterCmd(@g_GameCommand.POSITIONMOVE,
-    '@' + g_GameCommand.POSITIONMOVE.sCmd + ' 地图号 X Y',
-    '移动到指定地图(支持权限分配，小于最大权限受受禁止传送地图列表限制)');
+    '@' + g_GameCommand.POSITIONMOVE.sCmd + ' <Map No> <X Co-ordinate> <Y Co-ordinate>',
+                   'Moves a player to a set location on the specified map');
 
   RefGameMasterCmd(@g_GameCommand.RECALL,
-    '@' + g_GameCommand.RECALL.sCmd + ' 人物名称',
-    '将指定人物召唤到身边(支持权限分配)');
+    '@' + g_GameCommand.RECALL.sCmd + ' <Username>',
+                   'Teleports specified player to your location');
 
   RefGameMasterCmd(@g_GameCommand.REGOTO,
-    '@' + g_GameCommand.REGOTO.sCmd + ' 人物名称',
-    '跟踪指定人物(支持权限分配)');
+    '@' + g_GameCommand.REGOTO.sCmd + ' <Username>',
+                   'Teleports command user to the specified users location');
 
   RefGameMasterCmd(@g_GameCommand.TING,
-    '@' + g_GameCommand.TING.sCmd + ' 人物名称',
-    '将指定人物随机传送(支持权限分配)');
+    '@' + g_GameCommand.TING.sCmd + ' <Username>',
+                   'Randomly teleports a player');
 
   RefGameMasterCmd(@g_GameCommand.SUPERTING,
-    '@' + g_GameCommand.SUPERTING.sCmd + ' 人物名称 范围大小',
-    '将指定人物身边指定范围内的人物随机传送(支持权限分配)');
+    '@' + g_GameCommand.SUPERTING.sCmd + ' <Username> <Amount(0 - 10)>',
+                   'Randomly teleports a player and the surrounding players');
 
   RefGameMasterCmd(@g_GameCommand.MAPMOVE,
-    '@' + g_GameCommand.MAPMOVE.sCmd + ' 源地图号 目标地图号',
-    '将整个地图中的人物移动到其它地图中(支持权限分配)');
+    '@' + g_GameCommand.MAPMOVE.sCmd + ' <Old map no> <New map no>',
+                   '? gives a map a new map no ?');
 
   RefGameMasterCmd(@g_GameCommand.INFO,
-    '@' + g_GameCommand.INFO.sCmd + ' 人物名称',
-    '看人物信息(支持权限分配)');
+    '@' + g_GameCommand.INFO.sCmd + ' <Username>',
+                   'Shows a users full details');
 
   RefGameMasterCmd(@g_GameCommand.HUMANLOCAL,
-    '@' + g_GameCommand.HUMANLOCAL.sCmd + ' 地图号',
-    '查询人物IP所在地区(需加载IP地区查询插件)(支持权限分配)');
+    '@' + g_GameCommand.HUMANLOCAL.sCmd + ' <Map no>',
+                   'Shows the no of players on the specified map');
 
   RefGameMasterCmd(@g_GameCommand.VIEWWHISPER,
-    '@' + g_GameCommand.VIEWWHISPER.sCmd + ' 人物名称',
-    '查看指定人物的私聊信息(支持权限分配)');
+    '@' + g_GameCommand.VIEWWHISPER.sCmd + ' <Username>',
+                   'Interceps a copy of any PMs sent to the specified user');
 
   RefGameMasterCmd(@g_GameCommand.MOBLEVEL,
     '@' + g_GameCommand.MOBLEVEL.sCmd,
-    '查看身边角色信息(支持权限分配)');
+                   'Shows the data of the surroumnding mobs');
 
   RefGameMasterCmd(@g_GameCommand.MOBCOUNT,
-    '@' + g_GameCommand.MOBCOUNT.sCmd + ' 地图号',
-    '查看地图中怪物数量(支持权限分配)');
+    '@' + g_GameCommand.MOBCOUNT.sCmd + ' <Map no>',
+                   'Displays how many mobs there are on the specified map');
 
   RefGameMasterCmd(@g_GameCommand.HUMANCOUNT,
     '@' + g_GameCommand.HUMANCOUNT.sCmd,
-    '查看身边人数(支持权限分配)');
+                   'No of players on the current map');
 
   RefGameMasterCmd(@g_GameCommand.Map,
     '@' + g_GameCommand.Map.sCmd,
-    '显示当前所在地图相关信息(支持权限分配)');
+                   'Displays the current map filename');
 
   RefGameMasterCmd(@g_GameCommand.Level,
     '@' + g_GameCommand.Level.sCmd,
-    '调整自己的等级(支持权限分配)');
+                   'Changes your own level');
 
   RefGameMasterCmd(@g_GameCommand.KICK,
-    '@' + g_GameCommand.KICK.sCmd + ' 人物名称',
-    '将指定人物踢下线(支持权限分配)');
+    '@' + g_GameCommand.KICK.sCmd + ' <Username>',
+                   'Disconnecs a user');
 
   RefGameMasterCmd(@g_GameCommand.ReAlive,
-    '@' + g_GameCommand.ReAlive.sCmd + ' 人物名称',
-    '将指定人物复活(支持权限分配)');
+    '@' + g_GameCommand.ReAlive.sCmd + ' <Username>',
+                   'Brings a player back to life');
 
   RefGameMasterCmd(@g_GameCommand.KILL,
-    '@' + g_GameCommand.KILL.sCmd + '人物名称',
-    '将指定人物或怪物杀死(杀怪物时需面对怪物)(支持权限分配)');
+    '@' + g_GameCommand.KILL.sCmd + '<Username>',
+                   'Kills a player instantly');
 
   RefGameMasterCmd(@g_GameCommand.CHANGEJOB,
-    '@' + g_GameCommand.CHANGEJOB.sCmd +
-    ' 人物名称 职业类型(Warr Wizard Taos)',
-    '调整人物的职业(支持权限分配)');
+    '@' + g_GameCommand.CHANGEJOB.sCmd + ' <Username> <Job(Warrior, Wizard, Taos, Sin)>',
+                   'Changes the specified users job');
 
   RefGameMasterCmd(@g_GameCommand.FREEPENALTY,
-    '@' + g_GameCommand.FREEPENALTY.sCmd + ' 人物名称',
-    '清除指定人物的PK值(支持权限分配)');
+    '@' + g_GameCommand.FREEPENALTY.sCmd + ' <Username>',
+                   'Resets specified users PK value back to 0');
 
   RefGameMasterCmd(@g_GameCommand.PKPOINT,
-    '@' + g_GameCommand.PKPOINT.sCmd + ' 人物名称',
-    '查看指定人物的PK值(支持权限分配)');
+    '@' + g_GameCommand.PKPOINT.sCmd + ' <Username>',
+                   'Displays the specified users PK points');
 
   RefGameMasterCmd(@g_GameCommand.IncPkPoint,
-    '@' + g_GameCommand.IncPkPoint.sCmd + ' 人物名称 点数',
-    '增加指定人物的PK值(支持权限分配)');
+    '@' + g_GameCommand.IncPkPoint.sCmd + ' <Username> <Points>',
+                   'Increases the specified users PK points by the specified amount');
 
   RefGameMasterCmd(@g_GameCommand.CHANGEGENDER,
-    '@' + g_GameCommand.CHANGEGENDER.sCmd + ' 人物名称 性别(男、女)',
-    '调整人物的性别(支持权限分配)');
+    '@' + g_GameCommand.CHANGEGENDER.sCmd + ' <Username> <Sex(M, F)>',
+                   'Changes a players sex');
 
   RefGameMasterCmd(@g_GameCommand.HAIR,
-    '@' + g_GameCommand.HAIR.sCmd + ' 类型值',
-    '更改指定人物的头发类型(支持权限分配)');
+    '@' + g_GameCommand.HAIR.sCmd + ' <Style no(0 or 1)>',
+                   'Sets the specified hairstyle');
 
-  {RefGameMasterCmd(@g_GameCommand.BonusPoint,
-    '@' + g_GameCommand.BonusPoint.sCmd + ' 人物名称 属性点数',
-    '调整人物的属性点数(支持权限分配)');
+  RefGameMasterCmd(@g_GameCommand.BonusPoint,
+    '@' + g_GameCommand.BonusPoint.sCmd + ' <Username> <Amount of points>',
+                   'Displays specified users bonus points');
 
   RefGameMasterCmd(@g_GameCommand.DELBONUSPOINT,
-    '@' + g_GameCommand.DELBONUSPOINT.sCmd + ' 人物名称',
-    '删除人物的属性点数(支持权限分配)');
+    '@' + g_GameCommand.DELBONUSPOINT.sCmd + ' <Username>',
+                   'Deletes specified users bonus points');
 
   RefGameMasterCmd(@g_GameCommand.RESTBONUSPOINT,
-    '@' + g_GameCommand.RESTBONUSPOINT.sCmd + ' 人物名称',
-    '将人物的属性点数重新分配(支持权限分配)');  }
+    '@' + g_GameCommand.RESTBONUSPOINT.sCmd + ' <Username>',
+                   'Rest points');
 
   RefGameMasterCmd(@g_GameCommand.SETPERMISSION,
-    '@' + g_GameCommand.SETPERMISSION.sCmd +
-    ' 人物名称 权限等级(0 - 10)',
-    '调整人物的权限等级，可以将普通人物升为GM权限(支持权限分配)');
+    '@' + g_GameCommand.SETPERMISSION.sCmd + ' <Username> <Permission level(0 - 10)>',
+                   'Sets specified uses commands acces permissions');
 
   RefGameMasterCmd(@g_GameCommand.RENEWLEVEL,
-    '@' + g_GameCommand.RENEWLEVEL.sCmd +
-    ' 人物名称 点数(为空则查看)',
-    '调整查看人物的转生等级(支持权限分配)');
+    '@' + g_GameCommand.RENEWLEVEL.sCmd + ' <Username> <Points(Blank for View)>',
+                   'Sets specified users rebirth level');
 
   RefGameMasterCmd(@g_GameCommand.DELGOLD,
-    '@' + g_GameCommand.DELGOLD.sCmd + ' 人物名称 数量',
-    '删除人物指定数量的金币(支持权限分配)');
+    '@' + g_GameCommand.DELGOLD.sCmd + ' <Username> <Amount>',
+                   'Removes specified amount of gold from specified players bag');
 
   RefGameMasterCmd(@g_GameCommand.ADDGOLD,
-    '@' + g_GameCommand.ADDGOLD.sCmd + ' 人物名称 数量',
-    '增加人物指定数量的金币(支持权限分配)');
+    '@' + g_GameCommand.ADDGOLD.sCmd + ' <Username> <Amount>',
+                   'Adds specified amount of gold to specified players bag');
 
   RefGameMasterCmd(@g_GameCommand.GAMEGOLD,
-    '@' + g_GameCommand.GAMEGOLD.sCmd + ' 人物名称 控制符(+ - =) 数量',
-    '调整人物的元宝数量(支持权限分配)');
+    '@' + g_GameCommand.GAMEGOLD.sCmd + ' <Username> <Action(+ - =)> <Amount>',
+                   'Shows(if only <username> used)/adds/removes/sets specified players gamegold');
 
-  {RefGameMasterCmd(@g_GameCommand.GAMEPOINT,
-    '@' + g_GameCommand.GAMEPOINT.sCmd +
-    ' 人物名称 控制符(+ - =) 数量',
-    '调整人物的游戏点数量(支持权限分配)');   }
+  RefGameMasterCmd(@g_GameCommand.GAMEPOINT,
+    '@' + g_GameCommand.GAMEPOINT.sCmd + ' <Username> <Action(+ - =)> <Amount>',
+                   'Shows(if only <username> used)/adds/removes/sets specified players gamepoints');
 
   RefGameMasterCmd(@g_GameCommand.CREDITPOINT,
-    '@' + g_GameCommand.CREDITPOINT.sCmd +
-    ' 人物名称 控制符(+ - =) 点数',
-    '调整人物的声望点数(支持权限分配)');
+    '@' + g_GameCommand.CREDITPOINT.sCmd + ' <Username> <Action(+ - =)> <Points>',
+                   'Shows(if only <username> used)/adds/removes/sets specified players creditpoints');
 
-  {RefGameMasterCmd(@g_GameCommand.REFINEWEAPON,
-    '@' + g_GameCommand.REFINEWEAPON.sCmd +
-    ' 攻击力 魔法力 道术 准确度',
-    '调整身上武器属性(支持权限分配)');  }
+  RefGameMasterCmd(@g_GameCommand.REFINEWEAPON,
+    '@' + g_GameCommand.REFINEWEAPON.sCmd + ' <DC> <MC> <SC> <Accuracy>',
+                   'Refines the weapon equipped with the specified stats');
 
   RefGameMasterCmd(@g_GameCommand.ADJUESTLEVEL,
-    '@' + g_GameCommand.ADJUESTLEVEL.sCmd + ' 人物名称 等级',
-    '调整指定人物的等级(支持权限分配)');
+    '@' + g_GameCommand.ADJUESTLEVEL.sCmd + ' <Username> <Level>',
+                   'Adjusts the specified players level to the specified level');
 
   RefGameMasterCmd(@g_GameCommand.ADJUESTEXP,
-    '@' + g_GameCommand.ADJUESTEXP.sCmd + ' 人物名称 经验值',
-    '调整指定人物的经验值(支持权限分配)');
+    '@' + g_GameCommand.ADJUESTEXP.sCmd + ' <Username> <Experience points>',
+                   'Adjusts the specified players exp to the specified amount');
+
 
   RefGameMasterCmd(@g_GameCommand.CHANGEDEARNAME,
-    '@' + g_GameCommand.CHANGEDEARNAME.sCmd +
-    ' 人物名称 配偶名称(如果为 无 则清除)',
-    '更改指定人物的配偶名称(支持权限分配)');
+    '@' + g_GameCommand.CHANGEDEARNAME.sCmd + ' <Username> <Partners name(must be online)>',
+                   'Creates a married couple');
 
   RefGameMasterCmd(@g_GameCommand.CHANGEMASTERNAME,
-    '@' + g_GameCommand.CHANGEMASTERNAME.sCmd +
-    ' 人物名称 师徒名称(如果为 无 则清除)',
-    '更改指定人物的师徒名称(支持权限分配)');
+    '@' + g_GameCommand.CHANGEMASTERNAME.sCmd + ' <Username> <Masters name(must be online)>',
+                   'Creates a master and slave couple');
 
   RefGameMasterCmd(@g_GameCommand.RECALLMOB,
-    '@' + g_GameCommand.RECALLMOB.sCmd + ' 怪物名称 数量 召唤等级',
-    '召唤指定怪物为宝宝(支持权限分配)');
+    '@' + g_GameCommand.RECALLMOB.sCmd + ' <Mob name> <Amount> <Mob level(0-9)>',
+                   'Spawns specified mob for the specified player at the specified level as a pet');
 
   RefGameMasterCmd(@g_GameCommand.TRAINING,
-    '@' + g_GameCommand.TRAINING.sCmd +
-    ' 人物名称  技能名称 修炼等级(0-3)',
-    '调整人物的技能修炼等级(支持权限分配)');
+    '@' + g_GameCommand.TRAINING.sCmd + ' <Username> <Skill name> <Skill level(0-3)>',
+                   'Sets the specified skill of the specified player to the specified level');
+
 
   RefGameMasterCmd(@g_GameCommand.TRAININGSKILL,
-    '@' + g_GameCommand.TRAININGSKILL.sCmd +
-    ' 人物名称  技能名称 修炼等级(0-3)',
-    '给指定人物增加技能(支持权限分配)');
+    '@' + g_GameCommand.TRAININGSKILL.sCmd + ' <Username> <Skill name> <Skill level(0-3)>',
+                   'Sets the specified skill of the specified player to the specified level');
 
   RefGameMasterCmd(@g_GameCommand.DELETESKILL,
-    '@' + g_GameCommand.DELETESKILL.sCmd + ' 人物名称 技能名称(All)',
-    '删除人物的技能，All代表删除全部技能(支持权限分配)');
+    '@' + g_GameCommand.DELETESKILL.sCmd + ' <Username> <Skill name(All)>',
+                   'Removes specified skill from specified player');
 
   RefGameMasterCmd(@g_GameCommand.DELETEITEM,
-    '@' + g_GameCommand.DELETEITEM.sCmd + ' 人物名称 物品名称 数量',
-    '删除人物身上指定的物品(支持权限分配)');
+    '@' + g_GameCommand.DELETEITEM.sCmd + ' <Username> <Itemname> <Amount>',
+                   'Removes the specified amount of the specified item form the specified user');
 
   RefGameMasterCmd(@g_GameCommand.CLEARMISSION,
-    '@' + g_GameCommand.CLEARMISSION.sCmd + ' 人物名称',
-    '清除人物的任务标志(支持权限分配)');
+    '@' + g_GameCommand.CLEARMISSION.sCmd + ' <Username>',
+                   'Stops the misson that has been set and mobs will revert to normal');
 
   RefGameMasterCmd(@g_GameCommand.AddGuild,
-    '@' + g_GameCommand.AddGuild.sCmd + ' 行会名称 掌门人',
-    '新建一个行会(支持权限分配)');
+    '@' + g_GameCommand.AddGuild.sCmd + ' <Guildname> <Guildchief>',
+                   'Creates a guild manually');
 
   RefGameMasterCmd(@g_GameCommand.DELGUILD,
-    '@' + g_GameCommand.DELGUILD.sCmd + ' 行会名称',
-    '删除一个行会(支持权限分配)');
+    '@' + g_GameCommand.DELGUILD.sCmd + ' <Guildname>',
+                   'Deletes a guild');
 
   RefGameMasterCmd(@g_GameCommand.CHANGESABUKLORD,
-    '@' + g_GameCommand.CHANGESABUKLORD.sCmd + ' 行会名称',
-    '更改城堡所属行会(支持权限分配)');
+    '@' + g_GameCommand.CHANGESABUKLORD.sCmd + ' <Castlename> <Guildname>',
+                   'Changes ownership of named wall to named guild');
 
   RefGameMasterCmd(@g_GameCommand.FORCEDWALLCONQUESTWAR,
     '@' + g_GameCommand.FORCEDWALLCONQUESTWAR.sCmd,
-    '强行开始/停止攻城战(支持权限分配)');
+                   'Forces the start of a castle war');
 
   RefGameMasterCmd(@g_GameCommand.CONTESTPOINT,
-    '@' + g_GameCommand.CONTESTPOINT.sCmd + ' 行会名称',
-    '查看行会争霸赛得分情况(支持权限分配)');
+    '@' + g_GameCommand.CONTESTPOINT.sCmd + ' <Guildname>',
+                   'View Guild Competition scores');
 
   RefGameMasterCmd(@g_GameCommand.STARTCONTEST,
     '@' + g_GameCommand.STARTCONTEST.sCmd,
-    '开始行会争霸赛(支持权限分配)');
+                   'Competition will start line');
 
   RefGameMasterCmd(@g_GameCommand.ENDCONTEST,
     '@' + g_GameCommand.ENDCONTEST.sCmd,
-    '结束行会争霸赛(支持权限分配)');
+                   'Competition will end line');
 
   RefGameMasterCmd(@g_GameCommand.ANNOUNCEMENT,
-    '@' + g_GameCommand.ANNOUNCEMENT.sCmd,
-    '查看行会争霸赛结果(支持权限分配)');
+                   '@' + g_GameCommand.ANNOUNCEMENT.sCmd + ' <Message>',
+                   'Sends in-game message');
 
   RefGameMasterCmd(@g_GameCommand.MOB,
-    '@' + g_GameCommand.MOB.sCmd + ' 怪物名称 数量',
-    '在身边放置指定类型数量的怪物(支持权限分配)');
+    '@' + g_GameCommand.MOB.sCmd + ' <Mobname> <Amount>',
+                   'Use to manually spawn a mob');
 
   RefGameMasterCmd(@g_GameCommand.Mission,
-    '@' + g_GameCommand.Mission.sCmd + ' X  Y',
-    '设置怪物的集中点(举行怪物攻城用)(支持权限分配');
+    '@' + g_GameCommand.Mission.sCmd + ' <X> <Y>',
+                   'Sets the start of a mob mission');
 
   RefGameMasterCmd(@g_GameCommand.MobPlace,
-    '@' + g_GameCommand.MobPlace.sCmd + ' X  Y 怪物名称 怪物数量',
-    '在当前地图指定XY放置怪物(支持权限分配(先必须设置怪物的集中点)，放置的怪物大刀守卫不会攻击这些怪物');
+    '@' + g_GameCommand.MobPlace.sCmd + ' <X> <Y> <Mobname> <Amount>',
+                   'Place mob at designated co-ordinates.  Guards will not atactk a placed mob.');
 
   RefGameMasterCmd(@g_GameCommand.CLEARMON,
-    '@' + g_GameCommand.CLEARMON.sCmd +
-    ' 地图号(* 为所有) 怪物名称(* 为所有) 掉物品(0,1)',
-    '清除地图中的怪物(支持权限分配'')');
+                   '@' + g_GameCommand.CLEARMON.sCmd + ' <Map(* for all)> <Mob name(* for all)> <Drop items(0,1)>',
+                   'Clears a map of all mob - including any pets');
 
   RefGameMasterCmd(@g_GameCommand.DISABLESENDMSG,
-    '@' + g_GameCommand.DISABLESENDMSG.sCmd + ' 人物名称',
-    '将指定人物加入发言过滤列表，加入列表后自己发的文字自己可以看到，其他人看不到(支持权限分配)');
+    '@' + g_GameCommand.DISABLESENDMSG.sCmd + ' <Username>',
+                   'Block a user from sending messages');
 
   RefGameMasterCmd(@g_GameCommand.ENABLESENDMSG,
     '@' + g_GameCommand.ENABLESENDMSG.sCmd,
-    '将指定人物从发言过滤列表中删除(支持权限分配)');
+                   'Allow a user to chat again after being banned');
 
   RefGameMasterCmd(@g_GameCommand.DISABLESENDMSGLIST,
     '@' + g_GameCommand.DISABLESENDMSGLIST.sCmd,
-    '查看发言过滤列表中的内容(支持权限分配)');
+                   'View the contents of the speech filter list');
 
   RefGameMasterCmd(@g_GameCommand.SHUTUP,
-    '@' + g_GameCommand.SHUTUP.sCmd + ' 人物名称',
-    '将指定人物禁言(支持权限分配)');
+    '@' + g_GameCommand.SHUTUP.sCmd + ' <Username>',
+                   'Ban a player from chatting');
 
   RefGameMasterCmd(@g_GameCommand.RELEASESHUTUP,
-    '@' + g_GameCommand.RELEASESHUTUP.sCmd + ' 人物名称',
-    '将指定人物从禁言列表中删除(支持权限分配)');
+    '@' + g_GameCommand.RELEASESHUTUP.sCmd + ' <Username>',
+                   'Allow a player to chat again after being banned');
 
   RefGameMasterCmd(@g_GameCommand.SHUTUPLIST,
     '@' + g_GameCommand.SHUTUPLIST.sCmd,
-    '查看禁言列表中的内容(支持权限分配)');
+                   'Displays a list of users that are banned from chatting');
 
   RefGameMasterCmd(@g_GameCommand.SABUKWALLGOLD,
     '@' + g_GameCommand.SABUKWALLGOLD.sCmd,
-    '查看城堡金币数(支持权限分配)');
+                   'View the castle gold');
 
   RefGameMasterCmd(@g_GameCommand.STARTQUEST,
     '@' + g_GameCommand.STARTQUEST.sCmd,
-    '开始提问功能，游戏中所有人同时跳出问题窗口(支持权限分配)');
+                   'Begin a quest, Skips problem game windows');
 
   RefGameMasterCmd(@g_GameCommand.DENYIPLOGON,
-    '@' + g_GameCommand.DENYIPLOGON.sCmd + ' IP地址 是否永久封(0,1)',
-    '将指定IP地址加入禁止登录列表，以这些IP登录的用户将无法进入游戏(支持权限分配)');
-    
+    '@' + g_GameCommand.DENYIPLOGON.sCmd + ' <IP Address> <Disable/Enable(0,1)>',
+                   'Block a user from logging in from a specific IP address');
+
   RefGameMasterCmd(@g_GameCommand.DELDENYIPLOGON,
-    '@' + g_GameCommand.DELDENYIPLOGON.sCmd + ' IP地址',
-    '将指定IP地址从禁止登录列表中删除(支持权限分配)');
+    '@' + g_GameCommand.DELDENYIPLOGON.sCmd,
+                   'Un-Block a user from logging in from a specific IP address');
 
   RefGameMasterCmd(@g_GameCommand.SHOWDENYIPLOGON,
     '@' + g_GameCommand.SHOWDENYIPLOGON.sCmd,
-    '查看禁止登录IP地址列表中的内容(支持权限分配)');
+                   'Shows a list of banned IP addresses');
 
   RefGameMasterCmd(@g_GameCommand.DENYACCOUNTLOGON,
-    '@' + g_GameCommand.DENYACCOUNTLOGON.sCmd +
-    ' 登录帐号 是否永久封(0,1)',
-    '将指定登录帐号加入禁止登录列表，以此帐号登录的用户将无法进入游戏(支持权限分配)');
+    '@' + g_GameCommand.DENYACCOUNTLOGON.sCmd + ' <AccountID> <Disable/Enable(0,1)>',
+                   'Block a user from logging in from a specific account');
 
   RefGameMasterCmd(@g_GameCommand.DELDENYACCOUNTLOGON,
-    '@' + g_GameCommand.DELDENYACCOUNTLOGON.sCmd + ' 登录帐号',
-    '将指定登录帐号从禁止登录列表中删除(支持权限分配)');
+    '@' + g_GameCommand.DELDENYACCOUNTLOGON.sCmd,
+                   'Un-Block a user from logging in from a specific account');
 
   RefGameMasterCmd(@g_GameCommand.SHOWDENYACCOUNTLOGON,
     '@' + g_GameCommand.SHOWDENYACCOUNTLOGON.sCmd,
-    '查看禁止登录帐号列表中的内容(支持权限分配)');
+                   'Shows a list of banned accounts');
 
   RefGameMasterCmd(@g_GameCommand.DENYCHARNAMELOGON,
-    '@' + g_GameCommand.DENYCHARNAMELOGON.sCmd +
-    ' 人物名称 是否永久封(0,1)',
-    '将指定人物名称加入禁止登录列表，此人物将无法进入游戏(支持权限分配)');
+    '@' + g_GameCommand.DENYCHARNAMELOGON.sCmd + ' <Username> <Disable/Enable(0,1)>',
+                   'Block a user from logging in from a specific player name');
 
   RefGameMasterCmd(@g_GameCommand.DELDENYCHARNAMELOGON,
-    '@' + g_GameCommand.DELDENYCHARNAMELOGON.sCmd + ' 人物名称',
-    '将指定人物名称从禁止登录列表中删除(支持权限分配)');
+    '@' + g_GameCommand.DELDENYCHARNAMELOGON.sCmd,
+                   'Un-Block a user from logging in from a specific player name');
 
   RefGameMasterCmd(@g_GameCommand.SHOWDENYCHARNAMELOGON,
     '@' + g_GameCommand.SHOWDENYCHARNAMELOGON.sCmd,
-    '查看禁止人物名称列表中的内容(支持权限分配)');
+                   'Shows a list of banned player names');
 
-  RefGameMasterCmd(@g_GameCommand.SETMAPMODE,
-    '@' + g_GameCommand.SETMAPMODE.sCmd,
-    '设置地图模式');
+  RefGameMasterCmd(@g_GameCommand.SetMapMode,
+    '@' + g_GameCommand.SetMapMode.sCmd,
+                   'Set map mode');
 
   RefGameMasterCmd(@g_GameCommand.SHOWMAPMODE,
     '@' + g_GameCommand.SHOWMAPMODE.sCmd,
-    '显示地图模式');
+                   'Show map mode');
 
   RefGameMasterCmd(@g_GameCommand.SPIRIT,
     '@' + g_GameCommand.SPIRIT.sCmd,
-    '开始祈祷生效宝宝叛变');
+    '');
 
   RefGameMasterCmd(@g_GameCommand.SPIRITSTOP,
     '@' + g_GameCommand.SPIRITSTOP.sCmd,
-    '停止祈祷生效宝宝叛变');
+    '');
 
 end;
 
@@ -745,7 +785,7 @@ begin
 
   StringGridGameDebugCmd.Cells[0, nRefGameDebugIndex] := GameCmd.sCmd;
   StringGridGameDebugCmd.Cells[1, nRefGameDebugIndex] :=
-    IntToStr(GameCmd.nPermissionMin) + '/' + IntToStr(GameCmd.nPermissionMax);
+  IntToStr(GameCmd.nPermissionMin) + '/' + IntToStr(GameCmd.nPermissionMax);
   StringGridGameDebugCmd.Cells[2, nRefGameDebugIndex] := sCmdParam;
   StringGridGameDebugCmd.Cells[3, nRefGameDebugIndex] := sDesc;
   StringGridGameDebugCmd.Objects[0, nRefGameDebugIndex] := TObject(GameCmd);
@@ -762,159 +802,160 @@ begin
   GameCmd := @g_GameCommand.SHOWFLAG;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '查看人物指定标识号状态');
+                   'Shows the status of the specified flag');
 
   GameCmd := @g_GameCommand.SETFLAG;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '设置人物指定标识号状态(开/关)');
+                   'Set the specified flag of a user');
 
   GameCmd := @g_GameCommand.MOBNPC;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '创建一个新的NPC');
+    '');
 
   GameCmd := @g_GameCommand.DELNPC;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '删除指定NPC');
+    '');
 
   GameCmd := @g_GameCommand.LOTTERYTICKET;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '查看彩票中奖比例');
+    '');
 
   GameCmd := @g_GameCommand.RELOADADMIN;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载管理员列表');
+                   'Reloads the GM list - users must log out/in to activate');
 
   GameCmd := @g_GameCommand.ReLoadNpc;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载NPC脚本');
+                   'Reloads the NPCs that are on screen');
 
   GameCmd := @g_GameCommand.RELOADMANAGE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载登录脚本');
+                   'Reloads the quest manager');
+
 
   GameCmd := @g_GameCommand.RELOADROBOTMANAGE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载机器人配置');
+                   'Reloads the robot manager');
 
   GameCmd := @g_GameCommand.RELOADROBOT;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载机器人脚本');
+                   'Reloads the robots');
 
   GameCmd := @g_GameCommand.RELOADMONITEMS;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载怪物爆率配置');
+                   'Reloads all drop files');
 
-  {GameCmd := @g_GameCommand.RELOADDIARY;
+  GameCmd := @g_GameCommand.RELOADDIARY;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '未使用');  }
+                   'Reloads the quest diray');
 
   GameCmd := @g_GameCommand.RELOADITEMDB;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载物品数据库');
+                   'Reloads the item database');
 
   GameCmd := @g_GameCommand.RELOADMAGICDB;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载技能数据库');
+                   'Reloads the magic database');
 
   GameCmd := @g_GameCommand.RELOADMONSTERDB;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载怪物数据库');
+                   'Reloads the monster database');
 
   GameCmd := @g_GameCommand.RELOADMINMAP;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载小地图配置');
+                   'Reloads the minimap settings file');
 
   GameCmd := @g_GameCommand.RELOADGUILD;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd,
-    '重新加载行会信息');
+    '@' + GameCmd.sCmd + ' <Guildname>',
+                   'Reloads the specified guild');
 
-  {GameCmd := @g_GameCommand.RELOADGUILDALL;
+  GameCmd := @g_GameCommand.RELOADGUILDALL;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '');  }
+                   'Reloads ALL guilds');
 
   GameCmd := @g_GameCommand.RELOADLINENOTICE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载游戏公告信息');
+                   'Reloads the line notices');
 
-  {GameCmd := @g_GameCommand.RELOADABUSE;
+  GameCmd := @g_GameCommand.RELOADABUSE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '重新加载脏话过滤配置');     }
+                   'Reloads the abuse filter list');
 
   GameCmd := @g_GameCommand.BACKSTEP;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '人物后退');
+                   'Makes user step backwards');
 
-  {GameCmd := @g_GameCommand.RECONNECTION;
+  GameCmd := @g_GameCommand.RECONNECTION;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd,
-    '将指定人物重新切换网络连接');
+    '@' + GameCmd.sCmd + ' <IP address> <Port>',
+                   'The specified network connection switch characters again');
 
   GameCmd := @g_GameCommand.DISABLEFILTER;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '禁用脏话过滤功能');    }
+                   'Disables the abuse filter');
 
   GameCmd := @g_GameCommand.CHGUSERFULL;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd,
-    '设置服务器最高上线人数');
+    '@' + GameCmd.sCmd + ' <Amount>',
+                   'Changes the amount of users that can connect simultaneously');
 
   GameCmd := @g_GameCommand.CHGZENFASTSTEP;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '设置怪物行动速度');
+    '');
 
-  {GameCmd := @g_GameCommand.OXQUIZROOM;
+  GameCmd := @g_GameCommand.OXQUIZROOM;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '');  }
+    '');
 
-  {GameCmd := @g_GameCommand.BALL;
+  GameCmd := @g_GameCommand.BALL;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    ''); }
+    '');
 
   GameCmd := @g_GameCommand.FIREBURN;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '在自己当前坐标增加地图事件');
+    '');
 
   GameCmd := @g_GameCommand.TESTFIRE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '在自己周围范围内增加地图事件');
+    '');
 
   GameCmd := @g_GameCommand.TESTSTATUS;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '设置人物状态时间');
+    '');
 
-  {GameCmd := @g_GameCommand.TESTGOLDCHANGE;
+  GameCmd := @g_GameCommand.TESTGOLDCHANGE;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '');   }
+    '');
 
-  {GameCmd := @g_GameCommand.GSA;
+  GameCmd := @g_GameCommand.GSA;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
     '');
@@ -922,21 +963,21 @@ begin
   GameCmd := @g_GameCommand.TESTGA;
   RefGameDebugCmd(GameCmd,
     '@' + GameCmd.sCmd,
-    '');   }
+    '');
 
   GameCmd := @g_GameCommand.MAPINFO;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd,
-    '显示地图详细信息');
+                   '@' + GameCmd.sCmd + ' <Map> <X> <Y>',
+                   'Show map information');
 
   GameCmd := @g_GameCommand.CLEARBAG;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd,
-    '清除背包全部物品');
+                   '@' + GameCmd.sCmd + ' <Username>',
+                   'Empties a users bag of all items');
 
   GameCmd := @g_GameCommand.SHOWEFFECT;
   RefGameDebugCmd(GameCmd,
-    '@' + GameCmd.sCmd + ' 特效ID',
+    '@' + GameCmd.sCmd + ' 特效ID',     //Translate
     '调试特效显示');
 
 end;
@@ -980,7 +1021,7 @@ begin
   sCmd := Trim(EditGameMasterCmdName.Text);
   nPermission := EditGameMasterCmdPerMission.Value;
   if sCmd = '' then begin
-    Application.MessageBox('命令名称不能为空.', '提示信息',
+    Application.MessageBox('Not a valid command permission level.','Error',
       MB_OK +
       MB_ICONERROR);
     EditGameMasterCmdName.SetFocus;
@@ -1414,7 +1455,7 @@ begin
   sCmd := Trim(EditGameDebugCmdName.Text);
   nPermission := EditGameDebugCmdPerMission.Value;
   if sCmd = '' then begin
-    Application.MessageBox('命令名称不能为空.', '提示信息',
+    Application.MessageBox('Invalid debug permission.','Error',
       MB_OK +
       MB_ICONERROR);
     EditGameDebugCmdName.SetFocus;

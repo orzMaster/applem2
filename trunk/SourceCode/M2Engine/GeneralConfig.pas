@@ -155,70 +155,70 @@ begin
   MsgSrvPort := StrToIntDef(Trim(EditMsgSrvPort.Text), -1);
 
   if not IsIPaddr(Gateaddr) then begin
-    Application.MessageBox('网关地址设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Gateway address is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditGateAddr.SetFocus;
     exit;
   end;
 
   if (GatePort < 0) or (GatePort > 65535) then begin
-    Application.MessageBox('网关端口设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Gateway port settings wrong!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditGatePort.SetFocus;
     exit;
   end;
 
   if not IsIPaddr(IDSAddr) then begin
-    Application.MessageBox('管理服务器地址设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Management Server address is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditIDSAddr.SetFocus;
     exit;
   end;
 
   if (IDSPort < 0) or (IDSPort > 65535) then begin
-    Application.MessageBox('管理服务器端口设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Management server port setting is incorrect!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditIDSPort.SetFocus;
     exit;
   end;
 
   if not IsIPaddr(DBAddr) then begin
-    Application.MessageBox('Database server address setting error.', '错误信息', MB_OK +
+    Application.MessageBox('Database server address is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditDBAddr.SetFocus;
     exit;
   end;
 
   if (DBPort < 0) or (DBPort > 65535) then begin
-    Application.MessageBox('Database server port settings error.', '错误信息', MB_OK +
+    Application.MessageBox('Database server port is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditDBPort.SetFocus;
     exit;
   end;
 
   if not IsIPaddr(LogServerAddr) then begin
-    Application.MessageBox('日志服务器地址设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Log server address is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditLogServerAddr.SetFocus;
     exit;
   end;
 
   if (LogServerPort < 0) or (LogServerPort > 65535) then begin
-    Application.MessageBox('日志服务器端口设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Log server port setting is incorrect!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditLogServerPort.SetFocus;
     exit;
   end;
 
   if not IsIPaddr(MsgSrvAddr) then begin
-    Application.MessageBox('游戏主服务器地址设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('The main game server address is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditMsgSrvAddr.SetFocus;
     exit;
   end;
 
   if (MsgSrvPort < 0) or (MsgSrvPort > 65535) then begin
-    Application.MessageBox('游戏主服务器端口设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('The main game server port setting is incorrect!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditMsgSrvPort.SetFocus;
     exit;
@@ -301,8 +301,7 @@ procedure TfrmGeneralConfig.PageControlChanging(Sender: TObject;
   var AllowChange: Boolean);
 begin
   if boModValued then begin
-    if Application.MessageBox('参数设置已经被修改，是否确认不保存修改的设置？',
-      '确认信息', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
+    if Application.MessageBox('Parameter settings have been modified, Comtinue without saving changes?','Confirmation', MB_YESNO + MB_ICONQUESTION) = IDYES then begin
       uModValue
     end
     else
@@ -339,54 +338,54 @@ begin
   UserFull := StrToIntDef(Trim(EditUserFull.Text), -1);
   DBName := Trim(EditDBName.Text);
   if GameName = '' then begin
-    Application.MessageBox('游戏名称设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Game Title is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditGameName.SetFocus;
     exit;
   end;
 
   if (ServerIndex < 0) or (ServerIndex > 255) then begin
-    Application.MessageBox('服务器号设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Server number is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditServerIndex.SetFocus;
     exit;
   end;
 
   if (ServerNumber < 0) or (ServerNumber > 255) then begin
-    Application.MessageBox('服务器数设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Set the server number error!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditServerNumber.SetFocus;
     exit;
   end;
   if (TestLevel < 0) or (TestLevel > 65535) then begin
-    Application.MessageBox('开始等级设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Start level setting error!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditTestLevel.SetFocus;
     exit;
   end;
   if (TestGold < 0) or (TestGold > High(Integer) div 2) then begin
-    Application.MessageBox('开始金币设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Starting gold setting error!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditTestGold.SetFocus;
     exit;
   end;
 
   if (TestUserLimit < 0) or (TestUserLimit > 10000) then begin
-    Application.MessageBox('测试人数设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Number of test users set error!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditTestUserLimit.SetFocus;
     exit;
   end;
 
   if (UserFull < 0) or (UserFull > 10000) then begin
-    Application.MessageBox('上限人数设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Limit the number of users set errors!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditUserFull.SetFocus;
     exit;
   end;
 
   if DBName = '' then begin
-    Application.MessageBox('数据库名称设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Database name is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditDBName.SetFocus;
     exit;
@@ -432,60 +431,60 @@ begin
 
   if not DirectoryExists(GuildDir) or (GuildDir[Length(GuildDir)] <> '\') then
     begin
-    Application.MessageBox('行会目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Guild directory error!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditGuildDir.SetFocus;
     exit;
   end;
   if not FileExists(GuildFile) then begin
-    Application.MessageBox('行会文件设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Guilds list set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditGuildFile.SetFocus;
     exit;
   end;
   if not DirectoryExists(VentureDir) or (VentureDir[Length(VentureDir)] <> '\')
     then begin
-    Application.MessageBox('Venture目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Venture directory is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditVentureDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(ConLogDir) or (ConLogDir[Length(ConLogDir)] <> '\') then
     begin
-    Application.MessageBox('登录日志目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Log directory set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditConLogDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(CastleDir) or (CastleDir[Length(CastleDir)] <> '\') then
     begin
-    Application.MessageBox('城堡目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Castle directory is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditCastleDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(EnvirDir) or (EnvirDir[Length(EnvirDir)] <> '\') then
     begin
-    Application.MessageBox('配置目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Configuration directory is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditEnvirDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(MapDir) or (MapDir[Length(MapDir)] <> '\') then begin
-    Application.MessageBox('地图目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Map directory is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditMapDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(NoticeDir) or (NoticeDir[Length(NoticeDir)] <> '\') then
     begin
-    Application.MessageBox('公告目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Notice directory is set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditNoticeDir.SetFocus;
     exit;
   end;
   if not DirectoryExists(PlugDir) or (PlugDir[Length(PlugDir)] <> '\') then begin
-    Application.MessageBox('插件目录设置错误.', '错误信息', MB_OK +
+    Application.MessageBox('Plugin directory set incorrectly!!!','Error message', MB_OK +
       MB_ICONERROR);
     EditPlugDir.SetFocus;
     exit;

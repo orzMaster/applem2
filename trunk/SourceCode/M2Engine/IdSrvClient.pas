@@ -88,7 +88,7 @@ begin
     Conf.Free;
   end
   else
-    ShowMessage('配置文件' + sConfigFileName + '未找到.');
+    ShowMessage('Configuration file ' + sConfigFileName + ' not found!!!');
 
   m_SessionList := TGList.Create;
   TList_2DC := TList.Create;
@@ -161,7 +161,7 @@ end;
 procedure TFrmIDSoc.SendSocket(sSENDMSG: string);
 var
   boSendData: Boolean;
-  Config: pTConfig;                       
+  Config: pTConfig;
   ThreadInfo: pTThreadInfo;
   timeout: TTimeVal;
   writefds: TFDSet;
@@ -531,7 +531,7 @@ var
   SessInfo: pTSessInfo;
   boFound: Boolean;
 resourcestring
-  sGetFailMsg = '[非法登录] 全局会话验证失败(%s/%s/%d)';
+  sGetFailMsg = '[Illegal login] Global session validation failure(%s/%s/%d)';
 begin
   //  Result:=3;
   //  exit;
@@ -823,8 +823,8 @@ var
   dwRunTick: LongWord;
   boShow: Boolean;
 resourcestring
-  sIDServerConnected = '登录服务器(%s:%d)连接成功...';
-  sIDServerDisconnect = '登录服务器(%s:%d)断开连接...';
+  sIDServerConnected = 'Login Server (%s:%d) connected successfully...';
+  sIDServerDisconnect = 'Login Server (%s:%d) disconnected...';
 begin
   s := INVALID_SOCKET;
   if Config.IDSocket <> INVALID_SOCKET then

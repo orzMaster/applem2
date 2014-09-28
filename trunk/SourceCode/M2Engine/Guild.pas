@@ -1604,10 +1604,10 @@ begin
       SetLength(Guild.m_AllyArr, _MAX(m_GuildList.Count * 2, 500));
       Guild.initialize;
     end;
-    MainOutMessage('Reading ' + IntToStr(m_GuildList.Count) + ' Guild information.');
+    MainOutMessage('已读取 ' + IntToStr(m_GuildList.Count) + '个行会信息...');
   end
   else begin
-    MainOutMessage('Guild Information File Not Found.');
+    MainOutMessage('行会信息文件未找到.');
   end;
 end;
 
@@ -1686,7 +1686,6 @@ begin
 end;
 
 end.
-
 
 
 

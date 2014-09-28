@@ -97,8 +97,8 @@ end;
 
 procedure TfrmActionSpeed.ButtonCloseClick(Sender: TObject);
 resourcestring
-  sExitMsg = '设置已被修改是否不保存设置退出？';
-  sExitMsgTitle = '确认信息';
+  sExitMsg      = 'Are you sure you want to close this window without saving?'+#10+#13+'Clicking Yes will discard any changes!';
+  sExitMsgTitle = 'Reset?';
 begin
   if not boModValued then begin
     Close;
@@ -126,8 +126,8 @@ end;
 
 procedure TfrmActionSpeed.ButtonDefaultClick(Sender: TObject);
 resourcestring
-  sExitMsg = '是否确认恢复默认设置？';
-  sExitMsgTitle = '确认信息';
+  sExitMsg      = 'Are you sure you want to reset this page to default values?';
+  sExitMsgTitle = 'Reset?';
 begin
   if Application.MessageBox(PChar(sExitMsg), PChar(sExitMsgTitle), MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin

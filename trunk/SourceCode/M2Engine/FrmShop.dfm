@@ -25,6 +25,10 @@ object FormShop: TFormShop
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Shop List Configuration'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label5: TLabel
         Left = 321
         Top = 235

@@ -27,6 +27,10 @@ object frmGameCmd: TfrmGameCmd
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'General'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object StringGridGameCmd: TStringGrid
         Left = 7
         Top = 8
@@ -147,6 +151,10 @@ object frmGameCmd: TfrmGameCmd
     object TabSheet2: TTabSheet
       Caption = 'GM-S'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object StringGridGameMasterCmd: TStringGrid
         Left = 7
         Top = 8

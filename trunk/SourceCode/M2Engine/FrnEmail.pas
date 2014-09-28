@@ -11,7 +11,7 @@ const
   MAXEMAILSAVEDAY = 30; //有物品的信件最大保存30天
   MAXEMAILSYSDAY = 3; //系统已读信件最短保存时间，未读则永久保存，但不超过最长保存时间
   MAXEMAILTEXTLEN = 1000;
-  SYSEMAILNAME = '[系统]';
+  SYSEMAILNAME = '[System]';
 
   EMS_USERLOGIN = 1000;
   EMS_USERGHOST = 1001;
@@ -230,7 +230,7 @@ begin
         nBack := -4;
     end;
     if nBack = 1 then begin
-      //AddGameLog(nil, LOG_EMAIL, EMailInfo.Header.sSendName, Integer(EMailInfo), 0, EMailInfo.sReadName, '0', '0', '发送成功');
+      //AddGameLog(nil, LOG_EMAIL, EMailInfo.Header.sSendName, Integer(EMailInfo), 0, EMailInfo.sReadName, '0', '0', 'Sent Successfully');
       SendObject := GetLoginPlay(nDBIndex);
       if (SendObject <> nil) and (not SendObject.m_boGhost) then begin
         SendObject.SendDefMsg(SendObject, SM_EMAIL, 1, 0, 0, 2, '');
@@ -258,7 +258,7 @@ begin
             if Stditem <> nil then begin
               if Stditem.NeedIdentify = 1 then
                 AddGameLog(SendObject, LOG_ADDITEM, StdItem.Name, UserItem.MakeIndex, UserItem.Dura, EMailInfo.sReadName,
-                  IntToStr(Integer(EMailInfo)), '0', '信件返回', UserItem);
+                  IntToStr(Integer(EMailInfo)), '0', 'Letters to return', UserItem);
               SendObject.m_ItemList.Add(UserItem);
               EMailInfo.Item.MakeIndex := 0;
             end else
@@ -272,7 +272,7 @@ begin
           if Stditem <> nil then begin
             if Stditem.NeedIdentify = 1 then
               AddGameLog(nil, LOG_ADDITEM, StdItem.Name, EMailInfo.Item.MakeIndex, EMailInfo.Item.Dura,
-                EMailInfo.sReadName, IntToStr(Integer(EMailInfo)), SYSEMAILNAME, '信件转移', @EMailInfo.Item);
+                EMailInfo.sReadName, IntToStr(Integer(EMailInfo)), SYSEMAILNAME, 'Letters Transfer', @EMailInfo.Item);
             EMailInfo.sReadName := SYSEMAILNAME;
             EMailInfo.boDelete := False;
             nIDIndex := GetWriteIndex;
@@ -440,7 +440,7 @@ begin
       if FFileStream.Size mod SizeOf(OldEMailInfo) = 0 then
         boCreateNew := True;
       FFileStream.Free;
-      sBakFileName := ExtractFilePath(sFileName) + FormatDateTime('YYYY-MM-DD-HH-MM-SS', Now) + '.bak'; 
+      sBakFileName := ExtractFilePath(sFileName) + FormatDateTime('YYYY-MM-DD-HH-MM-SS', Now) + '.bak';
       RenameFile(sFileName, sBakFileName);
       FFileStream := TFileStream.Create(sFileName, fmCreate);
       if boCreateNew then begin
@@ -727,7 +727,7 @@ begin
                     if PlayObject.AddItemToBag(UserItem, Stditem, False, '', '', AddUserItem) <> -1 then begin
                       if Stditem.NeedIdentify = 1 then
                         AddGameLog(PlayObject, LOG_ADDITEM, StdItem.Name, UserItem.MakeIndex, UserItem.Dura,
-                          EMailInfo.Header.sSendName, '0', '0', '信件取回', UserItem);
+                          EMailInfo.Header.sSendName, '0', '0', 'Mail Retrieval', UserItem);
                       EMailInfo.Item.MakeIndex := 0;
                       PlayObject.SendDefMsg(PlayObject, SM_EMAIL, nIndex, 0, 0, 5, '');
                     end else
@@ -782,7 +782,7 @@ begin
                   if PlayObject.IncGold(EMailInfo.nGold) then begin
                     if g_boGameLogGold then begin
                       AddGameLog(PlayObject, LOG_GOLDCHANGED, sSTRING_GOLDNAME, 0, PlayObject.m_nGold,
-                        EMailInfo.Header.sSendName, '+', IntToStr(EMailInfo.nGold), '信件取回', nil);
+                        EMailInfo.Header.sSendName, '+', IntToStr(EMailInfo.nGold), 'Mail Retrieval', nil);
                     end;
                     EMailInfo.nGold := 0;
                     PlayObject.SendDefMsg(PlayObject, SM_EMAIL, PlayObject.m_nGold, LoWord(nIndex), HiWord(nIndex), 4, '');
@@ -858,7 +858,7 @@ begin
         MainOutMessage(E.Message);
       end;
     End;
-    
+
     //SendDefMsg(PlayObject, PlayObject, SM_EMAIL, -1, 0, 0, 1, '');
   Finally
     FNameList.UnLock;

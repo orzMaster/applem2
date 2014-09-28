@@ -147,21 +147,20 @@ end;
 
 procedure TFrmServerValue.FormCreate(Sender: TObject);
 begin
-  ESendBlock.Hint := '与网关之间一次传输数据块大小(字节)。';
-  ECheckBlock.Hint := '与网关之间传输指定大小数据后，进行一次自检。';
-  EGateLoad.Hint := '设置与网关传输负载测试数据量大小。';
+  ESendBlock.Hint := 'And a gateway to transfer data between the block size (bytes).';
+  ECheckBlock.Hint := 'specify the size of the data transmission between the gateway, the once self-test.';
+  EGateLoad.Hint := 'Set the gateway transfer loading test data size.';
 
-  EHum.Hint := '处理人物数据分配时间。';
-  EMon.Hint := '处理怪物数据分配时间。';
-  EZen.Hint := '刷新怪物数据分配时间。';
-  ESoc.Hint := '处理网关数据分配时间。';
-  ENpc.Hint := '处理NPC数据分配时间。';
+  EHum.Hint := 'allocation of time dealing with character data.';
+  EMon.Hint := 'monster deal with data distribution time.';
+  EZen.Hint := 'allocation of time to refresh the data monster.';
+  ESoc.Hint := 'processing gateway data distribution time.';
+  ENpc.Hint := 'NPC data distribution processing time.';
 
-  EditZenMonRate.Hint :=
-    '刷怪倍率，倍率除以10为实际倍率(设置为10则为1:1)，此倍率以刷怪文件设置为准，数字越大，刷怪数量越小。';
-  EditZenMonTime.Hint := '刷怪间隔控制，数字越大，刷怪速度越慢。';
-  EditProcessTime.Hint := '处理怪物间隔时间，此设置数字越大，怪物行动越慢。';
-  EditProcessMonsterInterval.Hint := '怪物空闲间隔时间，数字越大，怪物反应越慢。';
+  EditZenMonRate.Hint := 'brush strange rate, divided by 10 for the actual magnification ratio (set to 10, compared with 1:1), this ratio to something and file settings prevail, the larger the number, the smaller the number of brush strange. ';
+  EditZenMonTime.Hint := 'something and the control interval, the larger the number, the slower the brush strange. ';
+  EditProcessTime.Hint := 'processing monster interval, this setting is the larger the number, the slower the monster action. ';
+  EditProcessMonsterInterval.Hint := 'Monster idle interval, the larger the number, the slower the monster reaction.';
 end;
 
 procedure TFrmServerValue.EditZenMonRateChange(Sender: TObject);
@@ -313,7 +312,7 @@ end;
 
 procedure TFrmServerValue.ButtonDefaultClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认恢复默认设置？', '确认信息', MB_YESNO +
+  if Application.MessageBox('Are you sure to restore default settings?','Confirmation', MB_YESNO +
     MB_ICONQUESTION) <> IDYES then begin
     exit;
   end;
